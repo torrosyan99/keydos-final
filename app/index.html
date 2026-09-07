@@ -1,0 +1,3022 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="ie=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <meta
+            name="description"
+            content="KEYDOS navigation"
+        />
+        <title>KEYDOS | Key Insight</title>
+        <link
+            rel="stylesheet"
+            href="assets/libs/swiper/swiper.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="assets/styles/fonts.css"
+        />
+        <link
+            rel="stylesheet"
+            href="assets/styles/main.css"
+        />
+        <script
+            src="assets/scripts/main.js"
+            defer
+        ></script>
+        <script
+            src="assets/libs/marquee6k/marquee6k.js"
+            defer
+        ></script>
+        <script
+            src="assets/libs/text-rotator/text-rotator.js"
+            defer
+        ></script>
+        <script
+            src="assets/libs/swiper/swiper.min.js"
+            defer
+        ></script>
+        <script
+            src="assets/scripts/homepage.js"
+            defer
+        ></script>
+    </head>
+    <body>
+    <header
+		    id="site-header"
+		    class="fixed inset-x-0 top-0 z-50 h-20 border-b border-c-border bg-white transition-[translate,background-color] duration-500 ease-header"
+    >
+	    <div class="flex h-full items-center gap-6 px-8 max-lg:px-md">
+		    <a
+				    href="#"
+				    class="mr-auto"
+				    aria-label="KKEYDOS home"
+		    >
+			    <img
+					    class="h-14 w-full"
+					    src="assets/images/keydos-logo.png"
+					    alt="KKEYDOS - Key Insight"
+			    />
+		    </a>
+
+		    <!-- Desktop navigation -->
+		    <nav
+				    class="flex h-full max-lg:hidden"
+				    aria-label="Primary navigation"
+		    >
+			    <ul class="flex h-full items-center gap-8">
+				    <li class="flex h-full items-center">
+					    <a
+							    href="#"
+							    class="nav-top-link group"
+							    data-menu-toggle="services-menu"
+							    data-active="false"
+							    aria-haspopup="true"
+							    aria-expanded="false"
+							    aria-controls="services-menu"
+					    >
+						    <span>Services</span>
+						    <svg
+								    class="block size-3.5 transition-transform duration-300 group-hover:rotate-180 group-data-[active=true]:rotate-180"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#chevron-down"
+							    ></use>
+						    </svg>
+					    </a>
+				    </li>
+				    <li class="flex h-full items-center">
+					    <a
+							    href="#"
+							    class="nav-top-link group"
+							    data-menu-toggle="technologies-menu"
+							    data-active="false"
+							    aria-haspopup="true"
+							    aria-expanded="false"
+							    aria-controls="technologies-menu"
+					    >
+						    <span>Technologies</span>
+						    <svg
+								    class="block size-3.5 transition-transform duration-300 group-hover:rotate-180 group-data-[active=true]:rotate-180"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#chevron-down"
+							    ></use>
+						    </svg>
+					    </a>
+				    </li>
+				    <li class="flex h-full items-center">
+					    <a
+							    href="#"
+							    class="nav-top-link group"
+							    data-menu-toggle="industries-menu"
+							    data-active="false"
+							    aria-haspopup="true"
+							    aria-expanded="false"
+							    aria-controls="industries-menu"
+					    >
+						    <span>Industries</span>
+						    <svg
+								    class="block size-3.5 transition-transform duration-300 group-hover:rotate-180 group-data-[active=true]:rotate-180"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#chevron-down"
+							    ></use>
+						    </svg>
+					    </a>
+				    </li>
+				    <li class="flex h-full items-center">
+					    <a
+							    href="#"
+							    class="nav-top-link group"
+							    data-menu-toggle="about-menu"
+							    data-active="false"
+							    aria-haspopup="true"
+							    aria-expanded="false"
+							    aria-controls="about-menu"
+					    >
+						    <span>About</span>
+						    <svg
+								    class="block size-3.5 transition-transform duration-300 group-hover:rotate-180 group-data-[active=true]:rotate-180"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#chevron-down"
+							    ></use>
+						    </svg>
+					    </a>
+				    </li>
+				    <li class="flex h-full items-center">
+					    <a
+							    href="#"
+							    class="nav-top-link"
+					    >Our Work</a
+					    >
+				    </li>
+				    <li class="flex h-full items-center">
+					    <a
+							    href="#"
+							    class="nav-top-link"
+					    >Blog</a
+					    >
+				    </li>
+			    </ul>
+		    </nav>
+
+		    <div class="max-lg:hidden">
+			    <a
+					    href="#"
+					    class="btn-cta h-10"
+			    >Schedule a Call</a
+			    >
+		    </div>
+
+		    <!-- Mobile menu trigger -->
+		    <button
+				    id="mobile-menu-button"
+				    type="button"
+				    class="group hidden size-6 flex-col items-center justify-center gap-1 max-lg:flex"
+				    aria-label="Open navigation"
+				    aria-expanded="false"
+				    aria-controls="mobile-menu"
+		    >
+            <span
+		            class="h-0.5 w-5 rounded-full bg-c-dark transition-transform duration-300 group-data-[open=true]:translate-y-1.5 group-data-[open=true]:rotate-45"
+            ></span>
+
+			    <span
+					    class="h-0.5 w-5 rounded-full bg-c-dark transition-opacity duration-300 group-data-[open=true]:opacity-0"
+			    ></span>
+
+			    <span
+					    class="h-0.5 w-5 rounded-full bg-c-dark transition-transform duration-300 group-data-[open=true]:-translate-y-1.5 group-data-[open=true]:-rotate-45"
+			    ></span>
+		    </button>
+	    </div>
+
+	    <!-- Services mega menu -->
+	    <section
+			    id="services-menu"
+			    class="menu-dropdown"
+			    data-menu-panel
+			    data-open="false"
+			    aria-hidden="true"
+			    aria-label="Services menu"
+			    inert
+	    >
+		    <div class="flex">
+			    <div class="mega-left">
+				    <h5 class="text-[#111111] mb-4">
+					    Services
+					    <span class="text-c-teal">.</span>
+				    </h5>
+				    <p class="mb-6.5 text-sm text-c-gray">
+					    We design and develop scalable digital solutions
+					    tailored to your business needs.
+				    </p>
+
+				    <nav
+						    class="flex flex-col gap-5 font-semibold text-sm"
+						    aria-label="Featured services"
+				    >
+					    <a
+							    href="#"
+							    class="flex items-center gap-3 transition-colors"
+					    >
+						    <svg
+								    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#sparkles"
+							    ></use>
+						    </svg>
+						    <span>AI Development</span>
+					    </a>
+					    <a
+							    href="#"
+							    class="flex items-center gap-3 transition-colors"
+					    >
+						    <svg
+								    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#globe"
+							    ></use>
+						    </svg>
+						    <span>Web Development</span>
+					    </a>
+					    <a
+							    href="#"
+							    class="flex items-center gap-3 transition-colors"
+					    >
+						    <svg
+								    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#mobile"
+							    ></use>
+						    </svg>
+						    <span>Mobile App Development</span>
+					    </a>
+					    <a
+							    href="#"
+							    class="flex items-center gap-3 transition-colors"
+					    >
+						    <svg
+								    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#cloud"
+							    ></use>
+						    </svg>
+						    <span>SaaS Development</span>
+					    </a>
+				    </nav>
+
+				    <div class="mt-5 border-y border-c-border py-4">
+					    <a
+							    href="#"
+							    class="link-arrow"
+					    >View All Services
+						    <svg
+								    class="link-arrow-icon"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#arrow-right"
+							    ></use>
+						    </svg>
+					    </a>
+				    </div>
+				    <div class="mt-5 flex flex-col gap-2">
+					    <div
+							    class="flex items-center gap-3 rounded-xl border border-c-border bg-white/85 px-3 py-2.5 shadow-default"
+					    >
+						    <svg
+								    class="block size-5 shrink-0 text-c-teal"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#product"
+							    ></use>
+						    </svg>
+						    <span class="text-sm font-semibold"
+						    >280+ Products Delivered</span
+						    >
+					    </div>
+					    <div
+							    class="flex items-center gap-3 rounded-xl border border-c-border bg-white/85 px-3 py-2.5 shadow-default"
+					    >
+						    <svg
+								    class="block size-5 shrink-0 text-c-teal"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#users"
+							    ></use>
+						    </svg>
+						    <span class="text-sm font-semibold"
+						    >268+ Happy Clients</span
+						    >
+					    </div>
+				    </div>
+			    </div>
+			    <div class="mega-grid">
+				    <div>
+					    <h3 class="mega-item-title">
+                        <span
+		                        class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                        ></span
+                        >Top Services
+					    </h3>
+					    <ul class="space-y-3">
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#sparkles"
+									    ></use>
+								    </svg>
+								    <span>AI Development</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#globe"
+									    ></use>
+								    </svg>
+								    <span>Web Development</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#mobile"
+									    ></use>
+								    </svg>
+								    <span>Mobile App Development</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#cloud"
+									    ></use>
+								    </svg>
+								    <span>SaaS Development</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#users"
+									    ></use>
+								    </svg>
+								    <span>CRM Development</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#shopping-bag"
+									    ></use>
+								    </svg>
+								    <span>E-commerce Development</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#paintbrush"
+									    ></use>
+								    </svg>
+								    <span>UI/UX Design</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#shield-check"
+									    ></use>
+								    </svg>
+								    <span
+								    >QA Testing &amp; Automation</span
+								    ></a
+							    >
+						    </li>
+					    </ul>
+				    </div>
+				    <div>
+					    <h3 class="mega-item-title">
+                        <span
+		                        class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                        ></span
+                        >Development Capabilities
+					    </h3>
+					    <ul class="space-y-3">
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#monitor"
+									    ></use>
+								    </svg>
+								    <span>Frontend Development</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#server"
+									    ></use>
+								    </svg>
+								    <span>Backend Development</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#terminal"
+									    ></use>
+								    </svg>
+								    <span>Full Stack Development</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#link-chain"
+									    ></use>
+								    </svg>
+								    <span
+								    >API Development &amp;
+                                    Integration</span
+								    ></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#cloud"
+									    ></use>
+								    </svg>
+								    <span
+								    >Cloud Application Development</span
+								    ></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#rocket"
+									    ></use>
+								    </svg>
+								    <span>DevOps &amp; Deployment</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#database"
+									    ></use>
+								    </svg>
+								    <span>Database Architecture</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#architecture"
+									    ></use>
+								    </svg>
+								    <span>System Architecture</span></a
+							    >
+						    </li>
+					    </ul>
+				    </div>
+				    <div>
+					    <h3 class="mega-item-title">
+                        <span
+		                        class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                        ></span
+                        >Business Solutions
+					    </h3>
+					    <ul class="space-y-3">
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#code"
+									    ></use>
+								    </svg>
+								    <span
+								    >Custom Software Development</span
+								    ></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#enterprise"
+									    ></use>
+								    </svg>
+								    <span
+								    >Enterprise Application
+                                    Development</span
+								    ></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#lightning"
+									    ></use>
+								    </svg>
+								    <span>Workflow Automation</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#refresh"
+									    ></use>
+								    </svg>
+								    <span>Digital Transformation</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#rocket"
+									    ></use>
+								    </svg>
+								    <span
+								    >Product Development (MVP to
+                                    Scale)</span
+								    ></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#wrench"
+									    ></use>
+								    </svg>
+								    <span
+								    >Maintenance &amp; Support</span
+								    ></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#gauge"
+									    ></use>
+								    </svg>
+								    <span>Performance Optimization</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#link-chain"
+									    ></use>
+								    </svg>
+								    <span>Third-party Integrations</span></a
+							    >
+						    </li>
+					    </ul>
+				    </div>
+			    </div>
+		    </div>
+	    </section>
+
+	    <!-- Technologies mega menu -->
+	    <section
+			    id="technologies-menu"
+			    class="menu-dropdown"
+			    data-menu-panel
+			    data-open="false"
+			    aria-hidden="true"
+			    aria-label="Technologies menu"
+			    inert
+	    >
+		    <div class="flex">
+			    <div class="mega-left">
+				    <h5 class="text-[#111111] mb-4">
+					    Technologies<span class="text-c-teal">.</span>
+				    </h5>
+				    <p class="mb-6.5 text-sm text-c-gray">
+					    We use modern technologies to build scalable,
+					    high-performance digital products.
+				    </p>
+
+				    <nav
+						    class="flex flex-col gap-5 text-sm font-semibold"
+						    aria-label="Technology capabilities"
+				    >
+					    <a
+							    href="#"
+							    class="flex items-center gap-3 transition-colors"
+					    >
+						    <svg
+								    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#html5"
+							    ></use>
+						    </svg>
+						    <span>HTML5 / CSS3</span>
+					    </a>
+					    <a
+							    href="#"
+							    class="flex items-center gap-3 transition-colors"
+					    >
+						    <svg
+								    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#javascript"
+							    ></use>
+						    </svg>
+						    <span>JavaScript</span>
+					    </a>
+					    <a
+							    href="#"
+							    class="flex items-center gap-3 transition-colors"
+					    >
+						    <svg
+								    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#typescript"
+							    ></use>
+						    </svg>
+						    <span>TypeScript</span>
+					    </a>
+					    <a
+							    href="#"
+							    class="flex items-center gap-3 transition-colors"
+					    >
+						    <svg
+								    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#react"
+							    ></use>
+						    </svg>
+						    <span>React.js</span>
+					    </a>
+				    </nav>
+
+				    <div class="mt-5 border-y border-c-border py-4">
+					    <a
+							    href="#"
+							    class="link-arrow"
+					    >View All Technologies
+						    <svg
+								    class="link-arrow-icon"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#arrow-right"
+							    ></use>
+						    </svg>
+					    </a>
+				    </div>
+				    <div class="mt-5 flex flex-col gap-2">
+					    <div
+							    class="flex items-center gap-3 rounded-xl border border-c-border bg-white/85 px-3 py-2.5 shadow-default"
+					    >
+						    <svg
+								    class="block size-5 shrink-0 text-c-teal"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#product"
+							    ></use>
+						    </svg>
+						    <span class="text-sm font-semibold"
+						    >280+ Products Delivered</span
+						    >
+					    </div>
+					    <div
+							    class="flex items-center gap-3 rounded-xl border border-c-border bg-white/85 px-3 py-2.5 shadow-default"
+					    >
+						    <svg
+								    class="block size-5 shrink-0 text-c-teal"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#users"
+							    ></use>
+						    </svg>
+						    <span class="text-sm font-semibold"
+						    >268+ Happy Clients</span
+						    >
+					    </div>
+				    </div>
+			    </div>
+
+			    <div class="mega-grid">
+				    <div>
+					    <h3 class="mega-item-title">
+                        <span
+		                        class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                        ></span
+                        >Frontend &amp; Mobile
+					    </h3>
+					    <ul class="space-y-3">
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#html5"
+									    ></use>
+								    </svg>
+								    <span>HTML5 / CSS3</span>
+							    </a>
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#javascript"
+									    ></use>
+								    </svg>
+								    <span>JavaScript</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#typescript"
+									    ></use>
+								    </svg>
+								    <span>TypeScript</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#react"
+									    ></use>
+								    </svg>
+								    <span>React.js</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#nextjs"
+									    ></use>
+								    </svg>
+								    <span>Next.js</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#vue"
+									    ></use>
+								    </svg>
+								    <span>Vue.js</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#flutter"
+									    ></use>
+								    </svg>
+								    <span>Flutter</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#react"
+									    ></use>
+								    </svg>
+								    <span>React Native</span></a
+							    >
+						    </li>
+					    </ul>
+				    </div>
+				    <div>
+					    <h3 class="mega-item-title">
+                        <span
+		                        class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                        ></span
+                        >Backend &amp; Systems
+					    </h3>
+					    <ul class="space-y-3">
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#nodejs"
+									    ></use>
+								    </svg>
+								    <span>Node.js</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#php"
+									    ></use>
+								    </svg>
+								    <span>PHP (Laravel)</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#python"
+									    ></use>
+								    </svg>
+								    <span>Python</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#java"
+									    ></use>
+								    </svg>
+								    <span>Java</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#dotnet"
+									    ></use>
+								    </svg>
+								    <span>.NET</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#mysql"
+									    ></use>
+								    </svg>
+								    <span>MySQL</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#postgresql"
+									    ></use>
+								    </svg>
+								    <span>PostgreSQL</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#mongodb"
+									    ></use>
+								    </svg>
+								    <span>MongoDB</span></a
+							    >
+						    </li>
+					    </ul>
+				    </div>
+				    <div>
+					    <h3 class="mega-item-title">
+						    <span></span>Cloud, AI &amp; Tools
+					    </h3>
+					    <ul class="space-y-3">
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#aws"
+									    ></use>
+								    </svg>
+								    <span>AWS</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#azure"
+									    ></use>
+								    </svg>
+								    <span>Microsoft Azure</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#google-cloud"
+									    ></use>
+								    </svg>
+								    <span>Google Cloud</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#firebase"
+									    ></use>
+								    </svg>
+								    <span>Firebase</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#docker"
+									    ></use>
+								    </svg>
+								    <span>Docker</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#sparkles"
+									    ></use>
+								    </svg>
+								    <span>AI / Machine Learning</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#openai-dots"
+									    ></use>
+								    </svg>
+								    <span>OpenAI / LLM Integration</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#rest-api"
+									    ></use>
+								    </svg>
+								    <span>REST API / GraphQL</span></a
+							    >
+						    </li>
+					    </ul>
+				    </div>
+			    </div>
+		    </div>
+	    </section>
+
+	    <!-- Industries mega menu -->
+	    <section
+			    id="industries-menu"
+			    class="menu-dropdown"
+			    data-menu-panel
+			    data-open="false"
+			    aria-hidden="true"
+			    aria-label="Industries menu"
+			    inert
+	    >
+		    <div class="flex">
+			    <div class="mega-left">
+				    <h5 class="text-[#111111] mb-4">
+					    Industries
+					    <span class="text-c-teal">.</span>
+				    </h5>
+				    <p class="mb-6.5 text-sm text-c-gray">
+					    We deliver tailored solutions across diverse
+					    industries and business verticals.
+				    </p>
+
+				    <nav
+						    class="flex flex-col gap-5 text-sm font-semibold"
+						    aria-label="Featured industries"
+				    >
+					    <a
+							    href="#"
+							    class="flex items-center gap-3 transition-colors"
+					    >
+						    <svg
+								    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#heart"
+							    ></use>
+						    </svg>
+						    <span>Healthcare</span>
+					    </a>
+					    <a
+							    href="#"
+							    class="flex items-center gap-3 transition-colors"
+					    >
+						    <svg
+								    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#dollar"
+							    ></use>
+						    </svg>
+						    <span>Fintech</span>
+					    </a>
+					    <a
+							    href="#"
+							    class="flex items-center gap-3 transition-colors"
+					    >
+						    <svg
+								    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#shopping-bag"
+							    ></use>
+						    </svg>
+						    <span>E-commerce</span>
+					    </a>
+					    <a
+							    href="#"
+							    class="flex items-center gap-3 transition-colors"
+					    >
+						    <svg
+								    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#school"
+							    ></use>
+						    </svg>
+						    <span>Education &amp; EdTech</span>
+					    </a>
+				    </nav>
+
+				    <div class="mt-5 border-y border-c-border py-4">
+					    <a
+							    href="#"
+							    class="link-arrow"
+					    >View All Industries
+						    <svg aria-hidden="true">
+							    <use
+									    href="assets/images/sprite.svg#arrow-right"
+							    ></use>
+						    </svg>
+					    </a>
+				    </div>
+				    <div class="mt-5 flex flex-col gap-2">
+					    <div
+							    class="flex items-center gap-3 rounded-xl border border-c-border bg-white/85 px-3 py-2.5 shadow-default"
+					    >
+						    <svg
+								    class="block size-5 shrink-0 text-c-teal"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#product"
+							    ></use>
+						    </svg>
+						    <span class="text-sm font-semibold"
+						    >280+ Products Delivered</span
+						    >
+					    </div>
+					    <div
+							    class="flex items-center gap-3 rounded-xl border border-c-border bg-white/85 px-3 py-2.5 shadow-default"
+					    >
+						    <svg
+								    class="block size-5 shrink-0 text-c-teal"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#users"
+							    ></use>
+						    </svg>
+						    <span class="text-sm font-semibold"
+						    >268+ Happy Clients</span
+						    >
+					    </div>
+				    </div>
+			    </div>
+
+			    <div class="mega-grid">
+				    <div>
+					    <h3 class="mega-item-title">
+                        <span
+		                        class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                        ></span
+                        >Core Industries
+					    </h3>
+					    <ul class="space-y-3">
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#heart"
+									    ></use>
+								    </svg>
+								    <span>Healthcare</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#dollar"
+									    ></use>
+								    </svg>
+								    <span>Fintech</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#shopping-bag"
+									    ></use>
+								    </svg>
+								    <span>E-commerce</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#school"
+									    ></use>
+								    </svg>
+								    <span>Education (EdTech)</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#building"
+									    ></use>
+								    </svg>
+								    <span>Real Estate</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#logistics"
+									    ></use>
+								    </svg>
+								    <span
+								    >Logistics &amp; Supply Chain</span
+								    ></a
+							    >
+						    </li>
+					    </ul>
+				    </div>
+				    <div>
+					    <h3 class="mega-item-title">
+                        <span
+		                        class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                        ></span
+                        >Growth Segments
+					    </h3>
+					    <ul class="space-y-3">
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#startup"
+									    ></use>
+								    </svg>
+								    <span>Startups &amp; SaaS</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#enterprise"
+									    ></use>
+								    </svg>
+								    <span>Enterprise Solutions</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#retail"
+									    ></use>
+								    </svg>
+								    <span
+								    >Retail &amp; Consumer Apps</span
+								    ></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#travel"
+									    ></use>
+								    </svg>
+								    <span>Travel &amp; Hospitality</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#media"
+									    ></use>
+								    </svg>
+								    <span
+								    >Media &amp; Entertainment</span
+								    ></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#automotive"
+									    ></use>
+								    </svg>
+								    <span>Automotive</span></a
+							    >
+						    </li>
+					    </ul>
+				    </div>
+				    <div>
+					    <h3 class="mega-item-title">
+                        <span
+		                        class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                        ></span
+                        >Specialized
+					    </h3>
+					    <ul class="space-y-3">
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#bank"
+									    ></use>
+								    </svg>
+								    <span>Banking &amp; Insurance</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#manufacturing"
+									    ></use>
+								    </svg>
+								    <span>Manufacturing</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#construction"
+									    ></use>
+								    </svg>
+								    <span>Construction</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#workforce"
+									    ></use>
+								    </svg>
+								    <span
+								    >HR &amp; Workforce Management</span
+								    ></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#marketing"
+									    ></use>
+								    </svg>
+								    <span>Marketing &amp; Martech</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#telecom"
+									    ></use>
+								    </svg>
+								    <span>Telecommunications</span></a
+							    >
+						    </li>
+					    </ul>
+				    </div>
+			    </div>
+		    </div>
+	    </section>
+
+	    <!-- About mega menu -->
+	    <section
+			    id="about-menu"
+			    class="menu-dropdown"
+			    data-menu-panel
+			    data-open="false"
+			    aria-hidden="true"
+			    aria-label="About menu"
+			    inert
+	    >
+		    <div class="flex">
+			    <div class="mega-left">
+				    <h5 class="text-[#111111] mb-4">
+					    About
+					    <span class="text-c-teal">.</span>
+				    </h5>
+				    <p class="mb-6.5 text-sm text-c-gray">
+					    Learn more about Keydos — our mission, team, and how
+					    we can help you succeed.
+				    </p>
+			    </div>
+
+			    <div class="mega-grid">
+				    <div>
+					    <h3 class="mega-item-title">
+                        <span
+		                        class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                        ></span
+                        >Company
+					    </h3>
+					    <ul class="space-y-3">
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#building"
+									    ></use>
+								    </svg>
+								    <span>About Kkeydos</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#book-open"
+									    ></use>
+								    </svg>
+								    <span>Our Story</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#phone"
+									    ></use>
+								    </svg>
+								    <span>Contact Us</span></a
+							    >
+						    </li>
+					    </ul>
+				    </div>
+				    <div>
+					    <h3 class="mega-item-title">
+                        <span
+		                        class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                        ></span
+                        >Team &amp; Work
+					    </h3>
+					    <ul class="space-y-3">
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#users"
+									    ></use>
+								    </svg>
+								    <span>Our Team</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#briefcase"
+									    ></use>
+								    </svg>
+								    <span>Careers</span></a
+							    >
+						    </li>
+					    </ul>
+				    </div>
+				    <div>
+					    <h3 class="mega-item-title">
+                        <span
+		                        class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                        ></span
+                        >Support
+					    </h3>
+					    <ul class="space-y-3">
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#help-circle"
+									    ></use>
+								    </svg>
+								    <span>FAQs</span></a
+							    >
+						    </li>
+						    <li>
+							    <a
+									    href="#"
+									    class="mega-link"
+							    >
+								    <svg aria-hidden="true">
+									    <use
+											    href="assets/images/sprite.svg#headset"
+									    ></use>
+								    </svg>
+								    <span>Support</span></a
+							    >
+						    </li>
+					    </ul>
+				    </div>
+			    </div>
+		    </div>
+	    </section>
+
+	    <!-- Mobile navigation -->
+	    <nav
+			    id="mobile-menu"
+			    class="fixed inset-x-0 bottom-0 top-20 hidden overscroll-contain overflow-y-auto bg-white px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] lg:hidden"
+			    aria-label="Mobile navigation"
+			    aria-hidden="true"
+			    inert
+	    >
+		    <div class="flex min-h-full flex-col">
+			    <div class="divide-y divide-c-border">
+				    <div class="py-1">
+					    <button
+							    type="button"
+							    class="mobile-menu-toggle"
+							    data-mobile-toggle="mobile-services"
+							    data-open="false"
+							    aria-expanded="false"
+							    aria-controls="mobile-services"
+					    >
+						    <span>Services</span>
+						    <svg
+								    class="size-3.5 transition-transform duration-300 group-data-[open=true]:rotate-180"
+								    aria-hidden="true"
+						    >
+							    <use
+									    href="assets/images/sprite.svg#chevron-down"
+							    ></use>
+						    </svg>
+					    </button>
+					    <div
+							    id="mobile-services"
+							    class="mobile-menu-item"
+							    data-mobile-panel
+							    data-open="false"
+							    aria-hidden="true"
+							    inert
+					    >
+						    <div class="overflow-hidden">
+							    <div class="grid grid-cols-2 gap-3 pb-4 max-sm:grid-cols-1">
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#sparkles"
+										    ></use>
+									    </svg>
+									    <span>AI Development</span></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#globe"
+										    ></use>
+									    </svg>
+									    <span>Web Development</span></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#mobile"
+										    ></use>
+									    </svg>
+									    <span
+									    >Mobile App Development</span
+									    ></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#cloud"
+										    ></use>
+									    </svg>
+									    <span>SaaS Development</span></a
+								    >
+								    <a
+										    href="#"
+										    class="link-arrow mt-2"
+								    >
+									    <span>All Services</span>
+									    <svg
+											    class="link-arrow-icon"
+											    aria-hidden="true"
+									    >
+										    <use
+												    href="assets/images/sprite.svg#arrow-right"
+										    ></use>
+									    </svg>
+								    </a>
+							    </div>
+						    </div>
+					    </div>
+				    </div>
+				    <div class="py-1">
+					    <button
+							    type="button"
+							    class="mobile-menu-toggle"
+							    data-mobile-toggle="mobile-technologies"
+							    data-open="false"
+							    aria-expanded="false"
+							    aria-controls="mobile-technologies"
+					    >
+						    <span>Technologies</span>
+						    <svg aria-hidden="true">
+							    <use
+									    href="assets/images/sprite.svg#chevron-down"
+							    ></use>
+						    </svg>
+					    </button>
+					    <div
+							    id="mobile-technologies"
+							    class="mobile-menu-item"
+							    data-mobile-panel
+							    data-open="false"
+							    aria-hidden="true"
+							    inert
+					    >
+						    <div class="overflow-hidden">
+							    <div class="grid grid-cols-2 gap-3 pb-4 max-sm:grid-cols-1">
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#sparkles"
+										    ></use>
+									    </svg>
+									    <span
+									    >AI &amp; Machine Learning</span
+									    ></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#code"
+										    ></use>
+									    </svg>
+									    <span
+									    >Web &amp; Mobile
+                                        Technologies</span
+									    ></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#cloud"
+										    ></use>
+									    </svg>
+									    <span>Cloud &amp; DevOps</span></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#link-chain"
+										    ></use>
+									    </svg>
+									    <span
+									    >API &amp; Integrations</span
+									    ></a
+								    >
+								    <a
+										    href="#"
+										    class="link-arrow"
+								    >
+									    <span>All Technologies</span>
+									    <svg
+											    class="link-arrow-icon"
+											    aria-hidden="true"
+									    >
+										    <use
+												    href="assets/images/sprite.svg#arrow-right"
+										    ></use>
+									    </svg>
+								    </a>
+							    </div>
+						    </div>
+					    </div>
+				    </div>
+				    <div class="py-1">
+					    <button
+							    type="button"
+							    class="mobile-menu-toggle"
+							    data-mobile-toggle="mobile-industries"
+							    data-open="false"
+							    aria-expanded="false"
+							    aria-controls="mobile-industries"
+					    >
+						    <span>Industries</span>
+						    <svg aria-hidden="true">
+							    <use
+									    href="assets/images/sprite.svg#chevron-down"
+							    ></use>
+						    </svg>
+					    </button>
+					    <div
+							    id="mobile-industries"
+							    class="mobile-menu-item"
+							    data-mobile-panel
+							    data-open="false"
+							    aria-hidden="true"
+							    inert
+					    >
+						    <div class="overflow-hidden">
+							    <div class="grid grid-cols-2 gap-3 pb-4 max-sm:grid-cols-1">
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#heart"
+										    ></use>
+									    </svg>
+									    <span>Healthcare</span></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#dollar"
+										    ></use>
+									    </svg>
+									    <span>Fintech</span></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#shopping-bag"
+										    ></use>
+									    </svg>
+									    <span>E-commerce</span></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#school"
+										    ></use>
+									    </svg>
+									    <span>Education (EdTech)</span></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#building"
+										    ></use>
+									    </svg>
+									    <span>Real Estate</span></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#logistics"
+										    ></use>
+									    </svg>
+									    <span
+									    >Logistics &amp; Supply
+                                        Chain</span
+									    ></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#startup"
+										    ></use>
+									    </svg>
+									    <span>Startups &amp; SaaS</span></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#enterprise"
+										    ></use>
+									    </svg>
+									    <span>Enterprise Solutions</span></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#retail"
+										    ></use>
+									    </svg>
+									    <span
+									    >Retail &amp; Consumer
+                                        Apps</span
+									    ></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#travel"
+										    ></use>
+									    </svg>
+									    <span
+									    >Travel &amp; Hospitality</span
+									    ></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#media"
+										    ></use>
+									    </svg>
+									    <span
+									    >Media &amp; Entertainment</span
+									    ></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#automotive"
+										    ></use>
+									    </svg>
+									    <span>Automotive</span></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#bank"
+										    ></use>
+									    </svg>
+									    <span
+									    >Banking &amp; Insurance</span
+									    ></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#manufacturing"
+										    ></use>
+									    </svg>
+									    <span>Manufacturing</span></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#construction"
+										    ></use>
+									    </svg>
+									    <span>Construction</span></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#workforce"
+										    ></use>
+									    </svg>
+									    <span
+									    >HR &amp; Workforce
+                                        Management</span
+									    ></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#marketing"
+										    ></use>
+									    </svg>
+									    <span
+									    >Marketing &amp; Martech</span
+									    ></a
+								    >
+								    <a
+										    class="mega-link"
+										    href="#"
+								    >
+									    <svg aria-hidden="true">
+										    <use
+												    href="assets/images/sprite.svg#telecom"
+										    ></use>
+									    </svg>
+									    <span>Telecommunications</span></a
+								    >
+								    <a
+										    href="#"
+										    class="link-arrow"
+								    >
+									    <span>All Industries</span>
+									    <svg
+											    class="link-arrow-icon"
+											    aria-hidden="true"
+									    >
+										    <use
+												    href="assets/images/sprite.svg#arrow-right"
+										    ></use>
+									    </svg>
+								    </a>
+							    </div>
+						    </div>
+					    </div>
+				    </div>
+				    <div class="py-1">
+					    <button
+							    type="button"
+							    class="mobile-menu-toggle"
+							    data-mobile-toggle="mobile-about"
+							    data-open="false"
+							    aria-expanded="false"
+							    aria-controls="mobile-about"
+					    >
+						    <span>About</span>
+						    <svg aria-hidden="true">
+							    <use
+									    href="assets/images/sprite.svg#chevron-down"
+							    ></use>
+						    </svg>
+					    </button>
+					    <div
+							    id="mobile-about"
+							    class="mobile-menu-item"
+							    data-mobile-panel
+							    data-open="false"
+							    aria-hidden="true"
+							    inert
+					    >
+						    <div class="overflow-hidden">
+							    <div class="pb-4">
+								    <p
+										    class="border-l-2 border-c-orange pl-4 text-sm leading-6 text-c-gray"
+								    >
+									    Learn more about Kkeydos РІР‚вЂќ our
+									    mission, team, and how we can help
+									    you succeed.
+								    </p>
+							    </div>
+						    </div>
+					    </div>
+				    </div>
+				    <a
+						    href="#"
+						    class="mobile-menu-toggle"
+				    >
+					    Our Work</a
+				    >
+				    <a
+						    href="#"
+						    class="mobile-menu-toggle"
+				    >
+					    Blog</a
+				    >
+			    </div>
+			    <div class="mt-auto flex w-full justify-center pt-5">
+				    <a
+						    class="btn-cta w-full max-w-120"
+						    href="#"
+				    >Schedule a Call</a
+				    >
+			    </div>
+		    </div>
+	    </nav>
+    </header>
+
+        <main class="overflow-hidden">
+            <section class="relative isolate pb-30 max-2xl:pb-25">
+                <div
+                    class="hero-section-bg"
+                    aria-hidden="true"
+                ></div>
+
+                <div
+                    class="page-container relative z-10 flex pt-34 pb-16 px-20 max-2xl:px-6 max-lg:pt-28"
+                >
+                    <div
+                        class="w-full text-left max-w-200 max-xl:mx-auto max-xl:text-center"
+                        data-rotator-scope
+                    >
+                        <h1
+                            class="font-medium tracking-[-0.045em] mb-4 text-c-dark-alt"
+                        >
+                            Accelerate your product roadmap with scalable
+                            software solutions.
+                            <span class="sr-only"
+                                >AI Development, Web Development, and Mobile
+                                Development.</span
+                            >
+                            <span
+                                class="text-rotator font-medium text-c-orange"
+                                data-interval="2200"
+                                data-duration="550"
+                                aria-hidden="true"
+                            >
+                                <span class="opacity-0">A</span>
+                                <span class="text-rotator-item"
+                                    >AI Development</span
+                                >
+                                <span class="text-rotator-item"
+                                    >Web Development</span
+                                >
+                                <span class="text-rotator-item"
+                                    >Mobile Development</span
+                                >
+                            </span>
+                        </h1>
+                        <p
+                            class="mb-6 text-[24px] font-normal text-c-muted-gray max-w-150 max-md:text-[20px] max-xl:mx-auto max-xl:mb-12"
+                        >
+                            We design and build high-performance digital
+                            products tailored to your business goals &mdash;
+                            from idea to scalable solutions.
+                        </p>
+                        <a
+                            class="btn-cta"
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Schedule a Call
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="pointer-events-none absolute -bottom-82.5 left-1/2 z-20 h-117.5 w-[118vw] -translate-x-1/2 rounded-[50%] bg-white lg:max-xl:-bottom-77.5 lg:max-xl:h-110 lg:max-xl:w-[118vw] sm:max-lg:-bottom-55 sm:max-lg:h-80 sm:max-lg:w-[125vw] max-sm:-bottom-41.25 max-sm:h-61.26 max-sm:w-[137vw]"
+                    aria-hidden="true"
+                ></div>
+            </section>
+	        <section class="relative -mt-8 bg-transparent">
+		        <div class="page-container max-w-300">
+			        <div
+					        class="flex items-center gap-20 max-xl:flex-col max-xl:gap-12"
+			        >
+				        <div class="max-w-100 w-full shrink-0">
+					        <h3
+							        class="font-bold leading-[1.15] tracking-[-0.04em] text-c-slate max-xl:text-center max-xl:max-w-100"
+					        >
+						        268+ companies rely on Keydos
+						        <span class="text-c-orange"
+						        >to build and scale
+                    </span>
+						        high-performing digital products
+						        <span class="text-c-orange">.</span>
+					        </h3>
+				        </div>
+
+				        <div class="min-w-0">
+					        <div class="horizontal-scroll">
+						        <div
+								        class="marquee6k"
+								        data-speed="0.8"
+								        data-pausable="true"
+						        >
+							        <div class="w-max">
+								        <div
+										        class="flex w-max snap-none items-center gap-6 max-lg:snap-x max-lg:snap-mandatory"
+										        aria-label="Client case studies"
+										        role="list"
+								        >
+									        <div class="client-card group">
+										        <div class="client-card-inner">
+											        <img
+													        class="client-card-logo"
+													        src="assets/images/clients/351791620208194.png"
+													        alt="Blue Fence Systems"
+													        loading="lazy"
+													        decoding="async"
+											        />
+											        <a
+													        class="client-card-link group-hover:opacity-100 group-hover:translate-y-0"
+													        href="#"
+													        aria-label="Read case study: Blue Fence Systems"
+											        >Read case study
+												        <svg
+														        class="size-3 shrink-0"
+														        aria-hidden="true"
+												        >
+													        <use
+															        href="assets/images/sprite.svg#arrow-right"
+													        ></use>
+												        </svg>
+											        </a>
+										        </div>
+									        </div>
+
+									        <div class="client-card group">
+										        <div class="client-card-inner">
+											        <img
+													        class="client-card-logo"
+													        src="assets/images/clients/black-koffee.png"
+													        alt="Black Koffee"
+													        loading="lazy"
+													        decoding="async"
+											        />
+											        <a
+													        class="client-card-link group-hover:opacity-100 group-hover:translate-y-0"
+													        href="#"
+													        aria-label="Read case study: Black Koffee"
+											        >Read case study
+												        <svg
+														        class="size-3 shrink-0"
+														        aria-hidden="true"
+												        >
+													        <use
+															        href="assets/images/sprite.svg#arrow-right"
+													        ></use>
+												        </svg>
+											        </a>
+										        </div>
+									        </div>
+
+									        <div class="client-card group">
+										        <div class="client-card-inner">
+											        <img
+													        class="client-card-logo"
+													        src="assets/images/clients/flycorpo.png"
+													        alt="FlyCorpo"
+													        loading="lazy"
+													        decoding="async"
+											        />
+											        <a
+													        class="client-card-link group-hover:opacity-100 group-hover:translate-y-0"
+													        href="#"
+													        aria-label="Read case study: FlyCorpo"
+											        >Read case study
+												        <svg
+														        class="size-3 shrink-0"
+														        aria-hidden="true"
+												        >
+													        <use
+															        href="assets/images/sprite.svg#arrow-right"
+													        ></use>
+												        </svg>
+											        </a>
+										        </div>
+									        </div>
+
+									        <div class="client-card group">
+										        <div class="client-card-inner">
+											        <img
+													        class="client-card-logo"
+													        src="assets/images/clients/ingresos.png"
+													        alt="Ingresos"
+													        loading="lazy"
+													        decoding="async"
+											        />
+											        <a
+													        class="client-card-link group-hover:opacity-100 group-hover:translate-y-0"
+													        href="#"
+													        aria-label="Read case study: Ingresos"
+											        >Read case study
+												        <svg
+														        class="size-3 shrink-0"
+														        aria-hidden="true"
+												        >
+													        <use
+															        href="assets/images/sprite.svg#arrow-right"
+													        ></use>
+												        </svg>
+											        </a>
+										        </div>
+									        </div>
+
+									        <div class="client-card group">
+										        <div class="client-card-inner">
+											        <img
+													        class="client-card-logo"
+													        src="assets/images/clients/keystone.png"
+													        alt="Keystone"
+													        loading="lazy"
+													        decoding="async"
+											        />
+											        <a
+													        class="client-card-link group-hover:opacity-100 group-hover:translate-y-0"
+													        href="#"
+													        aria-label="Read case study: Keystone"
+											        >Read case study
+												        <svg
+														        class="size-3 shrink-0"
+														        aria-hidden="true"
+												        >
+													        <use
+															        href="assets/images/sprite.svg#arrow-right"
+													        ></use>
+												        </svg>
+											        </a>
+										        </div>
+									        </div>
+
+									        <div class="client-card group">
+										        <div class="client-card-inner">
+											        <img
+													        class="client-card-logo"
+													        src="assets/images/clients/wonder-insure.jpg"
+													        alt="Wonder Insure"
+													        loading="lazy"
+													        decoding="async"
+											        />
+											        <a
+													        class="client-card-link group-hover:opacity-100 group-hover:translate-y-0"
+													        href="#"
+													        aria-label="Read case study: Wonder Insure"
+											        >Read case study
+												        <svg
+														        class="size-3 shrink-0"
+														        aria-hidden="true"
+												        >
+													        <use
+															        href="assets/images/sprite.svg#arrow-right"
+													        ></use>
+												        </svg>
+											        </a>
+										        </div>
+									        </div>
+								        </div>
+							        </div>
+						        </div>
+					        </div>
+				        </div>
+			        </div>
+		        </div>
+	        </section>
+	        <section class="pt-60 max-xl:pt-10">
+		        <div class="page-container">
+			        <div
+					        class="mb-12 flex gap-6 justify-between items-end max-lg:flex-col max-lg:items-start"
+			        >
+				        <h2 class="text-[#111111]">
+					        Full-stack expertise, built for scale
+					        <span class="text-c-orange">.</span>
+					        <span class="block"
+					        >Driving execution across every phase of the
+                    SDLC<span class="text-c-orange">.</span></span
+					        >
+				        </h2>
+				        <a
+						        class="black-arrow-link w-44"
+						        href="#"
+				        >
+                <span class="black-arrow-span">
+                    Everything we do
+                    <svg
+		                    class="size-4 shrink-0"
+		                    aria-hidden="true"
+                    >
+                        <use
+		                        href="assets/images/sprite.svg#arrow-right"
+                        ></use>
+                    </svg>
+                </span>
+				        </a>
+			        </div>
+
+			        <div class="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
+				        <article class="service-card">
+					        <div
+							        class="mb-2 flex flex-col items-start gap-4 max-sm:mb-4 max-sm:flex-row max-sm:items-center"
+					        >
+						        <svg
+								        class="size-16 shrink-0 rounded-xl bg-[#d6542e] p-2 text-white"
+								        aria-hidden="true"
+						        >
+							        <use
+									        href="assets/images/sprite.svg#service-frontend"
+							        ></use>
+						        </svg>
+						        <h4 class="font-normal text-black">
+							        Front-End Development
+						        </h4>
+					        </div>
+					        <p class="mb-6 text-base leading-6 text-[#272e34]">
+						        Build modern frontends designed for performance,
+						        accessibility, and scale.
+					        </p>
+					        <ul class="flex flex-wrap gap-2">
+						        <li>
+							        <span class="service-tag">Front-End</span>
+						        </li>
+						        <li>
+                        <span class="service-tag"
+                        >Web Development</span
+                        >
+						        </li>
+						        <li><span class="service-tag">React</span></li>
+						        <li>
+							        <span class="service-tag">Angular</span>
+						        </li>
+					        </ul>
+				        </article>
+
+				        <article class="service-card">
+					        <div
+							        class="mb-2 flex flex-col items-start gap-4 max-sm:mb-4 max-sm:flex-row max-sm:items-center"
+					        >
+						        <svg
+								        class="size-16 shrink-0 rounded-xl bg-[#272e34] p-2 text-white"
+								        aria-hidden="true"
+						        >
+							        <use
+									        href="assets/images/sprite.svg#service-backend"
+							        ></use>
+						        </svg>
+						        <h4 class="font-normal text-black">
+							        Back-End Development
+						        </h4>
+					        </div>
+					        <p class="mb-6 text-base leading-6 text-[#272e34]">
+						        Develop secure, scalable backends that perform
+						        reliably under load.
+					        </p>
+					        <ul class="flex flex-wrap gap-2">
+						        <li>
+							        <span class="service-tag">Back-End</span>
+						        </li>
+						        <li>
+							        <span class="service-tag">Database</span>
+						        </li>
+						        <li><span class="service-tag">Go</span></li>
+						        <li><span class="service-tag">.NET</span></li>
+						        <li><span class="service-tag">Java</span></li>
+						        <li>
+							        <span class="service-tag">Node.js</span>
+						        </li>
+					        </ul>
+				        </article>
+
+				        <article class="service-card">
+					        <div
+							        class="mb-2 flex flex-col items-start gap-4 max-sm:mb-4 max-sm:flex-row max-sm:items-center"
+					        >
+						        <svg
+								        class="size-16 shrink-0 rounded-xl bg-[#10468e] p-2 text-white"
+								        aria-hidden="true"
+						        >
+							        <use
+									        href="assets/images/sprite.svg#service-ai"
+							        ></use>
+						        </svg>
+						        <h4 class="font-normal text-black">
+							        AI and Machine Learning
+						        </h4>
+					        </div>
+					        <p class="mb-6 text-base leading-6 text-[#272e34]">
+						        Deploy trustworthy AI solutions that create real
+						        business value.
+					        </p>
+					        <ul class="flex flex-wrap gap-2">
+						        <li><span class="service-tag">AI</span></li>
+						        <li>
+                        <span class="service-tag"
+                        >Machine Learning</span
+                        >
+						        </li>
+						        <li>
+                        <span class="service-tag"
+                        >Data Science</span
+                        >
+						        </li>
+						        <li><span class="service-tag">LLMs</span></li>
+						        <li>
+                        <span class="service-tag"
+                        >Generative AI</span
+                        >
+						        </li>
+						        <li><span class="service-tag">Python</span></li>
+					        </ul>
+				        </article>
+
+				        <article class="service-card">
+					        <div
+							        class="mb-2 flex flex-col items-start gap-4 max-sm:mb-4 max-sm:flex-row max-sm:items-center"
+					        >
+						        <svg
+								        class="size-16 shrink-0 rounded-xl bg-c-blue p-2 text-white"
+								        aria-hidden="true"
+						        >
+							        <use
+									        href="assets/images/sprite.svg#service-mobile"
+							        ></use>
+						        </svg>
+						        <h4 class="font-normal text-black">
+							        Mobile Development
+						        </h4>
+					        </div>
+					        <p class="mb-6 text-base leading-6 text-[#272e34]">
+						        Launch iOS and Android apps with smooth
+						        performance, stable sessions, and secure data
+						        handling.
+					        </p>
+					        <ul class="flex flex-wrap gap-2">
+						        <li>
+                        <span class="service-tag"
+                        >Mobile Applications</span
+                        >
+						        </li>
+						        <li><span class="service-tag">iOS</span></li>
+						        <li>
+							        <span class="service-tag">Android</span>
+						        </li>
+					        </ul>
+				        </article>
+
+				        <article class="service-card">
+					        <div
+							        class="mb-2 flex flex-col items-start gap-4 max-sm:mb-4 max-sm:flex-row max-sm:items-center"
+					        >
+						        <svg
+								        class="size-16 shrink-0 rounded-xl bg-[#43a3aa] p-2 text-white"
+								        aria-hidden="true"
+						        >
+							        <use
+									        href="assets/images/sprite.svg#service-layout"
+							        ></use>
+						        </svg>
+						        <h4 class="font-normal text-black">
+							        UX/UI Design
+						        </h4>
+					        </div>
+					        <p class="mb-6 text-base leading-6 text-[#272e34]">
+						        Deliver product designs with clear user flows,
+						        reusable components, and accessible layouts.
+					        </p>
+					        <ul class="flex flex-wrap gap-2">
+						        <li>
+							        <span class="service-tag">UX Design</span>
+						        </li>
+						        <li>
+							        <span class="service-tag">UI Design</span>
+						        </li>
+					        </ul>
+				        </article>
+
+				        <article class="service-card">
+					        <div
+							        class="mb-2 flex flex-col items-start gap-4 max-sm:mb-4 max-sm:flex-row max-sm:items-center"
+					        >
+						        <svg
+								        class="size-16 shrink-0 rounded-xl bg-[#13926a] p-2 text-white"
+								        aria-hidden="true"
+						        >
+							        <use
+									        href="assets/images/sprite.svg#service-qa"
+							        ></use>
+						        </svg>
+						        <h4 class="font-normal text-black">
+							        QA and Testing
+						        </h4>
+					        </div>
+					        <p class="mb-6 text-base leading-6 text-[#272e34]">
+						        Ship release-ready software with manual and
+						        automated testing that validate core flows end
+						        to end.
+					        </p>
+					        <ul class="flex flex-wrap gap-2">
+						        <li>
+                        <span class="service-tag"
+                        >Quality Assurance</span
+                        >
+						        </li>
+					        </ul>
+				        </article>
+			        </div>
+		        </div>
+	        </section>
+	        <section class="relative isolate bg-c-light mt-50">
+		        <div
+				        class="pointer-events-none absolute -top-82.5 left-1/2 z-0 h-117.5 w-[118vw] -translate-x-1/2 rounded-[50%] bg-white lg:max-xl:-top-77.5 lg:max-xl:h-110 sm:max-lg:-top-55 sm:max-lg:h-80 sm:max-lg:w-[125vw] max-sm:-top-41.25 max-sm:h-61.25 max-sm:w-[137vw]"
+				        aria-hidden="true"
+		        ></div>
+
+		        <div class="page-container relative z-10 max-w-252">
+			        <div class="overflow-hidden rounded-2xl shadow-default">
+				        <div
+						        class="flex items-center gap-4 justify-between bg-c-muted-gray px-8 py-6 max-sm:px-5 max-lg:flex-col max-lg:justify-normal max-lg:px-7 max-lg:py-5"
+				        >
+					        <h2
+							        class="shrink-0 text-2xl font-medium leading-7 text-white max-lg:text-xl"
+					        >
+						        As featured in...
+					        </h2>
+					        <div
+							        class="flex w-full max-w-157.5 flex-wrap items-center justify-between gap-12 max-lg:max-w-none max-lg:gap-x-7 max-lg:gap-y-4 max-sm:justify-center"
+					        >
+						        <img
+								        class="h-6 w-auto object-contain max-lg:h-5"
+								        src="assets/images/featured/cnbc.svg"
+								        width="101"
+								        height="19"
+								        alt="CNBC"
+								        loading="lazy"
+								        decoding="async"
+						        />
+						        <img
+								        class="h-6 w-auto object-contain max-lg:h-5"
+								        src="assets/images/featured/forbes.svg"
+								        width="79"
+								        height="21"
+								        alt="Forbes"
+								        loading="lazy"
+								        decoding="async"
+						        />
+						        <img
+								        class="h-5 w-auto object-contain max-lg:h-4"
+								        src="assets/images/featured/insider.svg"
+								        width="99"
+								        height="15"
+								        alt="Insider"
+								        loading="lazy"
+								        decoding="async"
+						        />
+						        <img
+								        class="h-5 w-auto object-contain max-lg:h-4"
+								        src="assets/images/featured/bloomberg.svg"
+								        width="100"
+								        height="18"
+								        alt="Bloomberg"
+								        loading="lazy"
+								        decoding="async"
+						        />
+					        </div>
+				        </div>
+
+				        <div
+						        class="bg-[#3d4751]"
+						        id="featured-slider"
+				        >
+					        <div
+							        class="swiper w-full"
+							        data-swiper-slider
+					        >
+						        <div class="swiper-wrapper">
+							        <div class="swiper-slide">
+								        <div
+										        class="featured-slide flex min-h-55 items-center justify-center px-6 py-20 text-center text-3xl font-bold uppercase tracking-[0.06em] text-c-light max-sm:min-h-45 max-sm:py-16 max-sm:text-2xl"
+								        >
+									        Coming soon
+								        </div>
+							        </div>
+							        <div class="swiper-slide">
+								        <div
+										        class="featured-slide flex min-h-55 items-center justify-center px-6 py-20 text-center text-3xl font-bold uppercase tracking-[0.06em] text-c-light max-sm:min-h-45 max-sm:py-16 max-sm:text-2xl"
+								        >
+									        Coming soon
+								        </div>
+							        </div>
+							        <div class="swiper-slide">
+								        <div
+										        class="featured-slide flex min-h-55 items-center justify-center px-6 py-20 text-center text-3xl font-bold uppercase tracking-[0.06em] text-c-light max-sm:min-h-45 max-sm:py-16 max-sm:text-2xl"
+								        >
+									        Coming soon
+								        </div>
+							        </div>
+							        <div class="swiper-slide">
+								        <div
+										        class="featured-slide flex min-h-55 items-center justify-center px-6 py-20 text-center text-3xl font-bold uppercase tracking-[0.06em] text-c-light max-sm:min-h-45 max-sm:py-16 max-sm:text-2xl"
+								        >
+									        Coming soon
+								        </div>
+							        </div>
+							        <div class="swiper-slide">
+								        <div
+										        class="featured-slide flex min-h-55 items-center justify-center px-6 py-20 text-center text-3xl font-bold uppercase tracking-[0.06em] text-c-light max-sm:min-h-45 max-sm:py-16 max-sm:text-2xl"
+								        >
+									        Coming soon
+								        </div>
+							        </div>
+							        <div class="swiper-slide">
+								        <div
+										        class="featured-slide flex min-h-55 items-center justify-center px-6 py-20 text-center text-3xl font-bold uppercase tracking-[0.06em] text-c-light max-sm:min-h-45 max-sm:py-16 max-sm:text-2xl"
+								        >
+									        Coming soon
+								        </div>
+							        </div>
+						        </div>
+					        </div>
+
+					        <div
+							        class="grid min-h-14 grid-cols-[1fr_auto_1fr]
+							        items-center gap-3 border-t border-white/15 px-4 py-3 text-white"
+					        >
+						        <button
+								        type="button"
+								        class="group inline-flex cursor-pointer items-center gap-2 justify-self-start text-sm
+								        transition-transform duration-300 ease-out hover:-translate-x-2
+								        disabled:cursor-default disabled:opacity-40 disabled:hover:translate-x-0"
+								        data-featured-prev
+								        aria-label="Previous featured slide"
+						        >
+							        <svg
+									        class="size-5 rotate-180"
+									        aria-hidden="true"
+							        >
+								        <use
+										        href="assets/images/sprite.svg#arrow-right"
+								        ></use>
+							        </svg>
+							        <span class="max-sm:hidden">Previous</span>
+						        </button>
+
+						        <div
+								        class="featured-swiper-pagination swiper-pagination"
+								        data-featured-pagination
+						        ></div>
+
+						        <button
+								        type="button"
+								        class="group inline-flex cursor-pointer items-center gap-2 justify-self-end text-sm
+								        transition-transform duration-300 ease-out hover:translate-x-2 disabled:cursor-default
+								         disabled:opacity-40 disabled:hover:translate-x-0"
+								        data-featured-next
+								        aria-label="Next featured slide"
+						        >
+							        <span class="max-sm:hidden">Next</span>
+							        <svg
+									        class="size-5"
+									        aria-hidden="true"
+							        >
+								        <use
+										        href="assets/images/sprite.svg#arrow-right"
+								        ></use>
+							        </svg>
+						        </button>
+					        </div>
+				        </div>
+			        </div>
+		        </div>
+	        </section>
+
+	        <section class="bg-c-light pt-44 pb-24 max-lg:pt-20 max-sm:pt-16">
+		        <div class="page-container mb-16 text-center max-sm:mb-12">
+			        <h2 class=" font-medium  text-[#272e34]">
+				        Your entire tech stack, expertly handled<span class="text-c-orange">.</span>
+			        </h2>
+
+			        <p
+					        class="mx-auto mt-6 max-w-150 text-xl  text-c-muted-gray-alt "
+			        >
+				        We work across 100+ technologies and cutting-edge AI tools to build
+				        scalable, future-ready solutions.
+			        </p>
+		        </div>
+
+		        <div class="flex w-full flex-col gap-8 max-lg:gap-6 max-sm:gap-4">
+			        <div
+					        class="marquee6k group w-full overflow-hidden"
+					        data-speed="1.5"
+					        data-pausable="true"
+					        data-direction="left"
+			        >
+				        <div class="w-max">
+					        <div class="tech-marquee-group">
+						        <a class="tech-marquee-item" href="#">HTML5 / CSS3</a>
+						        <a class="tech-marquee-item" href="#">JavaScript</a>
+						        <a class="tech-marquee-item" href="#">TypeScript</a>
+						        <a class="tech-marquee-item" href="#">React.js</a>
+						        <a class="tech-marquee-item" href="#">Next.js</a>
+						        <a class="tech-marquee-item" href="#">Vue.js</a>
+						        <a class="tech-marquee-item" href="#">Flutter</a>
+						        <a class="tech-marquee-item" href="#">React Native</a>
+						        <a class="tech-marquee-item" href="#">Node.js</a>
+						        <a class="tech-marquee-item" href="#">PHP (Laravel)</a>
+						        <a class="tech-marquee-item" href="#">Python</a>
+						        <a class="tech-marquee-item" href="#">Java</a>
+						        <a class="tech-marquee-item" href="#">.NET</a>
+						        <a class="tech-marquee-item" href="#">MySQL</a>
+						        <a class="tech-marquee-item" href="#">PostgreSQL</a>
+						        <a class="tech-marquee-item" href="#">MongoDB</a>
+						        <a class="tech-marquee-item" href="#">AWS</a>
+						        <a class="tech-marquee-item" href="#">Microsoft Azure</a>
+						        <a class="tech-marquee-item" href="#">Google Cloud</a>
+						        <a class="tech-marquee-item" href="#">Firebase</a>
+						        <a class="tech-marquee-item" href="#">Docker</a>
+						        <a class="tech-marquee-item" href="#">AI / Machine Learning</a>
+						        <a class="tech-marquee-item" href="#">OpenAI / LLM Integration</a>
+						        <a class="tech-marquee-item" href="#">REST API / GraphQL</a>
+					        </div>
+				        </div>
+			        </div>
+
+			        <div
+					        class="marquee6k group w-full overflow-hidden"
+					        data-reverse="true"
+					        data-pausable="true"
+					        data-speed="1.5"
+			        >
+				        <div class="w-max">
+					        <div class="tech-marquee-group">
+						        <a class="tech-marquee-item" href="#">HTML5 / CSS3</a>
+						        <a class="tech-marquee-item" href="#">JavaScript</a>
+						        <a class="tech-marquee-item" href="#">TypeScript</a>
+						        <a class="tech-marquee-item" href="#">React.js</a>
+						        <a class="tech-marquee-item" href="#">Next.js</a>
+						        <a class="tech-marquee-item" href="#">Vue.js</a>
+						        <a class="tech-marquee-item" href="#">Flutter</a>
+						        <a class="tech-marquee-item" href="#">React Native</a>
+						        <a class="tech-marquee-item" href="#">Node.js</a>
+						        <a class="tech-marquee-item" href="#">PHP (Laravel)</a>
+						        <a class="tech-marquee-item" href="#">Python</a>
+						        <a class="tech-marquee-item" href="#">Java</a>
+						        <a class="tech-marquee-item" href="#">.NET</a>
+						        <a class="tech-marquee-item" href="#">MySQL</a>
+						        <a class="tech-marquee-item" href="#">PostgreSQL</a>
+						        <a class="tech-marquee-item" href="#">MongoDB</a>
+						        <a class="tech-marquee-item" href="#">AWS</a>
+						        <a class="tech-marquee-item" href="#">Microsoft Azure</a>
+						        <a class="tech-marquee-item" href="#">Google Cloud</a>
+						        <a class="tech-marquee-item" href="#">Firebase</a>
+						        <a class="tech-marquee-item" href="#">Docker</a>
+						        <a class="tech-marquee-item" href="#">AI / Machine Learning</a>
+						        <a class="tech-marquee-item" href="#">OpenAI / LLM Integration</a>
+						        <a class="tech-marquee-item" href="#">REST API / GraphQL</a>
+					        </div>
+				        </div>
+			        </div>
+		        </div>
+
+		        <div class="mt-18 flex justify-center max-sm:mt-14">
+			        <a
+					        href="#"
+					        class="repertoire-link"
+			        >
+				        Our full repertoire
+				        <svg
+						        class="size-4 shrink-0"
+						        aria-hidden="true"
+				        >
+					        <use href="assets/images/sprite.svg#arrow-right"></use>
+				        </svg>
+			        </a>
+		        </div>
+	        </section>
+
+
+
+
+	        <section class="pt-40"></section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "name": "keydos",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build:css": "tailwindcss -i ./src/input.css -o ./app/assets/styles/main.css --minify",
+        "dev:css": "tailwindcss -i ./src/input.css -o ./app/assets/styles/main.css --watch",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@tailwindcss/cli": "^4.3.3",
+        "prettier": "^3.9.6",
+        "tailwindcss": "^4.3.3"
+    }
+}

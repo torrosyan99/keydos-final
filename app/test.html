@@ -1,0 +1,2572 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="ie=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <meta
+            name="description"
+            content="KEYDOS navigation"
+        />
+        <title>KEYDOS | Key Insight</title>
+        <link
+            rel="stylesheet"
+            href="assets/styles/fonts.css"
+        />
+        <link
+            rel="stylesheet"
+            href="assets/styles/main.css"
+        />
+        <script
+            src="assets/scripts/main.js"
+            defer
+        ></script>
+        <script
+            src="assets/libs/marquee6k/marquee6k.js"
+            defer
+        ></script>
+        <script
+            src="assets/libs/text-rotator/text-rotator.js"
+            defer
+        ></script>
+        <script
+            src="assets/scripts/homepage.js"
+            defer
+        ></script>
+    </head>
+    <body>
+        <header
+            id="site-header"
+            class="fixed inset-x-0 top-0 z-50 h-20 border-b border-c-border bg-white transition-[translate,background-color] duration-500 ease-header"
+        >
+            <div class="flex h-full items-center gap-6 px-8 max-lg:px-md">
+                <a
+                    href="#"
+                    class="mr-auto"
+                    aria-label="KKEYDOS home"
+                >
+                    <img
+                        class="h-14 w-full"
+                        src="assets/images/keydos-logo.png"
+                        alt="KKEYDOS - Key Insight"
+                    />
+                </a>
+
+                <!-- Desktop navigation -->
+                <nav
+                    class="flex h-full max-lg:hidden"
+                    aria-label="Primary navigation"
+                >
+                    <ul class="flex h-full items-center gap-8">
+                        <li class="flex h-full items-center">
+                            <a
+                                href="#"
+                                class="nav-top-link group"
+                                data-menu-toggle="services-menu"
+                                data-active="false"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                aria-controls="services-menu"
+                            >
+                                <span>Services</span>
+                                <svg
+                                    class="block size-3.5 transition-transform duration-300 group-hover:rotate-180 group-data-[active=true]:rotate-180"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#chevron-down"
+                                    ></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="flex h-full items-center">
+                            <a
+                                href="#"
+                                class="nav-top-link group"
+                                data-menu-toggle="technologies-menu"
+                                data-active="false"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                aria-controls="technologies-menu"
+                            >
+                                <span>Technologies</span>
+                                <svg
+                                    class="block size-3.5 transition-transform duration-300 group-hover:rotate-180 group-data-[active=true]:rotate-180"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#chevron-down"
+                                    ></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="flex h-full items-center">
+                            <a
+                                href="#"
+                                class="nav-top-link group"
+                                data-menu-toggle="industries-menu"
+                                data-active="false"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                aria-controls="industries-menu"
+                            >
+                                <span>Industries</span>
+                                <svg
+                                    class="block size-3.5 transition-transform duration-300 group-hover:rotate-180 group-data-[active=true]:rotate-180"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#chevron-down"
+                                    ></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="flex h-full items-center">
+                            <a
+                                href="#"
+                                class="nav-top-link group"
+                                data-menu-toggle="about-menu"
+                                data-active="false"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                aria-controls="about-menu"
+                            >
+                                <span>About</span>
+                                <svg
+                                    class="block size-3.5 transition-transform duration-300 group-hover:rotate-180 group-data-[active=true]:rotate-180"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#chevron-down"
+                                    ></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="flex h-full items-center">
+                            <a
+                                href="#"
+                                class="nav-top-link"
+                                >Our Work</a
+                            >
+                        </li>
+                        <li class="flex h-full items-center">
+                            <a
+                                href="#"
+                                class="nav-top-link"
+                                >Blog</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="max-lg:hidden">
+                    <a
+                        href="#"
+                        class="btn-cta h-10"
+                        >Schedule a Call</a
+                    >
+                </div>
+
+                <!-- Mobile menu trigger -->
+                <button
+                    id="mobile-menu-button"
+                    type="button"
+                    class="group flex size-6 flex-col items-center justify-center gap-1 lg:hidden"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                >
+                    <span
+                        class="h-0.5 w-5 rounded-full bg-c-dark transition-transform duration-300 group-data-[open=true]:translate-y-1.5 group-data-[open=true]:rotate-45"
+                    ></span>
+
+                    <span
+                        class="h-0.5 w-5 rounded-full bg-c-dark transition-opacity duration-300 group-data-[open=true]:opacity-0"
+                    ></span>
+
+                    <span
+                        class="h-0.5 w-5 rounded-full bg-c-dark transition-transform duration-300 group-data-[open=true]:-translate-y-1.5 group-data-[open=true]:-rotate-45"
+                    ></span>
+                </button>
+            </div>
+
+            <!-- Services mega menu -->
+            <section
+                id="services-menu"
+                class="menu-dropdown"
+                data-menu-panel
+                data-open="false"
+                aria-hidden="true"
+                aria-label="Services menu"
+                inert
+            >
+                <div class="flex">
+                    <div class="mega-left">
+                        <h4 class="text-[#111111] mb-4">
+                            Services
+                            <span class="text-c-teal">.</span>
+                        </h4>
+                        <p class="mb-6.5 text-sm text-c-gray">
+                            We design and develop scalable digital solutions
+                            tailored to your business needs.
+                        </p>
+
+                        <nav
+                            class="flex flex-col gap-5 font-semibold text-sm"
+                            aria-label="Featured services"
+                        >
+                            <a
+                                href="#"
+                                class="flex items-center gap-3 transition-colors"
+                            >
+                                <svg
+                                    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#sparkles"
+                                    ></use>
+                                </svg>
+                                <span>AI Development</span>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center gap-3 transition-colors"
+                            >
+                                <svg
+                                    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#globe"
+                                    ></use>
+                                </svg>
+                                <span>Web Development</span>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center gap-3 transition-colors"
+                            >
+                                <svg
+                                    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#mobile"
+                                    ></use>
+                                </svg>
+                                <span>Mobile App Development</span>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center gap-3 transition-colors"
+                            >
+                                <svg
+                                    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#cloud"
+                                    ></use>
+                                </svg>
+                                <span>SaaS Development</span>
+                            </a>
+                        </nav>
+
+                        <div class="mt-5 border-y border-c-border py-4">
+                            <a
+                                href="#"
+                                class="link-arrow"
+                                >View All Services
+                                <svg
+                                    class="link-arrow-icon"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#arrow-right"
+                                    ></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="mt-5 flex flex-col gap-2">
+                            <div
+                                class="flex items-center gap-3 rounded-xl border border-c-border bg-white/85 px-3 py-2.5 shadow-default"
+                            >
+                                <svg
+                                    class="block size-5 shrink-0 text-c-teal"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#product"
+                                    ></use>
+                                </svg>
+                                <span class="text-sm font-semibold"
+                                    >280+ Products Delivered</span
+                                >
+                            </div>
+                            <div
+                                class="flex items-center gap-3 rounded-xl border border-c-border bg-white/85 px-3 py-2.5 shadow-default"
+                            >
+                                <svg
+                                    class="block size-5 shrink-0 text-c-teal"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#users"
+                                    ></use>
+                                </svg>
+                                <span class="text-sm font-semibold"
+                                    >268+ Happy Clients</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mega-grid">
+                        <div>
+                            <h3 class="mega-item-title">
+                                <span
+                                    class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                                ></span
+                                >Top Services
+                            </h3>
+                            <ul class="space-y-3">
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#sparkles"
+                                            ></use>
+                                        </svg>
+                                        <span>AI Development</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#globe"
+                                            ></use>
+                                        </svg>
+                                        <span>Web Development</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#mobile"
+                                            ></use>
+                                        </svg>
+                                        <span>Mobile App Development</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#cloud"
+                                            ></use>
+                                        </svg>
+                                        <span>SaaS Development</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#users"
+                                            ></use>
+                                        </svg>
+                                        <span>CRM Development</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#shopping-bag"
+                                            ></use>
+                                        </svg>
+                                        <span>E-commerce Development</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#paintbrush"
+                                            ></use>
+                                        </svg>
+                                        <span>UI/UX Design</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#shield-check"
+                                            ></use>
+                                        </svg>
+                                        <span
+                                            >QA Testing &amp; Automation</span
+                                        ></a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="mega-item-title">
+                                <span
+                                    class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                                ></span
+                                >Development Capabilities
+                            </h3>
+                            <ul class="space-y-3">
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#monitor"
+                                            ></use>
+                                        </svg>
+                                        <span>Frontend Development</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#server"
+                                            ></use>
+                                        </svg>
+                                        <span>Backend Development</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#terminal"
+                                            ></use>
+                                        </svg>
+                                        <span>Full Stack Development</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#link-chain"
+                                            ></use>
+                                        </svg>
+                                        <span
+                                            >API Development &amp;
+                                            Integration</span
+                                        ></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#cloud"
+                                            ></use>
+                                        </svg>
+                                        <span
+                                            >Cloud Application Development</span
+                                        ></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#rocket"
+                                            ></use>
+                                        </svg>
+                                        <span>DevOps &amp; Deployment</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#database"
+                                            ></use>
+                                        </svg>
+                                        <span>Database Architecture</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#architecture"
+                                            ></use>
+                                        </svg>
+                                        <span>System Architecture</span></a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="mega-item-title">
+                                <span
+                                    class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                                ></span
+                                >Business Solutions
+                            </h3>
+                            <ul class="space-y-3">
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#code"
+                                            ></use>
+                                        </svg>
+                                        <span
+                                            >Custom Software Development</span
+                                        ></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#enterprise"
+                                            ></use>
+                                        </svg>
+                                        <span
+                                            >Enterprise Application
+                                            Development</span
+                                        ></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#lightning"
+                                            ></use>
+                                        </svg>
+                                        <span>Workflow Automation</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#refresh"
+                                            ></use>
+                                        </svg>
+                                        <span>Digital Transformation</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#rocket"
+                                            ></use>
+                                        </svg>
+                                        <span
+                                            >Product Development (MVP to
+                                            Scale)</span
+                                        ></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#wrench"
+                                            ></use>
+                                        </svg>
+                                        <span
+                                            >Maintenance &amp; Support</span
+                                        ></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#gauge"
+                                            ></use>
+                                        </svg>
+                                        <span>Performance Optimization</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#link-chain"
+                                            ></use>
+                                        </svg>
+                                        <span>Third-party Integrations</span></a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technologies mega menu -->
+            <section
+                id="technologies-menu"
+                class="menu-dropdown"
+                data-menu-panel
+                data-open="false"
+                aria-hidden="true"
+                aria-label="Technologies menu"
+                inert
+            >
+                <div class="flex">
+                    <div class="mega-left">
+                        <h4 class="text-[#111111] mb-4">
+                            Technologies<span class="text-c-teal">.</span>
+                        </h4>
+                        <p class="mb-6.5 text-sm text-c-gray">
+                            We use modern technologies to build scalable,
+                            high-performance digital products.
+                        </p>
+
+                        <nav
+                            class="flex flex-col gap-5 text-sm font-semibold"
+                            aria-label="Technology capabilities"
+                        >
+                            <a
+                                href="#"
+                                class="flex items-center gap-3 transition-colors"
+                            >
+                                <svg
+                                    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#html5"
+                                    ></use>
+                                </svg>
+                                <span>HTML5 / CSS3</span>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center gap-3 transition-colors"
+                            >
+                                <svg
+                                    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#javascript"
+                                    ></use>
+                                </svg>
+                                <span>JavaScript</span>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center gap-3 transition-colors"
+                            >
+                                <svg
+                                    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#typescript"
+                                    ></use>
+                                </svg>
+                                <span>TypeScript</span>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center gap-3 transition-colors"
+                            >
+                                <svg
+                                    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#react"
+                                    ></use>
+                                </svg>
+                                <span>React.js</span>
+                            </a>
+                        </nav>
+
+                        <div class="mt-5 border-y border-c-border py-4">
+                            <a
+                                href="#"
+                                class="link-arrow"
+                                >View All Technologies
+                                <svg
+                                    class="link-arrow-icon"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#arrow-right"
+                                    ></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="mt-5 flex flex-col gap-2">
+                            <div
+                                class="flex items-center gap-3 rounded-xl border border-c-border bg-white/85 px-3 py-2.5 shadow-default"
+                            >
+                                <svg
+                                    class="block size-5 shrink-0 text-c-teal"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#product"
+                                    ></use>
+                                </svg>
+                                <span class="text-sm font-semibold"
+                                    >280+ Products Delivered</span
+                                >
+                            </div>
+                            <div
+                                class="flex items-center gap-3 rounded-xl border border-c-border bg-white/85 px-3 py-2.5 shadow-default"
+                            >
+                                <svg
+                                    class="block size-5 shrink-0 text-c-teal"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#users"
+                                    ></use>
+                                </svg>
+                                <span class="text-sm font-semibold"
+                                    >268+ Happy Clients</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mega-grid">
+                        <div>
+                            <h3 class="mega-item-title">
+                                <span
+                                    class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                                ></span
+                                >Frontend &amp; Mobile
+                            </h3>
+                            <ul class="space-y-3">
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#html5"
+                                            ></use>
+                                        </svg>
+                                        <span>HTML5 / CSS3</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#javascript"
+                                            ></use>
+                                        </svg>
+                                        <span>JavaScript</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#typescript"
+                                            ></use>
+                                        </svg>
+                                        <span>TypeScript</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#react"
+                                            ></use>
+                                        </svg>
+                                        <span>React.js</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#nextjs"
+                                            ></use>
+                                        </svg>
+                                        <span>Next.js</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#vue"
+                                            ></use>
+                                        </svg>
+                                        <span>Vue.js</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#flutter"
+                                            ></use>
+                                        </svg>
+                                        <span>Flutter</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#react"
+                                            ></use>
+                                        </svg>
+                                        <span>React Native</span></a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="mega-item-title">
+                                <span
+                                    class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                                ></span
+                                >Backend &amp; Systems
+                            </h3>
+                            <ul class="space-y-3">
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#nodejs"
+                                            ></use>
+                                        </svg>
+                                        <span>Node.js</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#php"
+                                            ></use>
+                                        </svg>
+                                        <span>PHP (Laravel)</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#python"
+                                            ></use>
+                                        </svg>
+                                        <span>Python</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#java"
+                                            ></use>
+                                        </svg>
+                                        <span>Java</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#dotnet"
+                                            ></use>
+                                        </svg>
+                                        <span>.NET</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#mysql"
+                                            ></use>
+                                        </svg>
+                                        <span>MySQL</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#postgresql"
+                                            ></use>
+                                        </svg>
+                                        <span>PostgreSQL</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#mongodb"
+                                            ></use>
+                                        </svg>
+                                        <span>MongoDB</span></a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="mega-item-title">
+                                <span></span>Cloud, AI &amp; Tools
+                            </h3>
+                            <ul class="space-y-3">
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#aws"
+                                            ></use>
+                                        </svg>
+                                        <span>AWS</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#azure"
+                                            ></use>
+                                        </svg>
+                                        <span>Microsoft Azure</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#google-cloud"
+                                            ></use>
+                                        </svg>
+                                        <span>Google Cloud</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#firebase"
+                                            ></use>
+                                        </svg>
+                                        <span>Firebase</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#docker"
+                                            ></use>
+                                        </svg>
+                                        <span>Docker</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#sparkles"
+                                            ></use>
+                                        </svg>
+                                        <span>AI / Machine Learning</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#openai-dots"
+                                            ></use>
+                                        </svg>
+                                        <span>OpenAI / LLM Integration</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#rest-api"
+                                            ></use>
+                                        </svg>
+                                        <span>REST API / GraphQL</span></a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Industries mega menu -->
+            <section
+                id="industries-menu"
+                class="menu-dropdown"
+                data-menu-panel
+                data-open="false"
+                aria-hidden="true"
+                aria-label="Industries menu"
+                inert
+            >
+                <div class="flex">
+                    <div class="mega-left">
+                        <h4 class="text-[#111111] mb-4">
+                            Industries
+                            <span class="text-c-teal">.</span>
+                        </h4>
+                        <p class="mb-6.5 text-sm text-c-gray">
+                            We deliver tailored solutions across diverse
+                            industries and business verticals.
+                        </p>
+
+                        <nav
+                            class="flex flex-col gap-5 text-sm font-semibold"
+                            aria-label="Featured industries"
+                        >
+                            <a
+                                href="#"
+                                class="flex items-center gap-3 transition-colors"
+                            >
+                                <svg
+                                    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#heart"
+                                    ></use>
+                                </svg>
+                                <span>Healthcare</span>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center gap-3 transition-colors"
+                            >
+                                <svg
+                                    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#dollar"
+                                    ></use>
+                                </svg>
+                                <span>Fintech</span>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center gap-3 transition-colors"
+                            >
+                                <svg
+                                    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#shopping-bag"
+                                    ></use>
+                                </svg>
+                                <span>E-commerce</span>
+                            </a>
+                            <a
+                                href="#"
+                                class="flex items-center gap-3 transition-colors"
+                            >
+                                <svg
+                                    class="block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#school"
+                                    ></use>
+                                </svg>
+                                <span>Education &amp; EdTech</span>
+                            </a>
+                        </nav>
+
+                        <div class="mt-5 border-y border-c-border py-4">
+                            <a
+                                href="#"
+                                class="link-arrow"
+                                >View All Industries
+                                <svg aria-hidden="true">
+                                    <use
+                                        href="assets/images/sprite.svg#arrow-right"
+                                    ></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="mt-5 flex flex-col gap-2">
+                            <div
+                                class="flex items-center gap-3 rounded-xl border border-c-border bg-white/85 px-3 py-2.5 shadow-default"
+                            >
+                                <svg
+                                    class="block size-5 shrink-0 text-c-teal"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#product"
+                                    ></use>
+                                </svg>
+                                <span class="text-sm font-semibold"
+                                    >280+ Products Delivered</span
+                                >
+                            </div>
+                            <div
+                                class="flex items-center gap-3 rounded-xl border border-c-border bg-white/85 px-3 py-2.5 shadow-default"
+                            >
+                                <svg
+                                    class="block size-5 shrink-0 text-c-teal"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#users"
+                                    ></use>
+                                </svg>
+                                <span class="text-sm font-semibold"
+                                    >268+ Happy Clients</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mega-grid">
+                        <div>
+                            <h3 class="mega-item-title">
+                                <span
+                                    class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                                ></span
+                                >Core Industries
+                            </h3>
+                            <ul class="space-y-3">
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#heart"
+                                            ></use>
+                                        </svg>
+                                        <span>Healthcare</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#dollar"
+                                            ></use>
+                                        </svg>
+                                        <span>Fintech</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#shopping-bag"
+                                            ></use>
+                                        </svg>
+                                        <span>E-commerce</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#school"
+                                            ></use>
+                                        </svg>
+                                        <span>Education (EdTech)</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#building"
+                                            ></use>
+                                        </svg>
+                                        <span>Real Estate</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#logistics"
+                                            ></use>
+                                        </svg>
+                                        <span
+                                            >Logistics &amp; Supply Chain</span
+                                        ></a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="mega-item-title">
+                                <span
+                                    class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                                ></span
+                                >Growth Segments
+                            </h3>
+                            <ul class="space-y-3">
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#startup"
+                                            ></use>
+                                        </svg>
+                                        <span>Startups &amp; SaaS</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#enterprise"
+                                            ></use>
+                                        </svg>
+                                        <span>Enterprise Solutions</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#retail"
+                                            ></use>
+                                        </svg>
+                                        <span
+                                            >Retail &amp; Consumer Apps</span
+                                        ></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#travel"
+                                            ></use>
+                                        </svg>
+                                        <span>Travel &amp; Hospitality</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#media"
+                                            ></use>
+                                        </svg>
+                                        <span
+                                            >Media &amp; Entertainment</span
+                                        ></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#automotive"
+                                            ></use>
+                                        </svg>
+                                        <span>Automotive</span></a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="mega-item-title">
+                                <span
+                                    class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                                ></span
+                                >Specialized
+                            </h3>
+                            <ul class="space-y-3">
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#bank"
+                                            ></use>
+                                        </svg>
+                                        <span>Banking &amp; Insurance</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#manufacturing"
+                                            ></use>
+                                        </svg>
+                                        <span>Manufacturing</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#construction"
+                                            ></use>
+                                        </svg>
+                                        <span>Construction</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#workforce"
+                                            ></use>
+                                        </svg>
+                                        <span
+                                            >HR &amp; Workforce Management</span
+                                        ></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#marketing"
+                                            ></use>
+                                        </svg>
+                                        <span>Marketing &amp; Martech</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#telecom"
+                                            ></use>
+                                        </svg>
+                                        <span>Telecommunications</span></a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About mega menu -->
+            <section
+                id="about-menu"
+                class="menu-dropdown"
+                data-menu-panel
+                data-open="false"
+                aria-hidden="true"
+                aria-label="About menu"
+                inert
+            >
+                <div class="flex">
+                    <div class="mega-left">
+                        <h4 class="text-[#111111] mb-4">
+                            About
+                            <span class="text-c-teal">.</span>
+                        </h4>
+                        <p class="mb-6.5 text-sm text-c-gray">
+                            Learn more about Keydos — our mission, team, and how
+                            we can help you succeed.
+                        </p>
+                    </div>
+
+                    <div class="mega-grid">
+                        <div>
+                            <h3 class="mega-item-title">
+                                <span
+                                    class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                                ></span
+                                >Company
+                            </h3>
+                            <ul class="space-y-3">
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#building"
+                                            ></use>
+                                        </svg>
+                                        <span>About Kkeydos</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#book-open"
+                                            ></use>
+                                        </svg>
+                                        <span>Our Story</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#phone"
+                                            ></use>
+                                        </svg>
+                                        <span>Contact Us</span></a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="mega-item-title">
+                                <span
+                                    class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                                ></span
+                                >Team &amp; Work
+                            </h3>
+                            <ul class="space-y-3">
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#users"
+                                            ></use>
+                                        </svg>
+                                        <span>Our Team</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#briefcase"
+                                            ></use>
+                                        </svg>
+                                        <span>Careers</span></a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="mega-item-title">
+                                <span
+                                    class="mr-2 inline-block size-2 rounded-sm bg-c-orange"
+                                ></span
+                                >Support
+                            </h3>
+                            <ul class="space-y-3">
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#help-circle"
+                                            ></use>
+                                        </svg>
+                                        <span>FAQs</span></a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="mega-link"
+                                    >
+                                        <svg aria-hidden="true">
+                                            <use
+                                                href="assets/images/sprite.svg#headset"
+                                            ></use>
+                                        </svg>
+                                        <span>Support</span></a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mobile navigation -->
+            <nav
+                id="mobile-menu"
+                class="fixed inset-x-0 bottom-0 top-20 hidden overscroll-contain overflow-y-auto bg-white px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] lg:hidden"
+                aria-label="Mobile navigation"
+                aria-hidden="true"
+                inert
+            >
+                <div class="flex min-h-full flex-col">
+                    <div class="divide-y divide-c-border">
+                        <div class="py-1">
+                            <button
+                                type="button"
+                                class="mobile-menu-toggle"
+                                data-mobile-toggle="mobile-services"
+                                data-open="false"
+                                aria-expanded="false"
+                                aria-controls="mobile-services"
+                            >
+                                <span>Services</span>
+                                <svg
+                                    class="size-3.5 transition-transform duration-300 group-data-[open=true]:rotate-180"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="assets/images/sprite.svg#chevron-down"
+                                    ></use>
+                                </svg>
+                            </button>
+                            <div
+                                id="mobile-services"
+                                class="mobile-menu-item"
+                                data-mobile-panel
+                                data-open="false"
+                                aria-hidden="true"
+                                inert
+                            >
+                                <div class="overflow-hidden">
+                                    <div class="grid gap-3 pb-4 sm:grid-cols-2">
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#sparkles"
+                                                ></use>
+                                            </svg>
+                                            <span>AI Development</span></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#globe"
+                                                ></use>
+                                            </svg>
+                                            <span>Web Development</span></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#mobile"
+                                                ></use>
+                                            </svg>
+                                            <span
+                                                >Mobile App Development</span
+                                            ></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#cloud"
+                                                ></use>
+                                            </svg>
+                                            <span>SaaS Development</span></a
+                                        >
+                                        <a
+                                            href="#"
+                                            class="link-arrow mt-2"
+                                        >
+                                            <span>All Services</span>
+                                            <svg
+                                                class="link-arrow-icon"
+                                                aria-hidden="true"
+                                            >
+                                                <use
+                                                    href="assets/images/sprite.svg#arrow-right"
+                                                ></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-1">
+                            <button
+                                type="button"
+                                class="mobile-menu-toggle"
+                                data-mobile-toggle="mobile-technologies"
+                                data-open="false"
+                                aria-expanded="false"
+                                aria-controls="mobile-technologies"
+                            >
+                                <span>Technologies</span>
+                                <svg aria-hidden="true">
+                                    <use
+                                        href="assets/images/sprite.svg#chevron-down"
+                                    ></use>
+                                </svg>
+                            </button>
+                            <div
+                                id="mobile-technologies"
+                                class="mobile-menu-item"
+                                data-mobile-panel
+                                data-open="false"
+                                aria-hidden="true"
+                                inert
+                            >
+                                <div class="overflow-hidden">
+                                    <div class="grid gap-3 pb-4 sm:grid-cols-2">
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#sparkles"
+                                                ></use>
+                                            </svg>
+                                            <span
+                                                >AI &amp; Machine Learning</span
+                                            ></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#code"
+                                                ></use>
+                                            </svg>
+                                            <span
+                                                >Web &amp; Mobile
+                                                Technologies</span
+                                            ></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#cloud"
+                                                ></use>
+                                            </svg>
+                                            <span>Cloud &amp; DevOps</span></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#link-chain"
+                                                ></use>
+                                            </svg>
+                                            <span
+                                                >API &amp; Integrations</span
+                                            ></a
+                                        >
+                                        <a
+                                            href="#"
+                                            class="link-arrow"
+                                        >
+                                            <span>All Technologies</span>
+                                            <svg
+                                                class="link-arrow-icon"
+                                                aria-hidden="true"
+                                            >
+                                                <use
+                                                    href="assets/images/sprite.svg#arrow-right"
+                                                ></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-1">
+                            <button
+                                type="button"
+                                class="mobile-menu-toggle"
+                                data-mobile-toggle="mobile-industries"
+                                data-open="false"
+                                aria-expanded="false"
+                                aria-controls="mobile-industries"
+                            >
+                                <span>Industries</span>
+                                <svg aria-hidden="true">
+                                    <use
+                                        href="assets/images/sprite.svg#chevron-down"
+                                    ></use>
+                                </svg>
+                            </button>
+                            <div
+                                id="mobile-industries"
+                                class="mobile-menu-item"
+                                data-mobile-panel
+                                data-open="false"
+                                aria-hidden="true"
+                                inert
+                            >
+                                <div class="overflow-hidden">
+                                    <div class="grid gap-3 pb-4 sm:grid-cols-2">
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#heart"
+                                                ></use>
+                                            </svg>
+                                            <span>Healthcare</span></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#dollar"
+                                                ></use>
+                                            </svg>
+                                            <span>Fintech</span></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#shopping-bag"
+                                                ></use>
+                                            </svg>
+                                            <span>E-commerce</span></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#school"
+                                                ></use>
+                                            </svg>
+                                            <span>Education (EdTech)</span></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#building"
+                                                ></use>
+                                            </svg>
+                                            <span>Real Estate</span></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#logistics"
+                                                ></use>
+                                            </svg>
+                                            <span
+                                                >Logistics &amp; Supply
+                                                Chain</span
+                                            ></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#startup"
+                                                ></use>
+                                            </svg>
+                                            <span>Startups &amp; SaaS</span></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#enterprise"
+                                                ></use>
+                                            </svg>
+                                            <span>Enterprise Solutions</span></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#retail"
+                                                ></use>
+                                            </svg>
+                                            <span
+                                                >Retail &amp; Consumer
+                                                Apps</span
+                                            ></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#travel"
+                                                ></use>
+                                            </svg>
+                                            <span
+                                                >Travel &amp; Hospitality</span
+                                            ></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#media"
+                                                ></use>
+                                            </svg>
+                                            <span
+                                                >Media &amp; Entertainment</span
+                                            ></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#automotive"
+                                                ></use>
+                                            </svg>
+                                            <span>Automotive</span></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#bank"
+                                                ></use>
+                                            </svg>
+                                            <span
+                                                >Banking &amp; Insurance</span
+                                            ></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#manufacturing"
+                                                ></use>
+                                            </svg>
+                                            <span>Manufacturing</span></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#construction"
+                                                ></use>
+                                            </svg>
+                                            <span>Construction</span></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#workforce"
+                                                ></use>
+                                            </svg>
+                                            <span
+                                                >HR &amp; Workforce
+                                                Management</span
+                                            ></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#marketing"
+                                                ></use>
+                                            </svg>
+                                            <span
+                                                >Marketing &amp; Martech</span
+                                            ></a
+                                        >
+                                        <a
+                                            class="mega-link"
+                                            href="#"
+                                        >
+                                            <svg aria-hidden="true">
+                                                <use
+                                                    href="assets/images/sprite.svg#telecom"
+                                                ></use>
+                                            </svg>
+                                            <span>Telecommunications</span></a
+                                        >
+                                        <a
+                                            href="#"
+                                            class="link-arrow"
+                                        >
+                                            <span>All Industries</span>
+                                            <svg
+                                                class="link-arrow-icon"
+                                                aria-hidden="true"
+                                            >
+                                                <use
+                                                    href="assets/images/sprite.svg#arrow-right"
+                                                ></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-1">
+                            <button
+                                type="button"
+                                class="mobile-menu-toggle"
+                                data-mobile-toggle="mobile-about"
+                                data-open="false"
+                                aria-expanded="false"
+                                aria-controls="mobile-about"
+                            >
+                                <span>About</span>
+                                <svg aria-hidden="true">
+                                    <use
+                                        href="assets/images/sprite.svg#chevron-down"
+                                    ></use>
+                                </svg>
+                            </button>
+                            <div
+                                id="mobile-about"
+                                class="mobile-menu-item"
+                                data-mobile-panel
+                                data-open="false"
+                                aria-hidden="true"
+                                inert
+                            >
+                                <div class="overflow-hidden">
+                                    <div class="pb-4">
+                                        <p
+                                            class="border-l-2 border-c-orange pl-4 text-sm leading-6 text-c-gray"
+                                        >
+                                            Learn more about Kkeydos РІР‚вЂќ our
+                                            mission, team, and how we can help
+                                            you succeed.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a
+                            href="#"
+                            class="mobile-menu-toggle"
+                        >
+                            Our Work</a
+                        >
+                        <a
+                            href="#"
+                            class="mobile-menu-toggle"
+                        >
+                            Blog</a
+                        >
+                    </div>
+                    <div class="mt-auto flex w-full justify-center pt-5">
+                        <a
+                            class="btn-cta w-full max-w-120"
+                            href="#"
+                            >Schedule a Call</a
+                        >
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="overflow-hidden">
+            <section class="relative isolate pb-60 max-2xl:pb-48">
+                <div
+                    class="hero-section-bg"
+                    aria-hidden="true"
+                ></div>
+
+                <div
+                    class="page-container relative z-10 flex pt-34 pb-16 px-20 max-2xl:px-6 max-lg:pt-28"
+                >
+                    <div
+                        class="w-full text-left max-w-200 max-xl:mx-auto max-xl:text-center"
+                        data-rotator-scope
+                    >
+                        <h1
+                            class="font-medium tracking-[-0.045em] mb-4 text-c-dark-alt"
+                        >
+                            Accelerate your product roadmap with scalable
+                            software solutions.
+                            <span class="sr-only"
+                                >AI Development, Web Development, and Mobile
+                                Development.</span
+                            >
+                            <span
+                                class="text-rotator relative block h-[1.25em] overflow-hidden font-medium text-c-orange [perspective:600px] max-md:text-[clamp(24px,8vw,32px)]"
+                                data-interval="2200"
+                                data-duration="550"
+                                aria-hidden="true"
+                            >
+                                <span
+                                    class="text-rotator__item absolute inset-x-0 top-0 whitespace-nowrap opacity-100 will-change-[transform,opacity]"
+                                    >AI Development</span
+                                >
+                                <span
+                                    class="text-rotator__item absolute inset-x-0 top-0 whitespace-nowrap opacity-0 will-change-[transform,opacity]"
+                                    >Web Development</span
+                                >
+                                <span
+                                    class="text-rotator__item absolute inset-x-0 top-0 whitespace-nowrap opacity-0 will-change-[transform,opacity]"
+                                    >Mobile Development</span
+                                >
+                            </span>
+                        </h1>
+                        <p
+                            class="mb-6 text-[24px] font-normal text-c-muted-gray max-w-[600px] max-xl:mx-auto max-xl:mb-12"
+                        >
+                            We design and build high-performance digital
+                            products tailored to your business goals &mdash;
+                            from idea to scalable solutions.
+                        </p>
+                        <a
+                            class="btn-cta"
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Schedule a Call
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="pointer-events-none absolute -bottom-[165px] left-1/2 z-20 h-[245px] w-[137vw] -translate-x-1/2 rounded-[50%] bg-white sm:-bottom-[220px] sm:h-[320px] sm:w-[125vw] lg:-bottom-[310px] lg:h-[440px] lg:w-[118vw] xl:-bottom-[330px] xl:h-[470px]"
+                    aria-hidden="true"
+                ></div>
+            </section>
+            <section
+                class="relative z-30 -mt-2 bg-transparent sm:-mt-4 lg:-mt-8 lg:pb-24"
+                data-blade-component="home.clients"
+                aria-labelledby="clients-title"
+            >
+                <div
+                    class="page-container max-w-[1200px] px-20 max-xl:px-16 max-lg:px-10 max-sm:px-6"
+                >
+                    <div
+                        class="grid items-center gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-18 xl:gap-24"
+                    >
+                        <div class="max-w-[400px]">
+                            <p
+                                class="mb-5 flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-c-teal"
+                            >
+                                <span
+                                    class="size-1.5 shrink-0 rounded-full bg-c-teal shadow-focus"
+                                    aria-hidden="true"
+                                ></span>
+                                Trusted partnerships
+                            </p>
+                            <h2
+                                id="clients-title"
+                                class="font-semibold leading-[1.15] tracking-[-0.04em] text-c-dark"
+                            >
+                                <span class="text-c-orange">268+</span>
+                                companies rely on KKEYDOS to build products that
+                                scale.
+                            </h2>
+                            <p
+                                class="mt-5 max-w-[470px] text-base leading-7 text-c-gray"
+                            >
+                                From the first product decision to long-term
+                                growth, our teams build alongside yours.
+                            </p>
+                        </div>
+
+                        <div
+                            class="min-w-0"
+                            role="region"
+                            aria-label="Featured client work"
+                        >
+                            <div
+                                class="overflow-hidden pb-1 lg:[mask-image:linear-gradient(to_right,transparent,#000_4%,#000_96%,transparent)]
+                                lg:[-webkit-mask-image:linear-gradient(to_right,transparent,#000_4%,#000_96%,transparent)] max-[1024px]:[mask-image:none] max-[1024px]:[-webkit-mask-image:none] max-[1024px]:[&_a]:translate-y-0! max-[1024px]:[&_a]:opacity-100!"
+
+                            >
+                                <div
+                                    class="partners-carousel"
+                                    data-enhanced-partners-carousel
+                                    data-speed="0.1"
+                                    data-pausable="false"
+                                >
+                                    <div class="w-max">
+                                        <div
+                                            class="flex w-max snap-x snap-mandatory items-center gap-6 lg:snap-none"
+                                            aria-label="Client case studies"
+                                            role="list"
+                                        >
+                                            <div
+                                                class="group flex w-[160px] shrink-0 snap-start justify-center md:w-[190px] lg:w-[210px]"
+                                                role="listitem"
+                                            >
+                                                <div
+                                                    class="flex min-h-[145px] flex-col items-center justify-center gap-5 px-1 text-center md:min-h-[170px] lg:min-h-[190px]"
+                                                >
+                                                    <img
+                                                        class="h-[86px] w-[130px] max-w-none object-contain md:h-[100px] md:w-[150px]"
+                                                        src="assets/images/clients/351791620208194.png"
+                                                        alt="Blue Fence Systems"
+                                                        width="300"
+                                                        height="200"
+                                                        loading="lazy"
+                                                        decoding="async"
+                                                    />
+                                                    <a
+                                                        class="inline-flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.08em] text-c-orange transition-colors hover:text-c-teal lg:translate-y-1 lg:opacity-0 lg:transition-[color,opacity,translate] lg:duration-200 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                                                        href="#"
+                                                        aria-label="Read case study: Blue Fence Systems"
+                                                        >Read case study
+                                                        <svg
+                                                            class="size-3 shrink-0"
+                                                            aria-hidden="true"
+                                                        >
+                                                            <use
+                                                                href="assets/images/sprite.svg#arrow-right"
+                                                            ></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="group flex w-[160px] shrink-0 snap-start justify-center md:w-[190px] lg:w-[210px]"
+                                                role="listitem"
+                                            >
+                                                <div
+                                                    class="flex min-h-[145px] flex-col items-center justify-center gap-5 px-1 text-center md:min-h-[170px] lg:min-h-[190px]"
+                                                >
+                                                    <img
+                                                        class="h-[86px] w-[130px] max-w-none object-contain md:h-[100px] md:w-[150px]"
+                                                        src="assets/images/clients/black-koffee.png"
+                                                        alt="Black Koffee"
+                                                        width="300"
+                                                        height="200"
+                                                        loading="lazy"
+                                                        decoding="async"
+                                                    />
+                                                    <a
+                                                        class="inline-flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.08em] text-c-orange transition-colors hover:text-c-teal lg:translate-y-1 lg:opacity-0 lg:transition-[color,opacity,translate] lg:duration-200 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                                                        href="#"
+                                                        aria-label="Read case study: Black Koffee"
+                                                        >Read case study
+                                                        <svg
+                                                            class="size-3 shrink-0"
+                                                            aria-hidden="true"
+                                                        >
+                                                            <use
+                                                                href="assets/images/sprite.svg#arrow-right"
+                                                            ></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="group flex w-[160px] shrink-0 snap-start justify-center md:w-[190px] lg:w-[210px]"
+                                                role="listitem"
+                                            >
+                                                <div
+                                                    class="flex min-h-[145px] flex-col items-center justify-center gap-5 px-1 text-center md:min-h-[170px] lg:min-h-[190px]"
+                                                >
+                                                    <img
+                                                        class="h-[86px] w-[130px] max-w-none object-contain md:h-[100px] md:w-[150px]"
+                                                        src="assets/images/clients/flycorpo.png"
+                                                        alt="FlyCorpo"
+                                                        width="300"
+                                                        height="200"
+                                                        loading="lazy"
+                                                        decoding="async"
+                                                    />
+                                                    <a
+                                                        class="inline-flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.08em] text-c-orange transition-colors hover:text-c-teal lg:translate-y-1 lg:opacity-0 lg:transition-[color,opacity,translate] lg:duration-200 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                                                        href="#"
+                                                        aria-label="Read case study: FlyCorpo"
+                                                        >Read case study
+                                                        <svg
+                                                            class="size-3 shrink-0"
+                                                            aria-hidden="true"
+                                                        >
+                                                            <use
+                                                                href="assets/images/sprite.svg#arrow-right"
+                                                            ></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="group flex w-[160px] shrink-0 snap-start justify-center md:w-[190px] lg:w-[210px]"
+                                                role="listitem"
+                                            >
+                                                <div
+                                                    class="flex min-h-[145px] flex-col items-center justify-center gap-5 px-1 text-center md:min-h-[170px] lg:min-h-[190px]"
+                                                >
+                                                    <img
+                                                        class="h-[86px] w-[130px] max-w-none object-contain md:h-[100px] md:w-[150px]"
+                                                        src="assets/images/clients/ingresos.png"
+                                                        alt="Ingresos"
+                                                        width="300"
+                                                        height="200"
+                                                        loading="lazy"
+                                                        decoding="async"
+                                                    />
+                                                    <a
+                                                        class="inline-flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.08em] text-c-orange transition-colors hover:text-c-teal lg:translate-y-1 lg:opacity-0 lg:transition-[color,opacity,translate] lg:duration-200 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                                                        href="#"
+                                                        aria-label="Read case study: Ingresos"
+                                                        >Read case study
+                                                        <svg
+                                                            class="size-3 shrink-0"
+                                                            aria-hidden="true"
+                                                        >
+                                                            <use
+                                                                href="assets/images/sprite.svg#arrow-right"
+                                                            ></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="group flex w-[160px] shrink-0 snap-start justify-center md:w-[190px] lg:w-[210px]"
+                                                role="listitem"
+                                            >
+                                                <div
+                                                    class="flex min-h-[145px] flex-col items-center justify-center gap-5 px-1 text-center md:min-h-[170px] lg:min-h-[190px]"
+                                                >
+                                                    <img
+                                                        class="h-[86px] w-[130px] max-w-none object-contain md:h-[100px] md:w-[150px]"
+                                                        src="assets/images/clients/keystone.png"
+                                                        alt="Keystone"
+                                                        width="300"
+                                                        height="200"
+                                                        loading="lazy"
+                                                        decoding="async"
+                                                    />
+                                                    <a
+                                                        class="inline-flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.08em] text-c-orange transition-colors hover:text-c-teal lg:translate-y-1 lg:opacity-0 lg:transition-[color,opacity,translate] lg:duration-200 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                                                        href="#"
+                                                        aria-label="Read case study: Keystone"
+                                                        >Read case study
+                                                        <svg
+                                                            class="size-3 shrink-0"
+                                                            aria-hidden="true"
+                                                        >
+                                                            <use
+                                                                href="assets/images/sprite.svg#arrow-right"
+                                                            ></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="group flex w-[160px] shrink-0 snap-start justify-center md:w-[190px] lg:w-[210px]"
+                                                role="listitem"
+                                            >
+                                                <div
+                                                    class="flex min-h-[145px] flex-col items-center justify-center gap-5 px-1 text-center md:min-h-[170px] lg:min-h-[190px]"
+                                                >
+                                                    <img
+                                                        class="h-[86px] w-[130px] max-w-none object-contain md:h-[100px] md:w-[150px]"
+                                                        src="assets/images/clients/wonder-insure.jpg"
+                                                        alt="Wonder Insure"
+                                                        width="300"
+                                                        height="200"
+                                                        loading="lazy"
+                                                        decoding="async"
+                                                    />
+                                                    <a
+                                                        class="inline-flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.08em] text-c-orange transition-colors hover:text-c-teal lg:translate-y-1 lg:opacity-0 lg:transition-[color,opacity,translate] lg:duration-200 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-within:translate-y-0 lg:group-focus-within:opacity-100"
+                                                        href="#"
+                                                        aria-label="Read case study: Wonder Insure"
+                                                        >Read case study
+                                                        <svg
+                                                            class="size-3 shrink-0"
+                                                            aria-hidden="true"
+                                                        >
+                                                            <use
+                                                                href="assets/images/sprite.svg#arrow-right"
+                                                            ></use>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
