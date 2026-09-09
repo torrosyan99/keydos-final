@@ -67,7 +67,7 @@ if (testimonialsSlider) {
     new Swiper(testimonialsSwiper, {
         slidesPerView: 'auto',
         slidesPerGroup: 1,
-        spaceBetween: 20,
+        spaceBetween: 32,
         speed: carouselSpeed,
         loop: false,
         rewind: false,
@@ -99,100 +99,109 @@ if (testimonialsSlider) {
             ),
         },
         breakpoints: {
-            768: { spaceBetween: 28 },
-            1280: { spaceBetween: 40 },
-            1536: { spaceBetween: 48 },
-            1800: { spaceBetween: 52 },
+            834: { spaceBetween: 65 },
         },
     });
 }
-const initTeamAssembly = (section) => {
+
+// Team assembly has its own scope; all layout and final states are in the HTML.
+(function initTeamAssembly() {
+    const section = document.querySelector('[data-team-assembly]');
     if (!section || section.dataset.uiReady === 'true') return;
+
+    const visual = section.querySelector('[data-team-visual]');
+    const heading = section.querySelector('[data-team-heading]');
+    const button = section.querySelector('[data-team-button]');
+    if (!visual || !heading || !button) return;
+    if (!('IntersectionObserver' in window) || !section.animate) return;
     section.dataset.uiReady = 'true';
 
     const motion = window.matchMedia(
         '(min-width: 1280px) and (prefers-reduced-motion: no-preference)',
     );
-    const clamp = (value) => Math.min(1, Math.max(0, value));
-    const ease = (value) => value * value * (3 - 2 * value);
+    const members = [...visual.querySelectorAll('[data-team-member]')];
+    const backdrops = [...visual.querySelectorAll('[data-team-backdrop]')];
+    const duration = 780;
+    const easing = 'cubic-bezier(0.22, 1, 0.36, 1)';
     let hasStarted = false;
-    let stopAnimation = () => {};
+    let observer;
+    let animations = [];
 
-    const configure = () => {
-        stopAnimation();
-        [
-            '--team-progress',
-            '--team-heading-progress',
-            '--team-button-progress',
-            '--team-button-events',
-        ].forEach((property) => section.style.removeProperty(property));
+    // Canceling restores the Tailwind defaults, including on a breakpoint change.
+    function reset() {
+        observer?.disconnect();
+        animations.forEach((animation) => animation.cancel());
+        animations = [];
+    }
 
-        // Mobile, reduced motion and no JS all keep the colorful, visible layout.
-        if (!motion.matches) return;
+    function prepare(element, keyframes, options = {}) {
+        const animation = element.animate(keyframes, {
+            duration,
+            easing,
+            fill: 'backwards',
+            ...options,
+        });
+        animation.pause();
+        animation.currentTime = 0;
+        animations.push(animation);
+    }
 
-        let frame = 0;
+    function configure() {
+        reset();
+        if (!motion.matches || hasStarted) return;
 
-        const render = (progress) => {
-            const assembly = ease(clamp(progress / 0.75));
-            const heading = ease(clamp((progress - 0.55) / 0.3));
-            const button = ease(clamp((progress - 0.75) / 0.25));
-
-            section.style.setProperty('--team-progress', assembly.toFixed(4));
-            section.style.setProperty(
-                '--team-heading-progress',
-                heading.toFixed(4),
+        // Read colors before animating. The browser handles every animation frame.
+        const colors = backdrops.map((backdrop) => {
+            const style = getComputedStyle(backdrop);
+            return [style.getPropertyValue('--team-color').trim(), style.fill];
+        });
+        // Larger spread makes the portraits travel farther into their final row.
+        const spread = Math.min(window.innerWidth * 0.04, 64);
+        members.forEach((member) => {
+            const x = Number(member.dataset.teamX) * spread;
+            const y = Number(member.dataset.teamY);
+            if (x === 0 && y === 0) return;
+            prepare(member, [
+                { transform: `translate(${x}px, ${y}px)` },
+                { transform: 'translate(0, 0)' },
+            ]);
+        });
+        backdrops.forEach((backdrop, index) => {
+            const [from, to] = colors[index];
+            prepare(backdrop, [{ fill: from }, { fill: to }]);
+        });
+        [heading, button].forEach((element, index) => {
+            prepare(
+                element,
+                [
+                    { opacity: 0, transform: 'translateY(16px)' },
+                    { opacity: 1, transform: 'translateY(0)' },
+                ],
+                { duration: 480, delay: 140 + index * 100 },
             );
-            section.style.setProperty(
-                '--team-button-progress',
-                button.toFixed(4),
-            );
-            section.style.setProperty(
-                '--team-button-events',
-                button > 0.05 ? 'auto' : 'none',
-            );
-        };
+        });
 
-        // Keep the completed state when returning from mobile or reduced motion.
-        if (hasStarted) {
-            render(1);
-            return;
-        }
-
-        render(0);
-
-        const observer = new IntersectionObserver(
+        // Play once on entry; scrolling back never restarts or scrubs the effect.
+        observer = new IntersectionObserver(
             ([entry]) => {
                 if (!entry.isIntersecting || hasStarted) return;
                 hasStarted = true;
                 observer.disconnect();
-
-                // Visibility starts one timed sequence; scrolling never drives it.
-                let startTime;
-                const animate = (timestamp) => {
-                    startTime ??= timestamp;
-                    const progress = clamp((timestamp - startTime) / 1800);
-                    render(progress);
-                    frame = progress < 1 ? requestAnimationFrame(animate) : 0;
-                };
-                frame = requestAnimationFrame(animate);
+                animations.forEach((animation) => animation.play());
             },
-            { threshold: 0.25, rootMargin: '0px 0px -10% 0px' },
+            { threshold: 0.12, rootMargin: '0px 0px -32px 0px' },
         );
-        observer.observe(
-            section.querySelector('.team-assembly__visual') || section,
-        );
+        observer.observe(visual);
+    }
 
-        stopAnimation = () => {
-            observer.disconnect();
-            cancelAnimationFrame(frame);
-        };
-    };
-
+    // Keyboard navigation reveals the CTA immediately, even before entry.
+    section.addEventListener('focusin', () => {
+        hasStarted = true;
+        reset();
+    });
     motion.addEventListener('change', configure);
     configure();
-};
-
-initTeamAssembly(document.querySelector('[data-team-assembly]'));
+})();
 
 const insightsCarousel = document.querySelector('[data-insights-carousel]');
 
@@ -220,3 +229,79 @@ if (insightsCarousel) {
         },
     });
 }
+
+const initEngagementModels = (grid) => {
+    if (!grid || grid.dataset.uiReady) return;
+    grid.dataset.uiReady = 'true';
+
+    const mobile = window.matchMedia('(max-width: 833px)');
+    const hover = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const cards = [...grid.querySelectorAll('.engagement-card')].map(
+        (card) => ({
+            card,
+            button: card.querySelector('.engagement-card__toggle'),
+            panel: card.querySelector('.engagement-card__panel'),
+            description: card.querySelector('.engagement-card__description'),
+        }),
+    );
+    const openMobileCards = new Set([0]);
+
+    function setOpen(item, open) {
+        item.card.classList.toggle('is-open', open);
+        item.button.setAttribute('aria-expanded', String(open));
+        item.panel.inert = mobile.matches && !open;
+        item.panel.setAttribute('aria-hidden', String(mobile.matches && !open));
+        item.description.setAttribute('aria-hidden', String(!open));
+    }
+
+    cards.forEach((item, index) => {
+        item.button.addEventListener('click', (event) => {
+            const open = item.button.getAttribute('aria-expanded') !== 'true';
+            if (mobile.matches) {
+                if (open) openMobileCards.add(index);
+                else openMobileCards.delete(index);
+                setOpen(item, open);
+            } else {
+                setOpen(item, event.detail > 0 && hover.matches ? true : open);
+            }
+        });
+        item.card.addEventListener('pointerenter', () => {
+            if (!mobile.matches && hover.matches) setOpen(item, true);
+        });
+        item.card.addEventListener('pointerleave', () => {
+            if (
+                !mobile.matches &&
+                hover.matches &&
+                !item.button.matches(':focus-visible')
+            ) {
+                setOpen(item, false);
+            }
+        });
+        item.button.addEventListener('focus', () => {
+            if (!mobile.matches && item.button.matches(':focus-visible')) {
+                setOpen(item, true);
+            }
+        });
+        item.button.addEventListener('blur', () => {
+            if (!mobile.matches) setOpen(item, false);
+        });
+        item.button.addEventListener('keydown', (event) => {
+            if (event.key !== 'Escape') return;
+            if (mobile.matches) {
+                openMobileCards.delete(index);
+                setOpen(item, false);
+            } else {
+                setOpen(item, false);
+            }
+        });
+    });
+
+    const syncLayout = () =>
+        cards.forEach((item, index) => {
+            setOpen(item, mobile.matches && openMobileCards.has(index));
+        });
+    mobile.addEventListener('change', syncLayout);
+    syncLayout();
+};
+
+initEngagementModels(document.querySelector('[data-engagement-cards]'));

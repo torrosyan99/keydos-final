@@ -27,18 +27,6 @@
             rel="stylesheet"
             href="assets/styles/main.css"
         />
-        <link
-            rel="stylesheet"
-            href="assets/styles/team-assembly.css"
-        />
-        <link
-            rel="stylesheet"
-            href="assets/styles/engagement-models.css"
-        />
-        <script
-            src="assets/scripts/engagement-models.js"
-            defer
-        ></script>
         <script
             src="assets/scripts/main.js"
             defer
@@ -74,7 +62,7 @@
                     aria-label="KKEYDOS home"
                 >
                     <img
-                        class="h-14 w-39 object-contain max-xl:h-12 max-xl:w-33"
+                        class="h-14 w-auto object-contain max-xl:h-12"
                         src="assets/images/keydos-logo.png"
                         alt="KKEYDOS - Key Insight"
                     />
@@ -82,12 +70,13 @@
 
                 <!-- Desktop navigation -->
                 <nav
-                    class="flex h-full max-xl:hidden"
+                    class="flex h-full max-lg:hidden"
                     aria-label="Primary navigation"
                 >
                     <ul class="flex h-full items-center gap-7">
                         <li class="flex h-full items-center">
-                            <button
+                            <a
+                                href="#"
                                 type="button"
                                 class="nav-top-link group"
                                 data-menu-toggle="services-menu"
@@ -105,10 +94,11 @@
                                         href="assets/images/sprite.svg#chevron-down"
                                     ></use>
                                 </svg>
-                            </button>
+                            </a>
                         </li>
                         <li class="flex h-full items-center">
-                            <button
+                            <a
+                                href="#"
                                 type="button"
                                 class="nav-top-link group"
                                 data-menu-toggle="technologies-menu"
@@ -126,10 +116,11 @@
                                         href="assets/images/sprite.svg#chevron-down"
                                     ></use>
                                 </svg>
-                            </button>
+                            </a>
                         </li>
                         <li class="flex h-full items-center">
-                            <button
+                            <a
+                                href="#"
                                 type="button"
                                 class="nav-top-link group"
                                 data-menu-toggle="industries-menu"
@@ -147,10 +138,11 @@
                                         href="assets/images/sprite.svg#chevron-down"
                                     ></use>
                                 </svg>
-                            </button>
+                            </a>
                         </li>
                         <li class="flex h-full items-center">
-                            <button
+                            <a
+                                href="#"
                                 type="button"
                                 class="nav-top-link group"
                                 data-menu-toggle="about-menu"
@@ -168,7 +160,7 @@
                                         href="assets/images/sprite.svg#chevron-down"
                                     ></use>
                                 </svg>
-                            </button>
+                            </a>
                         </li>
                         <li class="flex h-full items-center">
                             <a
@@ -187,7 +179,7 @@
                     </ul>
                 </nav>
 
-                <div class="max-xl:hidden">
+                <div class="max-lg:hidden">
                     <a
                         href="#"
                         class="btn-cta h-10"
@@ -199,7 +191,7 @@
                 <button
                     id="mobile-menu-button"
                     type="button"
-                    class="group hidden size-11 cursor-pointer flex-col items-center justify-center gap-1 max-xl:flex"
+                    class="group hidden size-11 cursor-pointer flex-col items-center justify-center gap-1 max-lg:flex"
                     aria-label="Open navigation"
                     aria-expanded="false"
                     aria-controls="mobile-menu"
@@ -1750,7 +1742,7 @@
                 aria-hidden="true"
                 inert
             >
-                <div class="mx-auto flex min-h-full max-w-3xl flex-col py-4">
+                <div class="mx-auto flex min-h-full max-w-3xl flex-col">
                     <div class="divide-y divide-c-border">
                         <div class="py-1">
                             <button
@@ -2267,7 +2259,7 @@
         </header>
 
         <main class="overflow-hidden">
-            <section class="relative isolate pb-30 max-2xl:pb-25">
+            <section class="relative isolate pb-20 max-md:pb-25">
                 <div
                     class="hero-section-bg"
                     aria-hidden="true"
@@ -2323,18 +2315,20 @@
                     </div>
                 </div>
                 <div
-                    class="pointer-events-none absolute -bottom-82.5 left-1/2 z-20 h-117.5 w-[118vw] -translate-x-1/2 rounded-[50%] bg-white lg:max-xl:-bottom-77.5 lg:max-xl:h-110 lg:max-xl:w-[118vw] sm:max-lg:-bottom-55 sm:max-lg:h-80 sm:max-lg:w-[125vw] max-sm:-bottom-41.25 max-sm:h-61.25 max-sm:w-[137vw]"
+                    class="pointer-events-none absolute -bottom-82.5 left-1/2 z-20 h-117.5 w-[118vw] -translate-x-1/2 rounded-[50%] bg-white max-2xl:-bottom-77.5 max-2xl:h-100 max-2xl:w-[118vw] max-lg:-bottom-55 max-lg:h-80 max-lg:w-[125vw] max-sm:-bottom-41.25 max-sm:h-61.25 max-sm:w-[137vw]"
                     aria-hidden="true"
                 ></div>
             </section>
             <section class="relative -mt-8 bg-transparent">
                 <div class="page-container max-w-300">
                     <div
-                        class="flex items-center gap-20 max-xl:flex-col max-xl:gap-12"
+                        class="flex items-center gap-20 max-2xl:flex-col max-2xl:gap-12"
                     >
-                        <div class="max-w-100 w-full shrink-0">
+                        <div
+                            class="max-w-100 w-full shrink-0 max-2xl:max-w-140"
+                        >
                             <h3
-                                class="font-bold leading-[1.15] tracking-[-0.04em] text-c-slate max-xl:text-center max-xl:max-w-100"
+                                class="font-bold leading-[1.15] tracking-[-0.04em] text-c-slate max-2xl:text-center"
                             >
                                 268+ companies rely on Keydos
                                 <span class="text-c-orange"
@@ -2769,7 +2763,7 @@
                 class="relative isolate overflow-hidden bg-c-light mt-50 max-lg:mt-24 max-md:mt-16"
             >
                 <div
-                    class="pointer-events-none absolute -top-82.5 left-1/2 z-0 h-117.5 w-[118vw] -translate-x-1/2 rounded-[50%] bg-white lg:max-xl:-top-77.5 lg:max-xl:h-110 sm:max-lg:-top-55 sm:max-lg:h-80 sm:max-lg:w-[125vw] max-sm:-top-41.25 max-sm:h-61.25 max-sm:w-[137vw]"
+                    class="pointer-events-none absolute -top-82.5 left-1/2 z-0 h-117.5 w-[118vw] -translate-x-1/2 rounded-[50%] bg-white max-2xl:-top-77.5 max-2xl:h-100 max-2xl:w-[118vw] max-lg:-top-55 max-lg:h-80 max-lg:w-[125vw] max-sm:-top-41.25 max-sm:h-61.25 max-sm:w-[137vw]"
                     aria-hidden="true"
                 ></div>
 
@@ -2784,10 +2778,10 @@
                                 As featured in...
                             </h2>
                             <div
-                                class="flex w-full max-w-157.5 flex-wrap items-center justify-between gap-12 max-lg:max-w-none max-lg:gap-x-7 max-lg:gap-y-4 max-sm:justify-center"
+                                class="flex w-full max-w-157.5 flex-wrap items-center justify-between gap-12 max-lg:max-w-none max-lg:gap-x-7 max-lg:gap-y-4 max-md:justify-center"
                             >
                                 <img
-                                    class="h-6 w-auto object-contain max-lg:h-5"
+                                    class="h-6 w-auto object-contain max-lg:h-4"
                                     src="assets/images/featured/cnbc.svg"
                                     width="101"
                                     height="19"
@@ -2796,7 +2790,7 @@
                                     decoding="async"
                                 />
                                 <img
-                                    class="h-6 w-auto object-contain max-lg:h-5"
+                                    class="h-6 w-auto object-contain max-lg:h-4"
                                     src="assets/images/featured/forbes.svg"
                                     width="79"
                                     height="21"
@@ -2884,7 +2878,7 @@
                             >
                                 <button
                                     type="button"
-                                    class="group inline-flex cursor-pointer items-center gap-2 justify-self-start text-sm transition-transform duration-300 ease-out hover:-translate-x-2 disabled:cursor-default disabled:opacity-40 disabled:hover:translate-x-0"
+                                    class="group inline-flex cursor-pointer items-center gap-2 justify-self-start text-[18px] transition-transform duration-300 ease-out hover:-translate-x-2 disabled:cursor-default disabled:opacity-40 disabled:hover:translate-x-0"
                                     data-featured-prev
                                     aria-label="Previous featured slide"
                                 >
@@ -2893,10 +2887,10 @@
                                         aria-hidden="true"
                                     >
                                         <use
-                                            href="assets/images/sprite.svg#arrow-right"
+                                            href="assets/images/sprite.svg#arrow"
                                         ></use>
                                     </svg>
-                                    <span class="max-sm:hidden">Previous</span>
+                                    <span class="max-md:hidden">Previous</span>
                                 </button>
 
                                 <div
@@ -2906,17 +2900,17 @@
 
                                 <button
                                     type="button"
-                                    class="group inline-flex cursor-pointer items-center gap-2 justify-self-end text-sm transition-transform duration-300 ease-out hover:translate-x-2 disabled:cursor-default disabled:opacity-40 disabled:hover:translate-x-0"
+                                    class="group inline-flex cursor-pointer items-center gap-2 justify-self-end text-[18px] transition-transform duration-300 ease-out hover:translate-x-2 disabled:cursor-default disabled:opacity-40 disabled:hover:translate-x-0"
                                     data-featured-next
                                     aria-label="Next featured slide"
                                 >
-                                    <span class="max-sm:hidden">Next</span>
+                                    <span class="max-md:hidden">Next</span>
                                     <svg
                                         class="size-5"
                                         aria-hidden="true"
                                     >
                                         <use
-                                            href="assets/images/sprite.svg#arrow-right"
+                                            href="assets/images/sprite.svg#arrow"
                                         ></use>
                                     </svg>
                                 </button>
@@ -2926,10 +2920,12 @@
                 </div>
             </section>
             <section
-                class="bg-c-light pt-44 pb-45 max-lg:pt-20 max-sm:pt-16 max-sm:pb-20"
+                class="bg-c-light pt-44 pb-45 max-lg:pt-20 max-2xl:py-24 max-md:pb-12"
             >
-                <div class="page-container mb-16 text-center max-sm:mb-12">
-                    <h2 class="font-medium">
+                <div class="page-container mb-16 text-center max-md:mb-15">
+                    <h2
+                        class="font-medium text-[48px] max-2xl:text-[40px] max-md:text-[32px]"
+                    >
                         Your entire tech stack, expertly handled<span
                             class="text-c-orange"
                             >.</span
@@ -2944,12 +2940,10 @@
                     </p>
                 </div>
 
-                <div
-                    class="flex w-full flex-col gap-8 max-lg:gap-6 max-sm:gap-4"
-                >
+                <div class="flex w-full flex-col gap-1 max-md:gap-6">
                     <div
                         class="marquee6k group w-full overflow-hidden"
-                        data-speed="1.5"
+                        data-speed="0.8"
                         data-pausable="true"
                         data-direction="left"
                     >
@@ -3083,7 +3077,7 @@
                         class="marquee6k group w-full overflow-hidden"
                         data-reverse="true"
                         data-pausable="true"
-                        data-speed="1.5"
+                        data-speed="0.8"
                     >
                         <div class="w-max">
                             <div class="tech-marquee-group">
@@ -3214,35 +3208,39 @@
 
                 <div class="mt-18 flex justify-center max-sm:mt-14">
                     <a
+                        class="black-arrow-link w-44"
                         href="#"
-                        class="repertoire-link"
                     >
-                        Our full repertoire
-                        <svg
-                            class="size-4 shrink-0"
-                            aria-hidden="true"
-                        >
-                            <use
-                                href="assets/images/sprite.svg#arrow-right"
-                            ></use>
-                        </svg>
+                        <span class="black-arrow-span">
+                            Our full repertoire
+                            <svg
+                                class="size-4 shrink-0"
+                                aria-hidden="true"
+                            >
+                                <use
+                                    href="assets/images/sprite.svg#arrow-right"
+                                ></use>
+                            </svg>
+                        </span>
                     </a>
                 </div>
             </section>
-            <section class="relative -mt-12 max-md:pb-10 max-xl:pt-10">
+            <section
+                class="relative -mt-12 max-[834px]:pb-10 max-xl:-mt-0 max-xl:pt-10"
+            >
                 <div
-                    class="grid h-280 grid-cols-[34%_66%] max-xl:h-auto max-xl:grid-cols-1"
+                    class="grid h-280 grid-cols-[34%_66%] max-[834px]:h-auto max-[834px]:grid-cols-1"
                 >
                     <img
                         src="assets/images/testimonials-reference.webp"
                         alt="Software team collaborating in the office"
                         fetchpriority="high"
-                        class="w-full rounded-r-2xl h-280 object-cover object-center max-xl:hidden max-xl:h-auto"
+                        class="w-full rounded-r-2xl h-280 object-cover object-center max-[834px]:hidden"
                     />
                     <div
-                        class="pt-36 pr-40 pl-24 pb-6 max-xl:px-6 max-xl:py-12"
+                        class="pt-24 pr-40 pl-24 pb-6 max-2xl:pr-10 max-2xl:pb-6 max-2xl:pl-6 max-md:px-6 max-md:py-12"
                     >
-                        <h2 class="max-w-[650px] text-[#404040] font-bold">
+                        <h2 class="max-w-162.5 text-[#404040] font-bold">
                             Trusted by 270+ businesses worldwide<span
                                 class="text-c-orange"
                                 >.</span
@@ -3272,7 +3270,7 @@
                 </div>
                 <div
                     data-testimonials-carousel
-                    class="absolute inset-x-0 bottom-20 pl-6 max-xl:static max-sm:pl-5"
+                    class="absolute inset-x-0 bottom-26.5 pl-6 max-[834px]:static max-[834px]:mt-30"
                 >
                     <div
                         data-testimonials-swiper
@@ -3385,7 +3383,7 @@
                         </div>
                     </div>
                     <div
-                        class="pl-50 mt-5 flex justify-center gap-3 pr-6 max-xl:pl-0 max-xl:pb-8"
+                        class="pl-70 mt-5 flex justify-center gap-3 max-[834px]:hidden"
                     >
                         <button
                             type="button"
@@ -3431,7 +3429,7 @@
                             class="flex h-full flex-col items-start max-xl:col-span-2 max-md:col-span-1"
                         >
                             <p
-                                class="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-c-gray"
+                                class="mb-4 text-[#c2c7cc] text-xs font-medium uppercase tracking-[0.2em]"
                             >
                                 Proven experience
                             </p>
@@ -3446,7 +3444,7 @@
                                 >
                             </h2>
                             <p
-                                class="mt-6 w-full leading-relaxed text-c-gray max-md:text-sm"
+                                class="mt-6 w-full text-[#c2c7cc] leading-relaxed max-md:text-sm"
                             >
                                 With 8+ years of experience in software
                                 development, Kkeydos delivers scalable web,
@@ -3662,654 +3660,795 @@
                 </div>
             </section>
 
-	        <section class="promo-section">
-		        <div class="relative page-container max-w-[940px]  z-1">
-
-			        <section>
-				        <div class="text-center">
-					        <p
-							        class="text-[28px] font-medium leading-tight  max-md:text-[24px]">
-						        Why Kkeydos is the right choice<span class="text-c-orange">.</span>
-					        </p>
-					        <h3 class="mt-1 font-medium leading-tight">
-						        Built for performance. Designed for scale<span class="text-c-orange">.</span>
-					        </h3>
-				        </div>
-				        <div
-						        class="mx-auto mt-12 grid  grid-cols-2 gap-x-20
-					        gap-y-8 max-lg:gap-x-10 max-md:mt-10 max-md:grid-cols-1
-					        max-md:gap-8"
-				        >
-					        <article class="flex items-start gap-3">
-						        <svg class="shrink-0" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.375 0.375H2.625C1.3875 0.375 0.375 1.3875 0.375 2.625V18.375C0.375 19.6125 1.3875 20.625 2.625 20.625H18.375C19.6125 20.625 20.625 19.6125 20.625 18.375V2.625C20.625 1.3875 19.6125 0.375 18.375 0.375ZM15.6525 5.52752L17.2387 7.12502L8.23874 16.125L3.73874 11.6363L5.33624 10.05L8.23874 12.9413L15.6525 5.52752Z" fill="#F66135"></path>
-						        </svg>
-						        <div>
-							        <h5 class="font-semibold">The right people</h5>
-							        <p class="mt-1 text-[18px] max-md:text-base">
-								        Our selective hiring process ensures you work with highly
-								        skilled developers and AI-ready engineers who deliver real
-								        results.
-							        </p>
-						        </div>
-					        </article>
-					        <article class="flex items-start gap-3">
-						        <svg class="shrink-0" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.375 0.375H2.625C1.3875 0.375 0.375 1.3875 0.375 2.625V18.375C0.375 19.6125 1.3875 20.625 2.625 20.625H18.375C19.6125 20.625 20.625 19.6125 20.625 18.375V2.625C20.625 1.3875 19.6125 0.375 18.375 0.375ZM15.6525 5.52752L17.2387 7.12502L8.23874 16.125L3.73874 11.6363L5.33624 10.05L8.23874 12.9413L15.6525 5.52752Z" fill="#F66135"></path>
-						        </svg>
-						        <div>
-							        <h5 class="font-semibold">The right team</h5>
-							        <p class="mt-1 text-[18px] max-md:text-base">
-								        From individual developers to full-scale teams, we offer
-								        flexible engagement models tailored to your project needs.
-							        </p>
-						        </div>
-					        </article>
-					        <article class="flex items-start gap-3">
-						        <svg class="shrink-0" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.375 0.375H2.625C1.3875 0.375 0.375 1.3875 0.375 2.625V18.375C0.375 19.6125 1.3875 20.625 2.625 20.625H18.375C19.6125 20.625 20.625 19.6125 20.625 18.375V2.625C20.625 1.3875 19.6125 0.375 18.375 0.375ZM15.6525 5.52752L17.2387 7.12502L8.23874 16.125L3.73874 11.6363L5.33624 10.05L8.23874 12.9413L15.6525 5.52752Z" fill="#F66135"></path>
-						        </svg>
-						        <div>
-							        <h5 class="font-semibold">The right place</h5>
-							        <p class="mt-1 text-[18px] max-md:text-base">
-								        Our teams align with your time zone, ensuring smooth
-								        communication, quick updates, and seamless collaboration.
-							        </p>
-						        </div>
-					        </article>
-					        <article class="flex items-start gap-3">
-						        <svg class="shrink-0" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.375 0.375H2.625C1.3875 0.375 0.375 1.3875 0.375 2.625V18.375C0.375 19.6125 1.3875 20.625 2.625 20.625H18.375C19.6125 20.625 20.625 19.6125 20.625 18.375V2.625C20.625 1.3875 19.6125 0.375 18.375 0.375ZM15.6525 5.52752L17.2387 7.12502L8.23874 16.125L3.73874 11.6363L5.33624 10.05L8.23874 12.9413L15.6525 5.52752Z" fill="#F66135"></path>
-						        </svg>
-						        <div>
-							        <h5 class="font-semibold">The right time</h5>
-							        <p class="mt-1 text-[18px] max-md:text-base">
-								        Start when you're ready. Scale your team up or down as your
-								        business evolves without delays.
-							        </p>
-						        </div>
-					        </article>
-				        </div>
-			        </section>
-
-			        <section
-					        id="team-assembly"
-					        class="team-assembly relative z-1"
-					        data-blade-component="home.team-assembly"
-					        data-team-assembly
-					        aria-labelledby="team-assembly-heading"
-			        >
-				        <div class="team-assembly__stage">
-					        <div
-							        class="team-assembly__visual relative mx-auto"
-							        role="group"
-							        aria-label="Available specialists"
-					        >
-						        <article
-								        class="team-member"
-								        style="--team-offset: 2; --team-lift: -18px"
-						        >
-							        <svg
-									        class="team-member__art"
-									        viewBox="20.5 0.18 222 166"
-									        aria-hidden="true"
-							        >
-								        <defs>
-									        <clipPath id="team-shape-software">
-										        <path
-												        d="M0.554 100L151 0.186C192 0.186 222.5 32 222.5 76C222.5 128 179 166 124 166H80C39 166 7 138 0.554 100Z"
-												        class="team-member__shape"
-										        ></path>
-									        </clipPath>
-									        <clipPath id="team-top-software">
-										        <rect
-												        width="100%"
-												        height="60%"
-										        ></rect>
-									        </clipPath>
-								        </defs>
-								        <path
-										        class="team-member__shape team-member__backdrop"
-										        style="--team-color: #f66135"
-										        d="M0.554 100L151 0.186C192 0.186 222.5 32 222.5 76C222.5 128 179 166 124 166H80C39 166 7 138 0.554 100Z"
-								        ></path>
-								        <image
-										        class="team-member__image"
-										        href="assets/images/team-flow/software-developer-reference.png"
-										        x="12"
-										        y="-10"
-										        width="100%"
-										        height="100%"
-										        clip-path="url(#team-shape-software)"
-								        ></image>
-								        <image
-										        class="team-member__image"
-										        href="assets/images/team-flow/software-developer-reference.png"
-										        x="12"
-										        y="-10"
-										        width="100%"
-										        height="100%"
-										        clip-path="url(#team-top-software)"
-								        ></image>
-							        </svg>
-							        <p class="team-member__role">Software<br />developers</p>
-						        </article>
-
-						        <article
-								        class="team-member"
-								        style="--team-offset: 1; --team-lift: 24px"
-						        >
-							        <svg
-									        class="team-member__art"
-									        viewBox="0 0.18 222 166"
-									        aria-hidden="true"
-							        >
-								        <defs>
-									        <clipPath id="team-shape-qa">
-										        <path
-												        d="M29 0L184.586 35L154 181.002L0.82349 146Z"
-												        class="team-member__shape"
-												        style="--team-shape-scale: 0.8"
-										        ></path>
-									        </clipPath>
-									        <clipPath id="team-top-qa">
-										        <rect
-												        width="100%"
-												        height="100%"
-												        class="[rotate:5deg] [transform:translate(0,-5px)] [transform-origin:center_center]"
-										        ></rect>
-									        </clipPath>
-								        </defs>
-								        <path
-										        class="team-member__shape team-member__backdrop"
-										        style="--team-color: #73aaf1"
-										        d="M29 0L184.586 35L154 181.002L0.82349 146Z"
-								        ></path>
-								        <image
-										        class="team-member__image"
-										        href="assets/images/team-flow/qa-engineer-reference.png"
-										        x="2.5%"
-										        y="2.5%"
-										        width="100%"
-										        height="100%"
-										        clip-path="url(#team-shape-qa)"
-										        transform="scale(0.95)"
-								        ></image>
-								        <image
-										        class="team-member__image"
-										        href="assets/images/team-flow/qa-engineer-reference.png"
-										        x="2.5%"
-										        y="2.5%"
-										        width="100%"
-										        height="100%"
-										        clip-path="url(#team-top-qa)"
-										        transform="scale(0.95)"
-								        ></image>
-							        </svg>
-							        <p class="team-member__role">QA<br />engineers</p>
-						        </article>
-
-						        <article
-								        class="team-member"
-								        style="--team-offset: 0; --team-lift: 0px"
-						        >
-							        <svg
-									        class="team-member__art"
-									        viewBox="-5.2 0.18 222 166"
-									        aria-hidden="true"
-							        >
-								        <defs>
-									        <clipPath id="team-shape-ux">
-										        <path
-												        d="M85.8237 0.186951C136 0.186951 170.824 31 170.824 80V94C170.824 138 138 169.262 94 169.262H78C33 169.262 0.82373 138 0.82373 94V80C0.82373 31 35 0.186951 85.8237 0.186951Z"
-												        class="team-member__shape"
-										        ></path>
-									        </clipPath>
-									        <clipPath id="team-top-ux">
-										        <rect
-												        width="100%"
-												        height="30%"
-										        ></rect>
-									        </clipPath>
-								        </defs>
-								        <path
-										        class="team-member__shape team-member__backdrop"
-										        style="--team-color: #fa9f84"
-										        d="M85.8237 0.186951C136 0.186951 170.824 31 170.824 80V94C170.824 138 138 169.262 94 169.262H78C33 169.262 0.82373 138 0.82373 94V80C0.82373 31 35 0.186951 85.8237 0.186951Z"
-								        ></path>
-								        <image
-										        class="team-member__image"
-										        href="assets/images/team-flow/ux-designer-reference.png"
-										        x="-10"
-										        y="-11"
-										        width="100%"
-										        height="100%"
-										        clip-path="url(#team-shape-ux)"
-								        ></image>
-								        <image
-										        class="team-member__image"
-										        href="assets/images/team-flow/ux-designer-reference.png"
-										        x="-10"
-										        y="-11"
-										        width="100%"
-										        height="100%"
-										        clip-path="url(#team-top-ux)"
-								        ></image>
-							        </svg>
-							        <p class="team-member__role">UX<br />designers</p>
-						        </article>
-
-						        <article
-								        class="team-member"
-								        style="--team-offset: -1; --team-lift: 18px"
-						        >
-							        <svg
-									        class="team-member__art"
-									        viewBox="16.5 0.18 222 166"
-									        aria-hidden="true"
-							        >
-								        <defs>
-									        <clipPath id="team-shape-data">
-										        <path
-												        d="M101.172 0.687866C111 0.687866 118 5 125 12L190 73C198 80 202.318 85 202.318 94C202.318 103 198 110 190 116L125 168C118 175 111 178.832 101.172 178.832C91 178.832 84 175 77 168L48 116C40 110 36 103 36 94C36 85 40 80 48 73L77 12C84 5 91 0.687866 101.172 0.687866Z"
-												        class="team-member__shape"
-												        style="--team-shape-scale: 0.8, 0.7"
-										        ></path>
-									        </clipPath>
-									        <clipPath id="team-top-data">
-										        <rect
-												        width="59%"
-												        height="91%"
-												        class="[rotate:8deg] [transform-origin:center_center]"
-										        ></rect>
-									        </clipPath>
-								        </defs>
-								        <path
-										        class="team-member__shape team-member__backdrop"
-										        style="--team-color: #ffac00; --team-shape-scale: 0.8, 0.7"
-										        d="M101.172 0.687866C111 0.687866 118 5 125 12L190 73C198 80 202.318 85 202.318 94C202.318 103 198 110 190 116L125 168C118 175 111 178.832 101.172 178.832C91 178.832 84 175 77 168L48 116C40 110 36 103 36 94C36 85 40 80 48 73L77 12C84 5 91 0.687866 101.172 0.687866Z"
-								        ></path>
-								        <image
-										        class="team-member__image"
-										        href="assets/images/team-flow/data-scientist-reference.png"
-										        x="-7"
-										        y="-9"
-										        width="100%"
-										        height="100%"
-										        clip-path="url(#team-shape-data)"
-								        ></image>
-								        <image
-										        class="team-member__image"
-										        href="assets/images/team-flow/data-scientist-reference.png"
-										        x="-7"
-										        y="-9"
-										        width="100%"
-										        height="100%"
-										        clip-path="url(#team-top-data)"
-								        ></image>
-							        </svg>
-							        <p class="team-member__role">Data<br />scientists</p>
-						        </article>
-
-						        <article
-								        class="team-member"
-								        style="--team-offset: -2; --team-lift: -12px"
-						        >
-							        <svg
-									        class="team-member__art"
-									        viewBox="-1.8 0.18 222 166"
-									        aria-hidden="true"
-							        >
-								        <defs>
-									        <clipPath id="team-shape-project">
-										        <path
-												        d="M177.599 0.570587V94.9458C177.599 147.07 135 189.321 82 189.321C36 189.321 0.82373 155 0.82373 110V94.9458C0.82373 42.8215 43.55 0.570587 96.2607 0.570587Z"
-												        class="team-member__shape"
-										        ></path>
-									        </clipPath>
-									        <clipPath id="team-top-project">
-										        <rect
-												        width="100%"
-												        height="76%"
-										        ></rect>
-									        </clipPath>
-								        </defs>
-								        <path
-										        class="team-member__shape team-member__backdrop"
-										        style="--team-color: #8fd5bf"
-										        d="M177.599 0.570587V94.9458C177.599 147.07 135 189.321 82 189.321C36 189.321 0.82373 155 0.82373 110V94.9458C0.82373 42.8215 43.55 0.570587 96.2607 0.570587Z"
-								        ></path>
-								        <image
-										        class="team-member__image"
-										        href="assets/images/team-flow/project-manager-reference.png"
-										        x="-7"
-										        width="100%"
-										        height="100%"
-										        clip-path="url(#team-shape-project)"
-								        ></image>
-								        <image
-										        class="team-member__image"
-										        href="assets/images/team-flow/project-manager-reference.png"
-										        x="-7"
-										        width="100%"
-										        height="100%"
-										        clip-path="url(#team-top-project)"
-								        ></image>
-							        </svg>
-							        <p class="team-member__role">Project<br />managers</p>
-						        </article>
-					        </div>
-
-					        <div class="team-assembly__cta relative z-4 flex flex-col items-center text-center">
-						        <h2
-								        id="team-assembly-heading"
-								        class="team-assembly__heading font-medium tracking-[-0.045em] text-[#797d80]"
-						        >
-							        Let’s assemble your team.
-						        </h2>
-						        <a
-								        class="team-assembly__button mt-8 inline-flex min-h-[66px] items-center justify-center rounded-[10px] bg-[#18aa7e] px-7 text-[22px] font-semibold text-white transition-[background-color,transform] duration-300 hover:-translate-y-1 hover:bg-[#118a68] max-[767px]:min-h-[54px] max-[767px]:text-[17px]"
-								        href="#"
-						        >
-							        Schedule a Call
-						        </a>
-					        </div>
-				        </div>
-			        </section>
-
-			        <div
-					        class="relative z-1 mx-auto w-[min(960px,calc(100%-32px))] pt-24 max-[1199px]:w-[min(940px,calc(100%-48px))] max-[767px]:w-[calc(100%-32px)]"
-					        data-blade-component="home.engagement-models"
-					        aria-labelledby="engagement-heading"
-			        >
-				        <header
-						        class="grid grid-cols-[minmax(0,540px)_250px] items-end justify-between gap-12 max-[767px]:grid-cols-1 max-[767px]:gap-5"
-				        >
-					        <h2
-							        id="engagement-heading"
-							        class="text-[30px] font-medium leading-[1.2] tracking-[-0.035em] text-[#11171c] max-[767px]:text-[24px] max-[767px]:leading-[1.32]"
-					        >
-						        Keep full control.<br />Or hand everything off to us.
-					        </h2>
-					        <p
-							        class="max-w-[250px] pb-1 text-[11px] leading-[16px] text-[#53616c] max-[767px]:max-w-none max-[767px]:text-[14px] max-[767px]:leading-[22px]"
-					        >
-						        From embedded engineers to fully managed projects, we customize every
-						        engagement to fit your workflow, priorities, and delivery needs.
-					        </p>
-				        </header>
-
-				        <div
-						        class="mt-10 grid grid-cols-3 gap-5 max-[1023px]:grid-cols-1 max-[767px]:mt-9 max-[767px]:flex max-[767px]:flex-col max-[767px]:gap-3"
-						        data-engagement-cards
-				        >
-					        <a
-							        class="group/engagement relative isolate flex min-h-[250px] flex-col overflow-hidden rounded-[5px] border border-black/4 bg-white p-5 shadow-[0_8px_30px_rgb(15_23_42/0.04)] before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[#20272b] before:[clip-path:circle(0_at_calc(100%-32px)_calc(100%-32px))] before:[transition:clip-path_520ms_cubic-bezier(0.65,0,0.35,1)] before:content-[''] hover:before:[clip-path:circle(160%_at_calc(100%-32px)_calc(100%-32px))] focus-visible:before:[clip-path:circle(160%_at_calc(100%-32px)_calc(100%-32px))] max-md:min-h-0 max-md:gap-3 max-md:border-[#d9dee2] max-md:p-4 max-md:shadow-none max-md:before:hidden"
-							        href="https://calendly.com/pandu-karteek/sales"
-					        >
-						        <span class="relative z-1 text-[8px] font-semibold uppercase tracking-[0.16em] text-[#53616c] transition-colors duration-300 group-hover/engagement:text-[#fa9f84] group-focus-visible/engagement:text-[#fa9f84] max-[767px]:hidden">Staff augmentation</span>
-						        <h3 class="relative z-1 mt-3 max-w-[260px] text-[15px] font-semibold leading-[19px] text-[#11171c] transition-colors duration-300 group-hover/engagement:text-white group-focus-visible/engagement:text-white max-[767px]:m-0 max-[767px]:max-w-none max-[767px]:pr-10 max-[767px]:text-[16px] max-[767px]:leading-6 max-[767px]:text-[#303941] max-md:group-hover/engagement:text-[#303941] max-md:group-focus-visible/engagement:text-[#303941]">
-							        Need a couple of extra software engineers on your team?
-						        </h3>
-						        <p class="relative z-1 mt-2 max-w-[260px] text-[11px] leading-[15px] text-[#c7cdd1] opacity-0 transition-opacity duration-300 group-hover/engagement:opacity-100 group-focus-visible/engagement:opacity-100 max-md:mt-0 max-md:max-w-none max-md:text-sm max-md:leading-6 max-md:text-[#53616c] max-md:opacity-100">
-							        Get senior, production-ready developers who integrate directly into
-							        your internal team.
-						        </p>
-						        <img
-								        src="assets/images/team-flow/engagement-01.svg"
-								        width="96"
-								        height="96"
-								        alt=""
-								        class="relative z-1 mt-auto size-[62px] transition-[filter,opacity] duration-300 group-hover/engagement:opacity-80 group-hover/engagement:[filter:grayscale(0.55)_brightness(0.72)] group-focus-visible/engagement:opacity-80 group-focus-visible/engagement:[filter:grayscale(0.55)_brightness(0.72)] max-md:mt-1"
-						        />
-						        <svg
-								        class="absolute bottom-5 right-5 z-2 size-6 cursor-pointer overflow-visible rounded-full bg-white p-[5px] fill-none stroke-[#303941] stroke-[1.3] [transform-box:fill-box] [transform-origin:center] transition-[opacity,transform,stroke] duration-200 group-hover/engagement:scale-[0.55] group-hover/engagement:opacity-0 group-focus-visible/engagement:scale-[0.55] group-focus-visible/engagement:opacity-0 max-[767px]:hidden"
-								        viewBox="0 0 24 24"
-								        aria-hidden="true"
-						        >
-							        <path
-									        d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z"
-									        class="[transform-box:fill-box] [transform-origin:center]"
-							        />
-							        <circle
-									        cx="12"
-									        cy="12"
-									        r="2.3"
-									        class="fill-[#303941] stroke-none [transform-box:fill-box] [transform-origin:center] transition-[fill]"
-							        />
-						        </svg>
-					        </a>
-					        <a
-							        class="group/engagement relative isolate flex min-h-[250px] flex-col overflow-hidden rounded-[5px] border border-black/4 bg-white p-5 shadow-[0_8px_30px_rgb(15_23_42/0.04)] before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[#20272b] before:[clip-path:circle(0_at_calc(100%-32px)_calc(100%-32px))] before:[transition:clip-path_520ms_cubic-bezier(0.65,0,0.35,1)] before:content-[''] hover:before:[clip-path:circle(160%_at_calc(100%-32px)_calc(100%-32px))] focus-visible:before:[clip-path:circle(160%_at_calc(100%-32px)_calc(100%-32px))] max-md:min-h-0 max-md:gap-3 max-md:border-[#d9dee2] max-md:p-4 max-md:shadow-none max-md:before:hidden"
-							        href="https://calendly.com/pandu-karteek/sales"
-					        >
-						        <span class="relative z-1 text-[8px] font-semibold uppercase tracking-[0.16em] text-[#53616c] transition-colors duration-300 group-hover/engagement:text-[#fa9f84] group-focus-visible/engagement:text-[#fa9f84] max-[767px]:hidden">Dedicated teams</span>
-						        <h3 class="relative z-1 mt-3 max-w-[260px] text-[15px] font-semibold leading-[19px] text-[#11171c] transition-colors duration-300 group-hover/engagement:text-white group-focus-visible/engagement:text-white max-[767px]:m-0 max-[767px]:max-w-none max-[767px]:pr-10 max-[767px]:text-[16px] max-[767px]:leading-6 max-[767px]:text-[#303941] max-md:group-hover/engagement:text-[#303941] max-md:group-focus-visible/engagement:text-[#303941]">
-							        Need a few teams to deliver several projects simultaneously?
-						        </h3>
-						        <p class="relative z-1 mt-2 max-w-[260px] text-[11px] leading-[15px] text-[#c7cdd1] opacity-0 transition-opacity duration-300 group-hover/engagement:opacity-100 group-focus-visible/engagement:opacity-100 max-md:mt-0 max-md:max-w-none max-md:text-sm max-md:leading-6 max-md:text-[#53616c] max-md:opacity-100">
-							        Spin up focused, delivery-ready pods to handle full builds or
-							        workstreams.
-						        </p>
-						        <img
-								        src="assets/images/team-flow/engagement-02.svg"
-								        width="96"
-								        height="96"
-								        alt=""
-								        class="relative z-1 mt-auto size-[62px] transition-[filter,opacity] duration-300 group-hover/engagement:opacity-80 group-hover/engagement:[filter:grayscale(0.55)_brightness(0.72)] group-focus-visible/engagement:opacity-80 group-focus-visible/engagement:[filter:grayscale(0.55)_brightness(0.72)] max-md:mt-1"
-						        />
-						        <svg
-								        class="absolute bottom-5 right-5 z-2 size-6 cursor-pointer overflow-visible rounded-full bg-white p-[5px] fill-none stroke-[#303941] stroke-[1.3] [transform-box:fill-box] [transform-origin:center] transition-[opacity,transform,stroke] duration-200 group-hover/engagement:scale-[0.55] group-hover/engagement:opacity-0 group-focus-visible/engagement:scale-[0.55] group-focus-visible/engagement:opacity-0 max-[767px]:hidden"
-								        viewBox="0 0 24 24"
-								        aria-hidden="true"
-						        >
-							        <path
-									        d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z"
-									        class="[transform-box:fill-box] [transform-origin:center]"
-							        />
-							        <circle
-									        cx="12"
-									        cy="12"
-									        r="2.3"
-									        class="fill-[#303941] stroke-none [transform-box:fill-box] [transform-origin:center] transition-[fill]"
-							        />
-						        </svg>
-					        </a>
-					        <a
-							        class="group/engagement relative isolate flex min-h-[250px] flex-col overflow-hidden rounded-[5px] border border-black/4 bg-white p-5 shadow-[0_8px_30px_rgb(15_23_42/0.04)] before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-[#20272b] before:[clip-path:circle(0_at_calc(100%-32px)_calc(100%-32px))] before:[transition:clip-path_520ms_cubic-bezier(0.65,0,0.35,1)] before:content-[''] hover:before:[clip-path:circle(160%_at_calc(100%-32px)_calc(100%-32px))] focus-visible:before:[clip-path:circle(160%_at_calc(100%-32px)_calc(100%-32px))] max-md:min-h-0 max-md:gap-3 max-md:border-[#d9dee2] max-md:p-4 max-md:shadow-none max-md:before:hidden"
-							        href="https://calendly.com/pandu-karteek/sales"
-					        >
-						        <span class="relative z-1 text-[8px] font-semibold uppercase tracking-[0.16em] text-[#53616c] transition-colors duration-300 group-hover/engagement:text-[#fa9f84] group-focus-visible/engagement:text-[#fa9f84] max-[767px]:hidden">Software outsourcing</span>
-						        <h3 class="relative z-1 mt-3 max-w-[260px] text-[15px] font-semibold leading-[19px] text-[#11171c] transition-colors duration-300 group-hover/engagement:text-white group-focus-visible/engagement:text-white max-[767px]:m-0 max-[767px]:max-w-none max-[767px]:pr-10 max-[767px]:text-[16px] max-[767px]:leading-6 max-[767px]:text-[#303941] max-md:group-hover/engagement:text-[#303941] max-md:group-focus-visible/engagement:text-[#303941]">
-							        Want to offload everything to us, from start to finish?
-						        </h3>
-						        <p class="relative z-1 mt-2 max-w-[260px] text-[11px] leading-[15px] text-[#c7cdd1] opacity-0 transition-opacity duration-300 group-hover/engagement:opacity-100 group-focus-visible/engagement:opacity-100 max-md:mt-0 max-md:max-w-none max-md:text-sm max-md:leading-6 max-md:text-[#53616c] max-md:opacity-100">
-							        Hand off the full project lifecycle. We take ownership and keep you
-							        involved at every step.
-						        </p>
-						        <img
-								        src="assets/images/team-flow/engagement-03.svg"
-								        width="96"
-								        height="96"
-								        alt=""
-								        class="relative z-1 mt-auto size-[62px] transition-[filter,opacity] duration-300 group-hover/engagement:opacity-80 group-hover/engagement:[filter:grayscale(0.55)_brightness(0.72)] group-focus-visible/engagement:opacity-80 group-focus-visible/engagement:[filter:grayscale(0.55)_brightness(0.72)] max-md:mt-1"
-						        />
-						        <svg
-								        class="absolute bottom-5 right-5 z-2 size-6 cursor-pointer overflow-visible rounded-full bg-white p-[5px] fill-none stroke-[#303941] stroke-[1.3] [transform-box:fill-box] [transform-origin:center] transition-[opacity,transform,stroke] duration-200 group-hover/engagement:scale-[0.55] group-hover/engagement:opacity-0 group-focus-visible/engagement:scale-[0.55] group-focus-visible/engagement:opacity-0 max-[767px]:hidden"
-								        viewBox="0 0 24 24"
-								        aria-hidden="true"
-						        >
-							        <path
-									        d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z"
-									        class="[transform-box:fill-box] [transform-origin:center]"
-							        />
-							        <circle
-									        cx="12"
-									        cy="12"
-									        r="2.3"
-									        class="fill-[#303941] stroke-none [transform-box:fill-box] [transform-origin:center] transition-[fill]"
-							        />
-						        </svg>
-					        </a>
-				        </div>
-			        </div>
-
-			        <div
-					        class="relative z-1 mx-auto mt-[120px] grid min-h-[560px]
-					        w-[min(960px,calc(100%-32px))] grid-cols-[390px_1fr] gap-[85px]
-					         max-[1199px]:w-[min(940px,calc(100%-48px))] max-[1199px]:gap-12
-					         max-[767px]:w-[calc(100%-32px)] max-[1023px]:mt-28
-					         max-[1023px]:min-h-[540px] max-[1023px]:w-[min(820px,calc(100%-32px))]
-					         max-[1023px]:grid-cols-[minmax(190px,0.8fr)_minmax(0,1.2fr)]
-					         max-[1023px]:gap-8 max-[479px]:isolate max-[479px]:mt-24
-					         max-[479px]:min-h-0 max-2xl:flex max-2xl:max-w-100 max-2xl:mx-auto
-					         max-2xl:flex-col  max-[479px]:gap-10
-					         max-[479px]:before:pointer-events-none max-[479px]:before:absolute
-					         max-[479px]:before:left-1/2 max-[479px]:before:top-[-40px]
-					         max-[479px]:before:-z-1 max-[479px]:before:h-[calc(100%+80px)]
-					          max-[479px]:before:w-[calc(100vw-16px)]
-					           max-[479px]:before:-translate-x-1/2 max-[479px]:before:rounded-full
-					           max-[479px]:before:bg-[#f3f4f5] max-[479px]:before:content-['']"
-					        data-blade-component="home.process"
-					        aria-labelledby="process-heading"
-			        >
-				        <div
-						        class="relative   max-[479px]:z-1 "
-				        >
-					        <h2
-							        id="process-heading"
-							        class="text-[31px] font-medium leading-[1.18] tracking-[-0.035em]
-							         text-[#11171c] max-[1023px]:text-[30px]
-							         max-[1023px]:leading-[1.22] max-[479px]:text-[32px]
-							         max-[479px]:leading-[1.16] max-2xl:text-start"
-					        >
-						        Our process.<br />Simple,<br />seamless,<br />streamlined<span
-							        class="text-[#f66135]"
-					        >.</span
-					        >
-					        </h2>
-					        <img
-							        src="assets/images/team-flow/our-process.webp"
-							        width="480"
-							        height="480"
-							        alt="A specialist guiding a client through the delivery process"
-							        class="absolute bottom-0 max-2xl:hidden -left-[140px] block w-[340px] max-w-none opacity-100 visible max-[1023px]:left-[clamp(-100px,calc(104px-25vw),-16px)] max-[479px]:left-1/2 max-[479px]:-translate-x-1/2"
-					        />
-				        </div>
-
-				        <div
-						        class="relative flex self-start flex-col gap-9 pt-1
-						        max-2xl:self-center
-						         before:pointer-events-none before:absolute before:bottom-[17px]
-						         before:left-4 before:top-7 before:border-l before:border-dashed
-						         before:border-[#cbd1d5] before:content-[''] after:pointer-events-none
-						          after:absolute after:bottom-[17px] after:left-4 after:w-[22px]
-						          after:border-t after:border-dashed after:border-[#cbd1d5] after:content-[''] max-[1023px]:gap-8 max-[479px]:before:left-[21px] max-[479px]:after:left-[21px] max-[479px]:after:w-[31px]"
-				        >
-					        <article class="relative grid grid-cols-[32px_1fr] gap-3 max-[479px]:grid-cols-[42px_1fr] max-[479px]:gap-4">
-						        <img
-								        src="assets/images/team-flow/phone.svg"
-								        width="48"
-								        height="48"
-								        alt=""
-								        class="relative z-1 size-8 max-[479px]:size-[42px]"
-						        />
-						        <div>
-							        <span class="text-[8px] font-semibold uppercase tracking-[0.16em] text-[#53616c]">Step 1</span>
-							        <h3 class="mt-1 text-[18px] font-semibold leading-6 text-[#11171c] max-[1023px]:text-[16px] max-[1023px]:leading-5">Start with a discovery call.</h3>
-							        <p class="mt-1 max-w-[390px] text-sm leading-6 text-[#53616c]">
-								        Tell us about your business goals, challenges, and vision. We'll
-								        understand your requirements, define success criteria, and
-								        identify the right approach to move forward.
-							        </p>
-						        </div>
-					        </article>
-					        <article class="relative grid grid-cols-[32px_1fr] gap-3 max-[479px]:grid-cols-[42px_1fr] max-[479px]:gap-4">
-						        <img
-								        src="assets/images/team-flow/person.svg"
-								        width="48"
-								        height="48"
-								        alt=""
-								        class="relative z-1 size-8 max-[479px]:size-[42px]"
-						        />
-						        <div>
-							        <span class="text-[8px] font-semibold uppercase tracking-[0.16em] text-[#53616c]">Step 2</span>
-							        <h3 class="mt-1 text-[18px] font-semibold leading-6 text-[#11171c] max-[1023px]:text-[16px] max-[1023px]:leading-5">
-								        Define the solution and build your team.
-							        </h3>
-							        <p class="mt-1 max-w-[390px] text-sm leading-6 text-[#53616c]">
-								        We translate your ideas into a clear execution plan—finalizing
-								        scope, tech stack, timelines, and assembling the right team
-								        tailored to your project.
-							        </p>
-						        </div>
-					        </article>
-					        <article class="relative grid grid-cols-[32px_1fr] gap-3 max-[479px]:grid-cols-[42px_1fr] max-[479px]:gap-4">
-						        <img
-								        src="assets/images/team-flow/track.svg"
-								        width="48"
-								        height="48"
-								        alt=""
-								        class="relative z-1 size-8 max-[479px]:size-[42px]"
-						        />
-						        <div>
-							        <span class="text-[8px] font-semibold uppercase tracking-[0.16em] text-[#53616c]">Step 3</span>
-							        <h3 class="mt-1 text-[18px] font-semibold leading-6 text-[#11171c] max-[1023px]:text-[16px] max-[1023px]:leading-5">Execute, deliver, and scale.</h3>
-							        <p class="mt-1 max-w-[390px] text-sm leading-6 text-[#53616c]">
-								        Once aligned, we begin development with full transparency. Track
-								        progress in real time, receive regular updates, and scale as
-								        your business grows.
-							        </p>
-						        </div>
-					        </article>
-					        <a
-							        class="relative isolate ml-11 mt-1 inline-flex min-h-12 w-fit items-center justify-center px-6 text-base font-semibold text-white transition-transform hover:-translate-y-0.5 max-[479px]:ml-[58px] before:pointer-events-none before:absolute before:inset-y-0 before:left-0 before:right-1.5 before:-z-1 before:rounded-l-lg before:bg-[#f48949] before:content-[''] before:transition-[filter] after:pointer-events-none after:absolute after:inset-y-0 after:right-0 after:-z-2 after:w-5 after:rounded-r-lg after:bg-[#f48949] after:content-[''] after:origin-bottom after:transition-[filter] after:[transform:skewX(-16deg)] hover:before:[filter:brightness(1.1)] hover:after:[filter:brightness(1.1)]"
-							        href="https://calendly.com/pandu-karteek/sales"
-					        >
-						        Schedule a Call
-					        </a>
-				        </div>
-			        </div>
-		        </div>
-	        </section>
-
             <section
-                class="overflow-hidden bg-white pb-[160px] pt-24 max-[768px]:pb-[120px] max-[768px]:pt-16"
+                class="relative isolate -mt-90 bg-white pt-120 pb-90 before:pointer-events-none
+                before:absolute before:top-20 before:left-1/2 before:z-0
+                before:h-[calc(100%-10rem)] before:min-w-[2500px]
+                before:-translate-x-1/2 before:rounded-full before:bg-[#f3f4f5]
+                before:content-[''] max-2xl:before:hidden max-lg:-mt-10 max-lg:pt-47.5
+                max-lg:pb-28 max-md:mt-0 max-md:pt-20 max-md:pb-20 max-2xl:pt-30 max-2xl:pb-30"
+            >
+                <!-- Keep the team row at a consistent maximum width on wide screens. -->
+
+                <section class="page-container relative z-1">
+                    <div class="text-center">
+                        <h2>
+                            Why Kkeydos is the right choice<span
+                                class="text-c-orange"
+                                >.</span
+                            >
+                            <span class="mt-1 block">
+                                Built for performance. Designed for scale<span
+                                    class="text-c-orange"
+                                    >.</span
+                                >
+                            </span>
+                        </h2>
+                    </div>
+                    <div
+                        class="mx-auto mt-12 grid grid-cols-2 gap-x-20 gap-y-8 max-lg:gap-x-10 max-md:mt-10 max-md:grid-cols-1 max-md:gap-8"
+                    >
+                        <article class="flex items-start gap-3">
+                            <svg
+                                class="size-5.5 shrink-0"
+                                aria-hidden="true"
+                            >
+                                <use
+                                    href="assets/images/sprite.svg#check-square"
+                                ></use>
+                            </svg>
+                            <div>
+                                <h5 class="font-semibold">The right people</h5>
+                                <p class="mt-1 text-lg">
+                                    Our selective hiring process ensures you
+                                    work with highly skilled developers and
+                                    AI-ready engineers who deliver real results.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="flex items-start gap-3">
+                            <svg
+                                class="size-5.5 shrink-0"
+                                aria-hidden="true"
+                            >
+                                <use
+                                    href="assets/images/sprite.svg#check-square"
+                                ></use>
+                            </svg>
+                            <div>
+                                <h5 class="font-semibold">The right team</h5>
+                                <p class="mt-1 text-lg">
+                                    From individual developers to full-scale
+                                    teams, we offer flexible engagement models
+                                    tailored to your project needs.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="flex items-start gap-3">
+                            <svg
+                                class="size-5.5 shrink-0"
+                                aria-hidden="true"
+                            >
+                                <use
+                                    href="assets/images/sprite.svg#check-square"
+                                ></use>
+                            </svg>
+                            <div>
+                                <h5 class="font-semibold">The right place</h5>
+                                <p class="mt-1 text-lg">
+                                    Our teams align with your time zone,
+                                    ensuring smooth communication, quick
+                                    updates, and seamless collaboration.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="flex items-start gap-3">
+                            <svg
+                                class="size-5.5 shrink-0"
+                                aria-hidden="true"
+                            >
+                                <use
+                                    href="assets/images/sprite.svg#check-square"
+                                ></use>
+                            </svg>
+                            <div>
+                                <h5 class="font-semibold">The right time</h5>
+                                <p class="mt-1 text-lg">
+                                    Start when you're ready. Scale your team up
+                                    or down as your business evolves without
+                                    delays.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Team assembly: layout and portrait styling live in Tailwind classes. -->
+                <section
+                    class="relative isolate overflow-x-clip py-50 max-xl:py-16 max-sm:py-12"
+                    data-team-assembly
+                >
+                    <div class="w-full px-6">
+                        <!-- Desktop: five equal columns. Tablet/mobile: centered wrapped rows. -->
+                        <div
+                            class="relative mx-auto grid w-full max-w-250 grid-cols-5 items-end gap-0 max-xl:flex max-xl:flex-wrap max-xl:justify-center max-xl:gap-x-8 max-xl:gap-y-12 max-sm:gap-x-6 max-sm:gap-y-10 max-2xl:max-w-200"
+                            data-team-visual
+                        >
+                            <!-- Software developers -->
+                            <article
+                                class="relative flex w-full min-w-0 flex-col items-center max-xl:w-[calc((100%_-_4rem)/3)] max-sm:w-[calc((100%_-_1.5rem)/2)]"
+                                data-team-member
+                                data-team-x="-4"
+                                data-team-y="-28"
+                            >
+                                <svg
+                                    class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-xl:w-70 max-lg:w-[230px] max-md:w-[140px]"
+                                    viewBox="20.5 0.18 222 166"
+                                    aria-hidden="true"
+                                    focusable="false"
+                                >
+                                    <defs>
+                                        <clipPath id="team-shape-software">
+                                            <path
+                                                d="M0.554 100L151 0.186C192 0.186 222.5 32 222.5 76C222.5 128 179 166 124 166H80C39 166 7 138 0.554 100Z"
+                                                class="[transform:translateX(20px)_scale(0.7)] [transform-box:fill-box] origin-center"
+                                            ></path>
+                                        </clipPath>
+
+                                        <clipPath id="team-top-software">
+                                            <rect
+                                                width="100%"
+                                                height="60%"
+                                            ></rect>
+                                        </clipPath>
+                                    </defs>
+
+                                    <path
+                                        class="[transform:translateX(20px)_scale(0.7)] [transform-box:fill-box] origin-center [--team-color:#f66135] fill-(--team-color) motion-safe:fill-[#c2c7cc] max-xl:motion-safe:fill-(--team-color)"
+                                        data-team-backdrop
+                                        d="M0.554 100L151 0.186C192 0.186 222.5 32 222.5 76C222.5 128 179 166 124 166H80C39 166 7 138 0.554 100Z"
+                                    ></path>
+
+                                    <image
+                                        href="assets/images/team-flow/software-developer-reference.png"
+                                        x="12"
+                                        y="-10"
+                                        width="100%"
+                                        height="100%"
+                                        clip-path="url(#team-shape-software)"
+                                    ></image>
+
+                                    <image
+                                        href="assets/images/team-flow/software-developer-reference.png"
+                                        x="12"
+                                        y="-10"
+                                        width="100%"
+                                        height="100%"
+                                        clip-path="url(#team-top-software)"
+                                    ></image>
+                                </svg>
+
+                                <p
+                                    class="mt-4 w-full text-center text-xl leading-[1.3] font-bold text-[#7f8993] max-sm:mt-3 max-sm:text-base max-sm:leading-6"
+                                >
+                                    Software<br />developers
+                                </p>
+                            </article>
+
+                            <!-- QA engineers -->
+                            <article
+                                class="relative flex w-full min-w-0 flex-col items-center max-xl:w-[calc((100%_-_4rem)/3)] max-sm:w-[calc((100%_-_1.5rem)/2)]"
+                                data-team-member
+                                data-team-x="-2"
+                                data-team-y="36"
+                            >
+                                <svg
+                                    class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-xl:w-70 max-lg:w-[230px] max-md:w-[140px]"
+                                    viewBox="0 0.18 222 166"
+                                    aria-hidden="true"
+                                    focusable="false"
+                                >
+                                    <defs>
+                                        <clipPath id="team-shape-qa">
+                                            <path
+                                                d="M29 0L184.586 35L154 181.002L0.82349 146Z"
+                                                class="[transform:translateX(20px)_scale(0.8)] [transform-box:fill-box] origin-center"
+                                            ></path>
+                                        </clipPath>
+
+                                        <clipPath id="team-top-qa">
+                                            <rect
+                                                width="100%"
+                                                height="100%"
+                                                class="[rotate:5deg] [transform:translate(0,-5px)] [transform-origin:center_center]"
+                                            ></rect>
+                                        </clipPath>
+                                    </defs>
+
+                                    <path
+                                        class="[transform:translateX(20px)_scale(0.7)] [transform-box:fill-box] origin-center [--team-color:#73aaf1] fill-(--team-color) motion-safe:fill-[#c2c7cc] max-xl:motion-safe:fill-(--team-color)"
+                                        data-team-backdrop
+                                        d="M29 0L184.586 35L154 181.002L0.82349 146Z"
+                                    ></path>
+
+                                    <image
+                                        href="assets/images/team-flow/qa-engineer-reference.png"
+                                        x="2.5%"
+                                        y="2.5%"
+                                        width="100%"
+                                        height="100%"
+                                        clip-path="url(#team-shape-qa)"
+                                        transform="scale(0.95)"
+                                    ></image>
+
+                                    <image
+                                        href="assets/images/team-flow/qa-engineer-reference.png"
+                                        x="2.5%"
+                                        y="2.5%"
+                                        width="100%"
+                                        height="100%"
+                                        clip-path="url(#team-top-qa)"
+                                        transform="scale(0.95)"
+                                    ></image>
+                                </svg>
+
+                                <p
+                                    class="mt-4 w-full text-center text-xl leading-[1.3] font-bold text-[#7f8993] max-sm:mt-3 max-sm:text-base max-sm:leading-6"
+                                >
+                                    QA<br />engineers
+                                </p>
+                            </article>
+
+                            <!-- UX designers -->
+                            <article
+                                class="relative flex w-full min-w-0 flex-col items-center max-xl:w-[calc((100%_-_4rem)/3)] max-sm:w-[calc((100%_-_1.5rem)/2)]"
+                                data-team-member
+                                data-team-x="0"
+                                data-team-y="0"
+                            >
+                                <svg
+                                    class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-xl:w-70 max-lg:w-[230px] max-md:w-[140px]"
+                                    viewBox="-5.2 0.18 222 166"
+                                    aria-hidden="true"
+                                    focusable="false"
+                                >
+                                    <defs>
+                                        <clipPath id="team-shape-ux">
+                                            <path
+                                                d="M85.8237 0.186951C136 0.186951 170.824 31 170.824 80V94C170.824 138 138 169.262 94 169.262H78C33 169.262 0.82373 138 0.82373 94V80C0.82373 31 35 0.186951 85.8237 0.186951Z"
+                                                class="[transform:translateX(20px)_scale(0.7)] [transform-box:fill-box] origin-center"
+                                            ></path>
+                                        </clipPath>
+
+                                        <clipPath id="team-top-ux">
+                                            <rect
+                                                width="100%"
+                                                height="30%"
+                                            ></rect>
+                                        </clipPath>
+                                    </defs>
+
+                                    <path
+                                        class="[transform:translateX(20px)_scale(0.7)] [transform-box:fill-box] origin-center [--team-color:#fa9f84] fill-(--team-color) motion-safe:fill-[#c2c7cc] max-xl:motion-safe:fill-(--team-color)"
+                                        data-team-backdrop
+                                        d="M85.8237 0.186951C136 0.186951 170.824 31 170.824 80V94C170.824 138 138 169.262 94 169.262H78C33 169.262 0.82373 138 0.82373 94V80C0.82373 31 35 0.186951 85.8237 0.186951Z"
+                                    ></path>
+
+                                    <image
+                                        href="assets/images/team-flow/ux-designer-reference.png"
+                                        x="-10"
+                                        y="-11"
+                                        width="100%"
+                                        height="100%"
+                                        clip-path="url(#team-shape-ux)"
+                                    ></image>
+
+                                    <image
+                                        href="assets/images/team-flow/ux-designer-reference.png"
+                                        x="-10"
+                                        y="-11"
+                                        width="100%"
+                                        height="100%"
+                                        clip-path="url(#team-top-ux)"
+                                    ></image>
+                                </svg>
+
+                                <p
+                                    class="mt-4 w-full text-center text-xl leading-[1.3] font-bold text-[#7f8993] max-sm:mt-3 max-sm:text-base max-sm:leading-6"
+                                >
+                                    UX<br />designers
+                                </p>
+                            </article>
+
+                            <!-- Data scientists -->
+                            <article
+                                class="relative flex w-full min-w-0 flex-col items-center max-xl:w-[calc((100%_-_4rem)/3)] max-sm:w-[calc((100%_-_1.5rem)/2)]"
+                                data-team-member
+                                data-team-x="2"
+                                data-team-y="30"
+                            >
+                                <svg
+                                    class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-xl:w-70 max-lg:w-[230px] max-md:w-[140px]"
+                                    viewBox="16.5 0.18 222 166"
+                                    aria-hidden="true"
+                                    focusable="false"
+                                >
+                                    <defs>
+                                        <clipPath id="team-shape-data">
+                                            <path
+                                                d="M101.172 0.687866C111 0.687866 118 5 125 12L190 73C198 80 202.318 85 202.318 94C202.318 103 198 110 190 116L125 168C118 175 111 178.832 101.172 178.832C91 178.832 84 175 77 168L48 116C40 110 36 103 36 94C36 85 40 80 48 73L77 12C84 5 91 0.687866 101.172 0.687866Z"
+                                                class="[transform:translateX(20px)_scale(0.8,0.7)] [transform-box:fill-box] origin-center"
+                                            ></path>
+                                        </clipPath>
+
+                                        <clipPath id="team-top-data">
+                                            <rect
+                                                width="59%"
+                                                height="91%"
+                                                class="[rotate:8deg] [transform-origin:center_center]"
+                                            ></rect>
+                                        </clipPath>
+                                    </defs>
+
+                                    <path
+                                        class="[transform:translateX(20px)_scale(0.8,0.7)] [transform-box:fill-box] origin-center [--team-color:#ffac00] fill-(--team-color) motion-safe:fill-[#c2c7cc] max-xl:motion-safe:fill-(--team-color)"
+                                        data-team-backdrop
+                                        d="M101.172 0.687866C111 0.687866 118 5 125 12L190 73C198 80 202.318 85 202.318 94C202.318 103 198 110 190 116L125 168C118 175 111 178.832 101.172 178.832C91 178.832 84 175 77 168L48 116C40 110 36 103 36 94C36 85 40 80 48 73L77 12C84 5 91 0.687866 101.172 0.687866Z"
+                                    ></path>
+
+                                    <image
+                                        href="assets/images/team-flow/data-scientist-reference.png"
+                                        x="-7"
+                                        y="-9"
+                                        width="100%"
+                                        height="100%"
+                                        clip-path="url(#team-shape-data)"
+                                    ></image>
+
+                                    <image
+                                        href="assets/images/team-flow/data-scientist-reference.png"
+                                        x="-7"
+                                        y="-9"
+                                        width="100%"
+                                        height="100%"
+                                        clip-path="url(#team-top-data)"
+                                    ></image>
+                                </svg>
+
+                                <p
+                                    class="mt-4 w-full text-center text-xl leading-[1.3] font-bold text-[#7f8993] max-sm:mt-3 max-sm:text-base max-sm:leading-6"
+                                >
+                                    Data<br />scientists
+                                </p>
+                            </article>
+
+                            <!-- Project managers -->
+                            <article
+                                class="relative flex w-full min-w-0 flex-col items-center max-xl:w-[calc((100%_-_4rem)/3)] max-sm:w-[calc((100%_-_1.5rem)/2)]"
+                                data-team-member
+                                data-team-x="4"
+                                data-team-y="-24"
+                            >
+                                <svg
+                                    class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-xl:w-70 max-lg:w-[230px] max-md:w-[140px]"
+                                    viewBox="-1.8 0.18 222 166"
+                                    aria-hidden="true"
+                                    focusable="false"
+                                >
+                                    <defs>
+                                        <clipPath id="team-shape-project">
+                                            <path
+                                                d="M177.599 0.570587V94.9458C177.599 147.07 135 189.321 82 189.321C36 189.321 0.82373 155 0.82373 110V94.9458C0.82373 42.8215 43.55 0.570587 96.2607 0.570587Z"
+                                                class="[transform:translateX(20px)_scale(0.7)] [transform-box:fill-box] origin-center"
+                                            ></path>
+                                        </clipPath>
+
+                                        <clipPath id="team-top-project">
+                                            <rect
+                                                width="100%"
+                                                height="76%"
+                                            ></rect>
+                                        </clipPath>
+                                    </defs>
+
+                                    <path
+                                        class="[transform:translateX(20px)_scale(0.7)] [transform-box:fill-box] origin-center [--team-color:#8fd5bf] fill-(--team-color) motion-safe:fill-[#c2c7cc] max-xl:motion-safe:fill-(--team-color)"
+                                        data-team-backdrop
+                                        d="M177.599 0.570587V94.9458C177.599 147.07 135 189.321 82 189.321C36 189.321 0.82373 155 0.82373 110V94.9458C0.82373 42.8215 43.55 0.570587 96.2607 0.570587Z"
+                                    ></path>
+
+                                    <image
+                                        href="assets/images/team-flow/project-manager-reference.png"
+                                        x="-7"
+                                        width="100%"
+                                        height="100%"
+                                        clip-path="url(#team-shape-project)"
+                                    ></image>
+
+                                    <image
+                                        href="assets/images/team-flow/project-manager-reference.png"
+                                        x="-7"
+                                        width="100%"
+                                        height="100%"
+                                        clip-path="url(#team-top-project)"
+                                    ></image>
+                                </svg>
+
+                                <p
+                                    class="mt-4 w-full text-center text-xl leading-[1.3] font-bold text-[#7f8993] max-sm:mt-3 max-sm:text-base max-sm:leading-6"
+                                >
+                                    Project<br />managers
+                                </p>
+                            </article>
+                        </div>
+
+                        <!-- Heading + CTA -->
+                        <div
+                            class="relative z-10 mt-16 flex flex-col items-center text-center max-xl:mt-14 max-sm:mt-10"
+                            data-team-cta
+                        >
+                            <h2
+                                id="team-assembly-heading"
+                                class="my-5 text-[#797d80] transition-all"
+                                data-team-heading
+                            >
+                                Let’s assemble your team.
+                            </h2>
+
+                            <a
+                                class="btn-cta w-full max-w-45 transition-all"
+                                href="https://calendly.com/pandu-karteek/sales"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                data-team-button
+                            >
+                                Schedule a Call
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    class="page-container relative z-1 w-full pt-50 max-2xl:pt-20"
+                >
+                    <div
+                        class="flex items-end justify-between gap-6 max-[833px]:flex-col max-[833px]:items-start"
+                    >
+                        <h2 id="engagement-heading" class="text-c-dark-alt">
+                            Keep full control.<br />
+                            Or hand everything off to us.
+                        </h2>
+
+                        <p
+                            class="max-w-[400px] shrink-0 leading-relaxed text-c-muted-gray min-[834px]:border-l min-[834px]:border-l-c-muted-gray min-[834px]:pl-5"
+                        >
+                            From embedded engineers to fully managed projects,
+                            we customize every engagement to fit your workflow,
+                            priorities, and delivery needs.
+                        </p>
+                    </div>
+
+                    <div
+                        class="mt-10 grid grid-cols-3 gap-6 max-lg:mt-8 max-[833px]:grid-cols-1 max-[833px]:gap-3"
+                        data-engagement-cards
+                    >
+                        <div class="engagement-card">
+                            <h3 class="engagement-card__title">
+                                <button
+                                    type="button"
+                                    class="engagement-card__toggle"
+                                    id="engagement-staff-toggle"
+                                    aria-expanded="true"
+                                    aria-controls="engagement-staff-panel"
+                                >
+                                    Need a couple of extra software engineers on
+                                    your team?
+                                </button>
+                            </h3>
+                            <div
+                                class="engagement-card__panel"
+                                id="engagement-staff-panel"
+                            >
+                                <div class="engagement-card__content">
+                                    <span class="engagement-card__category"
+                                        >Staff augmentation</span
+                                    >
+                                    <p class="engagement-card__description">
+                                        Get senior, production-ready developers
+                                        who integrate directly into your
+                                        internal team.
+                                    </p>
+                                    <img
+                                        src="assets/images/team-flow/engagement-01.svg"
+                                        width="96"
+                                        height="96"
+                                        alt=""
+                                        class="engagement-card__illustration"
+                                    />
+                                </div>
+                            </div>
+                            <svg
+                                class="engagement-card__eye"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z"
+                                />
+                                <circle
+                                    cx="12"
+                                    cy="12"
+                                    r="2.3"
+                                    class="fill-current stroke-none"
+                                />
+                            </svg>
+                        </div>
+                        <div class="engagement-card">
+                            <h3 class="engagement-card__title">
+                                <button
+                                    type="button"
+                                    class="engagement-card__toggle"
+                                    id="engagement-teams-toggle"
+                                    aria-expanded="true"
+                                    aria-controls="engagement-teams-panel"
+                                >
+                                    Need a few teams to deliver several projects
+                                    simultaneously?
+                                </button>
+                            </h3>
+                            <div
+                                class="engagement-card__panel"
+                                id="engagement-teams-panel"
+                            >
+                                <div class="engagement-card__content">
+                                    <span class="engagement-card__category"
+                                        >Dedicated teams</span
+                                    >
+                                    <p class="engagement-card__description">
+                                        Spin up focused, delivery-ready pods to
+                                        handle full builds or workstreams.
+                                    </p>
+                                    <img
+                                        src="assets/images/team-flow/engagement-02.svg"
+                                        width="96"
+                                        height="96"
+                                        alt=""
+                                        class="engagement-card__illustration"
+                                    />
+                                </div>
+                            </div>
+                            <svg
+                                class="engagement-card__eye"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z"
+                                />
+                                <circle
+                                    cx="12"
+                                    cy="12"
+                                    r="2.3"
+                                    class="fill-current stroke-none"
+                                />
+                            </svg>
+                        </div>
+                        <div class="engagement-card">
+                            <h3 class="engagement-card__title">
+                                <button
+                                    type="button"
+                                    class="engagement-card__toggle"
+                                    id="engagement-outsourcing-toggle"
+                                    aria-expanded="true"
+                                    aria-controls="engagement-outsourcing-panel"
+                                >
+                                    Want to offload everything to us, from start
+                                    to finish?
+                                </button>
+                            </h3>
+                            <div
+                                class="engagement-card__panel"
+                                id="engagement-outsourcing-panel"
+                            >
+                                <div class="engagement-card__content">
+                                    <span class="engagement-card__category"
+                                        >Software outsourcing</span
+                                    >
+                                    <p class="engagement-card__description">
+                                        Hand off the full project lifecycle. We
+                                        take ownership and keep you involved at
+                                        every step.
+                                    </p>
+                                    <img
+                                        src="assets/images/team-flow/engagement-03.svg"
+                                        width="96"
+                                        height="96"
+                                        alt=""
+                                        class="engagement-card__illustration"
+                                    />
+                                </div>
+                            </div>
+                            <svg
+                                class="engagement-card__eye"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z"
+                                />
+                                <circle
+                                    cx="12"
+                                    cy="12"
+                                    r="2.3"
+                                    class="fill-current stroke-none"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                </section>
+
+                <section
+                    class="page-container process-block relative z-1 mt-28 grid max-w-[1200px] grid-cols-[minmax(0,0.9fr)_minmax(0,1.2fr)] items-start gap-16 max-lg:gap-10 max-md:mt-20 max-2xl:flex max-2xl:items-center max-2xl:flex-col max-md:gap-10"
+                    data-blade-component="home.process"
+                >
+                    <div class="process-block__intro relative min-w-0">
+                        <h2
+                            id="process-heading"
+                            class="font-outfit text-[48px] font-medium leading-[1.12] tracking-[-0.035em] text-[#11171c] max-lg:text-[38px] max-md:text-[40px] max-[374px]:text-[34px]"
+                        >
+                            Our process.<br />
+                            Simple, seamless,<br />
+                            streamlined<span class="text-[#f66135]">.</span>
+                        </h2>
+                        <img
+                            src="assets/images/team-flow/our-process.webp"
+                            width="480"
+                            height="480"
+                            alt="A specialist guiding a client through the delivery process"
+                            loading="lazy"
+                            class="mt-8 block h-auto w-full max-w-[400px] object-contain max-2xl:hidden"
+                        />
+                    </div>
+                    <div
+                        class="process-steps relative isolate flex min-w-0 flex-col gap-10 pt-1 before:pointer-events-none before:absolute before:bottom-6 before:left-6 before:top-7 before:-z-1 before:border-l before:border-dashed before:border-[#cbd1d5] before:content-[''] after:pointer-events-none after:absolute after:bottom-6 after:left-6 after:-z-1 after:w-12 after:border-t after:border-dashed after:border-[#cbd1d5] after:content-[''] max-md:gap-8 max-sm:before:left-5 max-sm:after:left-5 max-sm:after:w-9"
+                    >
+                        <article
+                            class="process-step relative grid min-w-0 grid-cols-[48px_minmax(0,1fr)] gap-6 max-sm:grid-cols-[40px_minmax(0,1fr)] max-sm:gap-4"
+                        >
+                            <img
+                                src="assets/images/team-flow/phone.svg"
+                                width="48"
+                                height="48"
+                                alt=""
+                                class="relative z-1 size-12 rounded-full bg-white max-sm:size-10"
+                            />
+                            <div class="min-w-0">
+                                <span
+                                    class="block text-xs font-semibold uppercase tracking-[0.14em] text-[#53616c]"
+                                    >Step 1</span
+                                >
+                                <h3
+                                    class="mt-2 font-outfit text-[26px] font-semibold leading-[1.25] tracking-[-0.02em] text-[#11171c] max-lg:text-[23px] max-sm:text-[22px]"
+                                >
+                                    Book a discovery call.
+                                </h3>
+                                <p
+                                    class="mt-3 max-w-[480px] text-base leading-[1.65] text-[#53616c]"
+                                >
+                                    Tell us more about your business. We’ll
+                                    discuss team structure, goals, timeline,
+                                    budget, and required skills.
+                                </p>
+                            </div>
+                        </article>
+                        <article
+                            class="process-step relative grid min-w-0 grid-cols-[48px_minmax(0,1fr)] gap-6 max-sm:grid-cols-[40px_minmax(0,1fr)] max-sm:gap-4"
+                        >
+                            <img
+                                src="assets/images/team-flow/person.svg"
+                                width="48"
+                                height="48"
+                                alt=""
+                                class="relative z-1 size-12 rounded-full bg-white max-sm:size-10"
+                            />
+                            <div class="min-w-0">
+                                <span
+                                    class="block text-xs font-semibold uppercase tracking-[0.14em] text-[#53616c]"
+                                    >Step 2</span
+                                >
+                                <h3
+                                    class="mt-2 font-outfit text-[26px] font-semibold leading-[1.25] tracking-[-0.02em] text-[#11171c] max-lg:text-[23px] max-sm:text-[22px]"
+                                >
+                                    Discuss solution and team structure.
+                                </h3>
+                                <p
+                                    class="mt-3 max-w-[480px] text-base leading-[1.65] text-[#53616c]"
+                                >
+                                    We finalize specifications, agree on an
+                                    engagement model, and select and onboard
+                                    your team.
+                                </p>
+                            </div>
+                        </article>
+                        <article
+                            class="process-step relative grid min-w-0 grid-cols-[48px_minmax(0,1fr)] gap-6 max-sm:grid-cols-[40px_minmax(0,1fr)] max-sm:gap-4"
+                        >
+                            <img
+                                src="assets/images/team-flow/track.svg"
+                                width="48"
+                                height="48"
+                                alt=""
+                                class="relative z-1 size-12 rounded-full bg-white max-sm:size-10"
+                            />
+                            <div class="min-w-0">
+                                <span
+                                    class="block text-xs font-semibold uppercase tracking-[0.14em] text-[#53616c]"
+                                    >Step 3</span
+                                >
+                                <h3
+                                    class="mt-2 font-outfit text-[26px] font-semibold leading-[1.25] tracking-[-0.02em] text-[#11171c] max-lg:text-[23px] max-sm:text-[22px]"
+                                >
+                                    Get started and track performance.
+                                </h3>
+                                <p
+                                    class="mt-3 max-w-[480px] text-base leading-[1.65] text-[#53616c]"
+                                >
+                                    We track progress, report updates, and
+                                    continuously adapt to your needs.
+                                </p>
+                            </div>
+                        </article>
+                        <a
+                            href="#"
+                            class="process-block__button ml-[72px] inline-flex min-h-12 w-fit max-w-[calc(100%-72px)] items-center justify-center rounded-md bg-[#f66135] px-6 py-3 text-center text-base font-semibold leading-6 text-white transition-[background-color,transform] duration-300 hover:-translate-y-1 hover:bg-[#d94a29] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f66135] max-sm:ml-14 max-sm:max-w-[calc(100%-56px)]"
+                        >
+                            Schedule a Call
+                        </a>
+                    </div>
+                </section>
+            </section>
+            <section
+                class="overflow-hidden bg-white pt-8 pb-28 md:pt-12 md:pb-36"
                 data-blade-component="home.insights"
                 aria-labelledby="insights-preview-heading"
             >
-                <div
-                    class="mx-auto w-[min(1504px,calc(100%-48px))] max-[768px]:w-[calc(100%-40px)]"
-                >
+                <div class="page-container">
                     <header
-                        class="flex items-end justify-between gap-8 max-[768px]:flex-col max-[768px]:items-start max-[768px]:gap-6"
+                        class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end md:gap-8"
                     >
                         <h2
                             id="insights-preview-heading"
-                            class="text-[48px] font-medium leading-[1.2] tracking-[-0.04em] text-[#11171c] max-[768px]:text-[35px]"
+                            class="text-3xl font-medium leading-tight tracking-tight text-c-dark-alt md:text-5xl"
                         >
                             Our latest insights.
                         </h2>
-                        <a
-                            href="#"
-                            class="inline-flex min-w-[330px] items-center justify-between gap-5 border-b border-[#11171c] pb-3 text-[12px] font-medium text-[#11171c] transition-colors hover:border-[#f66135] hover:text-[#f66135] max-[768px]:w-full max-[768px]:min-w-0"
-                        >
-                            Articles on technology and talent
-                            <svg
-                                aria-hidden="true"
-                                class="size-4"
-                            >
-                                <use
-                                    href="assets/images/sprite.svg#arrow-right"
-                                ></use>
-                            </svg>
-                        </a>
+	                    <a
+			                    class="black-arrow-link w-80"
+			                    href="#"
+	                   >
+                            <span class="black-arrow-span">
+                                Articles on technology and talent
+                                <svg
+		                                class="size-4 shrink-0"
+		                                aria-hidden="true"
+                                >
+                                    <use
+		                                    href="assets/images/sprite.svg#arrow-right"
+                                    ></use>
+                                </svg>
+                            </span>
+	                    </a>
+
                     </header>
 
                     <div
-                        class="relative mx-auto mt-20 max-w-[1280px] px-16 max-[768px]:mt-10 max-[768px]:px-0 max-[768px]:pb-16"
+                        class="relative mx-auto mt-10 max-w-7xl pb-16 md:mt-16 md:px-16 md:pb-0"
                         data-insights-carousel
                         role="region"
                         aria-label="KKEYDOS insights"
                     >
                         <button
-                            class="carousel-button absolute top-1/3 z-10 max-md:top-auto max-md:bottom-0 left-0 max-[768px]:left-[calc(50%-48px)]"
+                            class="carousel-button absolute bottom-0 left-[calc(50%-48px)] z-10 md:top-1/3 md:bottom-auto md:left-0"
                             type="button"
                             data-insights-prev
                             aria-label="Previous insight"
@@ -4335,7 +4474,7 @@
                                     class="swiper-slide group/insight h-auto!"
                                 >
                                     <a
-                                        href="#"
+                                        href="/blog/history-and-evolution-of-artificial-intelligence/"
                                         class="flex h-full flex-col text-[#11171c]"
                                     >
                                         <span
@@ -4349,7 +4488,7 @@
                                             />
                                         </span>
                                         <h3
-                                            class="mt-4 text-[17px] font-semibold leading-[22px]"
+                                            class="mt-4 text-lg font-semibold leading-snug"
                                         >
                                             From Simple to Complex: Tracing the
                                             History and Evolution of Artificial
@@ -4371,7 +4510,7 @@
                                     class="swiper-slide group/insight h-auto!"
                                 >
                                     <a
-                                        href="#"
+                                        href="/blog/ios-app-design-guidelines/"
                                         class="flex h-full flex-col text-[#11171c]"
                                     >
                                         <span
@@ -4385,7 +4524,7 @@
                                             />
                                         </span>
                                         <h3
-                                            class="mt-4 text-[17px] font-semibold leading-[22px]"
+                                            class="mt-4 text-lg font-semibold leading-snug"
                                         >
                                             iOS App Design Guidelines for 2025
                                         </h3>
@@ -4405,7 +4544,7 @@
                                     class="swiper-slide group/insight h-auto!"
                                 >
                                     <a
-                                        href="#"
+                                        href="/blog/white-box-testing/"
                                         class="flex h-full flex-col text-[#11171c]"
                                     >
                                         <span
@@ -4419,7 +4558,7 @@
                                             />
                                         </span>
                                         <h3
-                                            class="mt-4 text-[17px] font-semibold leading-[22px]"
+                                            class="mt-4 text-lg font-semibold leading-snug"
                                         >
                                             White Box Testing: Definition, Types
                                             &amp; Techniques
@@ -4440,7 +4579,7 @@
                                     class="swiper-slide group/insight h-auto!"
                                 >
                                     <a
-                                        href="#"
+                                        href="/blog/scalability-vs-elasticity/"
                                         class="flex h-full flex-col text-[#11171c]"
                                     >
                                         <span
@@ -4454,7 +4593,7 @@
                                             />
                                         </span>
                                         <h3
-                                            class="mt-4 text-[17px] font-semibold leading-[22px] tracking-[-0.015em]"
+                                            class="mt-4 text-lg font-semibold leading-snug"
                                         >
                                             Scalability vs Elasticity: Types,
                                             Differences &amp; Synergies
@@ -4475,7 +4614,7 @@
                                     class="swiper-slide group/insight h-auto!"
                                 >
                                     <a
-                                        href="#"
+                                        href="/blog/how-to-become-an-android-developer/"
                                         class="flex h-full flex-col text-[#11171c]"
                                     >
                                         <span
@@ -4489,7 +4628,7 @@
                                             />
                                         </span>
                                         <h3
-                                            class="mt-4 text-[17px] font-semibold leading-[22px] tracking-[-0.015em]"
+                                            class="mt-4 text-lg font-semibold leading-snug"
                                         >
                                             How To Become an Android Developer
                                         </h3>
@@ -4509,7 +4648,7 @@
                         </div>
 
                         <button
-                            class="carousel-button absolute top-1/3 z-10 max-md:top-auto max-md:bottom-0 right-0 max-[768px]:right-[calc(50%-48px)]"
+                            class="carousel-button absolute right-[calc(50%-48px)] bottom-0 z-10 md:top-1/3 md:right-0 md:bottom-auto"
                             type="button"
                             data-insights-next
                             aria-label="Next insight"
@@ -4529,15 +4668,16 @@
             </section>
 
             <section
-                class="flex justify-center bg-black text-white"
+                id="bottom-cta"
+                class="bg-black text-white"
                 data-blade-component="home.closing-cta"
                 aria-labelledby="closing-cta-heading"
             >
                 <div
-                    class="mx-5 flex w-full max-w-lg flex-col justify-between gap-12 pb-12 min-[834px]:max-w-xl min-[1512px]:mx-0 min-[1512px]:w-[82rem] min-[1512px]:max-w-none min-[1512px]:flex-row-reverse min-[1512px]:gap-14 min-[1512px]:pb-14 min-[1512px]:pt-16 min-[1728px]:gap-3 min-[1920px]:w-[94rem]"
+                    class="mx-auto grid w-full max-w-[36rem] gap-6 px-5 pt-10 sm:px-8 lg:max-w-380 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-12 lg:pt-0 xl:gap-16"
                 >
                     <div
-                        class="relative -mt-14 aspect-[1200/752] w-full shrink-0 min-[834px]:-mt-16 min-[1512px]:-mt-32 min-[1512px]:w-[33.75rem] min-[1728px]:-mt-36 min-[1728px]:w-[37.75rem] min-[1920px]:w-[43.25rem]"
+                        class="relative aspect-[1200/752] w-full min-w-0 lg:order-2 lg:-mt-16 lg:self-start xl:-mt-24"
                     >
                         <img
                             src="assets/images/bottom-cta.webp"
@@ -4550,22 +4690,23 @@
                         />
                     </div>
                     <div
-                        class="min-w-0 min-[1512px]:w-[39rem] min-[1728px]:w-[34rem]"
+                        class="min-w-0 pb-12 text-center lg:py-16 lg:text-left"
                     >
                         <h2
                             id="closing-cta-heading"
-                            class="text-[32px] font-normal leading-10 tracking-[-0.03em] min-[834px]:text-[36px] min-[834px]:leading-[44px] min-[1512px]:text-[40px] min-[1512px]:leading-12 min-[1920px]:pt-10"
+                            class="text-3xl font-normal leading-tight tracking-tight sm:text-4xl xl:text-[42px]"
                         >
-                            Want to accelerate software development at your
-                            company?<span class="block text-c-orange"
-                                >See how we can help.</span
+                            Ready to accelerate your software development?<span
+                                class="block text-c-orange"
+                                >See how Kkeydos can help you build, scale, and
+                                deliver faster.</span
                             >
                         </h2>
-                        <div
-                            class="mt-10 flex justify-center min-[1512px]:justify-start"
-                        >
+                        <div class="mt-8 flex justify-center lg:justify-start">
                             <a
-                                href="#"
+                                href="https://calendly.com/pandu-karteek/sales"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 class="btn-cta"
                                 >Schedule a Call</a
                             >
@@ -4575,16 +4716,17 @@
             </section>
         </main>
         <footer
+            id="site-footer"
             class="site-footer relative isolate flex justify-center overflow-hidden bg-white text-c-dark-alt"
             data-blade-component="layout.footer"
         >
             <div
-                class="relative grid w-full max-w-7xl grid-cols-1 min-[640px]:grid-cols-[140px_minmax(0,1fr)] min-[640px]:pt-15 xl:grid-cols-[142px_752px_minmax(0,1fr)] xl:pt-0"
+                class="relative grid w-full max-w-380 grid-cols-1 pt-8 md:grid-cols-[100px_minmax(0,1fr)] md:pt-12 xl:grid-cols-[100px_minmax(0,1.6fr)_minmax(360px,1fr)] xl:pt-0"
             >
                 <a
-                    href="#"
+                    href="/"
                     aria-label="KKEYDOS home"
-                    class="self-start px-10 py-6 min-[640px]:col-start-1 min-[640px]:row-start-1 min-[640px]:py-0 xl:row-span-4 xl:pt-16"
+                    class="px-5 pb-8 md:col-start-1 md:row-start-1 md:px-5 md:pb-0 xl:row-span-4 xl:pt-16"
                 >
                     <img
                         src="assets/images/kkeydos-mark.png"
@@ -4598,246 +4740,189 @@
                 </a>
                 <nav
                     aria-label="Footer navigation"
-                    class="grid grid-cols-1 px-10 min-[640px]:col-start-2 min-[640px]:row-start-1 min-[640px]:grid-cols-[1fr_1fr_0.8fr] min-[640px]:gap-4 min-[640px]:pl-0 xl:row-span-3 xl:pr-0 xl:pt-16"
+                    class="relative isolate grid grid-cols-2 gap-x-6 px-5 md:col-start-2 md:row-start-1 md:grid-cols-3 md:gap-x-5 md:pl-0 md:pr-8 xl:row-span-3 xl:pt-16"
                 >
-                    <div class="mb-8 min-[640px]:max-w-49">
+                    <div
+                        class="pointer-events-none absolute inset-0 -z-1 flex select-none items-center justify-center overflow-hidden"
+                        aria-hidden="true"
+                    >
+                        <img
+                            src="assets/images/footer-watermark.png"
+                            alt=""
+                            width="1600"
+                            height="842"
+                            loading="lazy"
+                            decoding="async"
+                            class="h-auto w-150 max-w-none shrink-0 -rotate-12 lg:w-200"
+                        />
+                    </div>
+                    <div class="mb-8 md:max-w-49">
                         <h2 class="footer-heading">
                             Discover KKEYDOS<span class="text-c-orange">.</span>
                         </h2>
                         <ul class="space-y-3">
                             <li>
                                 <a
-                                    href="#"
+                                    href="/about/"
                                     class="footer-nav-link"
                                     >About Us</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="/methodologies/"
                                     class="footer-nav-link"
                                     >Methodologies</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="/technologies/"
                                     class="footer-nav-link"
                                     >Technologies</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
-                                    class="footer-nav-link"
-                                    >Certifications</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
+                                    href="/services/"
                                     class="footer-nav-link"
                                     >Software Development Services</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="/solutions/"
                                     class="footer-nav-link"
                                     >Software Development Solutions</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="/services/dedicated-teams/"
                                     class="footer-nav-link"
                                     >Dedicated Software Development Teams</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
-                                    class="footer-nav-link"
-                                    >Staff Augmentation</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
+                                    href="/services/software-development-outsourcing/"
                                     class="footer-nav-link"
                                     >Software Development Outsourcing</a
                                 >
                             </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    class="footer-nav-link"
-                                    >Diversity</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    class="footer-nav-link"
-                                    >Social Responsibility</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    class="footer-nav-link"
-                                    >Senior Advisor Program</a
-                                >
-                            </li>
                         </ul>
                     </div>
-                    <div class="mb-8 min-[640px]:max-w-49">
+                    <div class="mb-8 md:max-w-49">
                         <h2 class="footer-heading">
                             Resources<span class="text-c-orange">.</span>
                         </h2>
                         <ul class="space-y-3">
                             <li>
                                 <a
-                                    href="#"
+                                    href="/case-studies/"
                                     class="footer-nav-link"
                                     >Case Studies</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="/ai-learning-hub/"
                                     class="footer-nav-link"
                                     >AI Learning Hub</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="/blog/"
                                     class="footer-nav-link"
                                     >Blog</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="/press/"
                                     class="footer-nav-link"
                                     >Press</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
-                                    class="footer-nav-link"
-                                    >Industries Insights</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    class="footer-nav-link"
-                                    >Technology Resource Center</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
+                                    href="/client-referral-program/"
                                     class="footer-nav-link"
                                     >Client Referral Program</a
                                 >
                             </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    class="footer-nav-link"
-                                    >Fellows Program</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    class="footer-nav-link"
-                                    >Partners Program</a
-                                >
-                            </li>
                         </ul>
                     </div>
-                    <div class="mb-8 min-[640px]:max-w-49">
+                    <div class="mb-8 md:max-w-49">
                         <h2 class="footer-heading">
                             Careers<span class="text-c-orange">.</span>
                         </h2>
                         <ul class="space-y-3">
                             <li>
                                 <a
-                                    href="#"
+                                    href="/careers/"
                                     class="footer-nav-link"
                                     >Job Opportunities</a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="/talent-referrals/"
                                     class="footer-nav-link"
                                     >Talent Referrals</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    class="footer-nav-link"
-                                    >Associate Program</a
                                 >
                             </li>
                         </ul>
                     </div>
                 </nav>
                 <div
-                    class="row-start-3 px-10 pb-10 pt-2 text-xs leading-5 min-[640px]:col-start-2 min-[640px]:row-start-2 min-[640px]:p-0 xl:row-start-4"
+                    class="row-start-3 px-10 pb-10 pt-2 text-xs leading-5 md:col-start-2 md:row-start-2 md:p-0 xl:row-start-4"
                 >
                     <div class="mb-6">
                         <a
-                            href="#"
-                            class="hover:underline"
+                            href="/privacy-policy/"
+                            class="transition-colors hover:text-c-orange hover:underline"
                             >Privacy Policy</a
                         ><span
                             class="mx-2"
                             aria-hidden="true"
                             >|</span
                         ><a
-                            href="#"
-                            class="hover:underline"
+                            href="/terms-of-service/"
+                            class="transition-colors hover:text-c-orange hover:underline"
                             >Terms of Service</a
                         ><span
                             class="mx-2"
                             aria-hidden="true"
                             >|</span
                         ><a
-                            href="#"
-                            class="hover:underline"
+                            href="/do-not-sell-my-personal-information/"
+                            class="transition-colors hover:text-c-orange hover:underline"
                             >Do Not Sell My Personal Information</a
                         >
                     </div>
-                    <p class="mb-8 min-[834px]:mb-6 xl:mb-16">
-                        KKEYDOS &copy; 2026. All rights reserved.
+                    <p class="mb-8 md:mb-6 xl:mb-16">
+                        KKEYDOS 2009&ndash;2026. All rights reserved.
                     </p>
                 </div>
                 <div
-                    class="row-start-4 grid min-w-0 grid-cols-1 bg-[#e6e9eb] min-[640px]:col-span-2 min-[640px]:row-start-3 lg:grid-cols-2 xl:contents"
+                    class="row-start-4 grid min-w-0 grid-cols-1 bg-[#e6e9eb] md:col-span-2 md:row-start-3 lg:grid-cols-2 xl:contents"
                 >
                     <section
                         aria-labelledby="footer-newsletter-heading"
-                        class="footer-panel relative min-w-0 p-10 pb-8 lg:col-start-2 lg:row-start-1 xl:col-start-3 xl:row-start-2 xl:py-14 xl:pl-7 xl:pr-0 min-[1512px]:py-11 min-[1512px]:pl-10"
+                        class="footer-panel relative min-w-0 px-5 py-8 md:px-8 lg:col-start-2 lg:row-start-1 xl:col-start-3 xl:row-start-2"
                     >
                         <h2
                             id="footer-newsletter-heading"
-                            class="mb-4  text-base font-bold leading-6"
+                            class="mb-4 text-base font-bold leading-6"
                         >
                             Get insights from the experts on building and
                             scaling technology teams.
                         </h2>
                         <form
-                            action="#"
                             data-newsletter-form
-                            class="grid gap-y-3 min-[640px]:grid-cols-[minmax(0,1fr)_140px] min-[640px]:gap-x-3 min-[834px]:gap-x-4"
+                            class="grid gap-3"
                         >
                             <div class="min-w-0">
                                 <label
@@ -4856,7 +4941,7 @@
                                 />
                             </div>
                             <label
-                                class="row-start-3 flex cursor-pointer items-start gap-3 text-xs leading-5 min-[834px]:col-span-2 min-[834px]:row-start-2"
+                                class="flex cursor-pointer items-start gap-3 text-xs leading-5"
                                 ><input
                                     type="checkbox"
                                     required
@@ -4864,7 +4949,7 @@
                                 /><span
                                     >By subscribing I accept the
                                     <a
-                                        href="#"
+                                        href="/privacy-policy/"
                                         class="underline underline-offset-2"
                                         >Privacy Policy</a
                                     >.</span
@@ -4872,7 +4957,7 @@
                             >
                             <button
                                 type="submit"
-                                class="inline-flex h-11 w-35 cursor-pointer items-center justify-center gap-2 rounded-lg border-2 border-current px-4 text-sm font-medium transition-colors hover:border-c-dark-alt hover:bg-c-dark-alt hover:text-white min-[640px]:mt-7"
+                                class="inline-flex min-h-11 w-fit cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-c-dark-alt px-5 py-2 text-sm font-bold text-c-dark-alt transition-colors hover:bg-c-dark-alt hover:text-white"
                             >
                                 Subscribe
                                 <svg
@@ -4887,13 +4972,13 @@
                             <p
                                 data-newsletter-status
                                 role="status"
-                                class="hidden text-sm leading-5 min-[640px]:col-span-2"
+                                class="hidden text-sm leading-5"
                             ></p>
                         </form>
                     </section>
                     <section
                         aria-labelledby="footer-contact-heading"
-                        class="footer-panel relative min-w-0 px-10 lg:col-start-1 lg:row-start-1 lg:py-10 xl:col-start-3 xl:row-start-1 xl:pb-0 xl:pl-7 xl:pr-0 xl:pt-16 min-[1512px]:pl-10"
+                        class="footer-panel relative min-w-0 px-5 pb-8 md:px-8 lg:col-start-1 lg:row-start-1 lg:pt-8 xl:col-start-3 xl:row-start-1 xl:pb-0 xl:pt-16"
                     >
                         <h2
                             id="footer-contact-heading"
@@ -4901,22 +4986,22 @@
                         >
                             Get in touch<span class="text-c-orange">.</span>
                         </h2>
-                        <div
-                            class="flex flex-col items-start gap-5 min-[640px]:flex-row min-[640px]:flex-wrap min-[640px]:items-center min-[640px]:gap-x-2"
-                        >
+                        <div class="flex flex-wrap items-center gap-3">
                             <a
-                                href="#"
-                                class="inline-flex h-11 items-center justify-center rounded-lg border-2 border-current px-4 text-lg font-medium transition-colors hover:border-c-dark-alt hover:bg-c-dark-alt hover:text-white"
+                                href="/contact/"
+                                class="inline-flex min-h-11 items-center justify-center rounded-md border-2 border-c-dark-alt px-4 text-base font-bold transition-colors hover:bg-c-dark-alt hover:text-white"
                                 >Contact Us</a
                             >
                             <a
-                                href="#"
+                                href="https://calendly.com/pandu-karteek/sales"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 class="btn-cta h-11 px-4 text-lg"
                                 >Schedule a Call</a
                             >
                         </div>
                         <a
-                            href="#"
+                            href="tel:+919581083083"
                             class="mt-5 flex w-fit items-center gap-2 text-base leading-6 hover:text-c-teal"
                             ><svg
                                 aria-hidden="true"
@@ -4927,10 +5012,24 @@
                                 ></use></svg
                             ><span>+91 95810 83083</span></a
                         >
+                        <a
+                            href="mailto:info@kkeydos.com"
+                            class="mt-3 flex w-fit items-center gap-2 text-base leading-6 transition-colors hover:text-c-teal"
+                        >
+                            <svg
+                                aria-hidden="true"
+                                class="size-4 shrink-0"
+                            >
+                                <use
+                                    href="assets/images/sprite.svg#contact-email"
+                                ></use>
+                            </svg>
+                            <span>info@kkeydos.com</span>
+                        </a>
                     </section>
                     <section
                         aria-labelledby="footer-social-heading"
-                        class="footer-panel relative p-10 min-[834px]:pt-0 lg:col-span-2 lg:row-start-2 xl:col-span-1 xl:col-start-3 xl:row-span-2 xl:row-start-3 xl:pl-7 xl:pr-0 min-[1512px]:pl-10"
+                        class="footer-panel relative px-5 pb-10 md:px-8 lg:col-span-2 lg:row-start-2 xl:col-span-1 xl:col-start-3 xl:row-span-2 xl:row-start-3"
                     >
                         <h2
                             id="footer-social-heading"
@@ -4940,9 +5039,11 @@
                         </h2>
                         <div class="flex gap-4">
                             <a
-                                href="#"
+                                href="https://www.linkedin.com/company/kkeydos"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 aria-label="KKEYDOS on LinkedIn"
-                                class="grid size-8 place-items-center text-c-muted-gray-alt transition-colors hover:text-c-orange"
+                                class="flex size-8 items-center justify-center text-c-muted-gray transition-colors hover:text-c-orange"
                                 ><svg
                                     aria-hidden="true"
                                     class="size-4 fill-current min-[1512px]:size-6"
@@ -4951,9 +5052,11 @@
                                         href="assets/images/sprite.svg#social-linkedin"
                                     ></use></svg></a
                             ><a
-                                href="#"
+                                href="https://www.facebook.com/kkeydos/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 aria-label="KKEYDOS on Facebook"
-                                class="grid size-8 place-items-center text-c-muted-gray-alt transition-colors hover:text-c-orange"
+                                class="flex size-8 items-center justify-center text-c-muted-gray transition-colors hover:text-c-orange"
                                 ><svg
                                     aria-hidden="true"
                                     class="size-4 fill-current min-[1512px]:size-6"
@@ -4962,9 +5065,11 @@
                                         href="assets/images/sprite.svg#social-facebook"
                                     ></use></svg></a
                             ><a
-                                href="#"
+                                href="https://x.com/kkeydos"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 aria-label="KKEYDOS on X"
-                                class="grid size-8 place-items-center text-c-muted-gray-alt transition-colors hover:text-c-orange"
+                                class="flex size-8 items-center justify-center text-c-muted-gray transition-colors hover:text-c-orange"
                                 ><svg
                                     aria-hidden="true"
                                     class="size-4 fill-current min-[1512px]:size-6"
@@ -4973,9 +5078,11 @@
                                         href="assets/images/sprite.svg#social-x"
                                     ></use></svg></a
                             ><a
-                                href="#"
+                                href="https://www.instagram.com/kkeydos/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 aria-label="KKEYDOS on Instagram"
-                                class="grid size-8 place-items-center text-c-muted-gray-alt transition-colors hover:text-c-orange"
+                                class="flex size-8 items-center justify-center text-c-muted-gray transition-colors hover:text-c-orange"
                                 ><svg
                                     aria-hidden="true"
                                     class="size-4 fill-current min-[1512px]:size-6"
