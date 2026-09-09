@@ -1,8 +1,15 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-    typeof define === 'function' && define.amd ? define(factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.marquee6k = factory());
-})(this, (function () { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined'
+        ? (module.exports = factory())
+        : typeof define === 'function' && define.amd
+          ? define(factory)
+          : ((global =
+                typeof globalThis !== 'undefined'
+                    ? globalThis
+                    : global || self),
+            (global.marquee6k = factory()));
+})(this, function () {
+    'use strict';
 
     /**
      * marquee6k
@@ -29,7 +36,9 @@
         requiredReps;
         constructor(element, options) {
             if (element.children.length === 0) {
-                throw new Error('Encountered a marquee element without children, please supply a wrapper for your content');
+                throw new Error(
+                    'Encountered a marquee element without children, please supply a wrapper for your content',
+                );
             }
             this.element = element;
             this.selector = options.selector;
@@ -58,7 +67,13 @@
             this.content.classList.add(`${this.selector}__copy`);
             this.content.style.display = 'inline-block';
             this.contentWidth = this.content.offsetWidth;
-            this.requiredReps = this.contentWidth > this.parentProps.width ? 2 : Math.ceil((this.parentProps.width - this.contentWidth) / this.contentWidth) + 1;
+            this.requiredReps =
+                this.contentWidth > this.parentProps.width
+                    ? 2
+                    : Math.ceil(
+                          (this.parentProps.width - this.contentWidth) /
+                              this.contentWidth,
+                      ) + 1;
             for (let i = 0; i < this.requiredReps; i++) {
                 this._createClone();
             }
@@ -69,12 +84,10 @@
         }
         _setupEvents() {
             this.element.addEventListener('mouseenter', () => {
-                if (this.pausable)
-                    this.paused = true;
+                if (this.pausable) this.paused = true;
             });
             this.element.addEventListener('mouseleave', () => {
-                if (this.pausable)
-                    this.paused = false;
+                if (this.pausable) this.paused = false;
             });
         }
         _createClone() {
@@ -85,13 +98,13 @@
         }
         animate() {
             if (!this.paused) {
-                const isScrolled = this.reverse ? this.offset < 0 : this.offset > this.contentWidth * -1;
+                const isScrolled = this.reverse
+                    ? this.offset < 0
+                    : this.offset > this.contentWidth * -1;
                 const direction = this.reverse ? -1 : 1;
                 const reset = this.reverse ? this.contentWidth * -1 : 0;
-                if (isScrolled)
-                    this.offset -= this.speed * direction;
-                else
-                    this.offset = reset;
+                if (isScrolled) this.offset -= this.speed * direction;
+                else this.offset = reset;
                 this.wrapper.style.whiteSpace = 'nowrap';
                 this.wrapper.style.transform = `translate(${this.offset}px, 0) translateZ(0)`;
             }
@@ -141,11 +154,12 @@
             }
         }
         static init(options = { selector: 'marquee6k' }) {
-            if (animationId)
-                window.cancelAnimationFrame(animationId);
+            if (animationId) window.cancelAnimationFrame(animationId);
             MARQUEES = [];
             window.MARQUEES = MARQUEES;
-            const marquees = Array.from(document.querySelectorAll(`.${options.selector}`));
+            const marquees = Array.from(
+                document.querySelectorAll(`.${options.selector}`),
+            );
             let previousWidth = window.innerWidth;
             let timer;
             for (let i = 0; i < marquees.length; i++) {
@@ -175,6 +189,5 @@
     }
 
     return marquee6k;
-
-}));
+});
 //# sourceMappingURL=marquee6k.js.map
