@@ -582,6 +582,9 @@
   .w-\[118vw\] {
     width: 118vw;
   }
+  .w-\[545px\] {
+    width: 545px;
+  }
   .w-\[clamp\(300px\,24vw\,380px\)\] {
     width: clamp(300px, 24vw, 380px);
   }
@@ -645,6 +648,9 @@
   .max-w-\[480px\] {
     max-width: 480px;
   }
+  .max-w-\[545px\] {
+    max-width: 545px;
+  }
   .max-w-\[1200px\] {
     max-width: 1200px;
   }
@@ -656,6 +662,9 @@
   }
   .min-w-0 {
     min-width: 0px;
+  }
+  .min-w-\[545px\] {
+    min-width: 545px;
   }
   .shrink-0 {
     flex-shrink: 0;
@@ -670,8 +679,44 @@
     --tw-translate-x: calc(calc(1 / 2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .-translate-x-20 {
+    --tw-translate-x: calc(var(--spacing) * -20);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .-translate-x-30 {
+    --tw-translate-x: calc(var(--spacing) * -30);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .-translate-x-50 {
+    --tw-translate-x: calc(var(--spacing) * -50);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .-translate-x-60 {
+    --tw-translate-x: calc(var(--spacing) * -60);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-x-20 {
+    --tw-translate-x: calc(var(--spacing) * 20);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .-translate-y-50 {
+    --tw-translate-y: calc(var(--spacing) * -50);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
   .-translate-y-full {
     --tw-translate-y: -100%;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-y-40 {
+    --tw-translate-y: calc(var(--spacing) * 40);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-y-45 {
+    --tw-translate-y: calc(var(--spacing) * 45);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-y-50 {
+    --tw-translate-y: calc(var(--spacing) * 50);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-rotate-12 {
@@ -969,9 +1014,6 @@
   }
   .bg-\[\#e6e9eb\] {
     background-color: #e6e9eb;
-  }
-  .bg-\[\#f66135\] {
-    background-color: #f66135;
   }
   .bg-black {
     background-color: var(--color-black);
@@ -1376,9 +1418,6 @@
   .text-\[\#c2c7cc\] {
     color: #c2c7cc;
   }
-  .text-\[\#f66135\] {
-    color: #f66135;
-  }
   .text-black {
     color: var(--color-black);
   }
@@ -1727,8 +1766,8 @@
   .focus-visible\:outline-offset-4:focus-visible {
     outline-offset: 4px;
   }
-  .focus-visible\:outline-\[\#f66135\]:focus-visible {
-    outline-color: #f66135;
+  .focus-visible\:outline-c-orange:focus-visible {
+    outline-color: var(--color-c-orange);
   }
   .disabled\:cursor-default:disabled {
     cursor: default;
