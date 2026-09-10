@@ -29,8 +29,14 @@ if (featuredSlider) {
         slidesPerGroup: 1,
         spaceBetween: 0,
         speed: carouselSpeed,
-        loop: false,
-        rewind: false,
+        loop: true,
+        autoplay: reducedMotion.matches
+            ? false
+            : {
+                  delay: 4000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+              },
         grabCursor: true,
         simulateTouch: true,
         allowTouchMove: true,
