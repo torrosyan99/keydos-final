@@ -3725,10 +3725,10 @@
 				class="relative isolate overflow-x-clip py-20 max-xl:py-16 max-sm:py-12"
 				data-team-assembly
 		>
-			<div class="w-full px-6">
+			<div class="w-full px-2 max-sm:px-6">
 				<!-- Desktop: five equal columns. Tablet/mobile: centered wrapped rows. -->
 				<div
-						class="relative mx-auto grid w-full max-w-250 grid-cols-5 items-end gap-0 max-xl:flex max-xl:flex-wrap max-xl:justify-center max-xl:gap-x-8 max-xl:gap-y-12 max-sm:gap-x-6 max-sm:gap-y-10 max-2xl:max-w-200"
+						class="relative mx-auto grid w-full max-w-[1600px] grid-cols-5 items-end gap-0 max-xl:flex max-xl:flex-wrap max-xl:justify-center max-xl:gap-x-8 max-xl:gap-y-12 max-sm:gap-x-6 max-sm:gap-y-10"
 						data-team-visual
 				>
 					<!-- Software developers -->
@@ -3739,16 +3739,19 @@
 							data-team-y="-28"
 					>
 						<svg
-								class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-xl:w-70 max-lg:w-[230px] max-md:w-[140px]"
+								class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-2xl:w-70 max-lg:w-[230px] max-md:w-[140px]"
 								viewBox="20.5 0.18 222 166"
 								aria-hidden="true"
 								focusable="false"
 						>
 							<defs>
+								<linearGradient id="team-gradient-software" x1="20" y1="20" x2="205" y2="155" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#ff9b5f"></stop>
+									<stop offset="1" stop-color="#ff6287"></stop>
+								</linearGradient>
 								<clipPath id="team-shape-software">
 									<path
-											d="M0.554 100L151 0.186C192 0.186 222.5 32 222.5 76C222.5 128 179 166 124 166H80C39 166 7 138 0.554 100Z"
-											class="[transform:translateX(20px)_scale(0.7)] [transform-box:fill-box] origin-center"
+											d="M13 111C4 75 27 34 64 18C103 1 152 10 184 38C217 66 216 112 188 142C162 169 109 152 73 158C37 164 21 143 13 111Z"
 									></path>
 								</clipPath>
 
@@ -3761,16 +3764,27 @@
 							</defs>
 
 							<path
-									class="opacity-0"
-									d="M0.554 100L151 0.186C192 0.186 222.5 32 222.5 76C222.5 128 179 166 124 166H80C39 166 7 138 0.554 100Z"
+									fill="url(#team-gradient-software)"
+									d="M13 111C4 75 27 34 64 18C103 1 152 10 184 38C217 66 216 112 188 142C162 169 109 152 73 158C37 164 21 143 13 111Z"
 							></path>
+							<circle cx="194" cy="31" r="17" fill="#ffd8c8" opacity="0.9"></circle>
+							<circle cx="31" cy="139" r="8" fill="#ffcf72"></circle>
 
 							<image
-									href="assets/images/team-flow/software-developer-icon.svg"
-									x="20"
-									y="4"
-									width="205"
-									height="154"
+									href="assets/images/team-flow/software-developer-v2.webp"
+									x="12"
+									y="-10"
+									width="100%"
+									height="100%"
+									clip-path="url(#team-shape-software)"
+							></image>
+							<image
+									href="assets/images/team-flow/software-developer-v2.webp"
+									x="12"
+									y="-10"
+									width="100%"
+									height="100%"
+									clip-path="url(#team-top-software)"
 							></image>
 						</svg>
 
@@ -3789,16 +3803,19 @@
 							data-team-y="36"
 					>
 						<svg
-								class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-xl:w-70 max-lg:w-[230px] max-md:w-[140px]"
+								class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-2xl:w-70 max-lg:w-[230px] max-md:w-[140px]"
 								viewBox="0 0.18 222 166"
 								aria-hidden="true"
 								focusable="false"
 						>
 							<defs>
+								<linearGradient id="team-gradient-qa" x1="15" y1="15" x2="205" y2="155" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#55c8ef"></stop>
+									<stop offset="1" stop-color="#6f83f2"></stop>
+								</linearGradient>
 								<clipPath id="team-shape-qa">
 									<path
-											d="M29 0L184.586 35L154 181.002L0.82349 146Z"
-											class="[transform:translateX(20px)_scale(0.8)] [transform-box:fill-box] origin-center"
+											d="M30 9L205 41L191 91L207 139L36 158L10 53Z"
 									></path>
 								</clipPath>
 
@@ -3812,16 +3829,29 @@
 							</defs>
 
 							<path
-									class="opacity-0"
-									d="M29 0L184.586 35L154 181.002L0.82349 146Z"
+									fill="url(#team-gradient-qa)"
+									d="M30 9L205 41L191 91L207 139L36 158L10 53Z"
 							></path>
+							<circle cx="193" cy="24" r="12" fill="#9ce8f6"></circle>
+							<path d="M19 132L50 153L15 157Z" fill="#b4a2ff"></path>
 
 							<image
-									href="assets/images/team-flow/qa-engineer-icon.svg"
-									x="7"
-									y="4"
-									width="205"
-									height="154"
+									href="assets/images/team-flow/qa-engineer-v2.webp"
+									x="2.5%"
+									y="2.5%"
+									width="100%"
+									height="100%"
+									clip-path="url(#team-shape-qa)"
+									transform="scale(0.95)"
+							></image>
+							<image
+									href="assets/images/team-flow/qa-engineer-v2.webp"
+									x="2.5%"
+									y="2.5%"
+									width="100%"
+									height="100%"
+									clip-path="url(#team-top-qa)"
+									transform="scale(0.95)"
 							></image>
 						</svg>
 
@@ -3840,16 +3870,19 @@
 							data-team-y="0"
 					>
 						<svg
-								class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-xl:w-70 max-lg:w-[230px] max-md:w-[140px]"
+								class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-2xl:w-70 max-lg:w-[230px] max-md:w-[140px]"
 								viewBox="-5.2 0.18 222 166"
 								aria-hidden="true"
 								focusable="false"
 						>
 							<defs>
+								<linearGradient id="team-gradient-ux" x1="24" y1="12" x2="198" y2="155" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#9577ea"></stop>
+									<stop offset="1" stop-color="#e37fc2"></stop>
+								</linearGradient>
 								<clipPath id="team-shape-ux">
 									<path
-											d="M85.8237 0.186951C136 0.186951 170.824 31 170.824 80V94C170.824 138 138 169.262 94 169.262H78C33 169.262 0.82373 138 0.82373 94V80C0.82373 31 35 0.186951 85.8237 0.186951Z"
-											class="[transform:translateX(20px)_scale(0.7)] [transform-box:fill-box] origin-center"
+											d="M16 142C5 114 20 92 42 81C31 51 54 20 87 22C105 -1 142 6 150 34C184 32 208 60 198 91C219 116 201 151 168 154H52C35 154 22 150 16 142Z"
 									></path>
 								</clipPath>
 
@@ -3862,16 +3895,27 @@
 							</defs>
 
 							<path
-									class="opacity-0"
-									d="M85.8237 0.186951C136 0.186951 170.824 31 170.824 80V94C170.824 138 138 169.262 94 169.262H78C33 169.262 0.82373 138 0.82373 94V80C0.82373 31 35 0.186951 85.8237 0.186951Z"
+									fill="url(#team-gradient-ux)"
+									d="M16 142C5 114 20 92 42 81C31 51 54 20 87 22C105 -1 142 6 150 34C184 32 208 60 198 91C219 116 201 151 168 154H52C35 154 22 150 16 142Z"
 							></path>
+							<circle cx="28" cy="35" r="11" fill="#f3b4df"></circle>
+							<circle cx="192" cy="143" r="7" fill="#9fe7dc"></circle>
 
 							<image
-									href="assets/images/team-flow/ux-designer-icon.svg"
-									x="-1"
-									y="4"
-									width="205"
-									height="154"
+									href="assets/images/team-flow/ux-designer-v2.webp"
+									x="-10"
+									y="-11"
+									width="100%"
+									height="100%"
+									clip-path="url(#team-shape-ux)"
+							></image>
+							<image
+									href="assets/images/team-flow/ux-designer-v2.webp"
+									x="-10"
+									y="-11"
+									width="100%"
+									height="100%"
+									clip-path="url(#team-top-ux)"
 							></image>
 						</svg>
 
@@ -3890,16 +3934,19 @@
 							data-team-y="30"
 					>
 						<svg
-								class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-xl:w-70 max-lg:w-[230px] max-md:w-[140px]"
-								viewBox="16.5 0.18 222 166"
+								class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-2xl:w-70 max-lg:w-[230px] max-md:w-[140px]"
+								viewBox="0 0.18 222 166"
 								aria-hidden="true"
 								focusable="false"
 						>
 							<defs>
+								<linearGradient id="team-gradient-data" x1="32" y1="15" x2="188" y2="158" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#ffe06d"></stop>
+									<stop offset="1" stop-color="#ff9656"></stop>
+								</linearGradient>
 								<clipPath id="team-shape-data">
 									<path
-											d="M101.172 0.687866C111 0.687866 118 5 125 12L190 73C198 80 202.318 85 202.318 94C202.318 103 198 110 190 116L125 168C118 175 111 178.832 101.172 178.832C91 178.832 84 175 77 168L48 116C40 110 36 103 36 94C36 85 40 80 48 73L77 12C84 5 91 0.687866 101.172 0.687866Z"
-											class="[transform:translateX(20px)_scale(0.8,0.7)] [transform-box:fill-box] origin-center"
+											d="M111 5L145 40L202 35L190 88L215 132L163 145L127 164L91 143L29 151L35 96L7 55L64 40Z"
 									></path>
 								</clipPath>
 
@@ -3913,16 +3960,27 @@
 							</defs>
 
 							<path
-									class="opacity-0"
-									d="M101.172 0.687866C111 0.687866 118 5 125 12L190 73C198 80 202.318 85 202.318 94C202.318 103 198 110 190 116L125 168C118 175 111 178.832 101.172 178.832C91 178.832 84 175 77 168L48 116C40 110 36 103 36 94C36 85 40 80 48 73L77 12C84 5 91 0.687866 101.172 0.687866Z"
+									fill="url(#team-gradient-data)"
+									d="M111 5L145 40L202 35L190 88L215 132L163 145L127 164L91 143L29 151L35 96L7 55L64 40Z"
 							></path>
+							<circle cx="195" cy="25" r="10" fill="#ff7591"></circle>
+							<circle cx="22" cy="112" r="6" fill="#fff0aa"></circle>
 
 							<image
-									href="assets/images/team-flow/data-scientist-icon.svg"
-									x="21"
-									y="4"
-									width="205"
-									height="154"
+									href="assets/images/team-flow/data-scientist-v2.webp"
+									x="0"
+									y="-9"
+									width="100%"
+									height="100%"
+									clip-path="url(#team-shape-data)"
+							></image>
+							<image
+									href="assets/images/team-flow/data-scientist-v2.webp"
+									x="0"
+									y="-9"
+									width="100%"
+									height="100%"
+									clip-path="url(#team-top-data)"
 							></image>
 						</svg>
 
@@ -3941,16 +3999,19 @@
 							data-team-y="-24"
 					>
 						<svg
-								class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-xl:w-70 max-lg:w-[230px] max-md:w-[140px]"
+								class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-2xl:w-70 max-lg:w-[230px] max-md:w-[140px]"
 								viewBox="-1.8 0.18 222 166"
 								aria-hidden="true"
 								focusable="false"
 						>
 							<defs>
+								<linearGradient id="team-gradient-project" x1="24" y1="20" x2="205" y2="155" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#69d7b3"></stop>
+									<stop offset="1" stop-color="#3fa8d7"></stop>
+								</linearGradient>
 								<clipPath id="team-shape-project">
 									<path
-											d="M177.599 0.570587V94.9458C177.599 147.07 135 189.321 82 189.321C36 189.321 0.82373 155 0.82373 110V94.9458C0.82373 42.8215 43.55 0.570587 96.2607 0.570587Z"
-											class="[transform:translateX(20px)_scale(0.7)] [transform-box:fill-box] origin-center"
+											d="M31 20H160C189 20 209 39 209 66V104C209 137 185 158 151 158H92C47 158 17 130 17 89V36C17 27 23 20 31 20Z"
 									></path>
 								</clipPath>
 
@@ -3963,16 +4024,25 @@
 							</defs>
 
 							<path
-									class="opacity-0"
-									d="M177.599 0.570587V94.9458C177.599 147.07 135 189.321 82 189.321C36 189.321 0.82373 155 0.82373 110V94.9458C0.82373 42.8215 43.55 0.570587 96.2607 0.570587Z"
+									fill="url(#team-gradient-project)"
+									d="M31 20H160C189 20 209 39 209 66V104C209 137 185 158 151 158H92C47 158 17 130 17 89V36C17 27 23 20 31 20Z"
 							></path>
+							<circle cx="193" cy="30" r="15" fill="#a9f0d6"></circle>
+							<path d="M18 127C42 111 61 116 79 150H37C27 145 21 137 18 127Z" fill="#75b9f1" opacity="0.9"></path>
 
 							<image
-									href="assets/images/team-flow/project-manager-icon.svg"
-									x="1"
-									y="4"
-									width="205"
-									height="154"
+									href="assets/images/team-flow/project-manager-v2.webp"
+									x="-7"
+									width="100%"
+									height="100%"
+									clip-path="url(#team-shape-project)"
+							></image>
+							<image
+									href="assets/images/team-flow/project-manager-v2.webp"
+									x="-7"
+									width="100%"
+									height="100%"
+									clip-path="url(#team-top-project)"
 							></image>
 						</svg>
 
