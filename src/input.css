@@ -42,7 +42,7 @@
     }
 
     body {
-        @apply bg-white text-c-dark min-w-[320px] font-outfit;
+        @apply bg-white text-c-dark min-w-80 font-outfit;
     }
 
     :focus-visible {
@@ -175,6 +175,18 @@
 
     .mega-grid {
         @apply grid grid-cols-[repeat(3,minmax(0,330px))] lg:justify-between pt-8 px-7.5 pb-10 gap-5 text-c-gray xl:gap-15;
+    }
+
+    .mega-card {
+        @apply flex items-center gap-3 rounded-xl border border-c-border bg-white/85 px-3 py-2.5 shadow-default;
+    }
+
+    .icon-badge {
+        @apply block size-9 bg-c-teal/10 rounded-lg text-c-teal p-2;
+    }
+
+    .badge-dot {
+        @apply mr-2 inline-block size-2 rounded-sm bg-c-orange;
     }
 
     .mega-item-title {
@@ -317,7 +329,7 @@
         before:z-0
         before:h-[calc(100%-12rem)]
         max-[1800px]:before:h-[calc(100%-40rem)]
-        before:min-w-[2500px]
+        before:min-w-625
         before:-translate-x-1/2
         before:rounded-full
         before:bg-[#f3f4f5]
@@ -464,10 +476,10 @@
     }
 
     .testimonial-card {
-        @apply flex! h-auto! min-h-128 w-[320px]! min-w-96 shrink-0;
+        @apply flex! h-auto! min-h-128 w-80! min-w-96 shrink-0;
         @apply flex-col gap-8 rounded-xl border border-black/6 bg-white px-8 pb-8 pt-19;
         @apply shadow-default hover:shadow-[0_16px_40px_rgb(15_23_42/0.16)];
-        @apply max-[834px]:w-[280px]! max-[834px]:min-w-72 max-[834px]:p-6 cursor-pointer;
+        @apply max-[834px]:w-70! max-[834px]:min-w-72 max-[834px]:p-6 cursor-pointer;
 
         @apply transition-shadow! duration-200 ease-out;
     }

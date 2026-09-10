@@ -1,17 +1,13 @@
 (() => {
     'use strict';
 
-    const reducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)',
-    );
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     // Returns 0 when the user prefers reduced motion.
-    const getMotionSpeed = (speed) =>
-      reducedMotion.matches ? 0 : speed;
+    const getMotionSpeed = (speed) => (reducedMotion.matches ? 0 : speed);
 
     // Prevents the same component from being initialized more than once.
-    const isReady = (element) =>
-      element?.dataset.uiReady === 'true';
+    const isReady = (element) => element?.dataset.uiReady === 'true';
 
     const markReady = (element) => {
         element.dataset.uiReady = 'true';
@@ -62,11 +58,7 @@
     });
 
     // Creates a Swiper instance only when both the root and slider element exist.
-    const createSwiper = ({
-                              root,
-                              sliderSelector,
-                              options,
-                          }) => {
+    const createSwiper = ({ root, sliderSelector, options }) => {
         if (!root || typeof Swiper === 'undefined') {
             return null;
         }
@@ -89,9 +81,7 @@
 
         // Pauses marquee animation for reduced motion and hidden tabs.
         const syncMotion = () => {
-            const shouldPause =
-              reducedMotion.matches ||
-              document.hidden;
+            const shouldPause = reducedMotion.matches || document.hidden;
 
             if (shouldPause) {
                 marquee6k.pauseAll();
@@ -100,33 +90,20 @@
             }
         };
 
-        reducedMotion.addEventListener(
-          'change',
-          syncMotion,
-        );
+        reducedMotion.addEventListener('change', syncMotion);
 
-        document.addEventListener(
-          'visibilitychange',
-          syncMotion,
-        );
+        document.addEventListener('visibilitychange', syncMotion);
 
         // Re-applies the current motion preference after the library hover handler.
-        document
-          .querySelectorAll('.marquee6k')
-          .forEach((marquee) => {
-              marquee.addEventListener(
-                'mouseleave',
-                syncMotion,
-              );
-          });
+        document.querySelectorAll('.marquee6k').forEach((marquee) => {
+            marquee.addEventListener('mouseleave', syncMotion);
+        });
 
         syncMotion();
     };
 
     const initFeaturedSlider = () => {
-        const root = document.querySelector(
-          '#featured-slider',
-        );
+        const root = document.querySelector('#featured-slider');
 
         if (!root || isReady(root)) {
             return;
@@ -153,43 +130,35 @@
 
                 // Disables autoplay when reduced motion is enabled.
                 autoplay: reducedMotion.matches
-                  ? false
-                  : {
-                      // Time between automatic slide changes in milliseconds.
-                      delay: 4000,
+                    ? false
+                    : {
+                          // Time between automatic slide changes in milliseconds.
+                          delay: 4000,
 
-                      // Keeps autoplay running after manual interaction.
-                      disableOnInteraction: false,
+                          // Keeps autoplay running after manual interaction.
+                          disableOnInteraction: false,
 
-                      // Pauses autoplay while the pointer is over the slider.
-                      pauseOnMouseEnter: true,
-                  },
+                          // Pauses autoplay while the pointer is over the slider.
+                          pauseOnMouseEnter: true,
+                      },
 
                 // Connects custom previous/next buttons.
                 navigation: {
-                    prevEl: root.querySelector(
-                      '[data-featured-prev]',
-                    ),
-                    nextEl: root.querySelector(
-                      '[data-featured-next]',
-                    ),
+                    prevEl: root.querySelector('[data-featured-prev]'),
+                    nextEl: root.querySelector('[data-featured-next]'),
                 },
 
                 // Enables clickable pagination bullets.
                 pagination: {
-                    el: root.querySelector(
-                      '[data-featured-pagination]',
-                    ),
+                    el: root.querySelector('[data-featured-pagination]'),
                     clickable: true,
                 },
 
                 // Custom screen-reader messages for this carousel.
                 a11y: {
                     enabled: true,
-                    prevSlideMessage:
-                      'Previous featured slide',
-                    nextSlideMessage:
-                      'Next featured slide',
+                    prevSlideMessage: 'Previous featured slide',
+                    nextSlideMessage: 'Next featured slide',
                 },
             },
         });
@@ -200,9 +169,7 @@
     };
 
     const initTestimonialsSlider = () => {
-        const root = document.querySelector(
-          '[data-testimonials-carousel]',
-        );
+        const root = document.querySelector('[data-testimonials-carousel]');
 
         if (!root || isReady(root)) {
             return;
@@ -210,8 +177,7 @@
 
         const instance = createSwiper({
             root,
-            sliderSelector:
-              '[data-testimonials-swiper]',
+            sliderSelector: '[data-testimonials-swiper]',
 
             options: {
                 ...getBaseSwiperOptions(650),
@@ -236,21 +202,15 @@
 
                 // Connects custom previous/next buttons.
                 navigation: {
-                    prevEl: root.querySelector(
-                      '[data-testimonials-prev]',
-                    ),
-                    nextEl: root.querySelector(
-                      '[data-testimonials-next]',
-                    ),
+                    prevEl: root.querySelector('[data-testimonials-prev]'),
+                    nextEl: root.querySelector('[data-testimonials-next]'),
                 },
 
                 // Custom screen-reader messages for testimonials.
                 a11y: {
                     enabled: true,
-                    prevSlideMessage:
-                      'Previous testimonial',
-                    nextSlideMessage:
-                      'Next testimonial',
+                    prevSlideMessage: 'Previous testimonial',
+                    nextSlideMessage: 'Next testimonial',
                 },
 
                 // Changes only the options that differ on wider screens.
@@ -268,25 +228,17 @@
     };
 
     const initTeamAssembly = () => {
-        const section = document.querySelector(
-          '[data-team-assembly]',
-        );
+        const section = document.querySelector('[data-team-assembly]');
 
         if (!section || isReady(section)) {
             return;
         }
 
-        const visual = section.querySelector(
-          '[data-team-visual]',
-        );
+        const visual = section.querySelector('[data-team-visual]');
 
-        const heading = section.querySelector(
-          '[data-team-heading]',
-        );
+        const heading = section.querySelector('[data-team-heading]');
 
-        const button = section.querySelector(
-          '[data-team-button]',
-        );
+        const button = section.querySelector('[data-team-button]');
 
         if (!visual || !heading || !button) {
             return;
@@ -296,9 +248,7 @@
             return;
         }
 
-        if (
-          typeof section.animate !== 'function'
-        ) {
+        if (typeof section.animate !== 'function') {
             return;
         }
 
@@ -306,27 +256,18 @@
 
         // Runs the assembly animation only on desktop and when motion is allowed.
         const motion = window.matchMedia(
-          '(min-width: 1280px) and (prefers-reduced-motion: no-preference)',
+            '(min-width: 1280px) and (prefers-reduced-motion: no-preference)',
         );
 
-        const members = [
-            ...visual.querySelectorAll(
-              '[data-team-member]',
-            ),
-        ];
+        const members = [...visual.querySelectorAll('[data-team-member]')];
 
-        const backdrops = [
-            ...visual.querySelectorAll(
-              '[data-team-backdrop]',
-            ),
-        ];
+        const backdrops = [...visual.querySelectorAll('[data-team-backdrop]')];
 
         // Main portrait/background animation duration in milliseconds.
         const duration = 780;
 
         // Main easing curve for the assembly animation.
-        const easing =
-          'cubic-bezier(0.22, 1, 0.36, 1)';
+        const easing = 'cubic-bezier(0.22, 1, 0.36, 1)';
 
         let hasStarted = false;
         let observer = null;
@@ -337,29 +278,19 @@
             observer?.disconnect();
             observer = null;
 
-            animations.forEach(
-              (animation) =>
-                animation.cancel(),
-            );
+            animations.forEach((animation) => animation.cancel());
 
             animations = [];
         };
 
         // Prepares an animation in a paused state so all animations can start together.
-        const prepare = (
-          element,
-          keyframes,
-          options = {},
-        ) => {
-            const animation = element.animate(
-              keyframes,
-              {
-                  duration,
-                  easing,
-                  fill: 'backwards',
-                  ...options,
-              },
-            );
+        const prepare = (element, keyframes, options = {}) => {
+            const animation = element.animate(keyframes, {
+                duration,
+                easing,
+                fill: 'backwards',
+                ...options,
+            });
 
             animation.pause();
             animation.currentTime = 0;
@@ -371,49 +302,27 @@
             reset();
 
             // Skip animation on smaller screens, reduced motion, or after the first run.
-            if (
-              !motion.matches ||
-              hasStarted
-            ) {
+            if (!motion.matches || hasStarted) {
                 return;
             }
 
             // Reads the current backdrop colors before starting the animation.
-            const backdropColors =
-              backdrops.map(
-                (backdrop) => {
-                    const style =
-                      getComputedStyle(
-                        backdrop,
-                      );
+            const backdropColors = backdrops.map((backdrop) => {
+                const style = getComputedStyle(backdrop);
 
-                    return [
-                        style
-                          .getPropertyValue(
-                            '--team-color',
-                          )
-                          .trim(),
-                        style.fill,
-                    ];
-                },
-              );
+                return [
+                    style.getPropertyValue('--team-color').trim(),
+                    style.fill,
+                ];
+            });
 
             // Scales horizontal travel with viewport width, capped at 64px.
-            const spread = Math.min(
-              window.innerWidth * 0.04,
-              64,
-            );
+            const spread = Math.min(window.innerWidth * 0.04, 64);
 
             members.forEach((member) => {
-                const x =
-                  Number(
-                    member.dataset.teamX ||
-                    0,
-                  ) * spread;
+                const x = Number(member.dataset.teamX || 0) * spread;
 
-                const y = Number(
-                  member.dataset.teamY || 0,
-                );
+                const y = Number(member.dataset.teamY || 0);
 
                 if (x === 0 && y === 0) {
                     return;
@@ -424,42 +333,35 @@
                         transform: `translate(${x}px, ${y}px)`,
                     },
                     {
-                        transform:
-                          'translate(0, 0)',
+                        transform: 'translate(0, 0)',
                     },
                 ]);
             });
 
-            backdrops.forEach(
-              (backdrop, index) => {
-                  const [from, to] =
-                    backdropColors[index];
+            backdrops.forEach((backdrop, index) => {
+                const [from, to] = backdropColors[index];
 
-                  prepare(backdrop, [
-                      {
-                          fill: from,
-                      },
-                      {
-                          fill: to,
-                      },
-                  ]);
-              },
-            );
+                prepare(backdrop, [
+                    {
+                        fill: from,
+                    },
+                    {
+                        fill: to,
+                    },
+                ]);
+            });
 
-            [heading, button].forEach(
-              (element, index) => {
-                  prepare(
+            [heading, button].forEach((element, index) => {
+                prepare(
                     element,
                     [
                         {
                             opacity: 0,
-                            transform:
-                              'translateY(16px)',
+                            transform: 'translateY(16px)',
                         },
                         {
                             opacity: 1,
-                            transform:
-                              'translateY(0)',
+                            transform: 'translateY(0)',
                         },
                     ],
                     {
@@ -467,21 +369,14 @@
                         duration: 480,
 
                         // 140ms initial delay + 100ms stagger between heading and button.
-                        delay:
-                          140 +
-                          index * 100,
+                        delay: 140 + index * 100,
                     },
-                  );
-              },
-            );
+                );
+            });
 
-            observer =
-              new IntersectionObserver(
+            observer = new IntersectionObserver(
                 ([entry]) => {
-                    if (
-                      !entry.isIntersecting ||
-                      hasStarted
-                    ) {
+                    if (!entry.isIntersecting || hasStarted) {
                         return;
                     }
 
@@ -490,45 +385,33 @@
                     observer?.disconnect();
                     observer = null;
 
-                    animations.forEach(
-                      (animation) =>
-                        animation.play(),
-                    );
+                    animations.forEach((animation) => animation.play());
                 },
                 {
                     // Starts when 12% of the observed visual is visible.
                     threshold: 0.12,
 
                     // Moves the effective bottom edge 32px upward.
-                    rootMargin:
-                      '0px 0px -32px 0px',
+                    rootMargin: '0px 0px -32px 0px',
                 },
-              );
+            );
 
             observer.observe(visual);
         };
 
         // Keyboard focus reveals the final state immediately instead of waiting for scroll.
-        section.addEventListener(
-          'focusin',
-          () => {
-              hasStarted = true;
-              reset();
-          },
-        );
+        section.addEventListener('focusin', () => {
+            hasStarted = true;
+            reset();
+        });
 
-        motion.addEventListener(
-          'change',
-          configure,
-        );
+        motion.addEventListener('change', configure);
 
         configure();
     };
 
     const initInsightsSlider = () => {
-        const root = document.querySelector(
-          '[data-insights-carousel]',
-        );
+        const root = document.querySelector('[data-insights-carousel]');
 
         if (!root || isReady(root)) {
             return;
@@ -536,8 +419,7 @@
 
         const instance = createSwiper({
             root,
-            sliderSelector:
-              '[data-insights-swiper]',
+            sliderSelector: '[data-insights-swiper]',
 
             options: {
                 ...getBaseSwiperOptions(500),
@@ -553,21 +435,15 @@
 
                 // Connects custom previous/next buttons.
                 navigation: {
-                    prevEl: root.querySelector(
-                      '[data-insights-prev]',
-                    ),
-                    nextEl: root.querySelector(
-                      '[data-insights-next]',
-                    ),
+                    prevEl: root.querySelector('[data-insights-prev]'),
+                    nextEl: root.querySelector('[data-insights-next]'),
                 },
 
                 // Custom screen-reader messages for insights.
                 a11y: {
                     enabled: true,
-                    prevSlideMessage:
-                      'Previous insight',
-                    nextSlideMessage:
-                      'Next insight',
+                    prevSlideMessage: 'Previous insight',
+                    nextSlideMessage: 'Next insight',
                 },
 
                 // Responsive slide count and spacing.
@@ -591,56 +467,35 @@
     };
 
     const initEngagementModels = () => {
-        const grid = document.querySelector(
-          '[data-engagement-cards]',
-        );
+        const grid = document.querySelector('[data-engagement-cards]');
 
         if (!grid || isReady(grid)) {
             return;
         }
 
         // Mobile uses click/tap state; desktop can use hover/focus state.
-        const mobile = window.matchMedia(
-          '(max-width: 833px)',
-        );
+        const mobile = window.matchMedia('(max-width: 833px)');
 
-        const hover = window.matchMedia(
-          '(hover: hover) and (pointer: fine)',
-        );
+        const hover = window.matchMedia('(hover: hover) and (pointer: fine)');
 
-        const cards = [
-            ...grid.querySelectorAll(
-              '.engagement-card',
-            ),
-        ]
-          .map((card) => ({
-              card,
+        const cards = [...grid.querySelectorAll('.engagement-card')]
+            .map((card) => ({
+                card,
 
-              button: card.querySelector(
-                '.engagement-card__toggle',
-              ),
+                button: card.querySelector('.engagement-card__toggle'),
 
-              panel: card.querySelector(
-                '.engagement-card__panel',
-              ),
+                panel: card.querySelector('.engagement-card__panel'),
 
-              description:
-                card.querySelector(
-                  '.engagement-card__description',
+                description: card.querySelector(
+                    '.engagement-card__description',
                 ),
-          }))
+            }))
 
-          // Ignores incomplete cards instead of throwing a runtime error.
-          .filter(
-            ({
-                 button,
-                 panel,
-                 description,
-             }) =>
-              button &&
-              panel &&
-              description,
-          );
+            // Ignores incomplete cards instead of throwing a runtime error.
+            .filter(
+                ({ button, panel, description }) =>
+                    button && panel && description,
+            );
 
         if (!cards.length) {
             return;
@@ -649,201 +504,94 @@
         markReady(grid);
 
         // The first card starts open on mobile.
-        const openMobileCards =
-          new Set([0]);
+        const openMobileCards = new Set([0]);
 
-        const setOpen = (
-          item,
-          open,
-        ) => {
-            const isMobile =
-              mobile.matches;
+        const setOpen = (item, open) => {
+            const isMobile = mobile.matches;
 
-            item.card.classList.toggle(
-              'is-open',
-              open,
-            );
+            item.card.classList.toggle('is-open', open);
 
-            item.button.setAttribute(
-              'aria-expanded',
-              String(open),
-            );
+            item.button.setAttribute('aria-expanded', String(open));
 
             // Prevents keyboard interaction with hidden mobile content.
-            item.panel.inert =
-              isMobile && !open;
+            item.panel.inert = isMobile && !open;
 
-            item.panel.setAttribute(
-              'aria-hidden',
-              String(
-                isMobile && !open,
-              ),
-            );
+            item.panel.setAttribute('aria-hidden', String(isMobile && !open));
 
-            item.description.setAttribute(
-              'aria-hidden',
-              String(!open),
-            );
+            item.description.setAttribute('aria-hidden', String(!open));
         };
 
         const syncLayout = () => {
-            cards.forEach(
-              (item, index) => {
-                  setOpen(
-                    item,
-                    mobile.matches &&
-                    openMobileCards.has(
-                      index,
-                    ),
-                  );
-              },
-            );
+            cards.forEach((item, index) => {
+                setOpen(item, mobile.matches && openMobileCards.has(index));
+            });
         };
 
-        cards.forEach(
-          (item, index) => {
-              item.button.addEventListener(
-                'click',
-                (event) => {
-                    const isOpen =
-                      item.button.getAttribute(
-                        'aria-expanded',
-                      ) === 'true';
+        cards.forEach((item, index) => {
+            item.button.addEventListener('click', (event) => {
+                const isOpen =
+                    item.button.getAttribute('aria-expanded') === 'true';
 
-                    const nextOpen =
-                      !isOpen;
+                const nextOpen = !isOpen;
 
-                    if (
-                      mobile.matches
-                    ) {
-                        if (nextOpen) {
-                            openMobileCards.add(
-                              index,
-                            );
-                        } else {
-                            openMobileCards.delete(
-                              index,
-                            );
-                        }
-
-                        setOpen(
-                          item,
-                          nextOpen,
-                        );
-
-                        return;
+                if (mobile.matches) {
+                    if (nextOpen) {
+                        openMobileCards.add(index);
+                    } else {
+                        openMobileCards.delete(index);
                     }
 
-                    // Pointer click on a hover device keeps the card open until pointerleave.
-                    // Keyboard-generated click behaves as a regular toggle.
-                    const isPointerClick =
-                      event.detail >
-                      0 &&
-                      hover.matches;
+                    setOpen(item, nextOpen);
 
-                    setOpen(
-                      item,
-                      isPointerClick
-                        ? true
-                        : nextOpen,
-                    );
-                },
-              );
+                    return;
+                }
 
-              item.card.addEventListener(
-                'pointerenter',
-                () => {
-                    if (
-                      !mobile.matches &&
-                      hover.matches
-                    ) {
-                        setOpen(
-                          item,
-                          true,
-                        );
-                    }
-                },
-              );
+                // Pointer click on a hover device keeps the card open until pointerleave.
+                // Keyboard-generated click behaves as a regular toggle.
+                const isPointerClick = event.detail > 0 && hover.matches;
 
-              item.card.addEventListener(
-                'pointerleave',
-                () => {
-                    const keepOpenForKeyboard =
-                      item.button.matches(
-                        ':focus-visible',
-                      );
+                setOpen(item, isPointerClick ? true : nextOpen);
+            });
 
-                    if (
-                      !mobile.matches &&
-                      hover.matches &&
-                      !keepOpenForKeyboard
-                    ) {
-                        setOpen(
-                          item,
-                          false,
-                        );
-                    }
-                },
-              );
+            item.card.addEventListener('pointerenter', () => {
+                if (!mobile.matches && hover.matches) {
+                    setOpen(item, true);
+                }
+            });
 
-              item.button.addEventListener(
-                'focus',
-                () => {
-                    if (
-                      !mobile.matches &&
-                      item.button.matches(
-                        ':focus-visible',
-                      )
-                    ) {
-                        setOpen(
-                          item,
-                          true,
-                        );
-                    }
-                },
-              );
+            item.card.addEventListener('pointerleave', () => {
+                const keepOpenForKeyboard =
+                    item.button.matches(':focus-visible');
 
-              item.button.addEventListener(
-                'blur',
-                () => {
-                    if (
-                      !mobile.matches
-                    ) {
-                        setOpen(
-                          item,
-                          false,
-                        );
-                    }
-                },
-              );
+                if (!mobile.matches && hover.matches && !keepOpenForKeyboard) {
+                    setOpen(item, false);
+                }
+            });
 
-              item.button.addEventListener(
-                'keydown',
-                (event) => {
-                    if (
-                      event.key !==
-                      'Escape'
-                    ) {
-                        return;
-                    }
+            item.button.addEventListener('focus', () => {
+                if (!mobile.matches && item.button.matches(':focus-visible')) {
+                    setOpen(item, true);
+                }
+            });
 
-                    openMobileCards.delete(
-                      index,
-                    );
+            item.button.addEventListener('blur', () => {
+                if (!mobile.matches) {
+                    setOpen(item, false);
+                }
+            });
 
-                    setOpen(
-                      item,
-                      false,
-                    );
-                },
-              );
-          },
-        );
+            item.button.addEventListener('keydown', (event) => {
+                if (event.key !== 'Escape') {
+                    return;
+                }
 
-        mobile.addEventListener(
-          'change',
-          syncLayout,
-        );
+                openMobileCards.delete(index);
+
+                setOpen(item, false);
+            });
+        });
+
+        mobile.addEventListener('change', syncLayout);
 
         syncLayout();
     };
@@ -859,17 +607,10 @@
     };
 
     // Supports both deferred/body scripts and scripts loaded before the HTML is ready.
-    if (
-      document.readyState ===
-      'loading'
-    ) {
-        document.addEventListener(
-          'DOMContentLoaded',
-          initUI,
-          {
-              once: true,
-          },
-        );
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initUI, {
+            once: true,
+        });
     } else {
         initUI();
     }
