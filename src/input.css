@@ -307,6 +307,58 @@
         }
     }
 
+    .section-circle-bg {
+        --circle-cut: 0%;
+
+        @apply
+        relative isolate
+        before:pointer-events-none
+        before:absolute
+        before:top-20
+        before:left-1/2
+        before:z-0
+            before:h-[calc(100%-12rem)]
+        max-[1800px]:before:h-[calc(100%-40rem)]
+        before:min-w-[2500px]
+        before:-translate-x-1/2
+        before:rounded-full
+        before:bg-[#f3f4f5]
+        before:content-['']
+        max-2xl:before:hidden;
+
+        &::before {
+            clip-path: inset(0 0 var(--circle-cut) 0);
+        }
+    }
+
+    .process-steps {
+        @apply
+        before:pointer-events-none
+        before:absolute
+        before:top-7
+        before:bottom-6
+        before:left-6
+        before:-z-1
+        before:border-l
+        before:border-dashed
+        before:border-[#cbd1d5]
+        before:content-['']
+
+        after:pointer-events-none
+        after:absolute
+        after:bottom-6
+        after:left-6
+        after:-z-1
+        after:w-12
+        after:border-t
+        after:border-dashed
+        after:border-[#cbd1d5]
+        after:content-['']
+
+        max-sm:before:left-5
+        max-sm:after:left-5
+        max-sm:after:w-9;
+    }
     .client-card {
         @apply flex max-w-52.5 shrink-0 snap-start justify-center;
         @apply max-md:max-w-40 max-lg:max-w-47.5;
@@ -360,7 +412,7 @@
     }
 
     .service-card {
-        @apply flex h-full flex-col rounded-xl bg-c-light p-6 xl:p-10;
+        @apply flex min-h-90 flex-col rounded-xl bg-c-light p-6 xl:p-10 max-lg:min-h-80 max-md:min-h-full;
     }
 
     .featured-swiper-pagination {
