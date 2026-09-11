@@ -73,40 +73,7 @@
         return new Swiper(slider, options);
     };
 
-    const initMarquee = () => {
-        if (typeof marquee6k === 'undefined') {
-            return;
-        }
 
-        const startMarquee = () => {
-            marquee6k.init();
-
-            const syncMotion = () => {
-                const shouldPause = reducedMotion.matches || document.hidden;
-
-                if (shouldPause) {
-                    marquee6k.pauseAll();
-                } else {
-                    marquee6k.playAll();
-                }
-            };
-
-            reducedMotion.addEventListener('change', syncMotion);
-            document.addEventListener('visibilitychange', syncMotion);
-
-            document.querySelectorAll('.marquee6k').forEach((marquee) => {
-                marquee.addEventListener('mouseleave', syncMotion);
-            });
-
-            syncMotion();
-        };
-
-        if (document.readyState === 'complete') {
-            startMarquee();
-        } else {
-            window.addEventListener('load', startMarquee, { once: true });
-        }
-    };
     const initFeaturedSlider = () => {
         const root = document.querySelector('#featured-slider');
 
@@ -195,6 +162,13 @@
 
                 // Default gap between testimonial cards.
                 spaceBetween: 32,
+                autoplay: {
+                    delay:4000,
+                    disableOnInteraction: false,
+
+                    // Pauses autoplay while the pointer is over the slider.
+                    pauseOnMouseEnter: true,
+                },
 
                 // Stops at the last slide instead of creating duplicated loop slides.
                 loop: false,
@@ -234,270 +208,356 @@
 
     const initTeamAssembly = () => {
         const section = document.querySelector('[data-team-assembly]');
-
-        if (!section || isReady(section)) {
-            return;
-        }
+        if (!section || section.__keydosTeamAssemblyV3) return;
 
         const visual = section.querySelector('[data-team-visual]');
+        if (!visual || !('IntersectionObserver' in window) || !visual.animate) return;
 
-        const heading = section.querySelector('[data-team-heading]');
+        const order = ['project', 'ux', 'software', 'qa', 'data'];
+        const members = order.map((slot) =>
+          visual.querySelector(`[data-team-member][data-team-slot="${slot}"]`),
+        ).filter(Boolean);
+        const tracks = [...visual.querySelectorAll('[data-team-track]')];
+        if (members.length !== 5 || !tracks.length) return;
 
-        const button = section.querySelector('[data-team-button]');
-
-        if (!visual || !heading || !button) {
-            return;
-        }
-
-        if (!('IntersectionObserver' in window)) {
-            return;
-        }
-
-        if (typeof section.animate !== 'function') {
-            return;
-        }
-
-        markReady(section);
-
-        // Runs the assembly animation only on desktop and when motion is allowed.
-        const motion = window.matchMedia('(prefers-reduced-motion: no-preference)');
-
-
-        const members = [...visual.querySelectorAll('[data-team-member]')];
-
-        const ribbons = [...visual.querySelectorAll('[data-team-ribbon]')];
-
-        const track = visual.querySelector('[data-team-track]');
-
-        const arrows = visual.querySelector('[data-team-arrows]');
-
-        // Main portrait animation duration in milliseconds.
-        const duration = 780;
-
-        // Time the ribbons take to draw themselves in milliseconds.
-        const drawDuration = 900;
-
-        // Main easing curve for the assembly animation.
-        const easing = 'cubic-bezier(0.22, 1, 0.36, 1)';
-
-        let hasStarted = false;
-        let revealObserver = null;
-        let flowObserver = null;
-        let isVisible = false;
-        let animations = [];
-
-        // Starts/stops the looping dashed line and arrows.
-        // The markup reacts with group-data-[flowing]:[animation-play-state:running].
-        const setFlowing = (flowing) => {
-            visual.toggleAttribute('data-flowing', flowing);
+        const settings = {
+            rowHold: 700,
+            assembly: 2600,
+            stagger: 250,
+            lap: 40000,
+            // A brief acceleration connects the stationary assembly to linear orbit.
+            acceleration: 1200,
+            samples: 480,
         };
-
-        // Turns the flow on only when the section is on screen and the tab is active.
-        const syncFlow = () => {
-            setFlowing(
-              hasStarted &&
-              isVisible &&
-              !document.hidden &&
-              !reducedMotion.matches,
-            );
-        };
-
-        // Cancels prepared animations and restores the final HTML/CSS state.
-        const reset = () => {
-            revealObserver?.disconnect();
-            revealObserver = null;
-
-            animations.forEach((animation) => animation.cancel());
-
-            animations = [];
-        };
-
-        // Prepares an animation in a paused state so all animations can start together.
-        const prepare = (element, keyframes, options = {}) => {
-            const animation = element.animate(keyframes, {
-                duration,
-                easing,
-                fill: 'backwards',
-                ...options,
-            });
-
-            animation.pause();
-            animation.currentTime = 0;
-
-            animations.push(animation);
-        };
-
-        const configure = () => {
-            reset();
-
-            // Skip animation on smaller screens, reduced motion, or after the first run.
-            if (!motion.matches || hasStarted) {
-                syncFlow();
-
-                return;
-            }
-
-            // Draws both ribbons from the centre of the loop outwards.
-            ribbons.forEach((ribbon) => {
-                const length = ribbon.getTotalLength();
-
-                prepare(
-                  ribbon,
-                  [
-                      {
-                          strokeDasharray: `${length}`,
-                          strokeDashoffset: length,
-                      },
-                      {
-                          strokeDasharray: `${length}`,
-                          strokeDashoffset: 0,
-                      },
-                  ],
-                  {
-                      duration: drawDuration,
-                      easing: 'cubic-bezier(0.33, 0, 0.2, 1)',
-                  },
-                );
-            });
-
-            const bounds = visual.getBoundingClientRect();
-
-            // Portraits converge towards the centre of the loop: "assemble your team".
-            members.forEach((member, index) => {
-                const box = member.getBoundingClientRect();
-
-                // Distance from the member centre to the centre of the loop.
-                const x = bounds.left + bounds.width / 2 - (box.left + box.width / 2);
-
-                const y = bounds.top + bounds.height / 2 - (box.top + box.height / 2);
-
-                // Travels at most 22% of the way towards the centre.
-                const travel = 0.22;
-
-                prepare(
-                  member,
-                  [
-                      {
-                          opacity: 0,
-                          transform: `translate(${x * travel}px, ${y * travel}px) scale(0.92)`,
-                      },
-                      {
-                          opacity: 1,
-                          transform: 'translate(0, 0) scale(1)',
-                      },
-                  ],
-                  {
-                      // 180ms after the ribbons start + 90ms between portraits.
-                      delay: 180 + index * 90,
-                  },
-                );
-            });
-
-            // Dashed line and arrows fade in once the ribbons are almost drawn.
-            [track, arrows].forEach((element) => {
-                if (!element) {
-                    return;
-                }
-
-                prepare(
-                  element,
-                  [
-                      {
-                          opacity: 0,
-                      },
-                      {
-                          opacity: 1,
-                      },
-                  ],
-                  {
-                      duration: 400,
-                      delay: 700,
-                      easing: 'linear',
-                  },
-                );
-            });
-
-            [heading, button].forEach((element, index) => {
-                prepare(
-                  element,
-                  [
-                      {
-                          opacity: 0,
-                          transform: 'translateY(16px)',
-                      },
-                      {
-                          opacity: 1,
-                          transform: 'translateY(0)',
-                      },
-                  ],
-                  {
-                      // Text animation duration in milliseconds.
-                      duration: 480,
-
-                      // 140ms initial delay + 100ms stagger between heading and button.
-                      delay: 140 + index * 100,
-                  },
-                );
-            });
-
-            revealObserver = new IntersectionObserver(
-              ([entry]) => {
-                  if (!entry.isIntersecting || hasStarted) {
-                      return;
-                  }
-
-                  hasStarted = true;
-
-                  revealObserver?.disconnect();
-                  revealObserver = null;
-
-                  animations.forEach((animation) => animation.play());
-
-                  // Starts the looping flow right after the reveal.
-                  window.setTimeout(syncFlow, drawDuration + 200);
-              },
-              {
-                  // Starts when 12% of the observed visual is visible.
-                  threshold: 0.12,
-
-                  // Moves the effective bottom edge 32px upward.
-                  rootMargin: '0px 0px -32px 0px',
-              },
-            );
-
-            revealObserver.observe(visual);
-        };
-
-        // Keyboard focus reveals the final state immediately instead of waiting for scroll.
-        section.addEventListener('focusin', () => {
-            hasStarted = true;
-            reset();
-            syncFlow();
-        });
-
-        // Keeps the loop animating only while it is actually on screen.
-        flowObserver = new IntersectionObserver(
-          ([entry]) => {
-              isVisible = entry.isIntersecting;
-
-              syncFlow();
-          },
-          {
-              threshold: 0,
-          },
+        const media = window.matchMedia(
+          '(min-width: 768px) and (prefers-reduced-motion: no-preference)',
         );
 
-        flowObserver.observe(visual);
+        // Disable the old paint-heavy dash and arrow animations, not just the JS.
+        // Portraits and logo-coloured backgrounds are kept intact.
+        const styleId = 'keydos-team-motion-v3-styles';
+        if (!document.getElementById(styleId)) {
+            const style = document.createElement('style');
+            style.id = styleId;
+            style.textContent = `
+            [data-team-performance="v3"] [data-team-arrows] {
+                display: none !important;
+            }
+            [data-team-performance="v3"] [data-team-track],
+            [data-team-performance="v3"] [data-team-arrows] * {
+                animation: none !important;
+            }
+            [data-team-performance="v3"] [data-team-track] { opacity: .5; }
+            [data-team-performance="v3"] [data-team-member] {
+                transition: none !important;
+            }
+            @media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+                [data-team-performance="v3"] [data-team-member] {
+                    will-change: transform;
+                }
+            }
+            [data-team-motion-toggle] {
+                position: absolute; bottom: 0; left: 50%;
+                transform: translateX(-50%); z-index: 5;
+                border: 1px solid #0f7d8033; border-radius: 999px;
+                background: #fff; color: #0F7D80;
+                padding: 8px 16px; font: inherit; font-size: 13px;
+                line-height: 1.3; cursor: pointer; white-space: nowrap;
+            }
+            [data-team-motion-toggle]:focus-visible {
+                outline: 2px solid #0F7D80; outline-offset: 3px;
+            }
+            [data-team-motion-toggle][hidden] { display: none !important; }
+        `;
+            document.head.append(style);
+        }
+        section.dataset.teamPerformance = 'v3';
+        visual.removeAttribute('data-flowing');
 
-        document.addEventListener('visibilitychange', syncFlow);
+        // Moving content can be paused without relying on hover or browser settings.
+        const toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.setAttribute('data-team-motion-toggle', '');
+        toggle.hidden = true;
+        toggle.textContent = 'Pause animation';
+        toggle.setAttribute('aria-pressed', 'false');
+        visual.append(toggle);
 
-        reducedMotion.addEventListener('change', syncFlow);
+        const pathCache = new WeakMap();
+        let active = [];
+        let stage = 'static'; // static, ready, assembly, launch, orbit
+        let started = false;
+        let activated = false;
+        let visible = false;
+        let userPaused = false;
+        let destroyed = false;
+        let generation = 0;
+        let geometry = null;
+        let observedWidth = 0;
+        let observedHeight = 0;
+        let resizeTimer = 0;
+        let resume = null;
 
-        motion.addEventListener('change', configure);
+        const cancelActive = () => {
+            generation += 1;
+            active.forEach(({ animation }) => {
+                animation.onfinish = null;
+                animation.cancel();
+            });
+            active = [];
+        };
 
-        configure();
+        const elapsed = () => Math.max(
+          0, ...active.map(({ animation }) => Number(animation.currentTime) || 0),
+        );
+
+        const samplePath = (path) => {
+            const d = path.getAttribute('d');
+            const cached = pathCache.get(path);
+            if (cached?.d === d) return cached.points;
+            const length = path.getTotalLength();
+            if (!(length > 0)) throw new Error('Infinity path has zero length.');
+            const points = Array.from({ length: settings.samples }, (_, index) => {
+                const p = path.getPointAtLength(length * index / settings.samples);
+                return { x: p.x, y: p.y };
+            });
+            pathCache.set(path, { d, points });
+            return points;
+        };
+
+        const measure = () => {
+            const path = tracks.find((item) =>
+              getComputedStyle(item.ownerSVGElement).display !== 'none',
+            );
+            if (!path) return null;
+            const svg = path.ownerSVGElement;
+            const vb = svg.viewBox.baseVal;
+            const width = visual.clientWidth;
+            const height = visual.clientHeight;
+            if (!width || !height || !vb.width || !vb.height) return null;
+
+            // Matches the supplied SVG: inset:0; width/height:100%; xMidYMid meet.
+            // Coordinates remain local, so scrolling does not invalidate the path.
+            const scale = Math.min(width / vb.width, height / vb.height);
+            const dx = (width - vb.width * scale) / 2 - vb.x * scale;
+            const dy = (height - vb.height * scale) / 2 - vb.y * scale;
+            const points = samplePath(path).map((p) => ({
+                x: p.x * scale + dx,
+                y: p.y * scale + dy,
+            }));
+            const bases = members.map((member) => {
+                const css = getComputedStyle(member);
+                const x = Number.parseFloat(css.left);
+                const y = Number.parseFloat(css.top);
+                return {
+                    x: Number.isFinite(x) ? x : member.offsetLeft,
+                    y: Number.isFinite(y) ? y : member.offsetTop,
+                };
+            });
+            return { svg, width, height, points, bases };
+        };
+
+        const position = (phase) => {
+            const count = geometry.points.length;
+            const value = ((phase % 1 + 1) % 1) * count;
+            const index = Math.floor(value);
+            const a = geometry.points[index % count];
+            const b = geometry.points[(index + 1) % count];
+            const blend = value - index;
+            return { x: a.x + (b.x - a.x) * blend, y: a.y + (b.y - a.y) * blend };
+        };
+        const transform = (point, base) =>
+          `translate3d(${(point.x - base.x).toFixed(3)}px, ${(point.y - base.y).toFixed(3)}px, 0px)`;
+
+        const makeAnimation = (element, frames, options, time) => {
+            const animation = element.animate(frames, { fill: 'both', ...options });
+            animation.pause();
+            animation.currentTime = time;
+            const end = options.iterations === Infinity
+              ? Infinity : (options.delay || 0) + options.duration;
+            active.push({ animation, end });
+            return animation;
+        };
+
+        const sync = () => {
+            if (destroyed) return;
+            if (stage === 'ready' && activated && visible && !document.hidden && media.matches) {
+                stage = 'assembly';
+                started = true;
+            }
+            const running = started && visible && !document.hidden && media.matches && !userPaused;
+            toggle.hidden = !media.matches || !started || stage === 'static';
+            toggle.textContent = userPaused ? 'Resume animation' : 'Pause animation';
+            toggle.setAttribute('aria-pressed', String(userPaused));
+            const now = document.timeline.currentTime;
+            active.forEach(({ animation, end }) => {
+                const time = Number(animation.currentTime) || 0;
+                if (running && stage !== 'ready' && time < end) {
+                    if (animation.playState !== 'running') {
+                        animation.play();
+                        // Every participant shares the same time origin, without timers.
+                        if (now !== null) animation.startTime = now - time;
+                    }
+                } else if (animation.playState === 'running') {
+                    animation.pause();
+                }
+            });
+        };
+
+        const install = (nextStage, time = 0) => {
+            cancelActive();
+            stage = nextStage;
+            const token = generation;
+            const launchAdvance = settings.acceleration / (2 * settings.lap);
+            let lastCard;
+
+            members.forEach((member, index) => {
+                const base = geometry.bases[index];
+                // Equal arc spacing avoids pairs being exactly half a lap apart
+                // and repeatedly arriving at the central crossing simultaneously.
+                const startPhase = index / members.length;
+                let frames;
+                let options;
+
+                if (stage === 'ready' || stage === 'assembly') {
+                    const rowPoint = {
+                        x: geometry.width * (.1 + .8 * index / (members.length - 1)),
+                        y: geometry.height * .5,
+                    };
+                    frames = [
+                        { transform: transform(rowPoint, base) },
+                        { transform: transform(position(startPhase), base) },
+                    ];
+                    options = {
+                        duration: settings.assembly,
+                        delay: settings.rowHold + index * settings.stagger,
+                        easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                    };
+                } else {
+                    const isLaunch = stage === 'launch';
+                    const count = isLaunch ? 48 : settings.samples;
+                    frames = Array.from({ length: count + 1 }, (_, step) => {
+                        const t = step / count;
+                        const phase = isLaunch
+                          ? startPhase + launchAdvance * t * t
+                          : startPhase + launchAdvance + t;
+                        return { offset: t, transform: transform(position(phase), base) };
+                    });
+                    if (!isLaunch) {
+                        // Close the cycle exactly, including floating-point rounding.
+                        frames[count].transform = frames[0].transform;
+                    }
+                    options = {
+                        duration: isLaunch ? settings.acceleration : settings.lap,
+                        iterations: isLaunch ? 1 : Infinity,
+                        easing: 'linear',
+                    };
+                }
+                lastCard = makeAnimation(member, frames, options, time);
+            });
+
+            if (stage === 'ready' || stage === 'assembly') {
+                // Fade the complete SVG as a layer. No animated stroke-dashoffset,
+                // and no animations on the hidden mobile SVG.
+                makeAnimation(geometry.svg, [{ opacity: 0 }, { opacity: 1 }], {
+                    duration: 2700, delay: 900, easing: 'ease-in-out',
+                }, time);
+            }
+            if (stage !== 'orbit') {
+                lastCard.onfinish = () => {
+                    if (destroyed || token !== generation) return;
+                    // Last assembly frame == first launch frame;
+                    // last launch frame == first orbit frame. No snap to CSS slots.
+                    install(stage === 'launch' ? 'orbit' : 'launch');
+                };
+            }
+            sync();
+        };
+
+        const rebuild = () => {
+            if (destroyed) return;
+            try {
+                if (!media.matches) {
+                    if (stage !== 'static') resume = { stage, time: elapsed() };
+                    cancelActive();
+                    stage = 'static';
+                    toggle.hidden = true;
+                    return;
+                }
+                const nextGeometry = measure();
+                if (!nextGeometry) {
+                    cancelActive();
+                    stage = 'static';
+                    toggle.hidden = true;
+                    return;
+                }
+                const previous = stage === 'static'
+                  ? (resume || { stage: 'ready', time: 0 })
+                  : { stage, time: elapsed() };
+                resume = null;
+                geometry = nextGeometry;
+                observedWidth = geometry.width;
+                observedHeight = geometry.height;
+                let nextStage = previous.stage;
+                let time = previous.time;
+                const assemblyEnd = settings.rowHold + settings.assembly +
+                  (members.length - 1) * settings.stagger;
+                if (nextStage === 'assembly' && time >= assemblyEnd) {
+                    nextStage = 'launch'; time = 0;
+                } else if (nextStage === 'launch' && time >= settings.acceleration) {
+                    nextStage = 'orbit'; time = 0;
+                }
+                install(nextStage, time);
+            } catch (error) {
+                // Fail open: the supplied static HTML must remain visible.
+                cancelActive();
+                stage = 'static';
+                toggle.hidden = true;
+                console.warn('KEYDOS team animation: using static layout.', error);
+            }
+        };
+
+        const observer = new IntersectionObserver(([entry]) => {
+            visible = entry.isIntersecting;
+            if (entry.isIntersecting && entry.intersectionRatio >= .15) activated = true;
+            sync();
+        }, { threshold: [0, .15], rootMargin: '0px 0px -24px 0px' });
+
+        const scheduleResize = () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = window.setTimeout(() => {
+                if (Math.abs(visual.clientWidth - observedWidth) > .5 ||
+                  Math.abs(visual.clientHeight - observedHeight) > .5) rebuild();
+            }, 120);
+        };
+        const resizer = 'ResizeObserver' in window ? new ResizeObserver(scheduleResize) : null;
+        const togglePause = () => { userPaused = !userPaused; sync(); };
+        const mediaChange = () => rebuild();
+
+        toggle.addEventListener('click', togglePause);
+        document.addEventListener('visibilitychange', sync);
+        media.addEventListener('change', mediaChange);
+        if (resizer) resizer.observe(visual);
+        else window.addEventListener('resize', scheduleResize);
+
+        section.__keydosTeamAssemblyV3 = {
+            destroy() {
+                destroyed = true;
+                clearTimeout(resizeTimer);
+                observer.disconnect();
+                resizer?.disconnect();
+                document.removeEventListener('visibilitychange', sync);
+                media.removeEventListener('change', mediaChange);
+                window.removeEventListener('resize', scheduleResize);
+                cancelActive();
+                toggle.remove();
+                delete section.dataset.teamPerformance;
+                delete section.__keydosTeamAssemblyV3;
+            },
+        };
+        rebuild();
+        observer.observe(visual);
     };
-
     const initInsightsSlider = () => {
         const root = document.querySelector('[data-insights-carousel]');
 
@@ -684,9 +744,11 @@
         syncLayout();
     };
 
+
     // Initializes all independent UI components.
     const initUI = () => {
-        initMarquee();
+
+
         initFeaturedSlider();
         initTestimonialsSlider();
         initTeamAssembly();
@@ -703,3 +765,31 @@
         initUI();
     }
 })();
+
+
+const element = document.querySelector('.clients-marquee');
+
+new marquee(element, {
+    duplicated: true,
+    gap: 12,
+    speed: 40,
+    pauseOnHover: true,
+    startVisible: true
+});
+const leftMarquee = document.querySelector('.tech-marquee-left')
+new marquee(leftMarquee, {
+    duplicated: true,
+    gap: 12,
+    speed: 40,
+    pauseOnHover: true,
+    startVisible: true
+});
+const rightMarquee = document.querySelector('.tech-marquee-right')
+new marquee(rightMarquee, {
+    direction:'right',
+    duplicated: true,
+    gap: 12,
+    speed: 40,
+    pauseOnHover: true,
+    startVisible: true
+});

@@ -387,8 +387,8 @@
         max-sm:after:w-9;
     }
     .client-card {
-        @apply flex max-w-52.5 shrink-0 snap-start justify-center;
-        @apply max-md:max-w-40 max-lg:max-w-47.5;
+        @apply w-52.5 shrink-0;
+        @apply max-lg:w-47.5 max-md:w-40;
     }
 
     .client-card-inner {

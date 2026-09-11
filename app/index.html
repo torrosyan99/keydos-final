@@ -2298,18 +2298,13 @@
                             </h3>
                         </div>
 
-                        <div class="min-w-0">
-                            <div class="horizontal-scroll">
+                        <div class="min-w-0 overflow-hidden max-w-full">
                                 <div
-                                    class="marquee6k"
-                                    data-speed="0.8"
-                                    data-pausable="true"
+                                    class="clients-marquee"
                                 >
-                                    <div class="w-max">
                                         <div
-                                            class="flex w-max snap-none items-center gap-6 max-lg:snap-x max-lg:snap-mandatory"
-                                            aria-label="Client case studies"
-                                            role="list"
+		                                        class="flex w-max items-center gap-6;
+"
                                         >
                                             <div class="client-card group">
                                                 <div class="client-card-inner">
@@ -2467,9 +2462,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+
+
+
                                 </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -2731,7 +2728,8 @@
 		        <div class="page-container relative z-10 max-w-320">
 			        <div
 					        id="featured-slider"
-					        class="overflow-hidden rounded-3xl bg-[#fcfbfa] shadow-default max-sm:rounded-2xl"
+					        class="overflow-hidden rounded-3xl bg-[#fcfbfa] shadow-default
+					        max-sm:rounded-2xl"
 			        >
 				        <!-- Slider -->
 				        <div class="swiper w-full" data-swiper-slider>
@@ -2976,17 +2974,7 @@
                     max-sm:min-h-10
                   "
 									        >
-                  <img
-		                  class="
-                      h-10 w-auto
-                      max-lg:h-8
-                      max-sm:h-7
-                    "
-		                  src="assets/images/featured/hypetrics.png"
-		                  alt="Hypetrics"
-		                  loading="lazy"
-		                  decoding="async"
-                  />
+                  <div class="h-8 text-white bg-black py-2 px-6 text-[24px] font-bold flex items-center ">Hypetrics</div>
                 </span>
 
 									        <h3
@@ -3246,10 +3234,7 @@
 
                 <div class="flex w-full flex-col gap-1 max-md:gap-6">
                     <div
-                        class="marquee6k group w-full overflow-hidden"
-                        data-speed="0.8"
-                        data-pausable="true"
-                        data-direction="left"
+                        class="tech-marquee-left group w-full overflow-hidden"
                     >
                         <div class="w-max">
                             <div class="tech-marquee-group">
@@ -3378,10 +3363,8 @@
                     </div>
 
                     <div
-                        class="marquee6k group w-full overflow-hidden"
-                        data-reverse="true"
-                        data-pausable="true"
-                        data-speed="0.8"
+                        class="tech-marquee-right group w-full overflow-hidden"
+
                     >
                         <div class="w-max">
                             <div class="tech-marquee-group">
@@ -4092,9 +4075,9 @@
 								            y2="760"
 								            gradientUnits="userSpaceOnUse"
 						            >
-							            <stop stop-color="#f4703f"></stop>
-							            <stop offset="0.55" stop-color="#f66f6a"></stop>
-							            <stop offset="1" stop-color="#f79ac4"></stop>
+							            <stop stop-color="#F58522"></stop>
+							            <stop offset="0.5" stop-color="#F2683E"></stop>
+							            <stop offset="1" stop-color="#0F7D80"></stop>
 						            </linearGradient>
 
 						            <linearGradient
@@ -4105,9 +4088,9 @@
 								            y2="1350"
 								            gradientUnits="userSpaceOnUse"
 						            >
-							            <stop stop-color="#4aa6f2"></stop>
-							            <stop offset="0.55" stop-color="#6f86f0"></stop>
-							            <stop offset="1" stop-color="#a96ef0"></stop>
+							            <stop stop-color="#0F7D80"></stop>
+							            <stop offset="0.5" stop-color="#159B9D"></stop>
+							            <stop offset="1" stop-color="#F58522"></stop>
 						            </linearGradient>
 					            </defs>
 
@@ -4129,54 +4112,13 @@
 
 					            <!-- Dashed line flowing along the whole loop -->
 					            <path
-							            class="animate-team-dash fill-none stroke-white [stroke-width:3] [stroke-linecap:round] [stroke-dasharray:9_13] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+							            class="fill-none stroke-white [stroke-width:3] [stroke-linecap:round] [stroke-dasharray:9_13] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
 							            data-team-track
 							            d="M430 720C300 590 210 470 210 367C210 215 300 90 430 90C560 90 649 215 649 367C649 520 560 590 430 720C300 850 210 970 210 1073C210 1225 300 1350 430 1350C560 1350 649 1225 649 1073C649 920 560 850 430 720Z"
 					            ></path>
 
-					            <!-- Arrow heads following the vertical --team-loop-path. -->
-					            <g class="hidden supports-[offset-path]:block" data-team-arrows>
-						            <!-- Arrow 1 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:0s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-						            <!-- Arrow 2 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-2.75s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-						            <!-- Arrow 3 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-5.5s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-						            <!-- Arrow 4 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-8.25s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-						            <!-- Arrow 5 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-11s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-						            <!-- Arrow 6 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-13.75s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-						            <!-- Arrow 7 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-16.5s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-						            <!-- Arrow 8 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-19.25s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-					            </g>
+					            <!-- Arrow heads removed; collaboration is shown by the cards. -->
+
 				            </svg>
 
 				            <!-- Horizontal loop: sm and up. -->
@@ -4196,9 +4138,9 @@
 								            y2="620"
 								            gradientUnits="userSpaceOnUse"
 						            >
-							            <stop stop-color="#f4703f"></stop>
-							            <stop offset="0.55" stop-color="#f66f6a"></stop>
-							            <stop offset="1" stop-color="#f79ac4"></stop>
+							            <stop stop-color="#F58522"></stop>
+							            <stop offset="0.5" stop-color="#F2683E"></stop>
+							            <stop offset="1" stop-color="#0F7D80"></stop>
 						            </linearGradient>
 
 						            <linearGradient
@@ -4209,9 +4151,9 @@
 								            y2="640"
 								            gradientUnits="userSpaceOnUse"
 						            >
-							            <stop stop-color="#4aa6f2"></stop>
-							            <stop offset="0.55" stop-color="#6f86f0"></stop>
-							            <stop offset="1" stop-color="#a96ef0"></stop>
+							            <stop stop-color="#0F7D80"></stop>
+							            <stop offset="0.5" stop-color="#159B9D"></stop>
+							            <stop offset="1" stop-color="#F58522"></stop>
 						            </linearGradient>
 					            </defs>
 
@@ -4233,59 +4175,18 @@
 
 					            <!-- Dashed line flowing along the whole loop -->
 					            <path
-							            class="animate-team-dash fill-none stroke-white [stroke-width:3] [stroke-linecap:round] [stroke-dasharray:9_13] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+							            class="fill-none stroke-white [stroke-width:3] [stroke-linecap:round] [stroke-dasharray:9_13] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
 							            data-team-track
 							            d="M720 430C590 300 470 210 367 210C215 210 90 300 90 430C90 560 215 649 367 649C520 649 590 560 720 430C850 300 970 210 1073 210C1225 210 1350 300 1350 430C1350 560 1225 649 1073 649C920 649 850 560 720 430Z"
 					            ></path>
 
-					            <!-- Arrow heads following the horizontal --team-loop-path. -->
-					            <g class="hidden supports-[offset-path]:block" data-team-arrows>
-						            <!-- Arrow 1 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:0s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-						            <!-- Arrow 2 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-2.75s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-						            <!-- Arrow 3 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-5.5s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-						            <!-- Arrow 4 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-8.25s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-						            <!-- Arrow 5 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-11s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-						            <!-- Arrow 6 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-13.75s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-						            <!-- Arrow 7 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-16.5s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-						            <!-- Arrow 8 of 8: the negative delay spreads it along the loop. -->
-						            <path
-								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-19.25s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
-								            d="M-8 -10 L5 0 L-8 10"
-						            ></path>
-					            </g>
+					            <!-- Arrow heads removed; collaboration is shown by the cards. -->
+
 				            </svg>
 
 				            <!-- Members. Mobile coordinates are the desktop ones with x and y swapped. -->
 				            <article
-						            class="absolute z-[2] flex w-[32%] flex-col items-center [translate:-50%_calc(-50%_-_var(--team-label-shift))] left-[24.5%] top-[19.5%] md:w-[16.5%] md:left-[19.5%] md:top-[24.5%]"
+						            class="absolute z-[2] flex w-[32%] flex-col items-center [translate:-50%_calc(-50%_-_var(--team-label-shift))] left-[76.5%] top-[19.5%] md:w-[16.5%] md:left-[19.5%] md:top-[76.5%]"
 						            data-team-member
 						            data-team-slot="software"
 				            >
@@ -4304,8 +4205,8 @@
 									            y2="155"
 									            gradientUnits="userSpaceOnUse"
 							            >
-								            <stop stop-color="#ff9b5f"></stop>
-								            <stop offset="1" stop-color="#ff6287"></stop>
+								            <stop stop-color="#F58522"></stop>
+								            <stop offset="1" stop-color="#F2683E"></stop>
 							            </linearGradient>
 							            <clipPath id="team-shape-software">
 								            <path
@@ -4322,8 +4223,8 @@
 								            fill="url(#team-gradient-software)"
 								            d="M13 111C4 75 27 34 64 18C103 1 152 10 184 38C217 66 216 112 188 142C162 169 109 152 73 158C37 164 21 143 13 111Z"
 						            ></path>
-						            <circle cx="194" cy="31" r="17" fill="#ffd8c8" opacity="0.9"></circle>
-						            <circle cx="31" cy="139" r="8" fill="#ffcf72"></circle>
+						            <circle cx="194" cy="31" r="17" fill="#FFD7B0" opacity="0.9"></circle>
+						            <circle cx="31" cy="139" r="8" fill="#F58522"></circle>
 
 						            <image
 								            href="assets/images/team-flow/software-developer-v2.webp"
@@ -4369,8 +4270,8 @@
 									            y2="155"
 									            gradientUnits="userSpaceOnUse"
 							            >
-								            <stop stop-color="#55c8ef"></stop>
-								            <stop offset="1" stop-color="#6f83f2"></stop>
+								            <stop stop-color="#159B9D"></stop>
+								            <stop offset="1" stop-color="#0F7D80"></stop>
 							            </linearGradient>
 							            <clipPath id="team-shape-qa">
 								            <path d="M30 9L205 41L191 91L207 139L36 158L10 53Z"></path>
@@ -4389,8 +4290,8 @@
 								            fill="url(#team-gradient-qa)"
 								            d="M30 9L205 41L191 91L207 139L36 158L10 53Z"
 						            ></path>
-						            <circle cx="193" cy="24" r="12" fill="#9ce8f6"></circle>
-						            <path d="M19 132L50 153L15 157Z" fill="#b4a2ff"></path>
+						            <circle cx="193" cy="24" r="12" fill="#9ED6D7"></circle>
+						            <path d="M19 132L50 153L15 157Z" fill="#F2683E"></path>
 
 						            <image
 								            href="assets/images/team-flow/qa-engineer-v2.webp"
@@ -4419,7 +4320,7 @@
 					            </p>
 				            </article>
 				            <article
-						            class="absolute z-[2] flex w-[32%] flex-col items-center [translate:-50%_calc(-50%_-_var(--team-label-shift))] left-[76.5%] top-[19.5%] md:w-[16.5%] md:left-[19.5%] md:top-[76.5%]"
+						            class="absolute z-[2] flex w-[32%] flex-col items-center [translate:-50%_calc(-50%_-_var(--team-label-shift))] left-[24.5%] top-[19.5%] md:w-[16.5%] md:left-[19.5%] md:top-[24.5%]"
 						            data-team-member
 						            data-team-slot="ux"
 				            >
@@ -4438,8 +4339,8 @@
 									            y2="155"
 									            gradientUnits="userSpaceOnUse"
 							            >
-								            <stop stop-color="#9577ea"></stop>
-								            <stop offset="1" stop-color="#e37fc2"></stop>
+								            <stop stop-color="#F2683E"></stop>
+								            <stop offset="1" stop-color="#F58522"></stop>
 							            </linearGradient>
 							            <clipPath id="team-shape-ux">
 								            <path
@@ -4456,8 +4357,8 @@
 								            fill="url(#team-gradient-ux)"
 								            d="M16 142C5 114 20 92 42 81C31 51 54 20 87 22C105 -1 142 6 150 34C184 32 208 60 198 91C219 116 201 151 168 154H52C35 154 22 150 16 142Z"
 						            ></path>
-						            <circle cx="28" cy="35" r="11" fill="#f3b4df"></circle>
-						            <circle cx="192" cy="143" r="7" fill="#9fe7dc"></circle>
+						            <circle cx="28" cy="35" r="11" fill="#F8A596"></circle>
+						            <circle cx="192" cy="143" r="7" fill="#9ED6D7"></circle>
 
 						            <image
 								            href="assets/images/team-flow/ux-designer-v2.webp"
@@ -4503,8 +4404,8 @@
 									            y2="158"
 									            gradientUnits="userSpaceOnUse"
 							            >
-								            <stop stop-color="#ffe06d"></stop>
-								            <stop offset="1" stop-color="#ff9656"></stop>
+								            <stop stop-color="#F58522"></stop>
+								            <stop offset="1" stop-color="#F2683E"></stop>
 							            </linearGradient>
 							            <clipPath id="team-shape-data">
 								            <path
@@ -4525,8 +4426,8 @@
 								            fill="url(#team-gradient-data)"
 								            d="M111 5L145 40L202 35L190 88L215 132L163 145L127 164L91 143L29 151L35 96L7 55L64 40Z"
 						            ></path>
-						            <circle cx="195" cy="25" r="10" fill="#ff7591"></circle>
-						            <circle cx="22" cy="112" r="6" fill="#fff0aa"></circle>
+						            <circle cx="195" cy="25" r="10" fill="#0F7D80"></circle>
+						            <circle cx="22" cy="112" r="6" fill="#FFD7B0"></circle>
 
 						            <image
 								            href="assets/images/team-flow/data-scientist-v2.webp"
@@ -4572,8 +4473,8 @@
 									            y2="155"
 									            gradientUnits="userSpaceOnUse"
 							            >
-								            <stop stop-color="#69d7b3"></stop>
-								            <stop offset="1" stop-color="#3fa8d7"></stop>
+								            <stop stop-color="#159B9D"></stop>
+								            <stop offset="1" stop-color="#0F7D80"></stop>
 							            </linearGradient>
 							            <clipPath id="team-shape-project">
 								            <path
@@ -4590,10 +4491,10 @@
 								            fill="url(#team-gradient-project)"
 								            d="M31 20H160C189 20 209 39 209 66V104C209 137 185 158 151 158H92C47 158 17 130 17 89V36C17 27 23 20 31 20Z"
 						            ></path>
-						            <circle cx="193" cy="30" r="15" fill="#a9f0d6"></circle>
+						            <circle cx="193" cy="30" r="15" fill="#9ED6D7"></circle>
 						            <path
 								            d="M18 127C42 111 61 116 79 150H37C27 145 21 137 18 127Z"
-								            fill="#75b9f1"
+								            fill="#F58522"
 								            opacity="0.9"
 						            ></path>
 
