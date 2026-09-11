@@ -78,31 +78,35 @@
             return;
         }
 
-        marquee6k.init();
+        const startMarquee = () => {
+            marquee6k.init();
 
-        // Pauses marquee animation for reduced motion and hidden tabs.
-        const syncMotion = () => {
-            const shouldPause = reducedMotion.matches || document.hidden;
+            const syncMotion = () => {
+                const shouldPause = reducedMotion.matches || document.hidden;
 
-            if (shouldPause) {
-                marquee6k.pauseAll();
-            } else {
-                marquee6k.playAll();
-            }
+                if (shouldPause) {
+                    marquee6k.pauseAll();
+                } else {
+                    marquee6k.playAll();
+                }
+            };
+
+            reducedMotion.addEventListener('change', syncMotion);
+            document.addEventListener('visibilitychange', syncMotion);
+
+            document.querySelectorAll('.marquee6k').forEach((marquee) => {
+                marquee.addEventListener('mouseleave', syncMotion);
+            });
+
+            syncMotion();
         };
 
-        reducedMotion.addEventListener('change', syncMotion);
-
-        document.addEventListener('visibilitychange', syncMotion);
-
-        // Re-applies the current motion preference after the library hover handler.
-        document.querySelectorAll('.marquee6k').forEach((marquee) => {
-            marquee.addEventListener('mouseleave', syncMotion);
-        });
-
-        syncMotion();
+        if (document.readyState === 'complete') {
+            startMarquee();
+        } else {
+            window.addEventListener('load', startMarquee, { once: true });
+        }
     };
-
     const initFeaturedSlider = () => {
         const root = document.querySelector('#featured-slider');
 
