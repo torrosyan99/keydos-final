@@ -240,48 +240,27 @@
             const style = document.createElement('style');
             style.id = styleId;
             style.textContent = `
-            [data-team-performance="v3"] [data-team-arrows] {
-                display: none !important;
-            }
-            [data-team-performance="v3"] [data-team-track],
-            [data-team-performance="v3"] [data-team-arrows] * {
-                animation: none !important;
-            }
-            [data-team-performance="v3"] [data-team-track] { opacity: .5; }
+        [data-team-performance="v3"] [data-team-arrows] {
+            display: none !important;
+        }
+        [data-team-performance="v3"] [data-team-track],
+        [data-team-performance="v3"] [data-team-arrows] * {
+            animation: none !important;
+        }
+        [data-team-performance="v3"] [data-team-track] { opacity: .5; }
+        [data-team-performance="v3"] [data-team-member] {
+            transition: none !important;
+        }
+        @media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
             [data-team-performance="v3"] [data-team-member] {
-                transition: none !important;
+                will-change: transform;
             }
-            @media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
-                [data-team-performance="v3"] [data-team-member] {
-                    will-change: transform;
-                }
-            }
-            [data-team-motion-toggle] {
-                position: absolute; bottom: 0; left: 50%;
-                transform: translateX(-50%); z-index: 5;
-                border: 1px solid #0f7d8033; border-radius: 999px;
-                background: #fff; color: #0F7D80;
-                padding: 8px 16px; font: inherit; font-size: 13px;
-                line-height: 1.3; cursor: pointer; white-space: nowrap;
-            }
-            [data-team-motion-toggle]:focus-visible {
-                outline: 2px solid #0F7D80; outline-offset: 3px;
-            }
-            [data-team-motion-toggle][hidden] { display: none !important; }
-        `;
+        }
+    `;
             document.head.append(style);
         }
         section.dataset.teamPerformance = 'v3';
         visual.removeAttribute('data-flowing');
-
-        // Moving content can be paused without relying on hover or browser settings.
-        const toggle = document.createElement('button');
-        toggle.type = 'button';
-        toggle.setAttribute('data-team-motion-toggle', '');
-        toggle.hidden = true;
-        toggle.textContent = 'Pause animation';
-        toggle.setAttribute('aria-pressed', 'false');
-        visual.append(toggle);
 
         const pathCache = new WeakMap();
         let active = [];
@@ -289,7 +268,6 @@
         let started = false;
         let activated = false;
         let visible = false;
-        let userPaused = false;
         let destroyed = false;
         let generation = 0;
         let geometry = null;
@@ -385,10 +363,7 @@
                 stage = 'assembly';
                 started = true;
             }
-            const running = started && visible && !document.hidden && media.matches && !userPaused;
-            toggle.hidden = !media.matches || !started || stage === 'static';
-            toggle.textContent = userPaused ? 'Resume animation' : 'Pause animation';
-            toggle.setAttribute('aria-pressed', String(userPaused));
+            const running = started && visible && !document.hidden && media.matches;
             const now = document.timeline.currentTime;
             active.forEach(({ animation, end }) => {
                 const time = Number(animation.currentTime) || 0;
@@ -481,14 +456,12 @@
                     if (stage !== 'static') resume = { stage, time: elapsed() };
                     cancelActive();
                     stage = 'static';
-                    toggle.hidden = true;
                     return;
                 }
                 const nextGeometry = measure();
                 if (!nextGeometry) {
                     cancelActive();
                     stage = 'static';
-                    toggle.hidden = true;
                     return;
                 }
                 const previous = stage === 'static'
@@ -512,7 +485,6 @@
                 // Fail open: the supplied static HTML must remain visible.
                 cancelActive();
                 stage = 'static';
-                toggle.hidden = true;
                 console.warn('KEYDOS team animation: using static layout.', error);
             }
         };
@@ -531,10 +503,8 @@
             }, 120);
         };
         const resizer = 'ResizeObserver' in window ? new ResizeObserver(scheduleResize) : null;
-        const togglePause = () => { userPaused = !userPaused; sync(); };
         const mediaChange = () => rebuild();
 
-        toggle.addEventListener('click', togglePause);
         document.addEventListener('visibilitychange', sync);
         media.addEventListener('change', mediaChange);
         if (resizer) resizer.observe(visual);
@@ -550,7 +520,6 @@
                 media.removeEventListener('change', mediaChange);
                 window.removeEventListener('resize', scheduleResize);
                 cancelActive();
-                toggle.remove();
                 delete section.dataset.teamPerformance;
                 delete section.__keydosTeamAssemblyV3;
             },
