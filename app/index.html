@@ -2720,141 +2720,511 @@
                     </div>
                 </div>
             </section>
-            <section
-                class="relative isolate overflow-hidden bg-c-light mt-50 max-lg:mt-24 max-md:mt-16"
-            >
-                <div
-                    class="pointer-events-none absolute -top-82.5 left-1/2 z-0 h-117.5 w-[118vw] -translate-x-1/2 rounded-[50%] bg-white max-2xl:-top-77.5 max-2xl:h-100 max-2xl:w-[118vw] max-lg:-top-55 max-lg:h-80 max-lg:w-[125vw] max-sm:-top-41.25 max-sm:h-61.25 max-sm:w-[137vw]"
-                    aria-hidden="true"
-                ></div>
+	        <section class="relative isolate pb-44 max-lg:pb-20 overflow-hidden  bg-c-light mt-50 max-lg:mt-24 max-md:mt-16"
+	        >
+		        <!-- Decorative white curve -->
+		        <div
+				        class="pointer-events-none absolute -top-82.5 left-1/2 z-0 h-117.5 w-[118vw] -translate-x-1/2 rounded-[50%] bg-white max-2xl:-top-77.5 max-2xl:h-100 max-2xl:w-[118vw] max-lg:-top-55 max-lg:h-80 max-lg:w-[125vw] max-sm:-top-41.25 max-sm:h-61.25 max-sm:w-[137vw]"
+				        aria-hidden="true"
+		        ></div>
 
-                <div class="page-container relative z-10 max-w-240">
-                    <div class="overflow-hidden rounded-2xl shadow-default">
-                        <div
-                            class="flex items-center justify-center bg-c-muted-gray px-6 py-5 max-sm:px-4 max-lg:py-4"
-                        >
-                            <h2
-                                class="text-2xl font-medium leading-7 text-white max-lg:text-xl"
-                            >
-                                As featured in...
-                            </h2>
-                        </div>
+		        <div class="page-container relative z-10 max-w-320">
+			        <div
+					        id="featured-slider"
+					        class="overflow-hidden rounded-3xl bg-[#fcfbfa] shadow-default max-sm:rounded-2xl"
+			        >
+				        <!-- Slider -->
+				        <div class="swiper w-full" data-swiper-slider>
+					        <div class="swiper-wrapper">
 
-                        <div
-                            class="bg-[#3d4751]"
-                            id="featured-slider"
-                        >
-                            <div
-                                class="swiper w-full"
-                                data-swiper-slider
-                            >
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <a
-                                            href="#"
-                                            class="featured-slide flex min-h-55 flex-col items-center justify-center gap-5 px-6 py-12 text-center text-c-light max-sm:min-h-45 max-sm:px-4"
-                                        >
-                                            <span
-                                                class="inline-flex min-h-12 items-center justify-center rounded-sm bg-white px-5 py-2"
-                                            >
-                                                <img
-                                                    class="h-7 w-auto"
-                                                    src="assets/images/featured/mid-day.webp"
-                                                    alt="Mid-Day"
-                                                    decoding="async"
-                                                />
-                                            </span>
-                                            <strong
-                                                class="max-w-200 text-3xl font-bold uppercase leading-tight tracking-[0.06em] transition-colors max-sm:text-2xl"
-                                                >Next Gen Brands of
-                                                India</strong
-                                            >
-                                            <span
-                                                class="inline-flex items-center gap-2 text-base font-medium"
-                                                >Read the feature
-                                                <span aria-hidden="true"
-                                                    >↗</span
-                                                ></span
-                                            >
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a
-                                            href="#"
-                                            class="featured-slide flex min-h-55 flex-col items-center justify-center gap-5 px-6 py-12 text-center text-c-light max-sm:min-h-45 max-sm:px-4"
-                                        >
-                                            <img
-                                                class="h-12 rounded-sm object-cover"
-                                                style="width: 152px"
-                                                src="assets/images/featured/hypetrics.png"
-                                                alt="Hypetrics"
-                                                decoding="async"
-                                            />
-                                            <strong
-                                                class="max-w-200 text-3xl font-bold leading-tight tracking-[0.06em] transition-colors max-sm:text-2xl"
-                                                >50 Companies Making Their Move
-                                                Forward</strong
-                                            >
-                                            <span
-                                                class="inline-flex items-center gap-2 text-base font-medium"
-                                                >Read the feature
-                                                <span aria-hidden="true"
-                                                    >↗</span
-                                                ></span
-                                            >
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+						        <!-- =========================
+                                     Slide: Mid-Day
+                                ========================== -->
+						        <div class="swiper-slide">
+							        <div
+									        class="
+                mx-auto grid w-full max-w-285 items-center
+                grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)]
+                gap-10 px-12 py-11
 
-                            <div
-                                class="grid min-h-14 grid-cols-[1fr_auto_1fr] items-center gap-3 border-t border-white/15 px-4 py-3 text-white"
-                            >
-                                <button
-                                    type="button"
-                                    class="group inline-flex cursor-pointer items-center gap-2 justify-self-start text-[18px] transition-transform duration-300 ease-out hover:-translate-x-2 disabled:cursor-default disabled:opacity-40 disabled:hover:translate-x-0"
-                                    data-featured-prev
-                                    aria-label="Previous featured slide"
-                                >
-                                    <svg
-                                        class="size-5 rotate-180"
-                                        aria-hidden="true"
-                                    >
-                                        <use
-                                            href="assets/images/sprite.svg#arrow"
-                                        ></use>
-                                    </svg>
-                                    <span class="max-md:hidden">Previous</span>
-                                </button>
+                max-xl:max-w-260
+                max-xl:gap-8
+                max-xl:px-10
 
-                                <div
-                                    class="featured-swiper-pagination swiper-pagination"
-                                    data-featured-pagination
-                                ></div>
+                max-lg:max-w-210
+                max-lg:gap-6
+                max-lg:px-8
+                max-lg:py-8
 
-                                <button
-                                    type="button"
-                                    class="group inline-flex cursor-pointer items-center gap-2 justify-self-end text-[18px] transition-transform duration-300 ease-out hover:translate-x-2 disabled:cursor-default disabled:opacity-40 disabled:hover:translate-x-0"
-                                    data-featured-next
-                                    aria-label="Next featured slide"
-                                >
-                                    <span class="max-md:hidden">Next</span>
-                                    <svg
-                                        class="size-5"
-                                        aria-hidden="true"
-                                    >
-                                        <use
-                                            href="assets/images/sprite.svg#arrow"
-                                        ></use>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section
-                class="bg-c-light pt-44 pb-45 max-lg:pt-20 max-2xl:py-24 max-md:pb-12"
+                max-md:max-w-150
+                max-md:grid-cols-1
+                max-md:gap-7
+                max-md:px-6
+                max-md:py-7
+
+                max-sm:gap-5
+                max-sm:px-5
+                max-sm:py-6
+              "
+							        >
+								        <!-- Text -->
+								        <div class="flex min-w-0 flex-col items-start">
+
+									        <p
+											        class="
+                    relative inline-block pr-12
+                    text-sm font-medium
+                    tracking-[0.18em]
+                    text-c-gray uppercase
+
+                    after:absolute
+                    after:top-1/2
+                    after:right-0
+                    after:h-px
+                    after:w-8
+                    after:bg-c-orange
+                    after:content-['']
+
+                    max-lg:text-xs
+                  "
+									        >
+										        As featured in
+									        </p>
+
+									        <span
+											        class="
+                    mt-5 inline-flex min-h-12 items-center
+                    max-lg:mt-4
+                    max-sm:min-h-10
+                  "
+									        >
+                  <img
+		                  class="h-8 w-auto max-lg:h-7 max-sm:h-6"
+		                  src="assets/images/featured/mid-day.webp"
+		                  alt="Mid-Day"
+		                  loading="lazy"
+		                  decoding="async"
+                  />
+                </span>
+
+									        <h3
+											        class="
+                    mt-5
+                    text-5xl
+                    leading-[1.08]
+                    font-extrabold
+                    tracking-tight
+
+                    max-xl:text-4xl
+
+                    max-lg:mt-4
+                    max-lg:text-[32px]
+
+                    max-md:text-4xl
+
+                    max-sm:text-[28px]
+                    max-sm:leading-[1.1]
+                  "
+									        >
+										        <span class="text-[#9aa1a8]">Next</span>
+										        <span class="text-[#2b3138]">Gen Brands</span>
+										        <span class="block text-c-orange">of India</span>
+									        </h3>
+
+									        <p
+											        class="
+                    mt-5 max-w-125
+                    text-lg leading-[1.65]
+                    text-c-gray
+
+                    max-lg:mt-4
+                    max-lg:text-base
+                    max-lg:leading-7
+
+                    max-md:max-w-full
+
+                    max-sm:text-[15px]
+                    max-sm:leading-6
+                  "
+									        >
+										        Kkeydos featured in Mid-Day for its innovation, impact,
+										        and contribution to India’s next generation of digital brands.
+									        </p>
+
+									        <div class="mt-7 max-lg:mt-6 max-sm:mt-5">
+										        <a
+												        href="#"
+												        class="
+                      group inline-flex min-h-13
+                      items-center gap-3
+                      rounded-full
+                      bg-[#161b20]
+                      px-7
+                      text-base font-semibold
+                      text-white
+
+                      transition-colors
+                      duration-300
+                      hover:bg-[#2b3138]
+
+                      max-lg:min-h-12
+                      max-lg:px-6
+                      max-lg:text-sm
+                    "
+										        >
+											        Read the feature
+
+											        <svg
+													        class="size-4 transition-transform duration-300 ease-out group-hover:translate-x-1"
+													        aria-hidden="true"
+											        >
+												        <use href="assets/images/sprite.svg#arrow"></use>
+											        </svg>
+										        </a>
+									        </div>
+								        </div>
+
+								        <!-- Image -->
+								        <div
+										        class="
+                  relative flex min-w-0 justify-end
+                  max-md:order-first
+                  max-md:justify-center
+                "
+								        >
+									        <img
+											        class="
+                    block h-auto w-full max-w-155
+                    object-contain
+
+                    max-xl:max-w-135
+                    max-lg:max-w-105
+
+                    max-md:max-w-115
+
+                    max-sm:max-w-85
+                  "
+											        src="assets/images/featured/featured-visual-midday.png"
+											        alt="Mid-Day article “Next Gen Brands of India” featuring Kkeydos"
+											        width="1536"
+											        height="1152"
+											        loading="lazy"
+											        decoding="async"
+									        />
+								        </div>
+							        </div>
+						        </div>
+
+						        <!-- =========================
+                                     Slide: Hypetrics
+                                ========================== -->
+						        <div class="swiper-slide">
+							        <div
+									        class="
+                mx-auto grid w-full max-w-285 items-center
+                grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)]
+                gap-10 px-12 py-11
+
+                max-xl:max-w-260
+                max-xl:gap-8
+                max-xl:px-10
+
+                max-lg:max-w-210
+                max-lg:gap-6
+                max-lg:px-8
+                max-lg:py-8
+
+                max-md:max-w-150
+                max-md:grid-cols-1
+                max-md:gap-7
+                max-md:px-6
+                max-md:py-7
+
+                max-sm:gap-5
+                max-sm:px-5
+                max-sm:py-6
+              "
+							        >
+								        <!-- Text -->
+								        <div class="flex min-w-0 flex-col items-start">
+
+									        <p
+											        class="
+                    relative inline-block pr-12
+                    text-sm font-medium
+                    tracking-[0.18em]
+                    text-c-gray uppercase
+
+                    after:absolute
+                    after:top-1/2
+                    after:right-0
+                    after:h-px
+                    after:w-8
+                    after:bg-c-orange
+                    after:content-['']
+
+                    max-lg:text-xs
+                  "
+									        >
+										        As featured in
+									        </p>
+
+									        <span
+											        class="
+                    mt-5 inline-flex min-h-12 items-center
+                    max-lg:mt-4
+                    max-sm:min-h-10
+                  "
+									        >
+                  <img
+		                  class="
+                      h-10 w-auto
+                      max-lg:h-8
+                      max-sm:h-7
+                    "
+		                  src="assets/images/featured/hypetrics.png"
+		                  alt="Hypetrics"
+		                  loading="lazy"
+		                  decoding="async"
+                  />
+                </span>
+
+									        <h3
+											        class="
+                    mt-5
+                    text-5xl
+                    leading-[1.08]
+                    font-extrabold
+                    tracking-tight
+
+                    max-xl:text-4xl
+
+                    max-lg:mt-4
+                    max-lg:text-[32px]
+
+                    max-md:text-4xl
+
+                    max-sm:text-[28px]
+                    max-sm:leading-[1.1]
+                  "
+									        >
+										        <span class="text-[#9aa1a8]">50</span>
+										        <span class="text-[#2b3138]">Companies Making</span>
+										        <span class="block text-c-orange">
+                    Their Move Forward
+                  </span>
+									        </h3>
+
+									        <p
+											        class="
+                    mt-5 max-w-125
+                    text-lg leading-[1.65]
+                    text-c-gray
+
+                    max-lg:mt-4
+                    max-lg:text-base
+                    max-lg:leading-7
+
+                    max-md:max-w-full
+
+                    max-sm:text-[15px]
+                    max-sm:leading-6
+                  "
+									        >
+										        Kkeydos recognised by Hypetrics among the companies driving
+										        real momentum and measurable growth.
+									        </p>
+
+									        <div class="mt-7 max-lg:mt-6 max-sm:mt-5">
+										        <a
+												        href="#"
+												        class="
+                      group inline-flex min-h-13
+                      items-center gap-3
+                      rounded-full
+                      bg-[#161b20]
+                      px-7
+                      text-base font-semibold
+                      text-white
+
+                      transition-colors
+                      duration-300
+                      hover:bg-[#2b3138]
+
+                      max-lg:min-h-12
+                      max-lg:px-6
+                      max-lg:text-sm
+                    "
+										        >
+											        Read the feature
+
+											        <svg
+													        class="size-4 transition-transform duration-300 ease-out group-hover:translate-x-1"
+													        aria-hidden="true"
+											        >
+												        <use href="assets/images/sprite.svg#arrow"></use>
+											        </svg>
+										        </a>
+									        </div>
+								        </div>
+
+								        <!-- Image -->
+								        <div
+										        class="
+                  relative flex min-w-0 justify-end
+                  max-md:order-first
+                  max-md:justify-center
+                "
+								        >
+									        <img
+											        class="
+                    block h-auto w-full max-w-155
+                    object-contain
+
+                    max-xl:max-w-135
+                    max-lg:max-w-105
+
+                    max-md:max-w-115
+
+                    max-sm:max-w-85
+                  "
+											        src="assets/images/featured/featured-visual-hypetrics.png"
+											        alt="Hypetrics article “50 Companies Making Their Move Forward” featuring Kkeydos"
+											        width="1536"
+											        height="1152"
+											        loading="lazy"
+											        decoding="async"
+									        />
+								        </div>
+							        </div>
+						        </div>
+
+					        </div>
+				        </div>
+
+				        <!-- =========================
+                             Slider Controls
+                        ========================== -->
+				        <div
+						        class="
+          mx-12 grid min-h-20
+          grid-cols-[1fr_auto_1fr]
+          items-center gap-3
+          border-t border-[#e6e3e0]
+          py-4
+
+          max-xl:mx-10
+
+          max-lg:mx-8
+          max-lg:min-h-18
+
+          max-sm:mx-5
+          max-sm:min-h-16
+          max-sm:py-3
+        "
+				        >
+					        <!-- Previous -->
+					        <button
+							        type="button"
+							        class="
+            group inline-flex cursor-pointer
+            items-center gap-4
+            justify-self-start
+
+            text-base font-medium
+            text-[#2b3138]
+
+            disabled:cursor-default
+            disabled:opacity-40
+          "
+							        data-featured-prev
+							        aria-label="Previous featured slide"
+					        >
+          <span
+		          class="
+              inline-flex size-12
+              items-center justify-center
+
+              rounded-full
+              border border-[#e6e3e0]
+              bg-white
+
+              transition-transform
+              duration-300
+              ease-out
+
+              group-hover:-translate-x-1
+              group-disabled:translate-x-0
+
+              max-sm:size-10
+            "
+          >
+            <svg class="size-4 rotate-180" aria-hidden="true">
+              <use href="assets/images/sprite.svg#arrow"></use>
+            </svg>
+          </span>
+
+						        <span class="max-md:hidden">
+            Previous
+          </span>
+					        </button>
+
+					        <!-- Pagination -->
+					        <div
+							        class="featured-swiper-pagination swiper-pagination"
+							        data-featured-pagination
+					        ></div>
+
+					        <!-- Next -->
+					        <button
+							        type="button"
+							        class="
+            group inline-flex cursor-pointer
+            items-center gap-4
+            justify-self-end
+
+            text-base font-medium
+            text-[#2b3138]
+
+            disabled:cursor-default
+            disabled:opacity-40
+          "
+							        data-featured-next
+							        aria-label="Next featured slide"
+					        >
+          <span class="max-md:hidden">
+            Next
+          </span>
+
+						        <span
+								        class="
+              inline-flex size-12
+              items-center justify-center
+
+              rounded-full
+              border border-[#e6e3e0]
+              bg-white
+
+              transition-transform
+              duration-300
+              ease-out
+
+              group-hover:translate-x-1
+              group-disabled:translate-x-0
+
+              max-sm:size-10
+            "
+						        >
+            <svg class="size-4" aria-hidden="true">
+              <use href="assets/images/sprite.svg#arrow"></use>
+            </svg>
+          </span>
+					        </button>
+				        </div>
+			        </div>
+		        </div>
+	        </section>
+	        <section class="bg-c-light pb-45 max-lg:pt-20 max-2xl:py-24 max-md:pb-12"
             >
                 <div class="page-container mb-16 text-center max-md:mb-15">
                     <h2
@@ -3692,623 +4062,868 @@
                 </section>
 
                 <!-- Team assembly: layout and portrait styling live in Tailwind classes. -->
-                <section
-                    class="relative isolate overflow-x-clip py-20 max-xl:py-16 max-sm:py-12"
-                    data-team-assembly
-                >
-                    <div class="w-full px-2 max-sm:px-6">
-                        <!-- Desktop: five equal columns. Tablet/mobile: centered wrapped rows. -->
-                        <div
-                            class="relative mx-auto grid w-full max-w-400 grid-cols-5 items-end gap-0 max-xl:flex max-xl:flex-wrap max-xl:justify-center max-xl:gap-x-8 max-xl:gap-y-12 max-sm:gap-x-6 max-sm:gap-y-10"
-                            data-team-visual
-                        >
-                            <!-- Software developers -->
-                            <article
-                                class="relative flex w-full min-w-0 flex-col items-center max-xl:w-[calc((100%_-_4rem)/3)] max-sm:w-[calc((100%_-_1.5rem)/2)]"
-                                data-team-member
-                                data-team-x="-4"
-                                data-team-y="-28"
-                            >
-                                <svg
-                                    class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-2xl:w-70 max-lg:w-57.5 max-md:w-35"
-                                    viewBox="20.5 0.18 222 166"
-                                    aria-hidden="true"
-                                    focusable="false"
-                                >
-                                    <defs>
-                                        <linearGradient
-                                            id="team-gradient-software"
-                                            x1="20"
-                                            y1="20"
-                                            x2="205"
-                                            y2="155"
-                                            gradientUnits="userSpaceOnUse"
-                                        >
-                                            <stop stop-color="#ff9b5f"></stop>
-                                            <stop
-                                                offset="1"
-                                                stop-color="#ff6287"
-                                            ></stop>
-                                        </linearGradient>
-                                        <clipPath id="team-shape-software">
-                                            <path
-                                                d="M13 111C4 75 27 34 64 18C103 1 152 10 184 38C217 66 216 112 188 142C162 169 109 152 73 158C37 164 21 143 13 111Z"
-                                            ></path>
-                                        </clipPath>
+	            <section
+			            class="relative isolate overflow-x-clip py-20 max-xl:py-16 max-md:py-12"
+			            data-team-assembly
+	            >
+		            <div class="w-full px-2">
+			            <!-- One composition, two orientations.
+                         Mobile (< sm): the very same infinity loop transposed (x <-> y), so it reads top to bottom.
+                         sm and up: the original horizontal loop.
+                         Everything is sized in % / cqw, so the whole thing scales instead of breaking into rows. -->
+			            <div
+					            class="group relative mx-auto block aspect-[860/1440] w-full max-w-[32rem] overflow-visible md:max-w-400 @container [--team-label-shift:2.6cqw] md:aspect-[1440/860] md:[--team-label-shift:1.4cqw]"
+					            data-team-visual
+			            >
+				            <!-- Vertical loop: mobile only. -->
+				            <svg
+						            class="absolute inset-0 block h-full w-full overflow-visible md:hidden [--team-loop-path:path('M430_720C300_590_210_470_210_367C210_215_300_90_430_90C560_90_649_215_649_367C649_520_560_590_430_720C300_850_210_970_210_1073C210_1225_300_1350_430_1350C560_1350_649_1225_649_1073C649_920_560_850_430_720Z')]"
+						            viewBox="0 0 860 1440"
+						            preserveAspectRatio="xMidYMid meet"
+						            aria-hidden="true"
+						            focusable="false"
+				            >
+					            <defs>
+						            <linearGradient
+								            id="team-loop-top-v"
+								            x1="240"
+								            y1="90"
+								            x2="620"
+								            y2="760"
+								            gradientUnits="userSpaceOnUse"
+						            >
+							            <stop stop-color="#f4703f"></stop>
+							            <stop offset="0.55" stop-color="#f66f6a"></stop>
+							            <stop offset="1" stop-color="#f79ac4"></stop>
+						            </linearGradient>
 
-                                        <clipPath id="team-top-software">
-                                            <rect
-                                                width="100%"
-                                                height="60%"
-                                            ></rect>
-                                        </clipPath>
-                                    </defs>
+						            <linearGradient
+								            id="team-loop-bottom-v"
+								            x1="240"
+								            y1="700"
+								            x2="640"
+								            y2="1350"
+								            gradientUnits="userSpaceOnUse"
+						            >
+							            <stop stop-color="#4aa6f2"></stop>
+							            <stop offset="0.55" stop-color="#6f86f0"></stop>
+							            <stop offset="1" stop-color="#a96ef0"></stop>
+						            </linearGradient>
+					            </defs>
 
-                                    <path
-                                        fill="url(#team-gradient-software)"
-                                        d="M13 111C4 75 27 34 64 18C103 1 152 10 184 38C217 66 216 112 188 142C162 169 109 152 73 158C37 164 21 143 13 111Z"
-                                    ></path>
-                                    <circle
-                                        cx="194"
-                                        cy="31"
-                                        r="17"
-                                        fill="#ffd8c8"
-                                        opacity="0.9"
-                                    ></circle>
-                                    <circle
-                                        cx="31"
-                                        cy="139"
-                                        r="8"
-                                        fill="#ffcf72"
-                                    ></circle>
+					            <!-- Top lobe -->
+					            <path
+							            class="fill-none [stroke-width:80] [stroke-linecap:round] [stroke-linejoin:round]"
+							            data-team-ribbon
+							            stroke="url(#team-loop-top-v)"
+							            d="M430 720C300 590 210 470 210 367C210 215 300 90 430 90C560 90 649 215 649 367C649 520 560 590 430 720"
+					            ></path>
 
-                                    <image
-                                        href="assets/images/team-flow/software-developer-v2.webp"
-                                        x="12"
-                                        y="-10"
-                                        width="100%"
-                                        height="100%"
-                                        clip-path="url(#team-shape-software)"
-                                    ></image>
-                                    <image
-                                        href="assets/images/team-flow/software-developer-v2.webp"
-                                        x="12"
-                                        y="-10"
-                                        width="100%"
-                                        height="100%"
-                                        clip-path="url(#team-top-software)"
-                                    ></image>
-                                </svg>
+					            <!-- Bottom lobe -->
+					            <path
+							            class="fill-none [stroke-width:80] [stroke-linecap:round] [stroke-linejoin:round]"
+							            data-team-ribbon
+							            stroke="url(#team-loop-bottom-v)"
+							            d="M430 720C300 850 210 970 210 1073C210 1225 300 1350 430 1350C560 1350 649 1225 649 1073C649 920 560 850 430 720"
+					            ></path>
 
-                                <p
-                                    class="mt-4 w-full text-center text-xl leading-[1.3] font-bold text-[#7f8993] max-sm:mt-3 max-sm:text-base max-sm:leading-6"
-                                >
-                                    Software<br />developers
-                                </p>
-                            </article>
+					            <!-- Dashed line flowing along the whole loop -->
+					            <path
+							            class="animate-team-dash fill-none stroke-white [stroke-width:3] [stroke-linecap:round] [stroke-dasharray:9_13] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+							            data-team-track
+							            d="M430 720C300 590 210 470 210 367C210 215 300 90 430 90C560 90 649 215 649 367C649 520 560 590 430 720C300 850 210 970 210 1073C210 1225 300 1350 430 1350C560 1350 649 1225 649 1073C649 920 560 850 430 720Z"
+					            ></path>
 
-                            <!-- QA engineers -->
-                            <article
-                                class="relative flex w-full min-w-0 flex-col items-center max-xl:w-[calc((100%_-_4rem)/3)] max-sm:w-[calc((100%_-_1.5rem)/2)]"
-                                data-team-member
-                                data-team-x="-2"
-                                data-team-y="36"
-                            >
-                                <svg
-                                    class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-2xl:w-70 max-lg:w-57.5 max-md:w-35"
-                                    viewBox="0 0.18 222 166"
-                                    aria-hidden="true"
-                                    focusable="false"
-                                >
-                                    <defs>
-                                        <linearGradient
-                                            id="team-gradient-qa"
-                                            x1="15"
-                                            y1="15"
-                                            x2="205"
-                                            y2="155"
-                                            gradientUnits="userSpaceOnUse"
-                                        >
-                                            <stop stop-color="#55c8ef"></stop>
-                                            <stop
-                                                offset="1"
-                                                stop-color="#6f83f2"
-                                            ></stop>
-                                        </linearGradient>
-                                        <clipPath id="team-shape-qa">
-                                            <path
-                                                d="M30 9L205 41L191 91L207 139L36 158L10 53Z"
-                                            ></path>
-                                        </clipPath>
+					            <!-- Arrow heads following the vertical --team-loop-path. -->
+					            <g class="hidden supports-[offset-path]:block" data-team-arrows>
+						            <!-- Arrow 1 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:0s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+						            <!-- Arrow 2 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-2.75s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+						            <!-- Arrow 3 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-5.5s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+						            <!-- Arrow 4 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-8.25s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+						            <!-- Arrow 5 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-11s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+						            <!-- Arrow 6 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-13.75s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+						            <!-- Arrow 7 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-16.5s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+						            <!-- Arrow 8 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-19.25s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+					            </g>
+				            </svg>
 
-                                        <clipPath id="team-top-qa">
-                                            <rect
-                                                width="100%"
-                                                height="100%"
-                                                class="[rotate:5deg] [transform:translate(0,-5px)] [transform-origin:center_center]"
-                                            ></rect>
-                                        </clipPath>
-                                    </defs>
+				            <!-- Horizontal loop: sm and up. -->
+				            <svg
+						            class="absolute inset-0 hidden h-full w-full overflow-visible md:block [--team-loop-path:path('M720_430C590_300_470_210_367_210C215_210_90_300_90_430C90_560_215_649_367_649C520_649_590_560_720_430C850_300_970_210_1073_210C1225_210_1350_300_1350_430C1350_560_1225_649_1073_649C920_649_850_560_720_430Z')]"
+						            viewBox="0 0 1440 860"
+						            preserveAspectRatio="xMidYMid meet"
+						            aria-hidden="true"
+						            focusable="false"
+				            >
+					            <defs>
+						            <linearGradient
+								            id="team-loop-left"
+								            x1="90"
+								            y1="240"
+								            x2="760"
+								            y2="620"
+								            gradientUnits="userSpaceOnUse"
+						            >
+							            <stop stop-color="#f4703f"></stop>
+							            <stop offset="0.55" stop-color="#f66f6a"></stop>
+							            <stop offset="1" stop-color="#f79ac4"></stop>
+						            </linearGradient>
 
-                                    <path
-                                        fill="url(#team-gradient-qa)"
-                                        d="M30 9L205 41L191 91L207 139L36 158L10 53Z"
-                                    ></path>
-                                    <circle
-                                        cx="193"
-                                        cy="24"
-                                        r="12"
-                                        fill="#9ce8f6"
-                                    ></circle>
-                                    <path
-                                        d="M19 132L50 153L15 157Z"
-                                        fill="#b4a2ff"
-                                    ></path>
+						            <linearGradient
+								            id="team-loop-right"
+								            x1="700"
+								            y1="240"
+								            x2="1350"
+								            y2="640"
+								            gradientUnits="userSpaceOnUse"
+						            >
+							            <stop stop-color="#4aa6f2"></stop>
+							            <stop offset="0.55" stop-color="#6f86f0"></stop>
+							            <stop offset="1" stop-color="#a96ef0"></stop>
+						            </linearGradient>
+					            </defs>
 
-                                    <image
-                                        href="assets/images/team-flow/qa-engineer-v2.webp"
-                                        x="2.5%"
-                                        y="2.5%"
-                                        width="100%"
-                                        height="100%"
-                                        clip-path="url(#team-shape-qa)"
-                                        transform="scale(0.95)"
-                                    ></image>
-                                    <image
-                                        href="assets/images/team-flow/qa-engineer-v2.webp"
-                                        x="2.5%"
-                                        y="2.5%"
-                                        width="100%"
-                                        height="100%"
-                                        clip-path="url(#team-top-qa)"
-                                        transform="scale(0.95)"
-                                    ></image>
-                                </svg>
+					            <!-- Left ribbon -->
+					            <path
+							            class="fill-none [stroke-width:80] [stroke-linecap:round] [stroke-linejoin:round]"
+							            data-team-ribbon
+							            stroke="url(#team-loop-left)"
+							            d="M720 430C590 300 470 210 367 210C215 210 90 300 90 430C90 560 215 649 367 649C520 649 590 560 720 430"
+					            ></path>
 
-                                <p
-                                    class="mt-4 w-full text-center text-xl leading-[1.3] font-bold text-[#7f8993] max-sm:mt-3 max-sm:text-base max-sm:leading-6"
-                                >
-                                    QA<br />engineers
-                                </p>
-                            </article>
+					            <!-- Right ribbon -->
+					            <path
+							            class="fill-none [stroke-width:80] [stroke-linecap:round] [stroke-linejoin:round]"
+							            data-team-ribbon
+							            stroke="url(#team-loop-right)"
+							            d="M720 430C850 300 970 210 1073 210C1225 210 1350 300 1350 430C1350 560 1225 649 1073 649C920 649 850 560 720 430"
+					            ></path>
 
-                            <!-- UX designers -->
-                            <article
-                                class="relative flex w-full min-w-0 flex-col items-center max-xl:w-[calc((100%_-_4rem)/3)] max-sm:w-[calc((100%_-_1.5rem)/2)]"
-                                data-team-member
-                                data-team-x="0"
-                                data-team-y="0"
-                            >
-                                <svg
-                                    class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-2xl:w-70 max-lg:w-57.5 max-md:w-35"
-                                    viewBox="-5.2 0.18 222 166"
-                                    aria-hidden="true"
-                                    focusable="false"
-                                >
-                                    <defs>
-                                        <linearGradient
-                                            id="team-gradient-ux"
-                                            x1="24"
-                                            y1="12"
-                                            x2="198"
-                                            y2="155"
-                                            gradientUnits="userSpaceOnUse"
-                                        >
-                                            <stop stop-color="#9577ea"></stop>
-                                            <stop
-                                                offset="1"
-                                                stop-color="#e37fc2"
-                                            ></stop>
-                                        </linearGradient>
-                                        <clipPath id="team-shape-ux">
-                                            <path
-                                                d="M16 142C5 114 20 92 42 81C31 51 54 20 87 22C105 -1 142 6 150 34C184 32 208 60 198 91C219 116 201 151 168 154H52C35 154 22 150 16 142Z"
-                                            ></path>
-                                        </clipPath>
+					            <!-- Dashed line flowing along the whole loop -->
+					            <path
+							            class="animate-team-dash fill-none stroke-white [stroke-width:3] [stroke-linecap:round] [stroke-dasharray:9_13] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+							            data-team-track
+							            d="M720 430C590 300 470 210 367 210C215 210 90 300 90 430C90 560 215 649 367 649C520 649 590 560 720 430C850 300 970 210 1073 210C1225 210 1350 300 1350 430C1350 560 1225 649 1073 649C920 649 850 560 720 430Z"
+					            ></path>
 
-                                        <clipPath id="team-top-ux">
-                                            <rect
-                                                width="100%"
-                                                height="30%"
-                                            ></rect>
-                                        </clipPath>
-                                    </defs>
+					            <!-- Arrow heads following the horizontal --team-loop-path. -->
+					            <g class="hidden supports-[offset-path]:block" data-team-arrows>
+						            <!-- Arrow 1 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:0s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+						            <!-- Arrow 2 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-2.75s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+						            <!-- Arrow 3 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-5.5s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+						            <!-- Arrow 4 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-8.25s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+						            <!-- Arrow 5 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-11s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+						            <!-- Arrow 6 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-13.75s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+						            <!-- Arrow 7 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-16.5s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+						            <!-- Arrow 8 of 8: the negative delay spreads it along the loop. -->
+						            <path
+								            class="animate-team-arrow fill-none stroke-white [stroke-width:3.5] [stroke-linecap:round] [stroke-linejoin:round] [transform-box:view-box] [transform-origin:0_0] [offset-path:var(--team-loop-path)] [offset-rotate:auto] [animation-delay:-19.25s] [animation-play-state:paused] group-data-[flowing]:[animation-play-state:running] motion-reduce:[animation-play-state:paused]"
+								            d="M-8 -10 L5 0 L-8 10"
+						            ></path>
+					            </g>
+				            </svg>
 
-                                    <path
-                                        fill="url(#team-gradient-ux)"
-                                        d="M16 142C5 114 20 92 42 81C31 51 54 20 87 22C105 -1 142 6 150 34C184 32 208 60 198 91C219 116 201 151 168 154H52C35 154 22 150 16 142Z"
-                                    ></path>
-                                    <circle
-                                        cx="28"
-                                        cy="35"
-                                        r="11"
-                                        fill="#f3b4df"
-                                    ></circle>
-                                    <circle
-                                        cx="192"
-                                        cy="143"
-                                        r="7"
-                                        fill="#9fe7dc"
-                                    ></circle>
+				            <!-- Members. Mobile coordinates are the desktop ones with x and y swapped. -->
+				            <article
+						            class="absolute z-[2] flex w-[32%] flex-col items-center [translate:-50%_calc(-50%_-_var(--team-label-shift))] left-[24.5%] top-[19.5%] md:w-[16.5%] md:left-[19.5%] md:top-[24.5%]"
+						            data-team-member
+						            data-team-slot="software"
+				            >
+					            <svg
+							            class="block h-auto w-full shrink-0 overflow-visible"
+							            viewBox="20.5 0.18 222 166"
+							            aria-hidden="true"
+							            focusable="false"
+					            >
+						            <defs>
+							            <linearGradient
+									            id="team-gradient-software"
+									            x1="20"
+									            y1="20"
+									            x2="205"
+									            y2="155"
+									            gradientUnits="userSpaceOnUse"
+							            >
+								            <stop stop-color="#ff9b5f"></stop>
+								            <stop offset="1" stop-color="#ff6287"></stop>
+							            </linearGradient>
+							            <clipPath id="team-shape-software">
+								            <path
+										            d="M13 111C4 75 27 34 64 18C103 1 152 10 184 38C217 66 216 112 188 142C162 169 109 152 73 158C37 164 21 143 13 111Z"
+								            ></path>
+							            </clipPath>
 
-                                    <image
-                                        href="assets/images/team-flow/ux-designer-v2.webp"
-                                        x="-10"
-                                        y="-11"
-                                        width="100%"
-                                        height="100%"
-                                        clip-path="url(#team-shape-ux)"
-                                    ></image>
-                                    <image
-                                        href="assets/images/team-flow/ux-designer-v2.webp"
-                                        x="-10"
-                                        y="-11"
-                                        width="100%"
-                                        height="100%"
-                                        clip-path="url(#team-top-ux)"
-                                    ></image>
-                                </svg>
+							            <clipPath id="team-top-software">
+								            <rect width="100%" height="60%"></rect>
+							            </clipPath>
+						            </defs>
 
-                                <p
-                                    class="mt-4 w-full text-center text-xl leading-[1.3] font-bold text-[#7f8993] max-sm:mt-3 max-sm:text-base max-sm:leading-6"
-                                >
-                                    UX<br />designers
-                                </p>
-                            </article>
+						            <path
+								            fill="url(#team-gradient-software)"
+								            d="M13 111C4 75 27 34 64 18C103 1 152 10 184 38C217 66 216 112 188 142C162 169 109 152 73 158C37 164 21 143 13 111Z"
+						            ></path>
+						            <circle cx="194" cy="31" r="17" fill="#ffd8c8" opacity="0.9"></circle>
+						            <circle cx="31" cy="139" r="8" fill="#ffcf72"></circle>
 
-                            <!-- Data scientists -->
-                            <article
-                                class="relative flex w-full min-w-0 flex-col items-center max-xl:w-[calc((100%_-_4rem)/3)] max-sm:w-[calc((100%_-_1.5rem)/2)]"
-                                data-team-member
-                                data-team-x="2"
-                                data-team-y="30"
-                            >
-                                <svg
-                                    class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-2xl:w-70 max-lg:w-57.5 max-md:w-35"
-                                    viewBox="0 0.18 222 166"
-                                    aria-hidden="true"
-                                    focusable="false"
-                                >
-                                    <defs>
-                                        <linearGradient
-                                            id="team-gradient-data"
-                                            x1="32"
-                                            y1="15"
-                                            x2="188"
-                                            y2="158"
-                                            gradientUnits="userSpaceOnUse"
-                                        >
-                                            <stop stop-color="#ffe06d"></stop>
-                                            <stop
-                                                offset="1"
-                                                stop-color="#ff9656"
-                                            ></stop>
-                                        </linearGradient>
-                                        <clipPath id="team-shape-data">
-                                            <path
-                                                d="M111 5L145 40L202 35L190 88L215 132L163 145L127 164L91 143L29 151L35 96L7 55L64 40Z"
-                                            ></path>
-                                        </clipPath>
+						            <image
+								            href="assets/images/team-flow/software-developer-v2.webp"
+								            x="12"
+								            y="-10"
+								            width="100%"
+								            height="100%"
+								            clip-path="url(#team-shape-software)"
+						            ></image>
+						            <image
+								            href="assets/images/team-flow/software-developer-v2.webp"
+								            x="12"
+								            y="-10"
+								            width="100%"
+								            height="100%"
+								            clip-path="url(#team-top-software)"
+						            ></image>
+					            </svg>
 
-                                        <clipPath id="team-top-data">
-                                            <rect
-                                                width="59%"
-                                                height="91%"
-                                                class="[rotate:8deg] [transform-origin:center_center]"
-                                            ></rect>
-                                        </clipPath>
-                                    </defs>
+					            <p
+							            class="relative z-[2] -mt-[1.2em] rounded-full bg-white px-[1.5em] py-[0.65em] text-center font-bold whitespace-nowrap text-[#26303b] text-[clamp(12px,3.1cqw,18px)] leading-[1.3] shadow-[0_12px_28px_-14px_#13203040,0_2px_5px_-2px_#13203014] md:text-[clamp(11px,1.45cqw,22px)]"
+					            >
+						            Software<br />developers
+					            </p>
+				            </article>
+				            <article
+						            class="absolute z-[2] flex w-[32%] flex-col items-center [translate:-50%_calc(-50%_-_var(--team-label-shift))] left-[24.5%] top-[80.5%] md:w-[16.5%] md:left-[80.5%] md:top-[24.5%]"
+						            data-team-member
+						            data-team-slot="qa"
+				            >
+					            <svg
+							            class="block h-auto w-full shrink-0 overflow-visible"
+							            viewBox="0 0.18 222 166"
+							            aria-hidden="true"
+							            focusable="false"
+					            >
+						            <defs>
+							            <linearGradient
+									            id="team-gradient-qa"
+									            x1="15"
+									            y1="15"
+									            x2="205"
+									            y2="155"
+									            gradientUnits="userSpaceOnUse"
+							            >
+								            <stop stop-color="#55c8ef"></stop>
+								            <stop offset="1" stop-color="#6f83f2"></stop>
+							            </linearGradient>
+							            <clipPath id="team-shape-qa">
+								            <path d="M30 9L205 41L191 91L207 139L36 158L10 53Z"></path>
+							            </clipPath>
 
-                                    <path
-                                        fill="url(#team-gradient-data)"
-                                        d="M111 5L145 40L202 35L190 88L215 132L163 145L127 164L91 143L29 151L35 96L7 55L64 40Z"
-                                    ></path>
-                                    <circle
-                                        cx="195"
-                                        cy="25"
-                                        r="10"
-                                        fill="#ff7591"
-                                    ></circle>
-                                    <circle
-                                        cx="22"
-                                        cy="112"
-                                        r="6"
-                                        fill="#fff0aa"
-                                    ></circle>
+							            <clipPath id="team-top-qa">
+								            <rect
+										            width="100%"
+										            height="100%"
+										            class="[rotate:5deg] [transform:translate(0,-5px)] [transform-origin:center_center]"
+								            ></rect>
+							            </clipPath>
+						            </defs>
 
-                                    <image
-                                        href="assets/images/team-flow/data-scientist-v2.webp"
-                                        x="0"
-                                        y="-9"
-                                        width="100%"
-                                        height="100%"
-                                        clip-path="url(#team-shape-data)"
-                                    ></image>
-                                    <image
-                                        href="assets/images/team-flow/data-scientist-v2.webp"
-                                        x="0"
-                                        y="-9"
-                                        width="100%"
-                                        height="100%"
-                                        clip-path="url(#team-top-data)"
-                                    ></image>
-                                </svg>
+						            <path
+								            fill="url(#team-gradient-qa)"
+								            d="M30 9L205 41L191 91L207 139L36 158L10 53Z"
+						            ></path>
+						            <circle cx="193" cy="24" r="12" fill="#9ce8f6"></circle>
+						            <path d="M19 132L50 153L15 157Z" fill="#b4a2ff"></path>
 
-                                <p
-                                    class="mt-4 w-full text-center text-xl leading-[1.3] font-bold text-[#7f8993] max-sm:mt-3 max-sm:text-base max-sm:leading-6"
-                                >
-                                    Data<br />scientists
-                                </p>
-                            </article>
+						            <image
+								            href="assets/images/team-flow/qa-engineer-v2.webp"
+								            x="2.5%"
+								            y="2.5%"
+								            width="100%"
+								            height="100%"
+								            clip-path="url(#team-shape-qa)"
+								            transform="scale(0.95)"
+						            ></image>
+						            <image
+								            href="assets/images/team-flow/qa-engineer-v2.webp"
+								            x="2.5%"
+								            y="2.5%"
+								            width="100%"
+								            height="100%"
+								            clip-path="url(#team-top-qa)"
+								            transform="scale(0.95)"
+						            ></image>
+					            </svg>
 
-                            <!-- Project managers -->
-                            <article
-                                class="relative flex w-full min-w-0 flex-col items-center max-xl:w-[calc((100%_-_4rem)/3)] max-sm:w-[calc((100%_-_1.5rem)/2)]"
-                                data-team-member
-                                data-team-x="4"
-                                data-team-y="-24"
-                            >
-                                <svg
-                                    class="block h-auto w-[clamp(300px,24vw,380px)] max-w-none shrink-0 overflow-visible max-2xl:w-70 max-lg:w-57.5 max-md:w-35"
-                                    viewBox="-1.8 0.18 222 166"
-                                    aria-hidden="true"
-                                    focusable="false"
-                                >
-                                    <defs>
-                                        <linearGradient
-                                            id="team-gradient-project"
-                                            x1="24"
-                                            y1="20"
-                                            x2="205"
-                                            y2="155"
-                                            gradientUnits="userSpaceOnUse"
-                                        >
-                                            <stop stop-color="#69d7b3"></stop>
-                                            <stop
-                                                offset="1"
-                                                stop-color="#3fa8d7"
-                                            ></stop>
-                                        </linearGradient>
-                                        <clipPath id="team-shape-project">
-                                            <path
-                                                d="M31 20H160C189 20 209 39 209 66V104C209 137 185 158 151 158H92C47 158 17 130 17 89V36C17 27 23 20 31 20Z"
-                                            ></path>
-                                        </clipPath>
+					            <p
+							            class="relative z-[2] -mt-[1.2em] rounded-full bg-white px-[1.5em] py-[0.65em] text-center font-bold whitespace-nowrap text-[#26303b] text-[clamp(12px,3.1cqw,18px)] leading-[1.3] shadow-[0_12px_28px_-14px_#13203040,0_2px_5px_-2px_#13203014] md:text-[clamp(11px,1.45cqw,22px)]"
+					            >
+						            QA<br />engineers
+					            </p>
+				            </article>
+				            <article
+						            class="absolute z-[2] flex w-[32%] flex-col items-center [translate:-50%_calc(-50%_-_var(--team-label-shift))] left-[76.5%] top-[19.5%] md:w-[16.5%] md:left-[19.5%] md:top-[76.5%]"
+						            data-team-member
+						            data-team-slot="ux"
+				            >
+					            <svg
+							            class="block h-auto w-full shrink-0 overflow-visible"
+							            viewBox="-5.2 0.18 222 166"
+							            aria-hidden="true"
+							            focusable="false"
+					            >
+						            <defs>
+							            <linearGradient
+									            id="team-gradient-ux"
+									            x1="24"
+									            y1="12"
+									            x2="198"
+									            y2="155"
+									            gradientUnits="userSpaceOnUse"
+							            >
+								            <stop stop-color="#9577ea"></stop>
+								            <stop offset="1" stop-color="#e37fc2"></stop>
+							            </linearGradient>
+							            <clipPath id="team-shape-ux">
+								            <path
+										            d="M16 142C5 114 20 92 42 81C31 51 54 20 87 22C105 -1 142 6 150 34C184 32 208 60 198 91C219 116 201 151 168 154H52C35 154 22 150 16 142Z"
+								            ></path>
+							            </clipPath>
 
-                                        <clipPath id="team-top-project">
-                                            <rect
-                                                width="100%"
-                                                height="76%"
-                                            ></rect>
-                                        </clipPath>
-                                    </defs>
+							            <clipPath id="team-top-ux">
+								            <rect width="100%" height="30%"></rect>
+							            </clipPath>
+						            </defs>
 
-                                    <path
-                                        fill="url(#team-gradient-project)"
-                                        d="M31 20H160C189 20 209 39 209 66V104C209 137 185 158 151 158H92C47 158 17 130 17 89V36C17 27 23 20 31 20Z"
-                                    ></path>
-                                    <circle
-                                        cx="193"
-                                        cy="30"
-                                        r="15"
-                                        fill="#a9f0d6"
-                                    ></circle>
-                                    <path
-                                        d="M18 127C42 111 61 116 79 150H37C27 145 21 137 18 127Z"
-                                        fill="#75b9f1"
-                                        opacity="0.9"
-                                    ></path>
+						            <path
+								            fill="url(#team-gradient-ux)"
+								            d="M16 142C5 114 20 92 42 81C31 51 54 20 87 22C105 -1 142 6 150 34C184 32 208 60 198 91C219 116 201 151 168 154H52C35 154 22 150 16 142Z"
+						            ></path>
+						            <circle cx="28" cy="35" r="11" fill="#f3b4df"></circle>
+						            <circle cx="192" cy="143" r="7" fill="#9fe7dc"></circle>
 
-                                    <image
-                                        href="assets/images/team-flow/project-manager-v2.webp"
-                                        x="-7"
-                                        width="100%"
-                                        height="100%"
-                                        clip-path="url(#team-shape-project)"
-                                    ></image>
-                                    <image
-                                        href="assets/images/team-flow/project-manager-v2.webp"
-                                        x="-7"
-                                        width="100%"
-                                        height="100%"
-                                        clip-path="url(#team-top-project)"
-                                    ></image>
-                                </svg>
+						            <image
+								            href="assets/images/team-flow/ux-designer-v2.webp"
+								            x="-10"
+								            y="-11"
+								            width="100%"
+								            height="100%"
+								            clip-path="url(#team-shape-ux)"
+						            ></image>
+						            <image
+								            href="assets/images/team-flow/ux-designer-v2.webp"
+								            x="-10"
+								            y="-11"
+								            width="100%"
+								            height="100%"
+								            clip-path="url(#team-top-ux)"
+						            ></image>
+					            </svg>
 
-                                <p
-                                    class="mt-4 w-full text-center text-xl leading-[1.3] font-bold text-[#7f8993] max-sm:mt-3 max-sm:text-base max-sm:leading-6"
-                                >
-                                    Project<br />managers
-                                </p>
-                            </article>
-                        </div>
+					            <p
+							            class="relative z-[2] -mt-[1.2em] rounded-full bg-white px-[1.5em] py-[0.65em] text-center font-bold whitespace-nowrap text-[#26303b] text-[clamp(12px,3.1cqw,18px)] leading-[1.3] shadow-[0_12px_28px_-14px_#13203040,0_2px_5px_-2px_#13203014] md:text-[clamp(11px,1.45cqw,22px)]"
+					            >
+						            UX<br />designers
+					            </p>
+				            </article>
+				            <article
+						            class="absolute z-[2] flex w-[32%] flex-col items-center [translate:-50%_calc(-50%_-_var(--team-label-shift))] left-[76.5%] top-[80.5%] md:w-[16.5%] md:left-[80.5%] md:top-[76.5%]"
+						            data-team-member
+						            data-team-slot="data"
+				            >
+					            <svg
+							            class="block h-auto w-full shrink-0 overflow-visible"
+							            viewBox="0 0.18 222 166"
+							            aria-hidden="true"
+							            focusable="false"
+					            >
+						            <defs>
+							            <linearGradient
+									            id="team-gradient-data"
+									            x1="32"
+									            y1="15"
+									            x2="188"
+									            y2="158"
+									            gradientUnits="userSpaceOnUse"
+							            >
+								            <stop stop-color="#ffe06d"></stop>
+								            <stop offset="1" stop-color="#ff9656"></stop>
+							            </linearGradient>
+							            <clipPath id="team-shape-data">
+								            <path
+										            d="M111 5L145 40L202 35L190 88L215 132L163 145L127 164L91 143L29 151L35 96L7 55L64 40Z"
+								            ></path>
+							            </clipPath>
 
-                        <!-- Heading + CTA -->
-                        <div
-                            class="relative z-10 mt-16 flex flex-col items-center text-center max-xl:mt-14 max-sm:mt-10"
-                            data-team-cta
-                        >
-                            <h2
-                                id="team-assembly-heading"
-                                class="my-5 text-[#797d80] transition-all"
-                                data-team-heading
-                            >
-                                Let’s assemble your team.
-                            </h2>
+							            <clipPath id="team-top-data">
+								            <rect
+										            width="59%"
+										            height="91%"
+										            class="[rotate:8deg] [transform-origin:center_center]"
+								            ></rect>
+							            </clipPath>
+						            </defs>
 
-                            <a
-                                class="btn-cta w-full max-w-45 transition-all"
-                                href="#"
-                                data-team-button
-                            >
-                                Schedule a Call
-                            </a>
-                        </div>
-                    </div>
-                </section>
+						            <path
+								            fill="url(#team-gradient-data)"
+								            d="M111 5L145 40L202 35L190 88L215 132L163 145L127 164L91 143L29 151L35 96L7 55L64 40Z"
+						            ></path>
+						            <circle cx="195" cy="25" r="10" fill="#ff7591"></circle>
+						            <circle cx="22" cy="112" r="6" fill="#fff0aa"></circle>
 
-                <section
-                    class="page-container relative z-1 w-full pt-20 max-2xl:pt-12"
-                >
-                    <div
-                        class="flex items-end justify-between gap-6 max-[833px]:flex-col max-[833px]:items-start"
-                    >
-                        <h2
-                            id="engagement-heading"
-                            class="text-c-dark-alt"
-                        >
-                            Keep full control.<br />
-                            Or hand everything off to us.
-                        </h2>
+						            <image
+								            href="assets/images/team-flow/data-scientist-v2.webp"
+								            x="0"
+								            y="-9"
+								            width="100%"
+								            height="100%"
+								            clip-path="url(#team-shape-data)"
+						            ></image>
+						            <image
+								            href="assets/images/team-flow/data-scientist-v2.webp"
+								            x="0"
+								            y="-9"
+								            width="100%"
+								            height="100%"
+								            clip-path="url(#team-top-data)"
+						            ></image>
+					            </svg>
 
-                        <p
-                            class="max-w-100 shrink-0 border-l border-l-c-muted-gray pl-5 leading-relaxed text-c-muted-gray max-[833px]:border-l-0 max-[833px]:pl-0"
-                        >
-                            From embedded engineers to fully managed projects,
-                            we customize every engagement to fit your workflow,
-                            priorities, and delivery needs.
-                        </p>
-                    </div>
+					            <p
+							            class="relative z-[2] -mt-[1.2em] rounded-full bg-white px-[1.5em] py-[0.65em] text-center font-bold whitespace-nowrap text-[#26303b] text-[clamp(12px,3.1cqw,18px)] leading-[1.3] shadow-[0_12px_28px_-14px_#13203040,0_2px_5px_-2px_#13203014] md:text-[clamp(11px,1.45cqw,22px)]"
+					            >
+						            Data<br />scientists
+					            </p>
+				            </article>
+				            <article
+						            class="absolute z-[3] flex w-[32%] flex-col items-center [translate:-50%_calc(-50%_-_var(--team-label-shift))] left-1/2 top-1/2 md:w-[16.5%]"
+						            data-team-member
+						            data-team-slot="project"
+				            >
+					            <svg
+							            class="block h-auto w-full shrink-0 overflow-visible"
+							            viewBox="-1.8 0.18 222 166"
+							            aria-hidden="true"
+							            focusable="false"
+					            >
+						            <defs>
+							            <linearGradient
+									            id="team-gradient-project"
+									            x1="24"
+									            y1="20"
+									            x2="205"
+									            y2="155"
+									            gradientUnits="userSpaceOnUse"
+							            >
+								            <stop stop-color="#69d7b3"></stop>
+								            <stop offset="1" stop-color="#3fa8d7"></stop>
+							            </linearGradient>
+							            <clipPath id="team-shape-project">
+								            <path
+										            d="M31 20H160C189 20 209 39 209 66V104C209 137 185 158 151 158H92C47 158 17 130 17 89V36C17 27 23 20 31 20Z"
+								            ></path>
+							            </clipPath>
 
-                    <div
-                        class="mt-10 grid grid-cols-3 gap-6 max-lg:mt-8 max-[833px]:grid-cols-1 max-[833px]:gap-3"
-                        data-engagement-cards
-                    >
-                        <div class="engagement-card">
-                            <h3 class="engagement-card__title">
-                                <button
-                                    type="button"
-                                    class="engagement-card__toggle"
-                                    id="engagement-staff-toggle"
-                                    aria-expanded="true"
-                                    aria-controls="engagement-staff-panel"
-                                >
-                                    Need a couple of extra software engineers on
-                                    your team?
-                                </button>
-                            </h3>
-                            <div
-                                class="engagement-card__panel"
-                                id="engagement-staff-panel"
-                            >
-                                <div class="engagement-card__content">
-                                    <span class="engagement-card__category"
-                                        >Staff augmentation</span
-                                    >
-                                    <p class="engagement-card__description">
-                                        Get senior, production-ready developers
-                                        who integrate directly into your
-                                        internal team.
-                                    </p>
-                                    <img
-                                        src="assets/images/team-flow/engagement-01.svg"
-                                        width="96"
-                                        height="96"
-                                        alt=""
-                                        class="engagement-card__illustration"
-                                    />
-                                </div>
-                            </div>
-                            <svg
-                                class="engagement-card__eye"
-                                aria-hidden="true"
-                            >
-                                <use
-                                    href="assets/images/sprite.svg#engagement-eye"
-                                ></use>
-                            </svg>
-                        </div>
-                        <div class="engagement-card">
-                            <h3 class="engagement-card__title">
-                                <button
-                                    type="button"
-                                    class="engagement-card__toggle"
-                                    id="engagement-teams-toggle"
-                                    aria-expanded="true"
-                                    aria-controls="engagement-teams-panel"
-                                >
-                                    Need a few teams to deliver several projects
-                                    simultaneously?
-                                </button>
-                            </h3>
-                            <div
-                                class="engagement-card__panel"
-                                id="engagement-teams-panel"
-                            >
-                                <div class="engagement-card__content">
-                                    <span class="engagement-card__category"
-                                        >Dedicated teams</span
-                                    >
-                                    <p class="engagement-card__description">
-                                        Spin up focused, delivery-ready pods to
-                                        handle full builds or workstreams.
-                                    </p>
-                                    <img
-                                        src="assets/images/team-flow/engagement-02.svg"
-                                        width="96"
-                                        height="96"
-                                        alt=""
-                                        class="engagement-card__illustration"
-                                    />
-                                </div>
-                            </div>
-                            <svg
-                                class="engagement-card__eye"
-                                aria-hidden="true"
-                            >
-                                <use
-                                    href="assets/images/sprite.svg#engagement-eye"
-                                ></use>
-                            </svg>
-                        </div>
-                        <div class="engagement-card">
-                            <h3 class="engagement-card__title">
-                                <button
-                                    type="button"
-                                    class="engagement-card__toggle"
-                                    id="engagement-outsourcing-toggle"
-                                    aria-expanded="true"
-                                    aria-controls="engagement-outsourcing-panel"
-                                >
-                                    Want to offload everything to us, from start
-                                    to finish?
-                                </button>
-                            </h3>
-                            <div
-                                class="engagement-card__panel"
-                                id="engagement-outsourcing-panel"
-                            >
-                                <div class="engagement-card__content">
-                                    <span class="engagement-card__category"
-                                        >Software outsourcing</span
-                                    >
-                                    <p class="engagement-card__description">
-                                        Hand off the full project lifecycle. We
-                                        take ownership and keep you involved at
-                                        every step.
-                                    </p>
-                                    <img
-                                        src="assets/images/team-flow/engagement-03.svg"
-                                        width="96"
-                                        height="96"
-                                        alt=""
-                                        class="engagement-card__illustration"
-                                    />
-                                </div>
-                            </div>
-                            <svg
-                                class="engagement-card__eye"
-                                aria-hidden="true"
-                            >
-                                <use
-                                    href="assets/images/sprite.svg#engagement-eye"
-                                ></use>
-                            </svg>
-                        </div>
-                    </div>
-                </section>
+							            <clipPath id="team-top-project">
+								            <rect width="100%" height="76%"></rect>
+							            </clipPath>
+						            </defs>
 
-                <section
+						            <path
+								            fill="url(#team-gradient-project)"
+								            d="M31 20H160C189 20 209 39 209 66V104C209 137 185 158 151 158H92C47 158 17 130 17 89V36C17 27 23 20 31 20Z"
+						            ></path>
+						            <circle cx="193" cy="30" r="15" fill="#a9f0d6"></circle>
+						            <path
+								            d="M18 127C42 111 61 116 79 150H37C27 145 21 137 18 127Z"
+								            fill="#75b9f1"
+								            opacity="0.9"
+						            ></path>
+
+						            <image
+								            href="assets/images/team-flow/project-manager-v2.webp"
+								            x="-7"
+								            width="100%"
+								            height="100%"
+								            clip-path="url(#team-shape-project)"
+						            ></image>
+						            <image
+								            href="assets/images/team-flow/project-manager-v2.webp"
+								            x="-7"
+								            width="100%"
+								            height="100%"
+								            clip-path="url(#team-top-project)"
+						            ></image>
+					            </svg>
+
+					            <p
+							            class="relative z-[2] -mt-[1.2em] rounded-full bg-white px-[1.5em] py-[0.65em] text-center font-bold whitespace-nowrap text-[#26303b] text-[clamp(12px,3.1cqw,18px)] leading-[1.3] shadow-[0_12px_28px_-14px_#13203040,0_2px_5px_-2px_#13203014] md:text-[clamp(11px,1.45cqw,22px)]"
+					            >
+						            Project<br />managers
+					            </p>
+				            </article>
+			            </div>
+
+			            <!-- Heading + CTA -->
+			            <div
+					            class="relative z-10 mt-16 flex flex-col items-center text-center max-xl:mt-14 max-md:mt-10"
+					            data-team-cta
+			            >
+				            <h2
+						            id="team-assembly-heading"
+						            class="my-5 text-[#797d80] transition-all"
+						            data-team-heading
+				            >
+					            Let’s assemble your team.
+				            </h2>
+
+				            <a class="btn-cta w-full max-w-45 transition-all" href="#" data-team-button>
+					            Schedule a Call
+				            </a>
+			            </div>
+		            </div>
+	            </section>
+	            <section
+			            class="page-container relative z-1 w-full pt-20 max-2xl:pt-12"
+			            aria-labelledby="engagement-heading"
+	            >
+		            <!-- Heading -->
+		            <div
+				            class="flex items-end justify-between gap-10 max-[833px]:flex-col max-[833px]:items-start max-[833px]:gap-5"
+		            >
+			            <h2
+					            id="engagement-heading"
+					            class="max-w-130 text-c-dark-alt"
+			            >
+				            One team.<br />
+				            From idea to scale.
+			            </h2>
+
+			            <p
+					            class="max-w-120 shrink-0 border-l border-l-c-muted-gray/40 pl-6 leading-relaxed text-c-muted-gray max-lg:max-w-100 max-[833px]:max-w-full max-[833px]:border-l-0 max-[833px]:pl-0"
+			            >
+				            Bring us your idea, product, or business challenge.
+				            Our full-scale engineering team handles strategy,
+				            design, development, testing, and delivery to build
+				            digital products that scale with your business.
+			            </p>
+		            </div>
+
+		            <!-- Cards -->
+		            <div
+				            class="mt-12 grid grid-cols-3 gap-6 max-xl:gap-4 max-lg:mt-10 max-[833px]:grid-cols-1 max-[833px]:gap-3"
+				            data-engagement-cards
+		            >
+			            <!-- ==========================================
+                             Card 01
+                        =========================================== -->
+			            <div class="engagement-card">
+
+				            <h3 class="engagement-card__title">
+					            <button
+							            type="button"
+							            class="engagement-card__toggle"
+							            id="engagement-team-toggle"
+							            aria-expanded="false"
+							            aria-controls="engagement-team-panel"
+					            >
+						            Build a complete team around your product.
+					            </button>
+				            </h3>
+
+				            <div
+						            class="engagement-card__panel"
+						            id="engagement-team-panel"
+				            >
+					            <div class="engagement-card__content">
+
+                    <span class="engagement-card__category">
+                        Dedicated Engineering
+                    </span>
+
+						            <p class="engagement-card__description">
+							            Get a dedicated team of software engineers,
+							            UI/UX designers, QA engineers, project managers,
+							            and technology specialists working together to
+							            continuously build and evolve your product.
+						            </p>
+
+						            <div class="engagement-card__best">
+                        <span class="engagement-card__best-label">
+                            Best for
+                        </span>
+
+							            <div class="engagement-card__tags">
+								            <span>SaaS Products</span>
+								            <span>Long-Term Development</span>
+								            <span>Continuous Innovation</span>
+							            </div>
+						            </div>
+
+						            <a
+								            href="#"
+								            class="engagement-card__cta"
+						            >
+							            <span>Build Your Team</span>
+
+							            <svg
+									            class="size-4"
+									            aria-hidden="true"
+							            >
+								            <use
+										            href="assets/images/sprite.svg#arrow"
+								            ></use>
+							            </svg>
+						            </a>
+
+						            <img
+								            src="assets/images/team-flow/engagement-01.svg"
+								            width="112"
+								            height="112"
+								            alt=""
+								            class="engagement-card__illustration"
+						            />
+
+					            </div>
+				            </div>
+
+				            <svg
+						            class="engagement-card__eye"
+						            aria-hidden="true"
+				            >
+					            <use
+							            href="assets/images/sprite.svg#engagement-eye"
+					            ></use>
+				            </svg>
+			            </div>
+
+
+			            <!-- ==========================================
+                             Card 02
+                        =========================================== -->
+			            <div class="engagement-card">
+
+				            <h3 class="engagement-card__title">
+					            <button
+							            type="button"
+							            class="engagement-card__toggle"
+							            id="engagement-product-toggle"
+							            aria-expanded="false"
+							            aria-controls="engagement-product-panel"
+					            >
+						            Turn your idea into a market-ready product.
+					            </button>
+				            </h3>
+
+				            <div
+						            class="engagement-card__panel"
+						            id="engagement-product-panel"
+				            >
+					            <div class="engagement-card__content">
+
+                    <span class="engagement-card__category">
+                        Product Development
+                    </span>
+
+						            <p class="engagement-card__description">
+							            From product discovery and UX/UI design to
+							            development, testing, deployment, and optimization,
+							            we take your product from concept to a scalable
+							            digital solution.
+						            </p>
+
+						            <div class="engagement-card__best">
+                        <span class="engagement-card__best-label">
+                            Best for
+                        </span>
+
+							            <div class="engagement-card__tags">
+								            <span>New Products</span>
+								            <span>SaaS</span>
+								            <span>Web &amp; Mobile Applications</span>
+							            </div>
+						            </div>
+
+						            <a
+								            href="#"
+								            class="engagement-card__cta"
+						            >
+							            <span>Build Your Product</span>
+
+							            <svg
+									            class="size-4"
+									            aria-hidden="true"
+							            >
+								            <use
+										            href="assets/images/sprite.svg#arrow"
+								            ></use>
+							            </svg>
+						            </a>
+
+						            <img
+								            src="assets/images/team-flow/engagement-02.svg"
+								            width="112"
+								            height="112"
+								            alt=""
+								            class="engagement-card__illustration"
+						            />
+
+					            </div>
+				            </div>
+
+				            <svg
+						            class="engagement-card__eye"
+						            aria-hidden="true"
+				            >
+					            <use
+							            href="assets/images/sprite.svg#engagement-eye"
+					            ></use>
+				            </svg>
+			            </div>
+
+
+			            <!-- ==========================================
+                             Card 03
+                        =========================================== -->
+			            <div class="engagement-card">
+
+				            <h3 class="engagement-card__title">
+					            <button
+							            type="button"
+							            class="engagement-card__toggle"
+							            id="engagement-delivery-toggle"
+							            aria-expanded="false"
+							            aria-controls="engagement-delivery-panel"
+					            >
+						            We take care of the complete delivery.
+					            </button>
+				            </h3>
+
+				            <div
+						            class="engagement-card__panel"
+						            id="engagement-delivery-panel"
+				            >
+					            <div class="engagement-card__content">
+
+                    <span class="engagement-card__category">
+                        End-to-End Development
+                    </span>
+
+						            <p class="engagement-card__description">
+							            Give Kkeydos complete ownership of your software
+							            project. Our team manages architecture, design,
+							            development, QA, deployment, and ongoing
+							            improvements under one roof.
+						            </p>
+
+						            <div class="engagement-card__best">
+                        <span class="engagement-card__best-label">
+                            Best for
+                        </span>
+
+							            <div class="engagement-card__tags">
+								            <span>Enterprise Software</span>
+								            <span>Digital Transformation</span>
+								            <span>Complex Platforms</span>
+							            </div>
+						            </div>
+
+						            <a
+								            href="#"
+								            class="engagement-card__cta"
+						            >
+							            <span>Start Your Project</span>
+
+							            <svg
+									            class="size-4"
+									            aria-hidden="true"
+							            >
+								            <use
+										            href="assets/images/sprite.svg#arrow"
+								            ></use>
+							            </svg>
+						            </a>
+
+						            <img
+								            src="assets/images/team-flow/engagement-03.svg"
+								            width="112"
+								            height="112"
+								            alt=""
+								            class="engagement-card__illustration"
+						            />
+
+					            </div>
+				            </div>
+
+				            <svg
+						            class="engagement-card__eye"
+						            aria-hidden="true"
+				            >
+					            <use
+							            href="assets/images/sprite.svg#engagement-eye"
+					            ></use>
+				            </svg>
+			            </div>
+		            </div>
+	            </section>
+	            <section
                     class="page-container relative z-1 mt-28 flex justify-between pr-40 items-start max-[1800px]:pr-50 max-2xl:pr-0 gap-16 max-lg:gap-10 max-md:mt-20 max-2xl:max-w-138 max-2xl:mx-auto max-2xl:flex-col max-2xl:gap-19"
                 >
                     <div class="relative min-w-0">

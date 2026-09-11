@@ -34,6 +34,23 @@
 
     /*Animations*/
     --ease-header: cubic-bezier(0.22, 1, 0.36, 1);
+
+
+    @keyframes team-dash {
+        to {
+            stroke-dashoffset: -34;
+        }
+    }
+
+    @keyframes team-arrow {
+        from {
+            offset-distance: 0%;
+        }
+
+        to {
+            offset-distance: 100%;
+        }
+    }
 }
 
 @layer base {
@@ -483,164 +500,598 @@
 
         @apply transition-shadow! duration-200 ease-out;
     }
+    .featured-swiper-pagination {
+        position: static !important;
+        width: auto !important;
+
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        justify-self: center;
+
+        gap: 14px;
+    }
+
+    .featured-swiper-pagination .swiper-pagination-bullet {
+        width: 10px !important;
+        height: 10px !important;
+        margin: 0 !important;
+
+        border-radius: 50% !important;
+        background-color: #d8d5d3 !important;
+        opacity: 1 !important;
+    }
+
+    .featured-swiper-pagination .swiper-pagination-bullet-active {
+        background-color: var(--color-c-orange) !important;
+    }
+
+    /* ==========================================
+    ENGAGEMENT CARDS
+ ========================================== */
 
     .engagement-card {
         --engagement-ease: cubic-bezier(0.22, 1, 0.36, 1);
-        @apply relative isolate flex min-h-99 min-w-0 flex-col overflow-hidden rounded-lg border border-black/6 bg-white p-6 shadow-[0_8px_30px_rgb(15_23_42/0.04)];
+
+        @apply relative isolate flex min-h-100 min-w-0 flex-col overflow-hidden;
+        @apply rounded-xl border border-black/6 bg-white p-6;
+        @apply shadow-[0_8px_30px_rgb(15_23_42/0.04)];
 
         &::before {
             content: '';
+
             @apply pointer-events-none absolute inset-0 z-1 bg-[#20272b];
-            clip-path: circle(0 at calc(100% - 34px) calc(100% - 34px));
-            transition: clip-path 560ms var(--engagement-ease);
+
+            clip-path: circle(
+                    0 at calc(100% - 30px) calc(100% - 30px)
+            );
+
+            will-change: clip-path;
+
+            transition:
+                    clip-path 680ms var(--engagement-ease);
         }
 
         &.is-open {
             &::before {
-                clip-path: circle(150% at calc(100% - 34px) calc(100% - 34px));
+                clip-path: circle(
+                        180% at calc(100% - 30px) calc(100% - 30px)
+                );
             }
+
             .engagement-card__category {
                 color: #fa9f84;
             }
+
             .engagement-card__title {
                 color: #fff;
             }
+
             .engagement-card__description {
                 color: #e0e4e6;
             }
+
             .engagement-card__illustration {
                 opacity: 0;
-                transform: translateY(8px);
+                transform: translateY(8px) scale(0.96);
             }
+
             .engagement-card__eye {
                 opacity: 0;
-                transform: scale(0.7);
+                transform: scale(0.75);
             }
         }
     }
-    .engagement-card__title {
-        @apply z-2 order-1 mt-4 text-2xl font-bold leading-snug text-c-dark-alt;
-        transition: color 300ms ease;
+
+    /* ==========================================
+       CATEGORY
+    ========================================== */
+
+    .engagement-card__category {
+        @apply relative z-2 order-0;
+        @apply text-[11px] font-semibold uppercase;
+        @apply tracking-[0.16em] text-c-muted-gray;
+
+        transition:
+                color 300ms ease;
     }
+
+
+    /* ==========================================
+       TITLE
+    ========================================== */
+
+    .engagement-card__title {
+        @apply relative z-2 order-1 mt-5;
+        @apply text-[26px] font-bold leading-[1.25] text-c-dark-alt;
+
+        transition:
+                color 300ms ease;
+    }
+
+
+    /* ==========================================
+       FULL-CARD TOGGLE
+    ========================================== */
+
     .engagement-card__toggle {
         @apply w-full cursor-pointer text-left;
+
         font: inherit;
         color: inherit;
         -webkit-tap-highlight-color: transparent;
 
         &::after {
             content: '';
+
             @apply absolute inset-0 z-3;
         }
+
         &:focus-visible {
             outline: none;
         }
+
         &:focus-visible::after {
             border-radius: inherit;
             outline: 2px solid var(--color-c-orange);
             outline-offset: -3px;
         }
     }
+
+
+    /* ==========================================
+       DESKTOP CONTENT STRUCTURE
+    ========================================== */
+
     .engagement-card__panel,
     .engagement-card__content {
         display: contents;
     }
-    .engagement-card__category {
-        @apply relative z-2 order-0 text-xs font-semibold uppercase tracking-widest text-c-muted-gray;
-        transition: color 300ms ease;
-    }
+
+
+    /* ==========================================
+       DESCRIPTION
+    ========================================== */
+
     .engagement-card__description {
-        @apply relative z-2 order-2 mt-4 text-base leading-relaxed text-c-muted-gray;
+        @apply relative z-2 order-2 mt-5;
+        @apply text-[15px] leading-7 text-c-muted-gray;
+
         transition:
                 opacity 320ms ease,
                 transform 420ms var(--engagement-ease),
                 color 300ms ease;
     }
+
+
+    /* ==========================================
+       BEST FOR
+    ========================================== */
+
+    .engagement-card__best {
+        @apply relative z-2 order-3 mt-6;
+        @apply border-t border-black/8 pt-5;
+
+        transition:
+                opacity 320ms ease,
+                transform 420ms var(--engagement-ease),
+                border-color 300ms ease;
+    }
+
+
+    .engagement-card__best-label {
+        @apply block;
+        @apply text-[10px] font-bold uppercase;
+        @apply tracking-[0.16em] text-c-muted-gray;
+
+        transition:
+                color 300ms ease;
+    }
+
+
+    /* ==========================================
+       TAGS
+    ========================================== */
+
+    .engagement-card__tags {
+        @apply mt-3 flex flex-wrap gap-2;
+    }
+
+
+    .engagement-card__tags span {
+        @apply inline-flex items-center rounded-full;
+        @apply border border-black/8 bg-white;
+        @apply px-3 py-1.5;
+        @apply text-[11px] font-medium leading-4 text-c-muted-gray;
+
+        transition:
+                color 300ms ease,
+                background-color 300ms ease,
+                border-color 300ms ease;
+    }
+
+
+    /* ==========================================
+       CTA
+    ========================================== */
+
+    .engagement-card__cta {
+        @apply relative z-4 order-4 mt-auto;
+        @apply inline-flex w-fit items-center gap-2 pt-7;
+        @apply text-sm font-semibold text-c-orange;
+
+        transition:
+                color 300ms ease,
+                opacity 320ms ease,
+                transform 420ms var(--engagement-ease);
+    }
+
+
+    .engagement-card__cta svg {
+        @apply size-4;
+
+        transition:
+                transform 300ms var(--engagement-ease);
+    }
+
+
+    .engagement-card__cta:hover {
+        color: #fff;
+    }
+
+
+    .engagement-card__cta:hover svg {
+        transform: translateX(4px);
+    }
+
+
+    /* ==========================================
+       ILLUSTRATION
+       Visible when card is NOT active
+    ========================================== */
+
+    .engagement-card__illustration {
+        @apply pointer-events-none absolute bottom-7 left-7 z-2;
+        @apply size-28 object-contain;
+
+        opacity: 1;
+        transform: translateY(0) scale(1);
+
+        transition:
+                opacity 260ms ease,
+                transform 420ms var(--engagement-ease);
+    }
+
+
+    /* ==========================================
+       EYE
+    ========================================== */
+
+    .engagement-card__eye {
+        @apply pointer-events-none absolute right-6 bottom-6 z-2;
+        @apply size-8 rounded-full bg-white;
+        @apply fill-none stroke-[#303941] stroke-[1.3];
+        @apply p-1.5 text-[#303941];
+
+        transition:
+                opacity 260ms ease,
+                transform 420ms var(--engagement-ease);
+    }
+
+
+    /* ==========================================
+       CLOSED DESKTOP STATE
+
+       Image stays visible.
+       Description / Best for / CTA disappear.
+    ========================================== */
+
     [data-engagement-cards][data-ui-ready]
     .engagement-card:not(.is-open)
     .engagement-card__description {
         opacity: 0;
         transform: translateY(10px);
     }
-    .engagement-card__illustration {
-        @apply pointer-events-none relative z-0 order-3 mt-auto size-24 pt-2;
-        transition:
-                opacity 260ms ease,
-                transform 420ms var(--engagement-ease);
-    }
-    .engagement-card__eye {
-        @apply pointer-events-none absolute right-5 bottom-5 z-2 size-7 rounded-full bg-white fill-none stroke-[#303941] stroke-[1.3] p-1.5 text-[#303941];
-        transition:
-                opacity 260ms ease,
-                transform 420ms var(--engagement-ease);
+
+
+    [data-engagement-cards][data-ui-ready]
+    .engagement-card:not(.is-open)
+    .engagement-card__best {
+        opacity: 0;
+        transform: translateY(10px);
     }
 
-    @media (max-width: 833px) {
+
+    [data-engagement-cards][data-ui-ready]
+    .engagement-card:not(.is-open)
+    .engagement-card__cta {
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+
+    [data-engagement-cards][data-ui-ready]
+    .engagement-card:not(.is-open)
+    .engagement-card__illustration {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+
+    /* ==========================================
+       TABLET
+       Still 3 cards
+    ========================================== */
+
+    @media (max-width: 1180px) and (min-width: 834px) {
+
         .engagement-card {
-            @apply block min-h-0 rounded border-[#d9dee2] p-0 shadow-none;
-            transition: border-color 300ms ease;
+            min-height: 560px;
+            padding: 22px;
+        }
+
+        .engagement-card__category {
+            font-size: 10px;
+        }
+
+        .engagement-card__title {
+            margin-top: 16px;
+            font-size: 20px;
+            line-height: 1.35;
+        }
+
+        .engagement-card__description {
+            margin-top: 16px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .engagement-card__best {
+            margin-top: 18px;
+            padding-top: 16px;
+        }
+
+        .engagement-card__tags {
+            gap: 6px;
+        }
+
+        .engagement-card__tags span {
+            padding: 5px 8px;
+            font-size: 10px;
+        }
+
+        .engagement-card__cta {
+            padding-top: 20px;
+            font-size: 13px;
+        }
+
+        .engagement-card__illustration {
+            bottom: 22px;
+            left: 22px;
+
+            width: 92px;
+            height: 92px;
+        }
+
+        .engagement-card__eye {
+            right: 20px;
+            bottom: 20px;
+        }
+    }
+
+
+    /* ==========================================
+       MOBILE ACCORDION
+    ========================================== */
+
+    @media (max-width: 833px) {
+
+        .engagement-card {
+            @apply block min-h-0 rounded-lg border-[#d9dee2] p-0 shadow-none;
+
+            transition:
+                    border-color 300ms ease;
 
             &::before {
                 content: none;
             }
+
             &.is-open {
-                border-color: #f66135;
+                border-color: var(--color-c-orange);
+
                 .engagement-card__title {
                     color: var(--color-c-dark-alt);
                 }
+
                 .engagement-card__category {
-                    color: #f66135;
+                    color: var(--color-c-orange);
                 }
+
                 .engagement-card__description {
                     color: var(--color-c-muted-gray);
                 }
+
                 .engagement-card__toggle::before {
-                    transform: translateY(-25%) rotate(225deg);
+                    transform:
+                            translateY(-25%)
+                            rotate(225deg);
                 }
+
                 .engagement-card__illustration {
                     opacity: 1;
                     transform: none;
                 }
+
+                .engagement-card__best {
+                    border-color: #e3e7ea;
+                }
+
+                .engagement-card__best-label {
+                    color: var(--color-c-muted-gray);
+                }
+
+                .engagement-card__tags span {
+                    border-color: rgb(0 0 0 / 0.06);
+                    background: var(--color-c-light);
+                    color: var(--color-c-muted-gray);
+                }
+
+                .engagement-card__cta {
+                    color: var(--color-c-orange);
+                }
             }
         }
+
+
+        /* Title / accordion header */
         .engagement-card__title {
-            @apply relative m-0 text-base font-normal leading-6 text-c-dark-alt;
+            @apply relative m-0;
+            @apply text-base font-medium leading-6 text-c-dark-alt;
         }
+
+
         .engagement-card__toggle {
-            @apply relative block min-h-15 py-4 pr-12 pl-4;
+            @apply relative block min-h-16;
+            @apply py-4 pr-13 pl-4;
 
             &::before {
                 content: '';
-                @apply absolute top-1/2 right-6 size-2 border-r-2 border-b-2 border-current;
-                transform: translateY(-75%) rotate(45deg);
-                transition: transform 400ms var(--engagement-ease);
+
+                @apply absolute top-1/2 right-6 size-2;
+                @apply border-r-2 border-b-2 border-current;
+
+                transform:
+                        translateY(-75%)
+                        rotate(45deg);
+
+                transition:
+                        transform 400ms var(--engagement-ease);
+            }
+
+            /*
+             * Desktop uses ::after over whole card.
+             * On mobile it must only cover the header button.
+             */
+            &::after {
+                @apply absolute inset-0;
             }
         }
+
+
+        /* Accordion */
         .engagement-card__panel {
             display: grid;
+
             grid-template-rows: 1fr;
-            transition: grid-template-rows 420ms var(--engagement-ease);
+
+            transition:
+                    grid-template-rows 420ms var(--engagement-ease);
         }
+
+
         [data-engagement-cards][data-ui-ready]
         .engagement-card:not(.is-open)
         .engagement-card__panel {
             grid-template-rows: 0fr;
         }
+
+
         .engagement-card__content {
             @apply block min-h-0 overflow-hidden px-4;
         }
+
+
+        /* Category */
         .engagement-card__category {
-            @apply block text-[11px] font-semibold uppercase tracking-[0.14em] text-[#f66135];
+            @apply block;
+            @apply text-[10px] font-semibold uppercase;
+            @apply tracking-[0.14em] text-c-orange;
         }
+
+
+        /* Description */
         .engagement-card__description {
-            @apply mt-2 text-sm leading-6 text-c-dark-alt;
+            @apply mt-3;
+            @apply text-sm leading-6 text-c-dark-alt;
+
+            opacity: 1;
+            transform: none;
         }
+
+
+        /* Best for */
+        .engagement-card__best {
+            @apply mt-5 border-t border-[#e3e7ea] pt-4;
+
+            opacity: 1;
+            transform: none;
+        }
+
+
+        .engagement-card__best-label {
+            @apply text-[10px] text-c-muted-gray;
+        }
+
+
+        /* Tags */
+        .engagement-card__tags {
+            @apply mt-3 gap-1.5;
+        }
+
+
+        .engagement-card__tags span {
+            @apply bg-c-light px-2.5 py-1;
+            @apply text-[10px] leading-4;
+        }
+
+
+        /* CTA */
+        .engagement-card__cta {
+            @apply mt-5 pb-0 pt-0 text-sm;
+
+            opacity: 1;
+            transform: none;
+            pointer-events: auto;
+        }
+
+
+        .engagement-card__cta:hover {
+            color: var(--color-c-teal);
+        }
+
+
+        /* Illustration inside opened accordion */
         .engagement-card__illustration {
-            @apply my-4 block size-12 p-0;
+            @apply relative bottom-auto left-auto;
+            @apply my-5 block size-14;
+
+            opacity: 1;
+            transform: none;
         }
+
+
+        /* Hide desktop eye */
         .engagement-card__eye {
             display: none;
         }
-    }
 
-}
+
+        /*
+         * Closed state is handled by grid-template-rows,
+         * therefore we DON'T hide content individually.
+         */
+        [data-engagement-cards][data-ui-ready]
+        .engagement-card:not(.is-open)
+        .engagement-card__description,
+        [data-engagement-cards][data-ui-ready]
+        .engagement-card:not(.is-open)
+        .engagement-card__best,
+        [data-engagement-cards][data-ui-ready]
+        .engagement-card:not(.is-open)
+        .engagement-card__cta {
+            opacity: 1;
+            transform: none;
+        }
+    }
+    }

@@ -1,8 +1,9 @@
 (() => {
     'use strict';
 
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+// Tracks the OS-level reduced-motion preference for the looping flow.
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     // Returns 0 when the user prefers reduced motion.
     const getMotionSpeed = (speed) => (reducedMotion.matches ? 0 : speed);
 
@@ -255,28 +256,52 @@
         markReady(section);
 
         // Runs the assembly animation only on desktop and when motion is allowed.
-        const motion = window.matchMedia(
-            '(min-width: 1280px) and (prefers-reduced-motion: no-preference)',
-        );
+        const motion = window.matchMedia('(prefers-reduced-motion: no-preference)');
+
 
         const members = [...visual.querySelectorAll('[data-team-member]')];
 
-        const backdrops = [...visual.querySelectorAll('[data-team-backdrop]')];
+        const ribbons = [...visual.querySelectorAll('[data-team-ribbon]')];
 
-        // Main portrait/background animation duration in milliseconds.
+        const track = visual.querySelector('[data-team-track]');
+
+        const arrows = visual.querySelector('[data-team-arrows]');
+
+        // Main portrait animation duration in milliseconds.
         const duration = 780;
+
+        // Time the ribbons take to draw themselves in milliseconds.
+        const drawDuration = 900;
 
         // Main easing curve for the assembly animation.
         const easing = 'cubic-bezier(0.22, 1, 0.36, 1)';
 
         let hasStarted = false;
-        let observer = null;
+        let revealObserver = null;
+        let flowObserver = null;
+        let isVisible = false;
         let animations = [];
+
+        // Starts/stops the looping dashed line and arrows.
+        // The markup reacts with group-data-[flowing]:[animation-play-state:running].
+        const setFlowing = (flowing) => {
+            visual.toggleAttribute('data-flowing', flowing);
+        };
+
+        // Turns the flow on only when the section is on screen and the tab is active.
+        const syncFlow = () => {
+            setFlowing(
+              hasStarted &&
+              isVisible &&
+              !document.hidden &&
+              !reducedMotion.matches,
+            );
+        };
 
         // Cancels prepared animations and restores the final HTML/CSS state.
         const reset = () => {
-            observer?.disconnect();
-            observer = null;
+            revealObserver?.disconnect();
+            revealObserver = null;
 
             animations.forEach((animation) => animation.cancel());
 
@@ -303,107 +328,166 @@
 
             // Skip animation on smaller screens, reduced motion, or after the first run.
             if (!motion.matches || hasStarted) {
+                syncFlow();
+
                 return;
             }
 
-            // Reads the current backdrop colors before starting the animation.
-            const backdropColors = backdrops.map((backdrop) => {
-                const style = getComputedStyle(backdrop);
+            // Draws both ribbons from the centre of the loop outwards.
+            ribbons.forEach((ribbon) => {
+                const length = ribbon.getTotalLength();
 
-                return [
-                    style.getPropertyValue('--team-color').trim(),
-                    style.fill,
-                ];
+                prepare(
+                  ribbon,
+                  [
+                      {
+                          strokeDasharray: `${length}`,
+                          strokeDashoffset: length,
+                      },
+                      {
+                          strokeDasharray: `${length}`,
+                          strokeDashoffset: 0,
+                      },
+                  ],
+                  {
+                      duration: drawDuration,
+                      easing: 'cubic-bezier(0.33, 0, 0.2, 1)',
+                  },
+                );
             });
 
-            // Scales horizontal travel with viewport width, capped at 64px.
-            const spread = Math.min(window.innerWidth * 0.04, 64);
+            const bounds = visual.getBoundingClientRect();
 
-            members.forEach((member) => {
-                const x = Number(member.dataset.teamX || 0) * spread;
+            // Portraits converge towards the centre of the loop: "assemble your team".
+            members.forEach((member, index) => {
+                const box = member.getBoundingClientRect();
 
-                const y = Number(member.dataset.teamY || 0);
+                // Distance from the member centre to the centre of the loop.
+                const x = bounds.left + bounds.width / 2 - (box.left + box.width / 2);
 
-                if (x === 0 && y === 0) {
+                const y = bounds.top + bounds.height / 2 - (box.top + box.height / 2);
+
+                // Travels at most 22% of the way towards the centre.
+                const travel = 0.22;
+
+                prepare(
+                  member,
+                  [
+                      {
+                          opacity: 0,
+                          transform: `translate(${x * travel}px, ${y * travel}px) scale(0.92)`,
+                      },
+                      {
+                          opacity: 1,
+                          transform: 'translate(0, 0) scale(1)',
+                      },
+                  ],
+                  {
+                      // 180ms after the ribbons start + 90ms between portraits.
+                      delay: 180 + index * 90,
+                  },
+                );
+            });
+
+            // Dashed line and arrows fade in once the ribbons are almost drawn.
+            [track, arrows].forEach((element) => {
+                if (!element) {
                     return;
                 }
 
-                prepare(member, [
-                    {
-                        transform: `translate(${x}px, ${y}px)`,
-                    },
-                    {
-                        transform: 'translate(0, 0)',
-                    },
-                ]);
-            });
-
-            backdrops.forEach((backdrop, index) => {
-                const [from, to] = backdropColors[index];
-
-                prepare(backdrop, [
-                    {
-                        fill: from,
-                    },
-                    {
-                        fill: to,
-                    },
-                ]);
+                prepare(
+                  element,
+                  [
+                      {
+                          opacity: 0,
+                      },
+                      {
+                          opacity: 1,
+                      },
+                  ],
+                  {
+                      duration: 400,
+                      delay: 700,
+                      easing: 'linear',
+                  },
+                );
             });
 
             [heading, button].forEach((element, index) => {
                 prepare(
-                    element,
-                    [
-                        {
-                            opacity: 0,
-                            transform: 'translateY(16px)',
-                        },
-                        {
-                            opacity: 1,
-                            transform: 'translateY(0)',
-                        },
-                    ],
-                    {
-                        // Text animation duration in milliseconds.
-                        duration: 480,
+                  element,
+                  [
+                      {
+                          opacity: 0,
+                          transform: 'translateY(16px)',
+                      },
+                      {
+                          opacity: 1,
+                          transform: 'translateY(0)',
+                      },
+                  ],
+                  {
+                      // Text animation duration in milliseconds.
+                      duration: 480,
 
-                        // 140ms initial delay + 100ms stagger between heading and button.
-                        delay: 140 + index * 100,
-                    },
+                      // 140ms initial delay + 100ms stagger between heading and button.
+                      delay: 140 + index * 100,
+                  },
                 );
             });
 
-            observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (!entry.isIntersecting || hasStarted) {
-                        return;
-                    }
+            revealObserver = new IntersectionObserver(
+              ([entry]) => {
+                  if (!entry.isIntersecting || hasStarted) {
+                      return;
+                  }
 
-                    hasStarted = true;
+                  hasStarted = true;
 
-                    observer?.disconnect();
-                    observer = null;
+                  revealObserver?.disconnect();
+                  revealObserver = null;
 
-                    animations.forEach((animation) => animation.play());
-                },
-                {
-                    // Starts when 12% of the observed visual is visible.
-                    threshold: 0.12,
+                  animations.forEach((animation) => animation.play());
 
-                    // Moves the effective bottom edge 32px upward.
-                    rootMargin: '0px 0px -32px 0px',
-                },
+                  // Starts the looping flow right after the reveal.
+                  window.setTimeout(syncFlow, drawDuration + 200);
+              },
+              {
+                  // Starts when 12% of the observed visual is visible.
+                  threshold: 0.12,
+
+                  // Moves the effective bottom edge 32px upward.
+                  rootMargin: '0px 0px -32px 0px',
+              },
             );
 
-            observer.observe(visual);
+            revealObserver.observe(visual);
         };
 
         // Keyboard focus reveals the final state immediately instead of waiting for scroll.
         section.addEventListener('focusin', () => {
             hasStarted = true;
             reset();
+            syncFlow();
         });
+
+        // Keeps the loop animating only while it is actually on screen.
+        flowObserver = new IntersectionObserver(
+          ([entry]) => {
+              isVisible = entry.isIntersecting;
+
+              syncFlow();
+          },
+          {
+              threshold: 0,
+          },
+        );
+
+        flowObserver.observe(visual);
+
+        document.addEventListener('visibilitychange', syncFlow);
+
+        reducedMotion.addEventListener('change', syncFlow);
 
         motion.addEventListener('change', configure);
 
