@@ -10,8 +10,12 @@
     const mobileToggles = [
         ...document.querySelectorAll('[data-mobile-toggle]'),
     ];
-    const desktopLayout = window.matchMedia('(min-width: 1280px)');
-    const hoverInput = window.matchMedia('(hover: hover) and (pointer: fine)');
+    // Keep JS in sync with the CSS desktop-navigation breakpoint (lg / 1024px).
+    const desktopLayout = window.matchMedia('(min-width: 1024px)');
+    // `any-*` also detects a connected mouse on touch-first devices.
+    const hoverInput = window.matchMedia(
+        '(any-hover: hover) and (any-pointer: fine)',
+    );
     const pageContent = [...document.querySelectorAll('main, body > footer')];
 
     if (!header || !mobileMenuButton || !mobileMenu) return;

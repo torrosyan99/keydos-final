@@ -1,5 +1,14 @@
 @import 'tailwindcss' source(none);
 
+/* Include an attached mouse on hybrid touch devices in hover interactions. */
+@custom-variant hover {
+    @media (any-hover: hover) {
+        &:hover {
+            @slot;
+        }
+    }
+}
+
 @source '../app/index.html';
 @source '../app/assets/scripts';
 @theme {
