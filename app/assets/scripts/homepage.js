@@ -208,63 +208,34 @@
 
     const initTeamAssembly = () => {
         const section = document.querySelector('[data-team-assembly]');
-        if (!section || section.__keydosTeamAssemblyV3) return;
+        if (!section || section.__keydosTeamAssemblyV4) return;
 
+        // Replace the previous controller, if it was already initialized.
+        section.__keydosTeamAssemblyV3?.destroy();
         const visual = section.querySelector('[data-team-visual]');
         if (!visual || !('IntersectionObserver' in window) || !visual.animate) return;
 
         const order = ['project', 'ux', 'software', 'qa', 'data'];
-        const members = order.map((slot) =>
+        const members = order.map(slot =>
           visual.querySelector(`[data-team-member][data-team-slot="${slot}"]`),
         ).filter(Boolean);
         const tracks = [...visual.querySelectorAll('[data-team-track]')];
         if (members.length !== 5 || !tracks.length) return;
 
         const settings = {
-            rowHold: 700,
-            assembly: 2600,
-            stagger: 250,
+            rowHold: 500,
+            assembly: 2200,
+            stagger: 180,
             lap: 40000,
-            // A brief acceleration connects the stationary assembly to linear orbit.
             acceleration: 1200,
             samples: 480,
         };
-        const media = window.matchMedia(
-          '(min-width: 768px) and (prefers-reduced-motion: no-preference)',
-        );
-
-        // Disable the old paint-heavy dash and arrow animations, not just the JS.
-        // Portraits and logo-coloured backgrounds are kept intact.
-        const styleId = 'keydos-team-motion-v3-styles';
-        if (!document.getElementById(styleId)) {
-            const style = document.createElement('style');
-            style.id = styleId;
-            style.textContent = `
-        [data-team-performance="v3"] [data-team-arrows] {
-            display: none !important;
-        }
-        [data-team-performance="v3"] [data-team-track],
-        [data-team-performance="v3"] [data-team-arrows] * {
-            animation: none !important;
-        }
-        [data-team-performance="v3"] [data-team-track] { opacity: .5; }
-        [data-team-performance="v3"] [data-team-member] {
-            transition: none !important;
-        }
-        @media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
-            [data-team-performance="v3"] [data-team-member] {
-                will-change: transform;
-            }
-        }
-    `;
-            document.head.append(style);
-        }
-        section.dataset.teamPerformance = 'v3';
-        visual.removeAttribute('data-flowing');
-
+        // Mobile is supported. Only accessibility preferences disable motion.
+        const motion = window.matchMedia('(prefers-reduced-motion: no-preference)');
+        const desktop = window.matchMedia('(min-width: 768px)');
         const pathCache = new WeakMap();
         let active = [];
-        let stage = 'static'; // static, ready, assembly, launch, orbit
+        let stage = 'static';
         let started = false;
         let activated = false;
         let visible = false;
@@ -283,28 +254,29 @@
                 animation.cancel();
             });
             active = [];
+            section.removeAttribute('data-team-running');
         };
 
         const elapsed = () => Math.max(
           0, ...active.map(({ animation }) => Number(animation.currentTime) || 0),
         );
 
-        const samplePath = (path) => {
+        const samplePath = path => {
             const d = path.getAttribute('d');
             const cached = pathCache.get(path);
             if (cached?.d === d) return cached.points;
             const length = path.getTotalLength();
             if (!(length > 0)) throw new Error('Infinity path has zero length.');
             const points = Array.from({ length: settings.samples }, (_, index) => {
-                const p = path.getPointAtLength(length * index / settings.samples);
-                return { x: p.x, y: p.y };
+                const point = path.getPointAtLength(length * index / settings.samples);
+                return { x: point.x, y: point.y };
             });
             pathCache.set(path, { d, points });
             return points;
         };
 
         const measure = () => {
-            const path = tracks.find((item) =>
+            const path = tracks.find(item =>
               getComputedStyle(item.ownerSVGElement).display !== 'none',
             );
             if (!path) return null;
@@ -314,16 +286,16 @@
             const height = visual.clientHeight;
             if (!width || !height || !vb.width || !vb.height) return null;
 
-            // Matches the supplied SVG: inset:0; width/height:100%; xMidYMid meet.
-            // Coordinates remain local, so scrolling does not invalidate the path.
+            // The two supplied SVGs fill visual and use xMidYMid meet.
+            // Include the non-zero viewBox origin in both orientations.
             const scale = Math.min(width / vb.width, height / vb.height);
             const dx = (width - vb.width * scale) / 2 - vb.x * scale;
             const dy = (height - vb.height * scale) / 2 - vb.y * scale;
-            const points = samplePath(path).map((p) => ({
-                x: p.x * scale + dx,
-                y: p.y * scale + dy,
+            const points = samplePath(path).map(point => ({
+                x: point.x * scale + dx,
+                y: point.y * scale + dy,
             }));
-            const bases = members.map((member) => {
+            const bases = members.map(member => {
                 const css = getComputedStyle(member);
                 const x = Number.parseFloat(css.left);
                 const y = Number.parseFloat(css.top);
@@ -332,10 +304,10 @@
                     y: Number.isFinite(y) ? y : member.offsetTop,
                 };
             });
-            return { svg, width, height, points, bases };
+            return { svg, width, height, points, bases, desktop: desktop.matches };
         };
 
-        const position = (phase) => {
+        const position = phase => {
             const count = geometry.points.length;
             const value = ((phase % 1 + 1) % 1) * count;
             const index = Math.floor(value);
@@ -359,18 +331,19 @@
 
         const sync = () => {
             if (destroyed) return;
-            if (stage === 'ready' && activated && visible && !document.hidden && media.matches) {
+            if (stage === 'ready' && activated && visible && !document.hidden && motion.matches) {
                 stage = 'assembly';
                 started = true;
             }
-            const running = started && visible && !document.hidden && media.matches;
+            const running = started && stage !== 'static' && stage !== 'ready' &&
+              visible && !document.hidden && motion.matches;
+            section.toggleAttribute('data-team-running', running);
             const now = document.timeline.currentTime;
             active.forEach(({ animation, end }) => {
                 const time = Number(animation.currentTime) || 0;
-                if (running && stage !== 'ready' && time < end) {
+                if (running && time < end) {
                     if (animation.playState !== 'running') {
                         animation.play();
-                        // Every participant shares the same time origin, without timers.
                         if (now !== null) animation.startTime = now - time;
                     }
                 } else if (animation.playState === 'running') {
@@ -388,19 +361,18 @@
 
             members.forEach((member, index) => {
                 const base = geometry.bases[index];
-                // Equal arc spacing avoids pairs being exactly half a lap apart
-                // and repeatedly arriving at the central crossing simultaneously.
                 const startPhase = index / members.length;
                 let frames;
                 let options;
 
                 if (stage === 'ready' || stage === 'assembly') {
-                    const rowPoint = {
-                        x: geometry.width * (.1 + .8 * index / (members.length - 1)),
-                        y: geometry.height * .5,
-                    };
+                    const progress = index / (members.length - 1);
+                    // Desktop starts in a row, mobile in a column, avoiding a cramped row.
+                    const startPoint = geometry.desktop
+                      ? { x: geometry.width * (.1 + .8 * progress), y: geometry.height * .5 }
+                      : { x: geometry.width * .5, y: geometry.height * (.1 + .8 * progress) };
                     frames = [
-                        { transform: transform(rowPoint, base) },
+                        { transform: transform(startPoint, base) },
                         { transform: transform(position(startPhase), base) },
                     ];
                     options = {
@@ -418,10 +390,7 @@
                           : startPhase + launchAdvance + t;
                         return { offset: t, transform: transform(position(phase), base) };
                     });
-                    if (!isLaunch) {
-                        // Close the cycle exactly, including floating-point rounding.
-                        frames[count].transform = frames[0].transform;
-                    }
+                    if (!isLaunch) frames[count].transform = frames[0].transform;
                     options = {
                         duration: isLaunch ? settings.acceleration : settings.lap,
                         iterations: isLaunch ? 1 : Infinity,
@@ -432,17 +401,13 @@
             });
 
             if (stage === 'ready' || stage === 'assembly') {
-                // Fade the complete SVG as a layer. No animated stroke-dashoffset,
-                // and no animations on the hidden mobile SVG.
                 makeAnimation(geometry.svg, [{ opacity: 0 }, { opacity: 1 }], {
-                    duration: 2700, delay: 900, easing: 'ease-in-out',
+                    duration: 1800, delay: 600, easing: 'ease-in-out',
                 }, time);
             }
             if (stage !== 'orbit') {
                 lastCard.onfinish = () => {
                     if (destroyed || token !== generation) return;
-                    // Last assembly frame == first launch frame;
-                    // last launch frame == first orbit frame. No snap to CSS slots.
                     install(stage === 'launch' ? 'orbit' : 'launch');
                 };
             }
@@ -452,7 +417,7 @@
         const rebuild = () => {
             if (destroyed) return;
             try {
-                if (!media.matches) {
+                if (!motion.matches) {
                     if (stage !== 'static') resume = { stage, time: elapsed() };
                     cancelActive();
                     stage = 'static';
@@ -460,6 +425,7 @@
                 }
                 const nextGeometry = measure();
                 if (!nextGeometry) {
+                    if (stage !== 'static') resume = { stage, time: elapsed() };
                     cancelActive();
                     stage = 'static';
                     return;
@@ -480,9 +446,9 @@
                 } else if (nextStage === 'launch' && time >= settings.acceleration) {
                     nextStage = 'orbit'; time = 0;
                 }
+                if (nextStage === 'orbit') time %= settings.lap;
                 install(nextStage, time);
             } catch (error) {
-                // Fail open: the supplied static HTML must remain visible.
                 cancelActive();
                 stage = 'static';
                 console.warn('KEYDOS team animation: using static layout.', error);
@@ -491,7 +457,7 @@
 
         const observer = new IntersectionObserver(([entry]) => {
             visible = entry.isIntersecting;
-            if (entry.isIntersecting && entry.intersectionRatio >= .15) activated = true;
+            if (visible && entry.intersectionRatio >= .15) activated = true;
             sync();
         }, { threshold: [0, .15], rootMargin: '0px 0px -24px 0px' });
 
@@ -504,29 +470,31 @@
         };
         const resizer = 'ResizeObserver' in window ? new ResizeObserver(scheduleResize) : null;
         const mediaChange = () => rebuild();
-
         document.addEventListener('visibilitychange', sync);
-        media.addEventListener('change', mediaChange);
+        motion.addEventListener('change', mediaChange);
+        desktop.addEventListener('change', mediaChange);
         if (resizer) resizer.observe(visual);
         else window.addEventListener('resize', scheduleResize);
 
-        section.__keydosTeamAssemblyV3 = {
+        section.__keydosTeamAssemblyV4 = {
             destroy() {
                 destroyed = true;
                 clearTimeout(resizeTimer);
                 observer.disconnect();
                 resizer?.disconnect();
                 document.removeEventListener('visibilitychange', sync);
-                media.removeEventListener('change', mediaChange);
+                motion.removeEventListener('change', mediaChange);
+                desktop.removeEventListener('change', mediaChange);
                 window.removeEventListener('resize', scheduleResize);
                 cancelActive();
-                delete section.dataset.teamPerformance;
-                delete section.__keydosTeamAssemblyV3;
+                delete section.__keydosTeamAssemblyV4;
             },
         };
         rebuild();
         observer.observe(visual);
     };
+
+
     const initInsightsSlider = () => {
         const root = document.querySelector('[data-insights-carousel]');
 
@@ -593,7 +561,9 @@
         // Mobile uses click/tap state; desktop can use hover/focus state.
         const mobile = window.matchMedia('(max-width: 833px)');
 
-        const hover = window.matchMedia('(hover: hover) and (pointer: fine)');
+        const hover = window.matchMedia(
+            '(any-hover: hover) and (any-pointer: fine)',
+        );
 
         const cards = [...grid.querySelectorAll('.engagement-card')]
             .map((card) => ({
@@ -670,17 +640,21 @@
                 setOpen(item, isPointerClick ? true : nextOpen);
             });
 
-            item.card.addEventListener('pointerenter', () => {
-                if (!mobile.matches && hover.matches) {
+            item.card.addEventListener('pointerenter', (event) => {
+                if (!mobile.matches && event.pointerType !== 'touch') {
                     setOpen(item, true);
                 }
             });
 
-            item.card.addEventListener('pointerleave', () => {
+            item.card.addEventListener('pointerleave', (event) => {
                 const keepOpenForKeyboard =
                     item.button.matches(':focus-visible');
 
-                if (!mobile.matches && hover.matches && !keepOpenForKeyboard) {
+                if (
+                    !mobile.matches &&
+                    event.pointerType !== 'touch' &&
+                    !keepOpenForKeyboard
+                ) {
                     setOpen(item, false);
                 }
             });

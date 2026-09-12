@@ -12,10 +12,6 @@
     ];
     // Keep JS in sync with the CSS desktop-navigation breakpoint (lg / 1024px).
     const desktopLayout = window.matchMedia('(min-width: 1024px)');
-    // `any-*` also detects a connected mouse on touch-first devices.
-    const hoverInput = window.matchMedia(
-        '(any-hover: hover) and (any-pointer: fine)',
-    );
     const pageContent = [...document.querySelectorAll('main, body > footer')];
 
     if (!header || !mobileMenuButton || !mobileMenu) return;
@@ -107,7 +103,9 @@
         const menuId = toggle.dataset.menuToggle;
 
         toggle.addEventListener('mouseenter', () => {
-            if (hoverInput.matches) openDesktopMenu(menuId);
+            // The mouse event itself is more reliable than capability media
+            // queries on hybrid, remote-desktop, and emulated environments.
+            openDesktopMenu(menuId);
         });
         toggle.addEventListener('click', (event) => {
             event.preventDefault();
