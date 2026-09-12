@@ -395,6 +395,18 @@
         max-sm:after:left-5
         max-sm:after:w-9;
     }
+
+    [data-team-visual] > svg > path:not([data-team-track]) {
+        stroke-width: 18px;
+    }
+
+    [data-team-member] {
+        width: 27%;
+
+        @media (width >= 48rem) {
+            width: 13.5%;
+        }
+    }
     .client-card {
         @apply w-52.5 shrink-0;
         @apply max-lg:w-47.5 max-md:w-40;
@@ -502,7 +514,7 @@
     }
 
     .testimonial-card {
-        @apply flex! h-auto! min-h-128 w-80! min-w-96 shrink-0;
+        @apply flex! h-auto! min-h-112 w-80! min-w-96 shrink-0;
         @apply flex-col gap-8 rounded-xl border border-black/6 bg-white px-8 pb-8 pt-19;
         @apply shadow-default hover:shadow-[0_16px_40px_rgb(15_23_42/0.16)];
         @apply max-[834px]:w-70! max-[834px]:min-w-72 max-[834px]:p-6 cursor-pointer;

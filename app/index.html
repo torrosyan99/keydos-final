@@ -3513,16 +3513,17 @@
                 </div>
             </section>
             <section
+                id="testimonials"
                 class="relative -mt-12 max-[834px]:pb-10 max-xl:-mt-0 max-xl:pt-10"
             >
                 <div
-                    class="grid h-280 grid-cols-[34%_66%] max-[834px]:h-auto max-[834px]:grid-cols-1"
+                    class="grid h-260 grid-cols-[34%_66%] max-[834px]:h-auto max-[834px]:grid-cols-1"
                 >
                     <img
                         src="assets/images/testimonials-reference.webp"
                         alt="Software team collaborating in the office"
                         fetchpriority="high"
-                        class="w-full rounded-r-2xl h-280 object-cover object-center max-[834px]:hidden"
+                        class="w-full rounded-r-2xl h-260 object-cover object-center max-[834px]:hidden"
                     />
                     <div
                         class="pt-24 pr-40 pl-24 pb-6 max-2xl:pr-10 max-2xl:pb-6 max-2xl:pl-6 max-md:px-6 max-md:py-12"
@@ -3951,7 +3952,7 @@
             >
                 <!-- Keep the team row at a consistent maximum width on wide screens. -->
 
-                <section class="page-container relative z-1">
+                <section id="why-kkeydos" class="page-container relative z-1 max-w-300">
                     <div class="text-center">
                         <h2>
                             Why Kkeydos is the right choice<span
@@ -4045,10 +4046,10 @@
                 </section>
 
                 <!-- Team assembly: layout and portrait styling live in Tailwind classes. -->
-	            <section class="group/team relative isolate overflow-x-clip py-10 md:flex md:h-[550px] md:items-center md:py-0" data-team-assembly aria-labelledby="team-assembly-heading">
-		            <div class="mx-auto w-full max-w-[1160px] px-[clamp(20px,4vw,48px)]">
+	            <section id="team-assembly" class="group/team relative isolate overflow-x-clip py-10 md:flex md:h-[620px] md:items-center md:py-0" data-team-assembly aria-label="Full-scale engineering team">
+		            <div class="mx-auto w-full max-w-[1320px] px-[clamp(20px,4vw,48px)]">
 			            <div class="py-4 md:py-0">
-				            <div class="@container relative mx-auto aspect-[860/1500] w-full max-w-[360px] md:h-[320px] md:w-[850px] md:max-w-full md:aspect-auto" data-team-visual>
+				            <div class="@container relative mx-auto aspect-[860/1500] w-full max-w-[380px] md:h-[410px] md:w-[1120px] md:max-w-full md:aspect-auto" data-team-visual>
 					            <svg class="absolute inset-0 block h-full w-full overflow-visible md:hidden" viewBox="0 -30 860 1500"
 					                 preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
 						            <defs>
@@ -4424,11 +4425,143 @@
 			            </div>
 		            </div>
 	            </section>
+
+                <section
+                    class="page-container relative z-1 w-full max-w-320 py-20 max-lg:py-16 max-md:py-12"
+                    aria-labelledby="engagement-heading"
+                >
+                    <div
+                        class="flex items-end justify-between gap-12 max-[833px]:flex-col max-[833px]:items-start max-[833px]:gap-5"
+                    >
+                        <h2
+                            id="engagement-heading"
+                            class="max-w-190 font-medium text-c-dark-alt"
+                        >
+                            Keep full control.<br />Or hand everything off to us.
+                        </h2>
+                        <p
+                            class="max-w-125 shrink-0 border-l border-l-c-muted-gray/40 pl-6 leading-relaxed text-c-muted-gray max-lg:max-w-100 max-[833px]:max-w-full max-[833px]:border-l-0 max-[833px]:pl-0"
+                        >
+                            From embedded engineers to fully managed projects,
+                            we customize every engagement to fit your workflow,
+                            priorities, and delivery needs.
+                        </p>
+                    </div>
+
+                    <div
+                        class="mt-18 grid grid-cols-3 gap-8 max-xl:gap-5 max-lg:mt-12 max-[833px]:grid-cols-1 max-[833px]:gap-3"
+                        data-engagement-cards
+                    >
+                        <article class="engagement-card">
+                            <span class="engagement-card__category">Staff Augmentation</span>
+                            <h3 class="engagement-card__title">
+                                <button
+                                    type="button"
+                                    class="engagement-card__toggle"
+                                    id="engagement-staff-toggle"
+                                    aria-expanded="false"
+                                    aria-controls="engagement-staff-panel"
+                                >
+                                    Need a couple of extra software engineers on your team?
+                                </button>
+                            </h3>
+                            <div class="engagement-card__panel" id="engagement-staff-panel">
+                                <div class="engagement-card__content">
+                                    <p class="engagement-card__description">
+                                        Add proven specialists to your existing team and scale delivery without slowing down recruitment.
+                                    </p>
+                                    <div class="engagement-card__best">
+                                        <span class="engagement-card__best-label">Best for</span>
+                                        <div class="engagement-card__tags">
+                                            <span>Skill Gaps</span><span>Flexible Scaling</span><span>Fast Start</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="engagement-card__cta">
+                                        <span>Extend Your Team</span>
+                                        <svg aria-hidden="true"><use href="assets/images/sprite.svg#arrow-right"></use></svg>
+                                    </a>
+                                    <img src="assets/images/team-flow/engagement-01.svg" width="112" height="112" alt="" class="engagement-card__illustration" />
+                                </div>
+                            </div>
+                            <svg class="engagement-card__eye" aria-hidden="true"><use href="assets/images/sprite.svg#engagement-eye"></use></svg>
+                        </article>
+
+                        <article class="engagement-card">
+                            <span class="engagement-card__category">Dedicated Teams</span>
+                            <h3 class="engagement-card__title">
+                                <button
+                                    type="button"
+                                    class="engagement-card__toggle"
+                                    id="engagement-teams-toggle"
+                                    aria-expanded="false"
+                                    aria-controls="engagement-teams-panel"
+                                >
+                                    Need a few teams to deliver several projects simultaneously?
+                                </button>
+                            </h3>
+                            <div class="engagement-card__panel" id="engagement-teams-panel">
+                                <div class="engagement-card__content">
+                                    <p class="engagement-card__description">
+                                        Launch dedicated cross-functional teams that work as a focused extension of your organization.
+                                    </p>
+                                    <div class="engagement-card__best">
+                                        <span class="engagement-card__best-label">Best for</span>
+                                        <div class="engagement-card__tags">
+                                            <span>Parallel Delivery</span><span>Long-Term Roadmaps</span><span>Product Growth</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="engagement-card__cta">
+                                        <span>Build Dedicated Teams</span>
+                                        <svg aria-hidden="true"><use href="assets/images/sprite.svg#arrow-right"></use></svg>
+                                    </a>
+                                    <img src="assets/images/team-flow/engagement-02.svg" width="112" height="112" alt="" class="engagement-card__illustration" />
+                                </div>
+                            </div>
+                            <svg class="engagement-card__eye" aria-hidden="true"><use href="assets/images/sprite.svg#engagement-eye"></use></svg>
+                        </article>
+
+                        <article class="engagement-card">
+                            <span class="engagement-card__category">Software Outsourcing</span>
+                            <h3 class="engagement-card__title">
+                                <button
+                                    type="button"
+                                    class="engagement-card__toggle"
+                                    id="engagement-outsourcing-toggle"
+                                    aria-expanded="false"
+                                    aria-controls="engagement-outsourcing-panel"
+                                >
+                                    Want to offload everything to us, from start to finish?
+                                </button>
+                            </h3>
+                            <div class="engagement-card__panel" id="engagement-outsourcing-panel">
+                                <div class="engagement-card__content">
+                                    <p class="engagement-card__description">
+                                        Give Kkeydos full ownership of architecture, design, development, QA, launch, and ongoing improvements.
+                                    </p>
+                                    <div class="engagement-card__best">
+                                        <span class="engagement-card__best-label">Best for</span>
+                                        <div class="engagement-card__tags">
+                                            <span>End-to-End Delivery</span><span>Complex Platforms</span><span>Managed Projects</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="engagement-card__cta">
+                                        <span>Start Your Project</span>
+                                        <svg aria-hidden="true"><use href="assets/images/sprite.svg#arrow-right"></use></svg>
+                                    </a>
+                                    <img src="assets/images/team-flow/engagement-03.svg" width="112" height="112" alt="" class="engagement-card__illustration" />
+                                </div>
+                            </div>
+                            <svg class="engagement-card__eye" aria-hidden="true"><use href="assets/images/sprite.svg#engagement-eye"></use></svg>
+                        </article>
+                    </div>
+                </section>
+
 	            <section
-                    class="page-container relative z-1 mt-28 flex justify-between pr-40 items-start max-[1800px]:pr-50 max-2xl:pr-0 gap-16 max-lg:gap-10 max-md:mt-20 max-2xl:max-w-138 max-2xl:mx-auto max-2xl:flex-col max-2xl:gap-19"
+                    id="our-process"
+                    class="page-container relative z-1 mt-20 grid max-w-[1380px] grid-cols-[minmax(360px,520px)_minmax(520px,650px)] items-start justify-center gap-20 max-2xl:max-w-138 max-2xl:grid-cols-1 max-2xl:gap-19 max-lg:gap-10 max-md:mt-16"
                 >
                     <div class="relative min-w-0">
-                        <h2 class="font-medium">
+                        <h2 class="ml-16 font-medium max-2xl:ml-0">
                             Our process.<br />
                             Simple,<br />
                             seamless,<br />
