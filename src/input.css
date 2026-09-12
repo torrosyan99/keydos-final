@@ -396,10 +396,6 @@
         max-sm:after:w-9;
     }
 
-    [data-team-visual] > svg > path:not([data-team-track]) {
-        stroke-width: 18px;
-    }
-
     [data-team-member] {
         width: 27%;
 
@@ -493,9 +489,14 @@
     }
 
     .tech-marquee-item {
-        @apply select-none pr-18 text-[52px] font-bold leading-tight;
-        @apply text-c-muted-gray-alt/20 transition-colors duration-200 hover:text-c-orange;
+        @apply  pr-18 text-[52px] font-bold leading-tight;
+        @apply text-c-muted-gray-alt/20 transition-colors duration-200;
         @apply cursor-pointer max-md:text-[32px] max-md:pr-8;
+    }
+
+    .tech-marquee-item:hover,
+    .tech-marquee-item:focus-visible {
+        color: var(--color-c-orange) !important;
     }
 
     .carousel-button {
@@ -520,6 +521,62 @@
         @apply max-[834px]:w-70! max-[834px]:min-w-72 max-[834px]:p-6 cursor-pointer;
 
         @apply transition-shadow! duration-200 ease-out;
+    }
+
+    .testimonial-quote-mark {
+        @apply mr-1 inline-block text-[32px] font-semibold leading-none text-c-orange;
+        transform: translateY(0.12em);
+    }
+
+    .testimonial-quote-mark--closing {
+        @apply mr-0 ml-1 text-c-dark;
+    }
+
+    #faq {
+        interpolate-size: allow-keywords;
+    }
+
+    #faq details {
+        @apply overflow-hidden rounded-xl border border-black/6 bg-white px-6;
+        @apply transition-[border-color,box-shadow,transform] duration-300;
+    }
+
+    #faq details + details {
+        @apply mt-3;
+    }
+
+    #faq details:hover {
+        @apply -translate-y-0.5 border-c-orange/35 shadow-[0_12px_30px_rgb(15_23_42/0.07)];
+    }
+
+    #faq details[open] {
+        @apply border-c-orange/45 shadow-[0_14px_34px_rgb(15_23_42/0.08)];
+    }
+
+    #faq details::details-content {
+        block-size: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-8px);
+        transition:
+            block-size 420ms cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 260ms ease,
+            transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+            content-visibility 420ms allow-discrete;
+    }
+
+    #faq details[open]::details-content {
+        block-size: auto;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #faq details[open] summary {
+        @apply text-c-orange;
+    }
+
+    #faq details[open] summary > span {
+        @apply bg-c-orange text-white;
     }
     .featured-swiper-pagination {
         position: static !important;
