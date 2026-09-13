@@ -623,6 +623,15 @@
 
                 if (mobile.matches) {
                     if (nextOpen) {
+                        cards.forEach((otherItem, otherIndex) => {
+                            if (otherIndex === index) {
+                                return;
+                            }
+
+                            openMobileCards.delete(otherIndex);
+                            setOpen(otherItem, false);
+                        });
+
                         openMobileCards.add(index);
                     } else {
                         openMobileCards.delete(index);

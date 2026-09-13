@@ -278,6 +278,54 @@
         }
     }
 
+    .mobile-nav-card {
+        @apply mb-4 pb-2;
+    }
+
+    .mobile-nav-card__intro {
+        @apply mb-3 border-l-2 border-c-orange py-1 pr-2 pl-4 text-sm leading-5 text-c-gray;
+    }
+
+    .mobile-nav-card__links {
+        @apply grid grid-cols-1;
+    }
+
+    .mobile-nav-card__link,
+    .mobile-nav-card--industries > .mega-link {
+        @apply flex min-h-10 items-center gap-3 py-1.5;
+        @apply text-sm font-medium leading-5 text-c-dark transition-[color,transform] duration-200;
+        @apply hover:translate-x-1 hover:text-c-teal;
+
+        svg {
+            @apply size-5 shrink-0 text-c-orange;
+        }
+    }
+
+    .mobile-nav-card--industries {
+        @apply grid grid-cols-1;
+
+        .mobile-nav-card__intro,
+        .mobile-nav-card__all {
+            @apply col-span-1;
+        }
+
+        > .mega-link:nth-of-type(n + 5) {
+            @apply hidden;
+        }
+    }
+
+    .mobile-nav-card__all.engagement-card__cta {
+        @apply order-none mt-4 w-fit gap-2 p-0 text-c-orange;
+
+        svg {
+            @apply size-4 shrink-0;
+        }
+
+        &:hover {
+            @apply text-c-teal;
+        }
+    }
+
     .hero-section-bg {
         @apply pointer-events-none absolute inset-0 bg-cover bg-no-repeat;
 
@@ -397,10 +445,18 @@
     }
 
     [data-team-member] {
-        width: 27%;
+        width: 29%;
 
         @media (width >= 48rem) {
-            width: 13.5%;
+            width: 13%;
+        }
+
+        > p {
+            font-size: clamp(12px, 3.35cqw, 14px);
+
+            @media (width >= 48rem) {
+                font-size: clamp(11px, 1.4cqw, 14px);
+            }
         }
     }
     .client-card {
@@ -515,12 +571,17 @@
     }
 
     .testimonial-card {
-        @apply flex! h-auto! min-h-112 w-80! min-w-96 shrink-0;
-        @apply flex-col gap-8 rounded-xl border border-black/6 bg-white px-8 pb-8 pt-19;
+        @apply flex! h-auto! min-h-90 w-80! min-w-96 shrink-0;
+        @apply flex-col gap-8 rounded-xl border border-black/6 bg-white px-8 pb-8 pt-12;
         @apply shadow-default hover:shadow-[0_16px_40px_rgb(15_23_42/0.16)];
         @apply max-[834px]:w-70! max-[834px]:min-w-72 max-[834px]:p-6 cursor-pointer;
 
         @apply transition-shadow! duration-200 ease-out;
+    }
+
+    .testimonials-swiper-clip {
+        overflow: visible !important;
+        clip-path: inset(-4rem -100vw -4rem 0);
     }
 
     .testimonial-quote-mark {
@@ -575,8 +636,29 @@
         @apply text-c-orange;
     }
 
+    #faq summary > span {
+        font-size: 0;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 14px;
+            height: 14px;
+            background:
+                linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat,
+                linear-gradient(currentColor, currentColor) center / 2px 100% no-repeat;
+            transform-origin: center;
+            transition: transform 300ms ease;
+        }
+    }
+
     #faq details[open] summary > span {
         @apply bg-c-orange text-white;
+
+        &::before {
+            color: #fff;
+            transform: rotate(45deg);
+        }
     }
     .featured-swiper-pagination {
         position: static !important;
@@ -1085,6 +1167,7 @@
             @apply block;
             @apply text-[10px] font-semibold uppercase;
             @apply tracking-[0.14em] text-c-orange;
+            @apply pl-4 pt-4;
         }
 
 

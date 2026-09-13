@@ -54,7 +54,7 @@
             class="fixed inset-x-0 top-0 z-50 h-20 max-xl:h-18 border-b border-c-border bg-white transition-[translate,background-color] duration-500 ease-header"
         >
             <div
-                class="page-container flex h-full  items-center gap-8 px-8 max-xl:gap-5 max-xl:px-6 max-sm:px-5"
+                class="page-container flex h-full  items-center gap-8 px-8 max-xl:gap-5 max-xl:px-6"
             >
                 <a
                     href="#"
@@ -1696,12 +1696,12 @@
             <!-- Mobile navigation -->
             <nav
                 id="mobile-menu"
-                class="absolute inset-x-0 top-18 hidden h-[calc(100dvh-4.5rem)] overscroll-contain overflow-y-auto bg-white px-5 pb-[max(20px,env(safe-area-inset-bottom))] xl:hidden"
+                class="fixed inset-x-0 top-18 bottom-0 hidden w-full overscroll-contain overflow-y-auto bg-white px-5 pb-[max(20px,env(safe-area-inset-bottom))] xl:hidden"
                 aria-label="Mobile navigation"
                 aria-hidden="true"
                 inert
             >
-                <div class="mx-auto flex min-h-full max-w-3xl flex-col">
+                <div class="flex min-h-full w-full flex-col">
                     <div class="divide-y divide-c-border">
                         <div class="py-1">
                             <button
@@ -1731,13 +1731,12 @@
                                 inert
                             >
                                 <div class="overflow-hidden">
-                                    <div
-                                        class="grid grid-cols-2 gap-3 pb-4 max-sm:grid-cols-1"
-                                    >
-                                        <a
-                                            class="mega-link"
-                                            href="#"
-                                        >
+                                    <div class="mobile-nav-card">
+                                        <p class="mobile-nav-card__intro">
+                                            From product strategy to launch and growth.
+                                        </p>
+                                        <div class="mobile-nav-card__links">
+                                        <a class="mobile-nav-card__link" href="#">
                                             <svg aria-hidden="true">
                                                 <use
                                                     href="assets/images/sprite.svg#sparkles"
@@ -1745,10 +1744,7 @@
                                             </svg>
                                             <span>AI Development</span></a
                                         >
-                                        <a
-                                            class="mega-link"
-                                            href="#"
-                                        >
+                                        <a class="mobile-nav-card__link" href="#">
                                             <svg aria-hidden="true">
                                                 <use
                                                     href="assets/images/sprite.svg#globe"
@@ -1756,10 +1752,7 @@
                                             </svg>
                                             <span>Web Development</span></a
                                         >
-                                        <a
-                                            class="mega-link"
-                                            href="#"
-                                        >
+                                        <a class="mobile-nav-card__link" href="#">
                                             <svg aria-hidden="true">
                                                 <use
                                                     href="assets/images/sprite.svg#mobile"
@@ -1769,10 +1762,7 @@
                                                 >Mobile App Development</span
                                             ></a
                                         >
-                                        <a
-                                            class="mega-link"
-                                            href="#"
-                                        >
+                                        <a class="mobile-nav-card__link" href="#">
                                             <svg aria-hidden="true">
                                                 <use
                                                     href="assets/images/sprite.svg#cloud"
@@ -1780,19 +1770,10 @@
                                             </svg>
                                             <span>SaaS Development</span></a
                                         >
-                                        <a
-                                            href="#"
-                                            class="link-arrow mt-2"
-                                        >
-                                            <span>All Services</span>
-                                            <svg
-                                                class="link-arrow-icon"
-                                                aria-hidden="true"
-                                            >
-                                                <use
-                                                    href="assets/images/sprite.svg#arrow-right"
-                                                ></use>
-                                            </svg>
+                                        </div>
+                                        <a href="#" class="mobile-nav-card__all engagement-card__cta">
+                                            <span>Explore all services</span>
+                                            <svg aria-hidden="true"><use href="assets/images/sprite.svg#arrow-right"></use></svg>
                                         </a>
                                     </div>
                                 </div>
@@ -1823,13 +1804,12 @@
                                 inert
                             >
                                 <div class="overflow-hidden">
-                                    <div
-                                        class="grid grid-cols-2 gap-3 pb-4 max-sm:grid-cols-1"
-                                    >
-                                        <a
-                                            class="mega-link"
-                                            href="#"
-                                        >
+                                    <div class="mobile-nav-card">
+                                        <p class="mobile-nav-card__intro">
+                                            The core technologies behind fast, scalable products.
+                                        </p>
+                                        <div class="mobile-nav-card__links">
+                                        <a class="mobile-nav-card__link" href="#">
                                             <svg aria-hidden="true">
                                                 <use
                                                     href="assets/images/sprite.svg#sparkles"
@@ -1839,10 +1819,7 @@
                                                 >AI &amp; Machine Learning</span
                                             ></a
                                         >
-                                        <a
-                                            class="mega-link"
-                                            href="#"
-                                        >
+                                        <a class="mobile-nav-card__link" href="#">
                                             <svg aria-hidden="true">
                                                 <use
                                                     href="assets/images/sprite.svg#code"
@@ -1853,10 +1830,7 @@
                                                 Technologies</span
                                             ></a
                                         >
-                                        <a
-                                            class="mega-link"
-                                            href="#"
-                                        >
+                                        <a class="mobile-nav-card__link" href="#">
                                             <svg aria-hidden="true">
                                                 <use
                                                     href="assets/images/sprite.svg#cloud"
@@ -1864,10 +1838,7 @@
                                             </svg>
                                             <span>Cloud &amp; DevOps</span></a
                                         >
-                                        <a
-                                            class="mega-link"
-                                            href="#"
-                                        >
+                                        <a class="mobile-nav-card__link" href="#">
                                             <svg aria-hidden="true">
                                                 <use
                                                     href="assets/images/sprite.svg#link-chain"
@@ -1877,19 +1848,10 @@
                                                 >API &amp; Integrations</span
                                             ></a
                                         >
-                                        <a
-                                            href="#"
-                                            class="link-arrow"
-                                        >
-                                            <span>All Technologies</span>
-                                            <svg
-                                                class="link-arrow-icon"
-                                                aria-hidden="true"
-                                            >
-                                                <use
-                                                    href="assets/images/sprite.svg#arrow-right"
-                                                ></use>
-                                            </svg>
+                                        </div>
+                                        <a href="#" class="mobile-nav-card__all engagement-card__cta">
+                                            <span>Explore all technologies</span>
+                                            <svg aria-hidden="true"><use href="assets/images/sprite.svg#arrow-right"></use></svg>
                                         </a>
                                     </div>
                                 </div>
@@ -1921,8 +1883,11 @@
                             >
                                 <div class="overflow-hidden">
                                     <div
-                                        class="grid grid-cols-2 gap-3 pb-4 max-sm:grid-cols-1"
+                                        class="mobile-nav-card mobile-nav-card--industries"
                                     >
+                                        <p class="mobile-nav-card__intro">
+                                            Proven digital solutions for industries that move fast.
+                                        </p>
                                         <a
                                             class="mega-link"
                                             href="#"
@@ -2140,17 +2105,10 @@
                                         >
                                         <a
                                             href="#"
-                                            class="link-arrow"
+                                            class="mobile-nav-card__all engagement-card__cta"
                                         >
-                                            <span>All Industries</span>
-                                            <svg
-                                                class="link-arrow-icon"
-                                                aria-hidden="true"
-                                            >
-                                                <use
-                                                    href="assets/images/sprite.svg#arrow-right"
-                                                ></use>
-                                            </svg>
+                                            <span>Explore all industries</span>
+                                            <svg aria-hidden="true"><use href="assets/images/sprite.svg#arrow-right"></use></svg>
                                         </a>
                                     </div>
                                 </div>
@@ -2181,14 +2139,34 @@
                                 inert
                             >
                                 <div class="overflow-hidden">
-                                    <div class="pb-4">
+                                    <div class="mobile-nav-card">
                                         <p
-                                            class="border-l-2 border-c-orange pl-4 text-sm leading-6 text-c-gray"
+                                            class="mobile-nav-card__intro"
                                         >
-                                            Learn more about Kkeydos РІР‚вЂќ our
-                                            mission, team, and how we can help
-                                            you succeed.
+                                            Meet Kkeydos and discover how we work with our clients.
                                         </p>
+                                        <div class="mobile-nav-card__links">
+                                            <a class="mobile-nav-card__link" href="#">
+                                                <svg aria-hidden="true"><use href="assets/images/sprite.svg#building"></use></svg>
+                                                <span>About Kkeydos</span>
+                                            </a>
+                                            <a class="mobile-nav-card__link" href="#">
+                                                <svg aria-hidden="true"><use href="assets/images/sprite.svg#book-open"></use></svg>
+                                                <span>Our Story</span>
+                                            </a>
+                                            <a class="mobile-nav-card__link" href="#">
+                                                <svg aria-hidden="true"><use href="assets/images/sprite.svg#users"></use></svg>
+                                                <span>Our Team</span>
+                                            </a>
+                                            <a class="mobile-nav-card__link" href="#faq">
+                                                <svg aria-hidden="true"><use href="assets/images/sprite.svg#help-circle"></use></svg>
+                                                <span>FAQs</span>
+                                            </a>
+                                        </div>
+                                        <a href="#" class="mobile-nav-card__all engagement-card__cta">
+                                            <span>Explore more about us</span>
+                                            <svg aria-hidden="true"><use href="assets/images/sprite.svg#arrow-right"></use></svg>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -2278,13 +2256,13 @@
                     aria-hidden="true"
                 ></div>
             </section>
-            <section class="relative -mt-8 bg-transparent">
-                <div class="page-container max-w-300">
+            <section class="relative -mt-8">
+                <div class="page-container max-w-300 max-2xl:max-w-full max-2xl:px-0">
                     <div
                         class="flex items-center gap-20 max-2xl:flex-col max-2xl:gap-12"
                     >
                         <div
-                            class="max-w-100 w-full shrink-0 max-2xl:max-w-140"
+                            class="max-w-100 w-full shrink-0 max-2xl:max-w-140 max-2xl:px-6"
                         >
                             <h3
                                 class="font-bold leading-[1.15] tracking-[-0.04em] text-c-slate max-2xl:text-center"
@@ -2717,7 +2695,8 @@
                     </div>
                 </div>
             </section>
-	        <section class="relative isolate pb-44 max-lg:pb-20 overflow-hidden  bg-c-light mt-50 max-lg:mt-24 max-md:mt-16"
+	        <section class="relative isolate pb-44 max-lg:pb-20 overflow-hidden  bg-c-light mt-50
+	        max-lg:mt-24 max-md:mt-16"
 	        >
 		        <!-- Decorative white curve -->
 		        <div
@@ -2725,7 +2704,7 @@
 				        aria-hidden="true"
 		        ></div>
 
-		        <div class="page-container relative z-10 max-w-320">
+		        <div class="page-container relative z-10 max-w-320 ">
 			        <div
 					        id="featured-slider"
 					        class="overflow-hidden rounded-3xl bg-[#fcfbfa] shadow-default
@@ -3514,16 +3493,18 @@
             </section>
             <section
                 id="testimonials"
-                class="relative mx-auto -mt-12 w-full max-w-[1920px] pb-40 max-[834px]:pb-10 max-xl:-mt-0 max-xl:pt-10"
+                class="relative mx-auto -mt-12 w-full max-w-[1920px] max-[1920px]:pl-6
+                 max-[834px]:pb-10 max-xl:-mt-0 max-xl:pt-10"
             >
                 <div
-                    class="grid h-200 grid-cols-[26%_74%] max-[834px]:h-auto max-[834px]:grid-cols-1"
+                    class="grid h-230 grid-cols-[minmax(420px,26%)_minmax(0,1fr)]
+                    max-[834px]:h-auto max-[834px]:grid-cols-1 max-[834px]:pl-0"
                 >
                     <img
-                        src="assets/images/testimonials-reference.webp"
+                        src="assets/images/testimonials-reference-v2.webp"
                         alt="Software team collaborating in the office"
                         fetchpriority="high"
-                        class="h-200 w-full rounded-2xl object-cover object-center max-[834px]:hidden"
+                        class="h-230 w-full rounded-2xl object-cover object-center max-[834px]:hidden"
                     />
                     <div
                         class="pt-24 pr-40 pl-24 pb-6 max-2xl:pr-10 max-2xl:pb-6 max-2xl:pl-6 max-md:px-6 max-md:py-12"
@@ -3558,14 +3539,15 @@
                 </div>
                 <div
                     data-testimonials-carousel
-                    class="absolute inset-x-0 top-88 pl-6 max-[834px]:static max-[834px]:mt-30"
+                    class="absolute inset-x-0 bottom-16 max-[1520px]:bottom-6 max-[834px]:static
+                    max-[834px]:mt-30"
                 >
                     <div
                         data-testimonials-swiper
                         id="customer-stories-swiper"
-                        class="pb-5 pt-2"
+                        class="testimonials-swiper-clip pb-5 pt-2"
                     >
-                        <div class="swiper-wrapper cursor-default!">
+                        <div class="swiper-wrapper pl-6 cursor-default!  max-[1920px]:pl-12 max-[834px]:pl-0">
                             <article class="swiper-slide testimonial-card">
                                 <blockquote class="text-[18px] leading-[1.65]">
                                     <span class="testimonial-quote-mark">“</span>
@@ -3577,7 +3559,7 @@
                                     Complete my work. Thanks a ton.. Best of
                                     luck!<span class="testimonial-quote-mark testimonial-quote-mark--closing">”</span>
                                 </blockquote>
-                                <div class="mt-auto flex flex-col gap-1 pt-7">
+                                <div class="mt-auto flex flex-col gap-1">
                                     <strong class="font-bold leading-6"
                                         >Chandra Sekhar</strong
                                     ><span class="text-sm leading-5 text-c-gray"
@@ -3596,7 +3578,7 @@
                                     website. The UI of the website is marvelous.
                                     I got reviews about my website.<span class="testimonial-quote-mark testimonial-quote-mark--closing">”</span>
                                 </blockquote>
-                                <div class="mt-auto flex flex-col gap-1 pt-7">
+                                <div class="mt-auto flex flex-col gap-1">
                                     <strong class="font-bold leading-6"
                                         >Sara Mehdi</strong
                                     ><span class="text-sm leading-5 text-c-gray"
@@ -3614,7 +3596,7 @@
                                     quality of the developers and the second
                                     project manager.<span class="testimonial-quote-mark testimonial-quote-mark--closing">”</span>
                                 </blockquote>
-                                <div class="mt-auto flex flex-col gap-1 pt-7">
+                                <div class="mt-auto flex flex-col gap-1">
                                     <strong class="font-bold leading-6"
                                         >Bommena Hemanth</strong
                                     ><span class="text-sm leading-5 text-c-gray"
@@ -3629,7 +3611,7 @@
                                     is very supportive, and very much
                                     understanding in our needs.<span class="testimonial-quote-mark testimonial-quote-mark--closing">”</span>
                                 </blockquote>
-                                <div class="mt-auto flex flex-col gap-1 pt-7">
+                                <div class="mt-auto flex flex-col gap-1">
                                     <strong class="font-bold leading-6"
                                         >K Sangeetha</strong
                                     ><span class="text-sm leading-5 text-c-gray"
@@ -3646,7 +3628,7 @@
                                     recommend it to everyone especially for an
                                     app or web development.<span class="testimonial-quote-mark testimonial-quote-mark--closing">”</span>
                                 </blockquote>
-                                <div class="mt-auto flex flex-col gap-1 pt-7">
+                                <div class="mt-auto flex flex-col gap-1">
                                     <strong class="font-bold leading-6"
                                         >Kranthi</strong
                                     ><span class="text-sm leading-5 text-c-gray"
@@ -3660,7 +3642,7 @@
                                     Very good work experience with good team of
                                     Kkeydos Infotech Pvt Ltd.<span class="testimonial-quote-mark testimonial-quote-mark--closing">”</span>
                                 </blockquote>
-                                <div class="mt-auto flex flex-col gap-1 pt-7">
+                                <div class="mt-auto flex flex-col gap-1">
                                     <strong class="font-bold leading-6"
                                         >Praveen M</strong
                                     ><span class="text-sm leading-5 text-c-gray"
@@ -3708,10 +3690,12 @@
                     </div>
                 </div>
             </section>
-            <section class="relative z-20 mx-auto -mt-16 w-full max-xl:mt-0">
+            <section class="relative z-20 mx-auto -mt-8 w-full max-2xl:mt-0 max-2xl:pt-10">
                 <div class="page-container max-2xl:p-0">
                     <div
-                        class="grid grid-cols-[384px_208px_minmax(0,1fr)] gap-x-10 rounded-2xl bg-[#111111] px-24 py-32 text-white max-xl:grid-cols-[208px_minmax(0,1fr)] max-xl:gap-x-8 max-xl:gap-y-12 max-xl:px-14 max-xl:py-20 max-md:grid-cols-1 max-md:gap-10 max-md:px-4 max-md:py-16 max-2xl:rounded-none"
+                        class="grid grid-cols-[384px_208px_minmax(0,1fr)] gap-x-10 rounded-2xl
+                        bg-[#111111] px-24 py-32 text-white max-xl:grid-cols-[208px_minmax(0,1fr)]
+                        max-xl:gap-x-8 max-xl:gap-y-12 max-xl:px-14 max-xl:py-20 max-md:grid-cols-1 max-md:gap-10 max-md:px-4 max-md:py-16 max-2xl:rounded-none"
                     >
                         <div
                             class="flex h-full flex-col items-start max-xl:col-span-2 max-md:col-span-1"
@@ -3803,7 +3787,8 @@
                             </div>
                         </div>
                         <div
-                            class="grid min-w-0 grid-cols-2 auto-rows-fr gap-5 self-center max-lg:gap-4 max-[360px]:grid-cols-1"
+                            class="grid min-w-0 grid-cols-2 auto-rows-fr gap-5 self-center
+                            max-lg:gap-4 max-[360px]:grid-cols-1"
                             aria-label="Ratings and recognition"
                         >
                             <article
@@ -4107,7 +4092,7 @@
 					            <path class="fill-none [stroke-width:40px] [stroke-linecap:round] [stroke-linejoin:round]" vector-effect="non-scaling-stroke" stroke="url(#team-primary-teal-desktop)" d="M90 430C90 300 215 210 367 210C470 210 590 300 720 430C850 560 920 649 1073 649C1225 649 1350 560 1350 430" />
 					            </svg>
 					            <article
-							            class="absolute flex w-[25%] flex-col items-center [translate:-50%_calc(-50%_-_2cqw)] [transition:none!important] motion-safe:group-data-[team-running]/team:will-change-transform md:w-[11%] md:[translate:-50%_calc(-50%_-_1cqw)] z-[2] left-[75.5%] top-[26.5%] md:left-[25.5%] md:top-[89.1%]"
+							            class="absolute flex w-[29%] flex-col items-center [translate:-50%_calc(-50%_-_2cqw)] [transition:none!important] motion-safe:group-data-[team-running]/team:will-change-transform md:w-[13%] md:[translate:-50%_calc(-50%_-_1cqw)] z-[2] left-[75.5%] top-[26.5%] md:left-[25.5%] md:top-[89.1%]"
 							            data-team-member
 							            data-team-slot="software"
 					            >
@@ -4168,7 +4153,7 @@
 						            <p class="relative z-[2] mx-auto -mt-[.65em] mb-0 w-max max-w-[135%] rounded-[14px] bg-white px-[.72em] py-[.48em] text-center text-[clamp(10px,3cqw,12px)] leading-[1.3] font-bold whitespace-normal text-[#26303b] shadow-[0_7px_20px_-10px_#13203030,0_1px_4px_#13203008] md:text-[clamp(9px,1.2cqw,12px)]">Engineering</p>
 					            </article>
 					            <article
-							            class="absolute flex w-[25%] flex-col items-center [translate:-50%_calc(-50%_-_2cqw)] [transition:none!important] motion-safe:group-data-[team-running]/team:will-change-transform md:w-[11%] md:[translate:-50%_calc(-50%_-_1cqw)] z-[2] left-[24.5%] top-[73.5%] md:left-[74.5%] md:top-[10.7%]"
+							            class="absolute flex w-[29%] flex-col items-center [translate:-50%_calc(-50%_-_2cqw)] [transition:none!important] motion-safe:group-data-[team-running]/team:will-change-transform md:w-[13%] md:[translate:-50%_calc(-50%_-_1cqw)] z-[2] left-[24.5%] top-[73.5%] md:left-[74.5%] md:top-[10.7%]"
 							            data-team-member
 							            data-team-slot="qa"
 					            >
@@ -4233,7 +4218,7 @@
 						            <p class="relative z-[2] mx-auto -mt-[.65em] mb-0 w-max max-w-[135%] rounded-[14px] bg-white px-[.72em] py-[.48em] text-center text-[clamp(10px,3cqw,12px)] leading-[1.3] font-bold whitespace-normal text-[#26303b] shadow-[0_7px_20px_-10px_#13203030,0_1px_4px_#13203008] md:text-[clamp(9px,1.2cqw,12px)]">Quality &amp; Cloud</p>
 					            </article>
 					            <article
-							            class="absolute flex w-[25%] flex-col items-center [translate:-50%_calc(-50%_-_2cqw)] [transition:none!important] motion-safe:group-data-[team-running]/team:will-change-transform md:w-[11%] md:[translate:-50%_calc(-50%_-_1cqw)] z-[2] left-[24.5%] top-[26.5%] md:left-[25.5%] md:top-[10.7%]"
+							            class="absolute flex w-[29%] flex-col items-center [translate:-50%_calc(-50%_-_2cqw)] [transition:none!important] motion-safe:group-data-[team-running]/team:will-change-transform md:w-[13%] md:[translate:-50%_calc(-50%_-_1cqw)] z-[2] left-[24.5%] top-[26.5%] md:left-[25.5%] md:top-[10.7%]"
 							            data-team-member
 							            data-team-slot="ux"
 					            >
@@ -4294,7 +4279,7 @@
 						            <p class="relative z-[2] mx-auto -mt-[.65em] mb-0 w-max max-w-[135%] rounded-[14px] bg-white px-[.72em] py-[.48em] text-center text-[clamp(10px,3cqw,12px)] leading-[1.3] font-bold whitespace-normal text-[#26303b] shadow-[0_7px_20px_-10px_#13203030,0_1px_4px_#13203008] md:text-[clamp(9px,1.2cqw,12px)]">Product &amp; UX</p>
 					            </article>
 					            <article
-							            class="absolute flex w-[25%] flex-col items-center [translate:-50%_calc(-50%_-_2cqw)] [transition:none!important] motion-safe:group-data-[team-running]/team:will-change-transform md:w-[11%] md:[translate:-50%_calc(-50%_-_1cqw)] z-[2] left-[75.5%] top-[73.5%] md:left-[74.5%] md:top-[89.1%]"
+							            class="absolute flex w-[29%] flex-col items-center [translate:-50%_calc(-50%_-_2cqw)] [transition:none!important] motion-safe:group-data-[team-running]/team:will-change-transform md:w-[13%] md:[translate:-50%_calc(-50%_-_1cqw)] z-[2] left-[75.5%] top-[73.5%] md:left-[74.5%] md:top-[89.1%]"
 							            data-team-member
 							            data-team-slot="data"
 					            >
@@ -4359,7 +4344,7 @@
 						            <p class="relative z-[2] mx-auto -mt-[.65em] mb-0 w-max max-w-[135%] rounded-[14px] bg-white px-[.72em] py-[.48em] text-center text-[clamp(10px,3cqw,12px)] leading-[1.3] font-bold whitespace-normal text-[#26303b] shadow-[0_7px_20px_-10px_#13203030,0_1px_4px_#13203008] md:text-[clamp(9px,1.2cqw,12px)]">AI &amp; Data</p>
 					            </article>
 					            <article
-							            class="absolute flex w-[25%] flex-col items-center [translate:-50%_calc(-50%_-_2cqw)] [transition:none!important] motion-safe:group-data-[team-running]/team:will-change-transform md:w-[11%] md:[translate:-50%_calc(-50%_-_1cqw)] z-[3] left-1/2 top-1/2"
+							            class="absolute flex w-[29%] flex-col items-center [translate:-50%_calc(-50%_-_2cqw)] [transition:none!important] motion-safe:group-data-[team-running]/team:will-change-transform md:w-[13%] md:[translate:-50%_calc(-50%_-_1cqw)] z-[3] left-1/2 top-1/2"
 							            data-team-member
 							            data-team-slot="project"
 					            >
@@ -4435,16 +4420,15 @@
                     >
                         <h2
                             id="engagement-heading"
-                            class="max-w-190 font-medium text-c-dark-alt"
+                            class="font-medium text-c-dark-alt"
                         >
-                            Keep full control.<br />Or hand everything off to us.
+	                        One team.<br />From idea to scale.
                         </h2>
                         <p
                             class="max-w-125 shrink-0 border-l border-l-c-muted-gray/40 pl-6 leading-relaxed text-c-muted-gray max-lg:max-w-100 max-[833px]:max-w-full max-[833px]:border-l-0 max-[833px]:pl-0"
                         >
-                            From embedded engineers to fully managed projects,
-                            we customize every engagement to fit your workflow,
-                            priorities, and delivery needs.
+	                        Bring us your idea, product, or business challenge. Our full-scale engineering team handles strategy, design, development, testing, and delivery to build digital products that scale with your business.
+
                         </p>
                     </div>
 
@@ -4453,7 +4437,8 @@
                         data-engagement-cards
                     >
                         <article class="engagement-card">
-                            <span class="engagement-card__category">Staff Augmentation</span>
+                            <span class="engagement-card__category">DEDICATED ENGINEERING
+</span>
                             <h3 class="engagement-card__title">
                                 <button
                                     type="button"
@@ -4462,22 +4447,24 @@
                                     aria-expanded="false"
                                     aria-controls="engagement-staff-panel"
                                 >
-                                    Need a couple of extra software engineers on your team?
+	                                Build a complete team around your product.
                                 </button>
                             </h3>
                             <div class="engagement-card__panel" id="engagement-staff-panel">
                                 <div class="engagement-card__content">
                                     <p class="engagement-card__description">
-                                        Add proven specialists to your existing team and scale delivery without slowing down recruitment.
+	                                    Get a dedicated team of software engineers, UI/UX designers, QA engineers, project managers, and technology specialists working together to continuously build and evolve your product.
                                     </p>
                                     <div class="engagement-card__best">
                                         <span class="engagement-card__best-label">Best for</span>
                                         <div class="engagement-card__tags">
-                                            <span>Skill Gaps</span><span>Flexible Scaling</span><span>Fast Start</span>
+                                            <span>SaaS Products</span>
+	                                        <span>Long-Term Development</span>
+	                                        <span>Continuous Innovation</span>
                                         </div>
                                     </div>
                                     <a href="#" class="engagement-card__cta">
-                                        <span>Extend Your Team</span>
+                                        <span>Build Your Team</span>
                                         <svg aria-hidden="true"><use href="assets/images/sprite.svg#arrow-right"></use></svg>
                                     </a>
                                     <img src="assets/images/team-flow/engagement-01.svg" width="112" height="112" alt="" class="engagement-card__illustration" />
@@ -4487,7 +4474,7 @@
                         </article>
 
                         <article class="engagement-card">
-                            <span class="engagement-card__category">Dedicated Teams</span>
+                            <span class="engagement-card__category">PRODUCT DEVELOPMENT</span>
                             <h3 class="engagement-card__title">
                                 <button
                                     type="button"
@@ -4496,22 +4483,24 @@
                                     aria-expanded="false"
                                     aria-controls="engagement-teams-panel"
                                 >
-                                    Need a few teams to deliver several projects simultaneously?
+	                                Turn your idea into a market-ready product.
                                 </button>
                             </h3>
                             <div class="engagement-card__panel" id="engagement-teams-panel">
                                 <div class="engagement-card__content">
                                     <p class="engagement-card__description">
-                                        Launch dedicated cross-functional teams that work as a focused extension of your organization.
+	                                    From product discovery and UX/UI design to development, testing, deployment, and optimization, we take your product from concept to a scalable digital solution.
                                     </p>
                                     <div class="engagement-card__best">
                                         <span class="engagement-card__best-label">Best for</span>
                                         <div class="engagement-card__tags">
-                                            <span>Parallel Delivery</span><span>Long-Term Roadmaps</span><span>Product Growth</span>
+                                            <span>New Products</span>
+	                                        <span>SaaS</span>
+	                                        <span>Web & Mobile Applications</span>
                                         </div>
                                     </div>
                                     <a href="#" class="engagement-card__cta">
-                                        <span>Build Dedicated Teams</span>
+                                        <span>Build Your Product</span>
                                         <svg aria-hidden="true"><use href="assets/images/sprite.svg#arrow-right"></use></svg>
                                     </a>
                                     <img src="assets/images/team-flow/engagement-02.svg" width="112" height="112" alt="" class="engagement-card__illustration" />
@@ -4521,7 +4510,7 @@
                         </article>
 
                         <article class="engagement-card">
-                            <span class="engagement-card__category">Software Outsourcing</span>
+                            <span class="engagement-card__category">END-TO-END DEVELOPMENT</span>
                             <h3 class="engagement-card__title">
                                 <button
                                     type="button"
@@ -4530,18 +4519,20 @@
                                     aria-expanded="false"
                                     aria-controls="engagement-outsourcing-panel"
                                 >
-                                    Want to offload everything to us, from start to finish?
+	                                We take care of the complete delivery.
                                 </button>
                             </h3>
                             <div class="engagement-card__panel" id="engagement-outsourcing-panel">
                                 <div class="engagement-card__content">
                                     <p class="engagement-card__description">
-                                        Give Kkeydos full ownership of architecture, design, development, QA, launch, and ongoing improvements.
+	                                    Give Kkeydos complete ownership of your software project. Our team manages architecture, design, development, QA, deployment, and ongoing improvements under one roof.
                                     </p>
                                     <div class="engagement-card__best">
                                         <span class="engagement-card__best-label">Best for</span>
                                         <div class="engagement-card__tags">
-                                            <span>End-to-End Delivery</span><span>Complex Platforms</span><span>Managed Projects</span>
+                                            <span>Enterprise Software</span>
+	                                        <span>Digital Transformation</span>
+	                                        <span>Complex Platforms</span>
                                         </div>
                                     </div>
                                     <a href="#" class="engagement-card__cta">
@@ -4568,10 +4559,10 @@
                             streamlined<span class="text-c-orange">.</span>
                         </h2>
                         <img
-                            src="assets/images/team-flow/our-process.webp"
+                            src="assets/images/team-flow/our-process-v4.webp"
                             alt="A specialist guiding a client through the delivery process"
                             loading="lazy"
-                            class="-translate-x-50 block h-auto min-w-136.25 object-contain max-2xl:hidden max-[1800px]:min-w-171"
+                            class="-translate-x-24 block h-auto min-w-136.25 object-contain max-2xl:hidden max-[1800px]:min-w-150"
                         />
                     </div>
                     <div
@@ -4673,7 +4664,7 @@
                 class="overflow-hidden bg-white pt-12 pb-36 max-md:pt-8 max-md:pb-28"
             >
                 <div class="page-container">
-                    <header
+                    <div
                         class="flex flex-row items-end justify-between gap-8 max-md:flex-col max-md:items-start max-md:gap-6"
                     >
                         <h2
@@ -4698,7 +4689,7 @@
                                 </svg>
                             </span>
                         </a>
-                    </header>
+                    </div>
 
                     <div
                         class="relative mx-auto mt-16 max-w-7xl px-16 pb-0 max-md:mt-10 max-md:px-0 max-md:pb-16"
@@ -4969,19 +4960,11 @@
 
             <section
                 id="faq"
-                class="relative isolate scroll-mt-20 overflow-hidden bg-[#f3f4f5] py-28 max-lg:py-20 max-md:py-16"
+                class="relative isolate scroll-mt-20 overflow-hidden bg-[#f1f5f9] py-28 max-lg:py-20 max-md:py-16"
                 aria-labelledby="faq-heading"
             >
                 <div
-                    class="pointer-events-none absolute -top-40 -left-32 -z-1 size-96 rounded-full bg-c-orange/8 blur-3xl"
-                    aria-hidden="true"
-                ></div>
-                <div
-                    class="pointer-events-none absolute -right-32 -bottom-48 -z-1 size-112 rounded-full bg-c-teal/8 blur-3xl"
-                    aria-hidden="true"
-                ></div>
-                <div
-                    class="page-container grid max-w-320 grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] gap-20 max-lg:grid-cols-1 max-lg:gap-10"
+                    class="page-container grid  grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] gap-20 max-lg:grid-cols-1 max-lg:gap-10"
                 >
                     <div class="max-w-125">
                         <h2 id="faq-heading" class="font-medium">
@@ -4991,13 +4974,13 @@
                             >
                         </h2>
                         <p class="mt-6 text-lg leading-relaxed text-c-gray">
-                            Answers about our engagement models, delivery
-                            process, and engineering teams.
+                            Answers about our services, delivery process,
+                            quality standards, and ongoing support.
                         </p>
                     </div>
 
                     <div>
-                        <details class="group border-b border-c-border">
+                        <details name="faq-accordion" class="group border-b border-c-border">
                             <summary
                                 class="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-xl font-semibold marker:content-none max-md:text-lg [&::-webkit-details-marker]:hidden"
                             >
@@ -5005,7 +4988,7 @@
                                 <span
                                     class="grid size-9 shrink-0 place-items-center rounded-full border border-c-orange text-2xl font-light leading-none text-c-orange"
                                     aria-hidden="true"
-                                    >+</span
+                                    ></span
                                 >
                             </summary>
                             <p class="max-w-190 pb-7 pr-16 leading-relaxed text-c-gray max-md:pr-0">
@@ -5015,54 +4998,55 @@
                             </p>
                         </details>
 
-                        <details class="group border-b border-c-border">
+                        <details name="faq-accordion" class="group border-b border-c-border">
                             <summary
                                 class="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-xl font-semibold marker:content-none max-md:text-lg [&::-webkit-details-marker]:hidden"
                             >
-                                How quickly can a project or team start?
-                                <span class="grid size-9 shrink-0 place-items-center rounded-full border border-c-orange text-2xl font-light leading-none text-c-orange" aria-hidden="true">+</span>
+                                How quickly can a software project start?
+                                <span class="grid size-9 shrink-0 place-items-center rounded-full border border-c-orange text-2xl font-light leading-none text-c-orange" aria-hidden="true"></span>
                             </summary>
                             <p class="max-w-190 pb-7 pr-16 leading-relaxed text-c-gray max-md:pr-0">
-                                After a discovery call, we confirm the required
-                                skills and scope, propose the team, and agree on
-                                a practical onboarding schedule for your project.
+                                After a discovery call, we define the scope,
+                                technical requirements, and delivery plan. The
+                                start date depends on project complexity and is
+                                confirmed before development begins.
                             </p>
                         </details>
 
-                        <details class="group border-b border-c-border">
+                        <details name="faq-accordion" class="group border-b border-c-border">
                             <summary
                                 class="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-xl font-semibold marker:content-none max-md:text-lg [&::-webkit-details-marker]:hidden"
                             >
-                                Can Kkeydos work with our existing engineering team?
-                                <span class="grid size-9 shrink-0 place-items-center rounded-full border border-c-orange text-2xl font-light leading-none text-c-orange" aria-hidden="true">+</span>
+                                Can Kkeydos collaborate with our existing team?
+                                <span class="grid size-9 shrink-0 place-items-center rounded-full border border-c-orange text-2xl font-light leading-none text-c-orange" aria-hidden="true"></span>
                             </summary>
                             <p class="max-w-190 pb-7 pr-16 leading-relaxed text-c-gray max-md:pr-0">
-                                Yes. Our specialists can join your current team,
-                                follow your workflow and tools, or operate as an
-                                independent team with shared reporting.
+                                Yes. We coordinate closely with your stakeholders
+                                and internal specialists while taking ownership of
+                                the agreed project scope, milestones, and delivery.
                             </p>
                         </details>
 
-                        <details class="group border-b border-c-border">
+                        <details name="faq-accordion" class="group border-b border-c-border">
                             <summary
                                 class="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-xl font-semibold marker:content-none max-md:text-lg [&::-webkit-details-marker]:hidden"
                             >
-                                Which engagement model is right for us?
-                                <span class="grid size-9 shrink-0 place-items-center rounded-full border border-c-orange text-2xl font-light leading-none text-c-orange" aria-hidden="true">+</span>
+                                Can you handle complete end-to-end product delivery?
+                                <span class="grid size-9 shrink-0 place-items-center rounded-full border border-c-orange text-2xl font-light leading-none text-c-orange" aria-hidden="true"></span>
                             </summary>
                             <p class="max-w-190 pb-7 pr-16 leading-relaxed text-c-gray max-md:pr-0">
-                                Staff augmentation works well for specific skill
-                                gaps, dedicated teams suit ongoing roadmaps, and
-                                outsourcing gives us ownership from planning to launch.
+                                Yes. We can manage the complete product lifecycle,
+                                including discovery, UX/UI design, architecture,
+                                development, QA, deployment, and further improvements.
                             </p>
                         </details>
 
-                        <details class="group border-b border-c-border">
+                        <details name="faq-accordion" class="group border-b border-c-border">
                             <summary
                                 class="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-xl font-semibold marker:content-none max-md:text-lg [&::-webkit-details-marker]:hidden"
                             >
                                 How do you ensure quality and security?
-                                <span class="grid size-9 shrink-0 place-items-center rounded-full border border-c-orange text-2xl font-light leading-none text-c-orange" aria-hidden="true">+</span>
+                                <span class="grid size-9 shrink-0 place-items-center rounded-full border border-c-orange text-2xl font-light leading-none text-c-orange" aria-hidden="true"></span>
                             </summary>
                             <p class="max-w-190 pb-7 pr-16 leading-relaxed text-c-gray max-md:pr-0">
                                 We combine code reviews, automated and manual QA,
@@ -5071,12 +5055,12 @@
                             </p>
                         </details>
 
-                        <details class="group border-b border-c-border">
+                        <details name="faq-accordion" class="group border-b border-c-border">
                             <summary
                                 class="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-xl font-semibold marker:content-none max-md:text-lg [&::-webkit-details-marker]:hidden"
                             >
                                 Do you provide support after launch?
-                                <span class="grid size-9 shrink-0 place-items-center rounded-full border border-c-orange text-2xl font-light leading-none text-c-orange" aria-hidden="true">+</span>
+                                <span class="grid size-9 shrink-0 place-items-center rounded-full border border-c-orange text-2xl font-light leading-none text-c-orange" aria-hidden="true"></span>
                             </summary>
                             <p class="max-w-190 pb-7 pr-16 leading-relaxed text-c-gray max-md:pr-0">
                                 Yes. We can continue with monitoring, maintenance,
@@ -5301,7 +5285,7 @@
                         <div class="flex flex-wrap items-center gap-3">
                             <a
                                 href="#"
-                                class="inline-flex h-12 items-center justify-center rounded-md border-2 border-c-dark-alt px-5 text-sm font-bold w-28.5 px-0 transition-colors hover:bg-c-dark-alt hover:text-white max-lg:w-auto max-lg:px-5 whitespace-nowrap"
+                                class="inline-flex h-10 items-center justify-center rounded-md border-2 border-c-dark-alt px-5 text-sm font-bold w-28.5 px-0 transition-colors hover:bg-c-dark-alt hover:text-white max-lg:w-auto max-lg:px-5 whitespace-nowrap"
                             >
                                 Contact Us
                             </a>
