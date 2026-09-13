@@ -156,6 +156,9 @@
     // Mobile navigation keeps one accordion section open at a time.
     const setMobileAccordion = (toggle, isOpen) => {
         const panel = document.querySelector(`#${toggle.dataset.mobileToggle}`);
+
+        if (!panel) return;
+
         toggle.dataset.open = String(isOpen);
         toggle.setAttribute('aria-expanded', String(isOpen));
         panel.dataset.open = String(isOpen);
@@ -307,6 +310,9 @@
     newsletter?.addEventListener('submit', (event) => {
         event.preventDefault();
         const status = newsletter.querySelector('[data-newsletter-status]');
+
+        if (!status) return;
+
         status.textContent =
             'Newsletter signup is coming soon. Please check back later.';
         status.classList.remove('hidden');
