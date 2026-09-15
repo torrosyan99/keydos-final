@@ -27,7 +27,7 @@
             rel="stylesheet"
             href="assets/styles/main.css"
         />
-        <script
+        <script type="module"
             src="assets/scripts/main.js"
             defer
         ></script>
@@ -87,7 +87,7 @@
                             >
                                 <div class="flex">
                                     <div class="mega-left">
-                                        <h5 class="mb-4 text-[#111111]">
+                                        <h5 class="mb-4 ">
                                             Services
                                             <span class="text-c-teal">.</span>
                                         </h5>
@@ -713,7 +713,7 @@
                             >
                                 <div class="flex">
                                     <div class="mega-left">
-                                        <h5 class="mb-4 text-[#111111]">
+                                        <h5 class="mb-4 ">
                                             Technologies<span
                                                 class="text-c-teal"
                                                 >.</span
@@ -1292,7 +1292,7 @@
                             >
                                 <div class="flex">
                                     <div class="mega-left">
-                                        <h5 class="mb-4 text-[#111111]">
+                                        <h5 class="mb-4 ">
                                             Industries
                                             <span class="text-c-teal">.</span>
                                         </h5>
@@ -1794,7 +1794,7 @@
                             >
                                 <div class="flex">
                                     <div class="mega-left">
-                                        <h5 class="mb-4 text-[#111111]">
+                                        <h5 class="mb-4 ">
                                             About
                                             <span class="text-c-teal">.</span>
                                         </h5>
@@ -2493,7 +2493,7 @@
 
         <main class="overflow-hidden">
             <section
-                class="relative isolate pb-40 pt-45 max-lg:pt-28 max-md:pb-40"
+                class="section-isolate pb-40 pt-45 max-lg:pt-28 max-md:pb-40"
                 aria-labelledby="hero-heading"
             >
                 <div
@@ -2552,7 +2552,7 @@
                     </div>
                 </div>
                 <div
-                    class="hero-bottom-oval"
+                    class="bottom-oval"
                     aria-hidden="true"
                 ></div>
             </section>
@@ -2562,7 +2562,7 @@
             >
                 <div
                     class="page-container max-w-300 flex items-center gap-10 max-2xl:flex-col max-2xl:max-w-full max-2xl:px-0"
-                >
+            >
                     <div
                         class="max-w-100 shrink-0 max-2xl:max-w-140 max-2xl:px-6"
                     >
@@ -2578,9 +2578,9 @@
                             <span class="text-c-orange">.</span>
                         </h3>
                     </div>
-                    <div class="overflow-hidden">
-                        <div class="clients-marquee">
-                            <div class="flex w-max items-center gap-6">
+                    <div class="overflow-hidden max-w-full">
+                        <div data-marquee data-marquee-gap="0">
+                            <div class="flex w-max items-center">
                                 <div class="client-card group">
                                     <div class="client-card-inner">
                                         <img
@@ -2742,19 +2742,20 @@
                 </div>
             </section>
             <section
-                class="pt-60 max-xl:pt-10"
+                class="section-padding relative"
                 aria-labelledby="services-heading"
             >
                 <div
-                    class="page-container max-[1900px]:max-w-[80vw] max-[1680px]:max-w-[85vw] max-2xl:max-w-full"
+                    class="page-container
+                    max-[1900px]:max-w-[80vw]
+                    max-[1680px]:max-w-[85vw]
+                    max-2xl:max-w-full"
                 >
                     <div
-                        class="mb-12 flex gap-6 justify-between items-end max-lg:flex-col max-lg:items-start"
+                        class="mb-12 flex gap-6 justify-between items-end
+                        max-lg:flex-col  max-lg:items-start"
                     >
-                        <h2
-                            id="services-heading"
-                            class="text-[#111111]"
-                        >
+                        <h2 id="services-heading">
                             Full-stack expertise, built for scale
                             <span class="text-c-orange">.</span>
                             <span class="block"
@@ -2762,16 +2763,10 @@
                                 SDLC<span class="text-c-orange">.</span></span
                             >
                         </h2>
-                        <a
-                            class="black-arrow-link w-44"
-                            href="#"
-                        >
+                        <a class="black-arrow-link w-44" href="#">
                             <span class="black-arrow-span">
                                 Everything we do
-                                <svg
-                                    class="size-4 shrink-0"
-                                    aria-hidden="true"
-                                >
+                                <svg class="size-4 shrink-0" aria-hidden="true">
                                     <use
                                         href="assets/images/sprite.svg#arrow-right"
                                     ></use>
@@ -2783,9 +2778,10 @@
                     <div
                         class="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1"
                     >
-                        <article class="service-card">
+                        <article class="flex min-h-90 flex-col rounded-xl bg-c-light p-10 max-xl:p-6  max-lg:min-h-80 max-md:min-h-full">
                             <div
-                                class="mb-2 flex flex-col items-start gap-4 max-sm:mb-4 max-sm:flex-row max-sm:items-center"
+                                class="mb-2 flex flex-col items-start gap-4 max-sm:mb-4
+                                max-sm:flex-row max-sm:items-center"
                             >
                                 <svg
                                     class="size-16 shrink-0 rounded-xl bg-[#d6542e] p-2 text-white"
@@ -2819,7 +2815,7 @@
                             </ul>
                         </article>
 
-                        <article class="service-card">
+                        <article class="flex min-h-90 flex-col rounded-xl bg-c-light p-10 max-xl:p-10 max-lg:min-h-80 max-md:min-h-full">
                             <div
                                 class="mb-2 flex flex-col items-start gap-4 max-sm:mb-4 max-sm:flex-row max-sm:items-center"
                             >
@@ -2855,7 +2851,7 @@
                             </ul>
                         </article>
 
-                        <article class="service-card">
+                        <article class="flex min-h-90 flex-col rounded-xl bg-c-light p-10 max-xl:p-10 max-lg:min-h-80 max-md:min-h-full">
                             <div
                                 class="mb-2 flex flex-col items-start gap-4 max-sm:mb-4 max-sm:flex-row max-sm:items-center"
                             >
@@ -2897,7 +2893,7 @@
                             </ul>
                         </article>
 
-                        <article class="service-card">
+                        <article class="flex min-h-90 flex-col rounded-xl bg-c-light p-10 max-xl:p-10 max-lg:min-h-80 max-md:min-h-full">
                             <div
                                 class="mb-2 flex flex-col items-start gap-4 max-sm:mb-4 max-sm:flex-row max-sm:items-center"
                             >
@@ -2931,7 +2927,7 @@
                             </ul>
                         </article>
 
-                        <article class="service-card">
+                        <article class="flex min-h-90 flex-col rounded-xl bg-c-light p-10 max-xl:p-10 max-lg:min-h-80 max-md:min-h-full">
                             <div
                                 class="mb-2 flex flex-col items-start gap-4 max-sm:mb-4 max-sm:flex-row max-sm:items-center"
                             >
@@ -2961,7 +2957,7 @@
                             </ul>
                         </article>
 
-                        <article class="service-card">
+                        <article class="flex min-h-90 flex-col rounded-xl bg-c-light p-10 max-xl:p-10 max-lg:min-h-80 max-md:min-h-full">
                             <div
                                 class="mb-2 flex flex-col items-start gap-4 max-sm:mb-4 max-sm:flex-row max-sm:items-center"
                             >
@@ -2994,18 +2990,17 @@
                 </div>
             </section>
             <section
-                class="relative isolate pb-44 max-lg:pb-20 overflow-hidden bg-c-light mt-50 max-lg:mt-24 max-md:mt-16"
+                class="section-isolate section-margin overflow-hidden bg-c-light"
                 aria-label="Featured coverage"
             >
                 <!-- Decorative white curve -->
                 <div
-                    class="pointer-events-none absolute -top-82.5 left-1/2 z-0 h-117.5 w-[118vw] -translate-x-1/2 rounded-[50%] bg-white max-2xl:-top-77.5 max-2xl:h-100 max-2xl:w-[118vw] max-lg:-top-55 max-lg:h-80 max-lg:w-[125vw] max-sm:-top-41.25 max-sm:h-61.25 max-sm:w-[137vw]"
+             class="top-oval"
                     aria-hidden="true"
                 ></div>
 
                 <div class="page-container relative z-10 max-w-320">
-                    <div
-                        id="featured-slider"
+                    <div id="featured-slider"
                         class="overflow-hidden rounded-3xl bg-[#fcfbfa] shadow-default max-sm:rounded-2xl"
                     >
                         <!-- Slider -->
@@ -3015,9 +3010,6 @@
                             data-swiper-slider
                         >
                             <div class="swiper-wrapper">
-                                <!-- =========================
-                                     Slide: Mid-Day
-                                ========================== -->
                                 <div class="swiper-slide">
                                     <div
                                         class="mx-auto grid w-full max-w-285 items-center grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)] gap-10 px-12 py-11 max-xl:max-w-260 max-xl:gap-8 max-xl:px-10 max-lg:max-w-210 max-lg:gap-6 max-lg:px-8 max-lg:py-8 max-md:max-w-150 max-md:grid-cols-1 max-md:gap-7 max-md:px-6 max-md:py-7 max-sm:gap-5 max-sm:px-5 max-sm:py-6"
@@ -3201,7 +3193,8 @@
                              Slider Controls
                         ========================== -->
                         <div
-                            class="mx-12 grid min-h-20 grid-cols-[1fr_auto_1fr] items-center gap-3 border-t border-[#e6e3e0] py-4 max-xl:mx-10 max-lg:mx-8 max-lg:min-h-18 max-sm:mx-5 max-sm:min-h-16 max-sm:py-3"
+                            class="mx-12 grid min-h-20 grid-cols-[1fr_auto_1fr] items-center gap-3
+                            border-t border-[#e6e3e0] py-4 max-xl:mx-10 max-lg:mx-8 max-lg:min-h-18 max-sm:mx-5 max-sm:min-h-16 max-sm:py-3"
                         >
                             <!-- Previous -->
                             <button

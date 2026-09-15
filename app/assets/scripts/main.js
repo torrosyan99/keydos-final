@@ -1,4 +1,8 @@
-(() => {
+import { marquee } from '../libs/vanilla-marquee/vanilla-marquee.js';
+import '../libs/text-rotator/text-rotator.js';
+
+
+function initHeader() {
     const header = document.querySelector('#site-header');
 
     if (!header) return;
@@ -224,4 +228,58 @@
     ========================================================== */
 
     closeMobileAccordions();
-})();
+}
+
+const initMarquees = () => {
+
+    document.querySelectorAll('[data-marquee]').forEach((element) => {
+        const gap = Number(element.dataset.marqueeGap);
+        const speed = Number(element.dataset.marqueeSpeed);
+
+        new marquee(element, {
+            direction: element.dataset.marqueeDirection || 'left',
+
+            duplicated:
+              element.dataset.marqueeDuplicated === undefined
+                ? true
+                : element.dataset.marqueeDuplicated === 'true' ||
+                element.dataset.marqueeDuplicated === '',
+
+            gap: Number.isFinite(gap) ? gap : 12,
+            speed: Number.isFinite(speed) ? speed : 40,
+
+            pauseOnHover:
+              element.dataset.marqueePauseOnHover === undefined
+                ? true
+                : element.dataset.marqueePauseOnHover === 'true' ||
+                element.dataset.marqueePauseOnHover === '',
+
+            startVisible:
+              element.dataset.marqueeStartVisible === undefined
+                ? true
+                : element.dataset.marqueeStartVisible === 'true' ||
+                element.dataset.marqueeStartVisible === '',
+        });
+
+        [...element.querySelectorAll('.js-marquee')]
+          .slice(1)
+          .forEach((copy) => {
+              copy.setAttribute('aria-hidden', 'true');
+          });
+    });
+};
+
+function initUI() {
+    initHeader();
+    initMarquees();
+}
+
+ if (document.readyState === 'loading') {
+     document.addEventListener('DOMContentLoaded', initUI, {
+         once: true,
+     });
+ } else {
+     initUI();
+ }
+
+

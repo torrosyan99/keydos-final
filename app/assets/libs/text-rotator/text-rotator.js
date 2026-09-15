@@ -3,8 +3,8 @@
 
     class TextRotator {
         constructor(element) {
-            this.element = element;
             this.items = [...element.querySelectorAll('.text-rotator-item')];
+            if(this.items.length === 0) return;
             this.interval = Math.max(
                 Number(element.dataset.interval) || 2200,
                 800,

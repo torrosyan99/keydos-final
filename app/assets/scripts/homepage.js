@@ -1,16 +1,10 @@
-import '../libs/text-rotator/text-rotator.js';
 import { Swiper } from '../libs/swiper/swiper.min.js';
-import { marquee } from '../libs/marquee6k/marquee6k.js';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const getMotionSpeed = (speed) => (reducedMotion.matches ? 0 : speed);
 
 // Prevents the same component from being initialized more than once.
-const isReady = (element) => element?.dataset.uiReady === 'true';
 
-const markReady = (element) => {
-    element.dataset.uiReady = 'true';
-};
 
 const getBaseSwiperOptions = (speed) => ({
     speed: getMotionSpeed(speed),
@@ -30,9 +24,9 @@ const createSwiper = ({ root, sliderSelector, options }) => {
 const initFeaturedSlider = () => {
     const root = document.querySelector('#featured-slider');
 
-    if (!root || isReady(root)) return;
+    if (!root) return;
 
-    const instance = createSwiper({
+    createSwiper({
         root,
         sliderSelector: '[data-swiper-slider]',
 
@@ -69,15 +63,14 @@ const initFeaturedSlider = () => {
         },
     });
 
-    if (instance) markReady(root);
 };
 
 const initTestimonialsSlider = () => {
     const root = document.querySelector('[data-testimonials-carousel]');
 
-    if (!root || isReady(root)) return;
+    if (!root) return;
 
-    const instance = createSwiper({
+   createSwiper({
         root,
         sliderSelector: '[data-testimonials-swiper]',
 
@@ -116,7 +109,6 @@ const initTestimonialsSlider = () => {
         },
     });
 
-    if (instance) markReady(root);
 };
 
 const initTeamAssembly = () => {
@@ -478,7 +470,7 @@ const initTeamAssembly = () => {
 const initInsightsSlider = () => {
     const root = document.querySelector('[data-insights-carousel]');
 
-    if (!root || isReady(root)) return;
+    if (!root) return;
 
     const instance = createSwiper({
         root,
@@ -515,13 +507,12 @@ const initInsightsSlider = () => {
         },
     });
 
-    if (instance) markReady(root);
 };
 
 const initEngagementModels = () => {
     const grid = document.querySelector('[data-engagement-cards]');
 
-    if (!grid || isReady(grid)) return;
+    if (!grid) return;
 
     // Mobile uses click/tap state; desktop can use hover/focus state.
     const mobile = window.matchMedia('(max-width: 833px)');
@@ -541,7 +532,6 @@ const initEngagementModels = () => {
 
     if (!cards.length) return;
 
-    markReady(grid);
 
     const openMobileCards = new Set([0]);
 
@@ -630,42 +620,6 @@ const initEngagementModels = () => {
     syncLayout();
 };
 
-const initMarquees = () => {
-    const MarqueeConstructor = typeof marquee === 'function' ? marquee : null;
-
-    if (!MarqueeConstructor || reducedMotion.matches) return;
-
-    const marquees = [
-        { selector: '.clients-marquee' },
-        { selector: '.tech-marquee-left' },
-        { selector: '.tech-marquee-right', direction: 'right' },
-    ];
-
-    marquees.forEach(({ selector, direction }) => {
-        const element = document.querySelector(selector);
-
-        if (!element || isReady(element)) return;
-
-        new MarqueeConstructor(element, {
-            ...(direction && { direction }),
-            duplicated: true,
-            gap: 12,
-            speed: 40,
-            pauseOnHover: true,
-            startVisible: true,
-        });
-
-        // The visual duplicate must not repeat every link in the tab order.
-        [...element.querySelectorAll('.js-marquee')]
-            .slice(1)
-            .forEach((copy) => {
-                copy.setAttribute('aria-hidden', 'true');
-                copy.inert = true;
-            });
-
-        markReady(element);
-    });
-};
 
 const initUI = () => {
     initFeaturedSlider();
@@ -673,7 +627,6 @@ const initUI = () => {
     initTeamAssembly();
     initInsightsSlider();
     initEngagementModels();
-    initMarquees();
 };
 
 // Supports both deferred/body scripts and scripts loaded before the HTML is ready.
