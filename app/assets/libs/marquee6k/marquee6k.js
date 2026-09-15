@@ -36,7 +36,7 @@ const a = {
 };
 let r = 0;
 
-class marquee {
+export class marquee {
   constructor(s, e) {
     if (void 0 === s) throw new Error("el cannot be undefined");
     if ("string" == typeof s) throw new Error("el cannot be just a selector");

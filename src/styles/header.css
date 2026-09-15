@@ -1,0 +1,326 @@
+@layer components {
+    /* =========================================================
+       DESKTOP MENU
+    ========================================================== */
+
+    .menu-item {
+        &:hover > .menu-dropdown,
+        &:focus-within > .menu-dropdown {
+            @apply visible pointer-events-auto opacity-100;
+        }
+
+        &:hover > .header-link,
+        &:focus-within > .header-link {
+            @apply text-c-teal;
+        }
+
+        &:hover > .header-link::after,
+        &:focus-within > .header-link::after {
+            transform: scaleX(1);
+        }
+
+        &:hover > .header-link svg,
+        &:focus-within > .header-link svg {
+            @apply rotate-180;
+        }
+    }
+
+    .header-link {
+        @apply relative flex h-full cursor-pointer items-center gap-2;
+        @apply whitespace-nowrap font-bold leading-6;
+        @apply transition-colors duration-300;
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            inset-inline: 0;
+            bottom: 18px;
+
+            height: 3px;
+
+            background: var(--color-c-teal);
+
+            transform: scaleX(0);
+            transform-origin: left;
+
+            transition: transform 300ms;
+        }
+
+        svg {
+            @apply block size-3.5;
+            @apply transition-transform duration-300;
+        }
+    }
+
+    .menu-dropdown {
+        /*
+         * Dropdown позиционируется относительно header.
+         * Поэтому .menu-item НЕ делаем relative.
+         */
+        @apply invisible pointer-events-none absolute inset-x-0 top-full;
+
+        @apply max-h-[calc(100dvh-4.5rem)];
+        @apply xl:max-h-[calc(100dvh-5rem)];
+
+        @apply overflow-y-auto overscroll-contain;
+
+        @apply border-y border-c-border;
+        @apply bg-white;
+
+        @apply opacity-0;
+
+        @apply rounded-b-2xl shadow-mega-menu;
+
+        @apply transition-[opacity,visibility] duration-200 ease-out;
+    }
+
+    /* =========================================================
+       MEGA MENU
+    ========================================================== */
+
+    .mega-link {
+        @apply flex items-center gap-3;
+        @apply text-c-gray;
+        @apply transition-colors;
+        @apply hover:text-c-teal;
+
+        svg {
+            @apply block size-5 shrink-0;
+            @apply text-c-orange;
+            @apply transition-colors;
+        }
+
+        &:hover svg {
+            @apply text-c-teal;
+        }
+    }
+
+    .link-arrow {
+        @apply flex items-center gap-1.5;
+        @apply font-semibold text-c-teal;
+
+        svg {
+            @apply size-4 transition-transform;
+        }
+
+        &:hover svg {
+            @apply translate-x-1;
+        }
+    }
+
+    .mega-left {
+        @apply relative isolate w-87.5 shrink-0 overflow-hidden;
+
+        @apply border-r border-c-border;
+        @apply bg-c-light-alt;
+
+        @apply px-7.5 pt-8 pb-10;
+
+        @apply max-xl:w-70;
+    }
+
+    .mega-grid {
+        @apply grid grid-cols-[repeat(3,minmax(0,330px))];
+
+        @apply gap-5;
+        @apply px-7.5 pt-8 pb-10;
+
+        @apply text-c-gray;
+
+        @apply lg:justify-between;
+        @apply xl:gap-15;
+    }
+
+    .mega-card {
+        @apply flex items-center gap-3;
+
+        @apply rounded-xl;
+
+        @apply border border-c-border;
+        @apply bg-white/85;
+
+        @apply px-3 py-2.5;
+
+        @apply shadow-default;
+    }
+
+    .icon-badge {
+        @apply block size-9;
+
+        @apply rounded-lg;
+        @apply bg-c-teal/10;
+
+        @apply p-2;
+
+        @apply text-c-teal;
+    }
+
+    .badge-dot {
+        @apply mr-2 inline-block size-2;
+        @apply rounded-sm bg-c-orange;
+    }
+
+    .mega-item-title {
+        @apply mb-5 flex items-center;
+
+        @apply border-b border-c-border;
+        @apply pb-4;
+
+        @apply text-[10px] font-bold uppercase;
+    }
+
+    /* =========================================================
+       MOBILE BURGER
+    ========================================================== */
+
+    #mobile-menu-button {
+        .mobile-menu-line {
+            @apply h-0.5 w-5 rounded-full bg-c-dark;
+        }
+
+        .mobile-menu-line--top,
+        .mobile-menu-line--bottom {
+            @apply transition-transform duration-300;
+        }
+
+        .mobile-menu-line--middle {
+            @apply transition-opacity duration-300;
+        }
+
+        &[aria-expanded='true'] {
+            .mobile-menu-line--top {
+                @apply translate-y-1.5 rotate-45;
+            }
+
+            .mobile-menu-line--middle {
+                @apply opacity-0;
+            }
+
+            .mobile-menu-line--bottom {
+                @apply -translate-y-1.5 -rotate-45;
+            }
+        }
+    }
+
+    /* =========================================================
+       MOBILE ACCORDION
+    ========================================================== */
+
+    .mobile-menu-toggle {
+        @apply flex min-h-16 w-full cursor-pointer;
+        @apply items-center justify-between;
+        @apply px-1;
+
+        @apply text-left font-medium;
+
+        @apply transition-colors;
+        @apply hover:text-c-teal;
+
+        svg {
+            @apply size-3.5;
+            @apply transition-transform duration-300;
+        }
+
+        &[aria-expanded='true'] {
+            @apply text-c-teal;
+
+            svg {
+                @apply rotate-180;
+            }
+        }
+    }
+
+    .mobile-menu-item {
+        @apply grid grid-rows-[0fr];
+        @apply opacity-0;
+
+        @apply transition-[grid-template-rows,opacity];
+        @apply duration-300 ease-out;
+    }
+
+    /*
+     * Открываем блок, который стоит сразу
+     * после открытой кнопки.
+     */
+    .mobile-menu-toggle[aria-expanded='true'] + .mobile-menu-item {
+        @apply grid-rows-[1fr] opacity-100;
+    }
+
+    /* =========================================================
+       MOBILE CONTENT
+    ========================================================== */
+
+    .mobile-nav-card {
+        @apply mb-4 pb-2;
+    }
+
+    .mobile-nav-card__intro {
+        @apply mb-3;
+
+        @apply border-l-2 border-c-orange;
+
+        @apply py-1 pr-2 pl-4;
+
+        @apply text-sm leading-5 text-c-gray;
+    }
+
+    .mobile-nav-card__links {
+        @apply grid grid-cols-1;
+    }
+
+    .mobile-nav-card__link,
+    .mobile-nav-card--industries > .mega-link {
+        @apply flex min-h-10 items-center gap-3;
+
+        @apply py-1.5;
+
+        @apply text-sm font-medium leading-5;
+        @apply text-c-dark;
+
+        @apply transition-[color,transform];
+        @apply duration-200;
+
+        @apply hover:translate-x-1;
+        @apply hover:text-c-teal;
+
+        svg {
+            @apply size-5 shrink-0;
+            @apply text-c-orange;
+        }
+    }
+
+    .mobile-nav-card--industries {
+        @apply grid grid-cols-1;
+
+        .mobile-nav-card__intro,
+        .mobile-nav-card__all {
+            @apply col-span-1;
+        }
+
+        > .mega-link:nth-of-type(n + 5) {
+            @apply hidden;
+        }
+    }
+
+    .mobile-nav-card__all.engagement-card__cta {
+        @apply order-none;
+
+        @apply mt-4;
+
+        @apply w-fit;
+
+        @apply gap-2;
+        @apply p-0;
+
+        @apply text-c-orange;
+
+        svg {
+            @apply size-4 shrink-0;
+        }
+
+        &:hover {
+            @apply text-c-teal;
+        }
+    }
+}

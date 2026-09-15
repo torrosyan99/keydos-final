@@ -1,252 +1,233 @@
 (() => {
-    'use strict';
-
     const header = document.querySelector('#site-header');
-    const desktopToggles = [...document.querySelectorAll('[data-menu-toggle]')];
 
-    const desktopPanels = [...document.querySelectorAll('[data-menu-panel]')];
-    const mobileMenuButton = document.querySelector('#mobile-menu-button');
-    const mobileMenu = document.querySelector('#mobile-menu');
-    const mobileToggles = [
-        ...document.querySelectorAll('[data-mobile-toggle]'),
-    ];
-    // Keep JS in sync with the CSS desktop-navigation breakpoint (lg / 1024px).
+    if (!header) return;
+
+    /* =========================================================
+     ELEMENTS
+  ========================================================== */
+
+    const mobileMenuButton = header.querySelector('#mobile-menu-button');
+
+    const mobileMenu = header.querySelector('#mobile-menu');
+
+    const mobileToggles = [...header.querySelectorAll('.mobile-menu-toggle')];
+
+    if (!mobileMenuButton || !mobileMenu) return;
+
+    /* =========================================================
+     SETTINGS
+  ========================================================== */
+
     const desktopLayout = window.matchMedia('(min-width: 1024px)');
+
     const pageContent = [...document.querySelectorAll('main, body > footer')];
 
-    if (!header || !mobileMenuButton || !mobileMenu) return;
+    /* =========================================================
+     SCROLL STATE
+  ========================================================== */
 
-    // Header state is split between desktop mega-menu panels and the mobile accordion.
-    let activeDesktopMenu = null;
-    let desktopCloseTimer = null;
-    let scrollAnchorY = window.scrollY;
+    let scrollAnchorY = Math.max(window.scrollY, 0);
+
     let scrollFrame = null;
+
     const scrollThreshold = 10;
-    const panelHideTimers = new WeakMap();
 
-    // Delay desktop closing so the pointer can move between a trigger and its panel.
-    const cancelScheduledDesktopClose = () => {
-        window.clearTimeout(desktopCloseTimer);
-        desktopCloseTimer = null;
-    };
+    /* =========================================================
+     MOBILE ACCORDION
+  ========================================================== */
 
-    const hideDesktopPanel = (panel) => {
-        window.clearTimeout(panelHideTimers.get(panel));
-        panel.dataset.open = 'false';
-        panel.setAttribute('aria-hidden', 'true');
-        panel.inert = true;
-        panel.classList.remove('is-open');
-
-        const timer = window.setTimeout(() => {
-            if (panel.dataset.open === 'false')
-                panel.classList.remove('is-visible');
-        }, 200);
-
-        panelHideTimers.set(panel, timer);
-    };
-
-    const showDesktopPanel = (panel) => {
-        window.clearTimeout(panelHideTimers.get(panel));
-        panel.dataset.open = 'true';
-        panel.setAttribute('aria-hidden', 'false');
-        panel.inert = false;
-        panel.classList.add('is-visible');
-
-        window.requestAnimationFrame(() => {
-            if (panel.dataset.open !== 'true') return;
-            panel.classList.add('is-open');
-        });
-    };
-
-    // Keep only one desktop menu active and synchronize its ARIA state with the UI.
-    const closeDesktopMenus = () => {
-        cancelScheduledDesktopClose();
-
-        desktopToggles.forEach((toggle) => {
-            toggle.setAttribute('aria-expanded', 'false');
-            toggle.dataset.active = 'false';
-        });
-
-        desktopPanels.forEach(hideDesktopPanel);
-        activeDesktopMenu = null;
-    };
-
-    const openDesktopMenu = (menuId) => {
-        if (!desktopLayout.matches) return;
-        cancelScheduledDesktopClose();
-
-        desktopToggles.forEach((toggle) => {
-            const isActive = toggle.dataset.menuToggle === menuId;
-            toggle.setAttribute('aria-expanded', String(isActive));
-            toggle.dataset.active = String(isActive);
-        });
-
-        desktopPanels.forEach((panel) => {
-            panel.id === menuId
-                ? showDesktopPanel(panel)
-                : hideDesktopPanel(panel);
-        });
-
-        activeDesktopMenu = menuId;
-        header.classList.remove('-translate-y-full');
-    };
-
-    const scheduleDesktopClose = () => {
-        if (!desktopLayout.matches || !activeDesktopMenu) return;
-        cancelScheduledDesktopClose();
-        // Allow the pointer to cross the small gap between a link and its panel.
-        desktopCloseTimer = window.setTimeout(closeDesktopMenus, 120);
-    };
-
-    // Mouse and keyboard interactions use the same desktop menu state transitions.
-    desktopToggles.forEach((toggle) => {
-        const menuId = toggle.dataset.menuToggle;
-
-        toggle.addEventListener('mouseenter', () => {
-            // The mouse event itself is more reliable than capability media
-            // queries on hybrid, remote-desktop, and emulated environments.
-            openDesktopMenu(menuId);
-        });
-        toggle.addEventListener('click', (event) => {
-            event.preventDefault();
-            activeDesktopMenu === menuId
-                ? closeDesktopMenus()
-                : openDesktopMenu(menuId);
-        });
-        toggle.addEventListener('keydown', (event) => {
-            if (event.key !== 'ArrowDown') return;
-            event.preventDefault();
-            openDesktopMenu(menuId);
-            document
-                .getElementById(menuId)
-                ?.querySelector('a, button')
-                ?.focus();
-        });
-        toggle.addEventListener('mouseleave', scheduleDesktopClose);
-    });
-
-    desktopPanels.forEach((panel) => {
-        panel.addEventListener('mouseenter', () => {
-            if (panel.id === activeDesktopMenu) cancelScheduledDesktopClose();
-        });
-        panel.addEventListener('mouseleave', scheduleDesktopClose);
-    });
-
-    header.addEventListener('mouseleave', scheduleDesktopClose);
-
-    header.addEventListener('focusout', () => {
-        window.requestAnimationFrame(() => {
-            if (
-                desktopLayout.matches &&
-                !header.contains(document.activeElement)
-            )
-                closeDesktopMenus();
-        });
-    });
-
-    // Clicking outside the header closes any open desktop or mobile navigation layer.
-    document.addEventListener('click', (event) => {
-        if (header.contains(event.target)) return;
-
-        closeDesktopMenus();
-        if (mobileMenuButton.getAttribute('aria-expanded') === 'true')
-            closeMobileMenu();
-    });
-
-    // Mobile navigation keeps one accordion section open at a time.
     const setMobileAccordion = (toggle, isOpen) => {
-        const panel = document.querySelector(`#${toggle.dataset.mobileToggle}`);
+        const panel = toggle.nextElementSibling;
 
-        if (!panel) return;
+        if (!panel?.classList.contains('mobile-menu-item')) {
+            return;
+        }
 
-        toggle.dataset.open = String(isOpen);
+        /*
+         * Единственный UI state кнопки.
+         */
         toggle.setAttribute('aria-expanded', String(isOpen));
-        panel.dataset.open = String(isOpen);
+
+        /*
+         * Accessibility панели.
+         */
         panel.setAttribute('aria-hidden', String(!isOpen));
+
         panel.inert = !isOpen;
     };
 
+    /* =========================================================
+     CLOSE ALL ACCORDIONS
+  ========================================================== */
+
+    const closeMobileAccordions = () => {
+        mobileToggles.forEach((toggle) => {
+            setMobileAccordion(toggle, false);
+        });
+    };
+
+    /* =========================================================
+     CLOSE MOBILE MENU
+  ========================================================== */
+
     const closeMobileMenu = () => {
         mobileMenu.classList.add('hidden');
+
         mobileMenu.setAttribute('aria-hidden', 'true');
+
         mobileMenu.inert = true;
-        mobileMenuButton.dataset.open = 'false';
+
         mobileMenuButton.setAttribute('aria-expanded', 'false');
+
         mobileMenuButton.setAttribute('aria-label', 'Open navigation');
-        mobileToggles.forEach((toggle) => setMobileAccordion(toggle, false));
+
+        closeMobileAccordions();
+
         document.body.classList.remove('overflow-hidden');
+
         pageContent.forEach((element) => {
             element.inert = false;
         });
     };
 
-    // Lock page scrolling while the mobile navigation overlay is open.
+    /* =========================================================
+     OPEN MOBILE MENU
+  ========================================================== */
+
     const openMobileMenu = () => {
-        closeDesktopMenus();
         mobileMenu.classList.remove('hidden');
+
         mobileMenu.setAttribute('aria-hidden', 'false');
+
         mobileMenu.inert = false;
-        mobileMenuButton.dataset.open = 'true';
+
         mobileMenuButton.setAttribute('aria-expanded', 'true');
+
         mobileMenuButton.setAttribute('aria-label', 'Close navigation');
+
+        /*
+         * Если header был спрятан scroll-логикой,
+         * возвращаем его.
+         */
         header.classList.remove('-translate-y-full');
+
+        /*
+         * Запрещаем скролл body.
+         */
         document.body.classList.add('overflow-hidden');
+
+        /*
+         * Контент за открытым mobile menu
+         * не должен получать focus.
+         */
         pageContent.forEach((element) => {
             element.inert = true;
         });
     };
 
+    /* =========================================================
+     BURGER
+  ========================================================== */
+
     mobileMenuButton.addEventListener('click', () => {
         const isOpen =
             mobileMenuButton.getAttribute('aria-expanded') === 'true';
-        isOpen ? closeMobileMenu() : openMobileMenu();
+
+        if (isOpen) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
     });
+
+    /* =========================================================
+     MOBILE ACCORDION BUTTONS
+  ========================================================== */
 
     mobileToggles.forEach((toggle) => {
         toggle.addEventListener('click', () => {
             const wasOpen = toggle.getAttribute('aria-expanded') === 'true';
 
-            mobileToggles.forEach((item) => setMobileAccordion(item, false));
+            /*
+             * Сначала закрываем все.
+             */
+            closeMobileAccordions();
 
-            if (!wasOpen) setMobileAccordion(toggle, true);
+            /*
+             * Если текущий был закрыт —
+             * открываем его.
+             */
+            if (!wasOpen) {
+                setMobileAccordion(toggle, true);
+            }
         });
     });
+
+    /* =========================================================
+     CLOSE MOBILE MENU AFTER LINK CLICK
+  ========================================================== */
 
     mobileMenu.addEventListener('click', (event) => {
-        if (event.target.closest('a')) closeMobileMenu();
+        if (!event.target.closest('a')) {
+            return;
+        }
+
+        closeMobileMenu();
     });
 
-    desktopPanels.forEach((panel) => {
-        panel.addEventListener('click', (event) => {
-            if (event.target.closest('a')) closeDesktopMenus();
-        });
-    });
+    /* =========================================================
+     KEEP HEADER VISIBLE ON FOCUS
+  ========================================================== */
 
     header.addEventListener('focusin', () => {
         header.classList.remove('-translate-y-full');
     });
 
-    // Hide the header on downward scroll and reveal it on upward scroll.
-    // A small threshold prevents flickering on trackpads.
+    /* =========================================================
+     HEADER SCROLL
+  ========================================================== */
+
     const updateHeaderOnScroll = () => {
         const currentScrollY = Math.max(window.scrollY, 0);
+
         const mobileMenuIsOpen =
             mobileMenuButton.getAttribute('aria-expanded') === 'true';
+
         const scrollDistance = currentScrollY - scrollAnchorY;
 
+        /*
+         * Всегда показываем header:
+         *
+         * - наверху страницы
+         * - когда mobile menu открыт
+         * - когда внутри header находится focus
+         */
         if (
+            currentScrollY <= 20 ||
             mobileMenuIsOpen ||
-            header.contains(document.activeElement) ||
-            currentScrollY <= 20
+            header.contains(document.activeElement)
         ) {
             header.classList.remove('-translate-y-full');
+
             scrollAnchorY = currentScrollY;
-        } else if (scrollDistance >= scrollThreshold) {
-            closeDesktopMenus();
+        }
+
+        /*
+         * Скроллим вниз.
+         */
+        else if (scrollDistance >= scrollThreshold) {
             header.classList.add('-translate-y-full');
+
             scrollAnchorY = currentScrollY;
-        } else if (scrollDistance <= -scrollThreshold) {
+        }
+
+        /*
+         * Скроллим вверх.
+         */
+        else if (scrollDistance <= -scrollThreshold) {
             header.classList.remove('-translate-y-full');
+
             scrollAnchorY = currentScrollY;
         }
 
@@ -256,65 +237,139 @@
     window.addEventListener(
         'scroll',
         () => {
-            if (scrollFrame !== null) return;
+            if (scrollFrame !== null) {
+                return;
+            }
+
             scrollFrame = window.requestAnimationFrame(updateHeaderOnScroll);
         },
-        { passive: true },
+        {
+            passive: true,
+        },
     );
 
-    desktopLayout.addEventListener('change', () => {
-        // Reset the inactive navigation mode when crossing the responsive breakpoint.
-        if (desktopLayout.matches) closeMobileMenu();
-        else closeDesktopMenus();
+    /* =========================================================
+     RESPONSIVE BREAKPOINT
+  ========================================================== */
+
+    desktopLayout.addEventListener('change', (event) => {
+        /*
+         * Перешли на desktop.
+         */
+        if (event.matches) {
+            closeMobileMenu();
+        }
     });
 
-    // Escape closes the active menu and returns focus to its trigger.
+    /* =========================================================
+     KEYBOARD
+  ========================================================== */
+
     document.addEventListener('keydown', (event) => {
-        if (
-            event.key === 'Tab' &&
-            mobileMenuButton.getAttribute('aria-expanded') === 'true'
-        ) {
+        const mobileIsOpen =
+            mobileMenuButton.getAttribute('aria-expanded') === 'true';
+
+        /* -------------------------------------------------
+         MOBILE FOCUS TRAP
+      -------------------------------------------------- */
+
+        if (event.key === 'Tab' && mobileIsOpen) {
             const focusable = [
-                ...header.querySelectorAll('a[href], button, input'),
+                ...header.querySelectorAll(
+                    `
+                        a[href],
+                        button,
+                        input,
+                        select,
+                        textarea,
+                        [tabindex]:not([tabindex="-1"])
+                        `,
+                ),
             ].filter(
                 (element) =>
                     !element.closest('[inert]') &&
                     element.getClientRects().length,
             );
+
             const first = focusable[0];
+
             const last = focusable.at(-1);
+
+            if (!first || !last) {
+                return;
+            }
+
             if (event.shiftKey && document.activeElement === first) {
                 event.preventDefault();
-                last?.focus();
+
+                last.focus();
             } else if (!event.shiftKey && document.activeElement === last) {
                 event.preventDefault();
-                first?.focus();
+
+                first.focus();
             }
         }
-        if (event.key !== 'Escape') return;
 
-        if (mobileMenuButton.getAttribute('aria-expanded') === 'true') {
-            closeMobileMenu();
-            mobileMenuButton.focus();
+        /* -------------------------------------------------
+         ESCAPE
+      -------------------------------------------------- */
+
+        if (event.key !== 'Escape') {
             return;
         }
 
-        const activeToggle = desktopToggles.find(
-            (toggle) => toggle.dataset.menuToggle === activeDesktopMenu,
-        );
-        activeToggle?.focus({ preventScroll: true });
-        closeDesktopMenus();
+        /*
+         * Mobile menu.
+         */
+        if (mobileIsOpen) {
+            closeMobileMenu();
+
+            mobileMenuButton.focus();
+
+            return;
+        }
+
+        /*
+         * Desktop dropdown открывается через
+         * :focus-within.
+         *
+         * Если открыли клавиатурой —
+         * Escape снимает focus.
+         */
+        if (desktopLayout.matches) {
+            const focusedMenuItem = header.querySelector(
+                '.menu-item:focus-within',
+            );
+
+            if (!focusedMenuItem) {
+                return;
+            }
+
+            const activeElement = document.activeElement;
+
+            if (activeElement instanceof HTMLElement) {
+                activeElement.blur();
+            }
+        }
     });
 
+    /* =========================================================
+     NEWSLETTER
+     Можешь удалить, если формы нет.
+  ========================================================== */
+
     const newsletter = document.querySelector('[data-newsletter-form]');
+
     newsletter?.addEventListener('submit', (event) => {
         event.preventDefault();
+
         const status = newsletter.querySelector('[data-newsletter-status]');
 
         if (!status) return;
 
         status.textContent =
             'Newsletter signup is coming soon. Please check back later.';
+
         status.classList.remove('hidden');
     });
 })();

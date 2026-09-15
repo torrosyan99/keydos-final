@@ -1,3 +1,7 @@
+import '../libs/text-rotator/text-rotator.js';
+import { Swiper } from '../libs/swiper/swiper.min.js';
+import { marquee } from '../libs/marquee6k/marquee6k.js';
+
 (() => {
     'use strict';
 
@@ -32,15 +36,13 @@
     });
 
     const createSwiper = ({ root, sliderSelector, options }) => {
-        const SwiperConstructor = window.Swiper;
-
-        if (!root || typeof SwiperConstructor !== 'function') return null;
+        if (!root || typeof Swiper !== 'function') return null;
 
         const slider = root.querySelector(sliderSelector);
 
         if (!slider) return null;
 
-        return new SwiperConstructor(slider, options);
+        return new Swiper(slider, options);
     };
 
     const initFeaturedSlider = () => {
