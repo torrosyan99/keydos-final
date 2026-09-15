@@ -1,114 +1,65 @@
 import { Swiper } from '../libs/swiper/swiper.min.js';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-const getMotionSpeed = (speed) => (reducedMotion.matches ? 0 : speed);
-
-// Prevents the same component from being initialized more than once.
-
-
-const getBaseSwiperOptions = (speed) => ({
-    speed: getMotionSpeed(speed),
-
-});
-
-const createSwiper = ({ root, sliderSelector, options }) => {
-    if (!root || typeof Swiper !== 'function') return null;
-
-    const slider = root.querySelector(sliderSelector);
-
-    if (!slider) return null;
-
-    return new Swiper(slider, options);
-};
 
 const initFeaturedSlider = () => {
     const root = document.querySelector('#featured-slider');
 
     if (!root) return;
 
-    createSwiper({
-        root,
-        sliderSelector: '[data-swiper-slider]',
-
-        options: {
-            ...getBaseSwiperOptions(650),
-
-            slidesPerView: 1,
-            slidesPerGroup: 1,
-            spaceBetween: 0,
-            loop: true,
-            // Disables autoplay when reduced motion is enabled.
-            autoplay: reducedMotion.matches
-                ? false
-                : {
-                      delay: 4000,
-                      disableOnInteraction: false,
-                      pauseOnMouseEnter: true,
-                  },
-            navigation: {
-                prevEl: root.querySelector('[data-featured-prev]'),
-                nextEl: root.querySelector('[data-featured-next]'),
-            },
-
-            pagination: {
-                el: root.querySelector('[data-featured-pagination]'),
-                clickable: true,
-            },
-
-            a11y: {
-                enabled: true,
-                prevSlideMessage: 'Previous featured slide',
-                nextSlideMessage: 'Next featured slide',
-            },
+    new Swiper(root.querySelector('[data-swiper-slider]'), {
+        speed: reducedMotion.matches ? 0 : 650,
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 0,
+        loop: true,
+        autoplay: reducedMotion.matches
+            ? false
+            : {
+                  delay: 4000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+              },
+        navigation: {
+            prevEl: root.querySelector('[data-featured-prev]'),
+            nextEl: root.querySelector('[data-featured-next]'),
+        },
+        pagination: {
+            el: root.querySelector('[data-featured-pagination]'),
+            clickable: true,
         },
     });
-
 };
 
 const initTestimonialsSlider = () => {
-    const root = document.querySelector('[data-testimonials-carousel]');
+    const root = document.querySelector('#testimonials-slider');
 
     if (!root) return;
-
-   createSwiper({
-        root,
-        sliderSelector: '[data-testimonials-swiper]',
-
-        options: {
-            ...getBaseSwiperOptions(650),
-
-            slidesPerView: 'auto',
-            slidesPerGroup: 1,
-            spaceBetween: 32,
-            autoplay: reducedMotion.matches
-                ? false
-                : {
-                      delay: 4000,
-                      disableOnInteraction: false,
-                      pauseOnMouseEnter: true,
-                  },
-            loop: false,
-            rewind: false,
-            watchSlidesProgress: true,
-            navigation: {
-                prevEl: root.querySelector('[data-testimonials-prev]'),
-                nextEl: root.querySelector('[data-testimonials-next]'),
-            },
-
-            a11y: {
-                enabled: true,
-                prevSlideMessage: 'Previous testimonial',
-                nextSlideMessage: 'Next testimonial',
-            },
-
-            breakpoints: {
-                834: {
-                    spaceBetween: 65,
-                },
+    new Swiper(root.querySelector('[data-testimonials-swiper]'), {
+        speed: reducedMotion.matches ? 0 : 650,
+        slidesPerView: 'auto',
+        slidesPerGroup: 1,
+        spaceBetween: 32,
+        autoplay: reducedMotion.matches
+            ? false
+            : {
+                  delay: 4000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+              },
+        loop: false,
+        rewind: false,
+        watchSlidesProgress: true,
+        navigation: {
+            prevEl: root.querySelector('[data-testimonials-prev]'),
+            nextEl: root.querySelector('[data-testimonials-next]'),
+        },
+        breakpoints: {
+            834: {
+                spaceBetween: 65,
             },
         },
     });
-
 };
 
 const initTeamAssembly = () => {
@@ -468,70 +419,55 @@ const initTeamAssembly = () => {
 };
 
 const initInsightsSlider = () => {
-    const root = document.querySelector('[data-insights-carousel]');
+    const root = document.querySelector('#insights-slider');
 
     if (!root) return;
+    new Swiper(root.querySelector('[data-insights-swiper]'), {
+        speed: reducedMotion.matches ? 0 : 500,
 
-    const instance = createSwiper({
-        root,
-        sliderSelector: '[data-insights-swiper]',
-
-        options: {
-            ...getBaseSwiperOptions(500),
-
-            slidesPerView: 1.12,
-            slidesPerGroup: 1,
-            spaceBetween: 20,
-            navigation: {
-                prevEl: root.querySelector('[data-insights-prev]'),
-                nextEl: root.querySelector('[data-insights-next]'),
+        slidesPerView: 1.12,
+        slidesPerGroup: 1,
+        spaceBetween: 20,
+        navigation: {
+            prevEl: root.querySelector('[data-insights-prev]'),
+            nextEl: root.querySelector('[data-insights-next]'),
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 24,
             },
 
-            a11y: {
-                enabled: true,
-                prevSlideMessage: 'Previous insight',
-                nextSlideMessage: 'Next insight',
-            },
-
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 24,
-                },
-
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 32,
-                },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 32,
             },
         },
     });
-
 };
 
 const initEngagementModels = () => {
-    const grid = document.querySelector('[data-engagement-cards]');
+    const grid = document.querySelector('#engagement-cards');
 
     if (!grid) return;
 
     // Mobile uses click/tap state; desktop can use hover/focus state.
-    const mobile = window.matchMedia('(max-width: 833px)');
+    const mobile = window.matchMedia('(width < 834px)');
 
     const hover = window.matchMedia(
         '(any-hover: hover) and (any-pointer: fine)',
     );
 
-    const cards = [...grid.querySelectorAll('.engagement-card')]
+    const cards = [...grid.querySelectorAll('[data-engagement-card]')]
         .map((card) => ({
             card,
-            button: card.querySelector('.engagement-card__toggle'),
-            panel: card.querySelector('.engagement-card__panel'),
+            button: card.querySelector('button[aria-controls]'),
+            panel: card.querySelector('[data-engagement-panel]'),
         }))
         // Ignores incomplete cards instead of throwing a runtime error.
         .filter(({ button, panel }) => button && panel);
 
     if (!cards.length) return;
-
 
     const openMobileCards = new Set([0]);
 
@@ -619,7 +555,6 @@ const initEngagementModels = () => {
 
     syncLayout();
 };
-
 
 const initUI = () => {
     initFeaturedSlider();
