@@ -50,4 +50,28 @@
             filter: none;
         }
     }
+
+    .page-container {
+        @apply mx-auto w-full max-w-380 px-6;
+    }
+
+    .link-arrow,
+    .link-arrow-orange {
+        @apply flex items-center gap-1.5 font-semibold;
+        svg {
+            @apply size-4 transition-transform;
+        }
+
+        &:hover svg {
+            @apply translate-x-1;
+        }
+    }
+
+    .link-arrow {
+        @apply text-c-teal;
+    }
+
+    .link-arrow-orange {
+        @apply text-c-orange;
+    }
 }
